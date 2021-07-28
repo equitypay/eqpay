@@ -43,9 +43,7 @@ const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfSta
 inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool fProofOfStake)
 {
     if(fProofOfStake) {
-        if(nHeight < params.QIP9Height) {
-            return UintToArith256(params.posLimit);
-        } else if(nHeight < params.nReduceBlocktimeHeight) {
+        if(nHeight < params.nReduceBlocktimeHeight) {
             return UintToArith256(params.QIP9PosLimit);
         } else {
             return UintToArith256(params.RBTPosLimit);
@@ -118,21 +116,12 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
     bnNew.SetCompact(pindexLast->nBits);
     int64_t nInterval = params.DifficultyAdjustmentInterval(nHeight); 
 
-    if (nHeight < params.QIP9Height) {
-        if (nActualSpacing < 0)
-            nActualSpacing = nTargetSpacing;
-        if (nActualSpacing > nTargetSpacing * 10)
-            nActualSpacing = nTargetSpacing * 10;
-        bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);
-        bnNew /= ((nInterval + 1) * nTargetSpacing);
-    } else {
-        if (nActualSpacing < 0)
-            nActualSpacing = nTargetSpacing;
-        if (nActualSpacing > nTargetSpacing * 20)
-            nActualSpacing = nTargetSpacing * 20;
-        uint32_t stakeTimestampMask=params.StakeTimestampMask(nHeight);
-        bnNew = mul_exp(bnNew, 2 * (nActualSpacing - nTargetSpacing) / (stakeTimestampMask + 1), (nInterval + 1) * nTargetSpacing / (stakeTimestampMask + 1));
-    }
+    if (nActualSpacing < 0)
+        nActualSpacing = nTargetSpacing;
+    if (nActualSpacing > nTargetSpacing * 20)
+        nActualSpacing = nTargetSpacing * 20;
+    uint32_t stakeTimestampMask=params.StakeTimestampMask(nHeight);
+    bnNew = mul_exp(bnNew, 2 * (nActualSpacing - nTargetSpacing) / (stakeTimestampMask + 1), (nInterval + 1) * nTargetSpacing / (stakeTimestampMask + 1));
 
     if (bnNew <= 0 || bnNew > bnTargetLimit)
         bnNew = bnTargetLimit;

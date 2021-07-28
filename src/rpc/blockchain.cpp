@@ -127,7 +127,7 @@ double GetPoSKernelPS()
     uint32_t stakeTimestampMask=consensusParams.StakeTimestampMask(0);
     if(pindex)
     {
-        dynamicStakeSpacing = pindex->nHeight < consensusParams.QIP9Height;
+        dynamicStakeSpacing = false;
         stakeTimestampMask=consensusParams.StakeTimestampMask(pindex->nHeight);
     }
 

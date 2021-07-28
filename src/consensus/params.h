@@ -50,8 +50,6 @@ struct Params {
     int QIP6Height;
     /** Block height at which QIP7 becomes active */
     int QIP7Height;
-    /** Block height at which QIP9 becomes active */
-    int QIP9Height;
     /** Block height at which Offline Staking becomes active */
     int nOfflineStakeHeight;
     /** Block height at which Reduce Block Time becomes active */
@@ -132,8 +130,7 @@ struct Params {
     }
     int64_t TargetTimespan(int height) const
     {
-        return height < QIP9Height ? nPowTargetTimespan : 
-            (height < nReduceBlocktimeHeight ? nPowTargetTimespanV2 : nRBTPowTargetTimespan);
+        return height < nReduceBlocktimeHeight ? nPowTargetTimespanV2 : nRBTPowTargetTimespan;
     }
     int CheckpointSpan(int height) const
     {

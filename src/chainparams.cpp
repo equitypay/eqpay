@@ -76,7 +76,6 @@ public:
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
-        consensus.QIP9Height = 466600;
         consensus.nOfflineStakeHeight = 1;
         consensus.nReduceBlocktimeHeight = 845000;
         consensus.nMuirGlacierHeight = 845000;
@@ -179,7 +178,6 @@ public:
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
-        consensus.QIP9Height = 446320;
         consensus.nOfflineStakeHeight = 1;
         consensus.nReduceBlocktimeHeight = 806600;
         consensus.nMuirGlacierHeight = 806600;
@@ -278,7 +276,6 @@ public:
         consensus.nSubsidyHalvingInterval = 985500;
         consensus.QIP6Height = 0;
         consensus.QIP7Height = 0;
-        consensus.QIP9Height = 0;
         consensus.nOfflineStakeHeight = 1;
         consensus.nReduceBlocktimeHeight = 0;
         consensus.nMuirGlacierHeight = 0;
@@ -513,7 +510,6 @@ void CChainParams::UpdateDifficultyChangeBlockHeight(int nHeight)
     consensus.posLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
     consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff");
     consensus.RBTPosLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
-    consensus.QIP9Height = nHeight;
     consensus.fPowAllowMinDifficultyBlocks = false;
     consensus.fPowNoRetargeting = true;
     consensus.fPoSNoRetargeting = false;
