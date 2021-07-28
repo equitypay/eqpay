@@ -2127,7 +2127,6 @@ UniValue getblockchaininfo(const JSONRPCRequest& request)
 
     const Consensus::Params& consensusParams = Params().GetConsensus();
     UniValue softforks(UniValue::VOBJ);
-    BuriedForkDescPushBack(softforks, "bip34", consensusParams.BIP34Height);
     BuriedForkDescPushBack(softforks, "bip66", consensusParams.BIP66Height);
     BuriedForkDescPushBack(softforks, "bip65", consensusParams.BIP65Height);
     BuriedForkDescPushBack(softforks, "csv", consensusParams.CSVHeight);
