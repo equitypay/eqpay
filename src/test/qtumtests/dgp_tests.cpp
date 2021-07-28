@@ -450,44 +450,6 @@ BOOST_AUTO_TEST_CASE(gas_schedule_passage_from_130_to_0_three_paramsInstance_tes
     }
 }
 
-BOOST_AUTO_TEST_CASE(block_size_default_state_test1){
-    initState();
-    contractLoading();
-    QtumDGP qtumDGP(globalState.get());
-    uint32_t nHeight = 100;
-    uint32_t blocktimeDownscaleFactor = Params().GetConsensus().BlocktimeDownscaleFactor(nHeight);
-    uint32_t blockSize = qtumDGP.getBlockSize(nHeight);
-    BOOST_CHECK(blockSize == DEFAULT_BLOCK_SIZE_DGP / blocktimeDownscaleFactor);
-}
-
-BOOST_AUTO_TEST_CASE(block_size_default_state_test2){
-    initState();
-    contractLoading();
-    QtumDGP qtumDGP(globalState.get());
-    uint32_t nHeight = 0;
-    uint32_t blocktimeDownscaleFactor = Params().GetConsensus().BlocktimeDownscaleFactor(nHeight);
-    uint32_t blockSize = qtumDGP.getBlockSize(0);
-    BOOST_CHECK(blockSize == DEFAULT_BLOCK_SIZE_DGP / blocktimeDownscaleFactor);
-}
-
-BOOST_AUTO_TEST_CASE(block_size_one_paramsInstance_introductory_block_1_test1){
-    initState();
-    contractLoading();
-
-    dev::h256 hashTemp(hash);
-    std::vector<QtumTransaction> txs;
-    txs.push_back(createQtumTransaction(code[0], 0, dev::u256(500000), dev::u256(1), hashTemp, BlockSizeDGP, 0));
-    txs.push_back(createQtumTransaction(code[7], 0, dev::u256(500000), dev::u256(1), ++hashTemp, dev::Address(), 0));
-    txs.push_back(createQtumTransaction(code[2], 0, dev::u256(500000), dev::u256(1), ++hashTemp, BlockSizeDGP, 0));
-    auto result = executeBC(txs);
-
-    QtumDGP qtumDGP(globalState.get());
-    uint32_t nHeight = 0;
-    uint32_t blocktimeDownscaleFactor = Params().GetConsensus().BlocktimeDownscaleFactor(nHeight);
-    uint32_t blockSize = qtumDGP.getBlockSize(nHeight);
-    BOOST_CHECK(blockSize == DEFAULT_BLOCK_SIZE_DGP / blocktimeDownscaleFactor);
-}
-
 BOOST_AUTO_TEST_CASE(block_size_one_paramsInstance_introductory_block_1_test2){
     initState();
     contractLoading();
@@ -503,36 +465,6 @@ BOOST_AUTO_TEST_CASE(block_size_one_paramsInstance_introductory_block_1_test2){
     int coinbaseMaturity = Params().GetConsensus().CoinbaseMaturity(0);
     uint32_t blockSize = qtumDGP.getBlockSize(coinbaseMaturity + 2);
     BOOST_CHECK(blockSize == 1000000);
-}
-
-BOOST_AUTO_TEST_CASE(block_size_passage_from_0_to_130_three_paramsInstance_test){
-//    initState();
-    contractLoading();
-    
-    createTestContractsAndBlocks(this, code[7], code[8], code[9], BlockSizeDGP);
-    QtumDGP qtumDGP(globalState.get());
-    size_t sizeList = Params().GetConsensus().CoinbaseMaturity(0) + 800;
-    for(size_t i = 0; i < sizeList; i++){
-        uint32_t blocktimeDownscaleFactor = Params().GetConsensus().BlocktimeDownscaleFactor(i);
-        uint32_t blockSize = qtumDGP.getBlockSize(i);
-        std::function<bool(const uint64_t&, const uint64_t&)> func = compareUint64;
-        checkValue<uint64_t>(blockSize, DEFAULT_BLOCK_SIZE_DGP / blocktimeDownscaleFactor, 1000000, 2000000, 500123, i, func);
-    }
-}
-
-BOOST_AUTO_TEST_CASE(block_size_passage_from_130_to_0_three_paramsInstance_test){
-//    initState();
-    contractLoading();
-    
-    createTestContractsAndBlocks(this, code[7], code[8], code[9], BlockSizeDGP);
-    QtumDGP qtumDGP(globalState.get());
-    size_t sizeList = Params().GetConsensus().CoinbaseMaturity(0) + 800;
-    for(size_t i = sizeList; i > 0; i--){
-        uint32_t blocktimeDownscaleFactor = Params().GetConsensus().BlocktimeDownscaleFactor(i);
-        uint32_t blockSize = qtumDGP.getBlockSize(i);
-        std::function<bool(const uint64_t&, const uint64_t&)> func = compareUint64;
-        checkValue<uint32_t>(blockSize, DEFAULT_BLOCK_SIZE_DGP / blocktimeDownscaleFactor, 1000000, 2000000, 500123, i, func);
-    }
 }
 
 BOOST_AUTO_TEST_CASE(min_gas_price_default_state_test1){

@@ -77,22 +77,16 @@ public:
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
-        consensus.nReduceBlocktimeHeight = 845000;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.posLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
-        consensus.RBTPosLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 16 * 60; // 16 minutes
-        consensus.nPowTargetTimespanV2 = 4000;
-        consensus.nRBTPowTargetTimespan = 1000;
-        consensus.nPowTargetSpacing = 2 * 64;
-        consensus.nRBTPowTargetSpacing = 32;
+        consensus.posLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.nTargetTimespan = 1000;
+        consensus.nTargetSpacing = 32;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = true;
         consensus.fPoSNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nMinerConfirmationWindow = 2016;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -152,19 +146,14 @@ public:
             0.02433574394826639 // * estimated number of transactions per second after that timestamp
         };
 
-        consensus.nBlocktimeDownscaleFactor = 4;
         consensus.nCoinbaseMaturity = 500;
-        consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
-        consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // qtum halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
         consensus.nLastPOWBlock = 5000;
         consensus.nLastBigReward = 5000;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
-        consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
-        consensus.nStakeTimestampMask = 15;
-        consensus.nRBTStakeTimestampMask = 3;
+        consensus.nStakeTimestampMask = 3;
     }
 };
 
@@ -179,22 +168,16 @@ public:
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
-        consensus.nReduceBlocktimeHeight = 806600;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.posLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
-        consensus.RBTPosLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 16 * 60; // 16 minutes
-        consensus.nPowTargetTimespanV2 = 4000;
-        consensus.nRBTPowTargetTimespan = 1000;
-        consensus.nPowTargetSpacing = 2 * 64;
-        consensus.nRBTPowTargetSpacing = 32;
+        consensus.posLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.nTargetTimespan = 1000;
+        consensus.nTargetSpacing = 32;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = true;
         consensus.fPoSNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nMinerConfirmationWindow = 2016;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -250,19 +233,14 @@ public:
             0
         };
 
-        consensus.nBlocktimeDownscaleFactor = 4;
         consensus.nCoinbaseMaturity = 500;
-        consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
-        consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // qtum halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
         consensus.nLastPOWBlock = 5000;
         consensus.nLastBigReward = 5000;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
-        consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
-        consensus.nStakeTimestampMask = 15;
-        consensus.nRBTStakeTimestampMask = 3;
+        consensus.nStakeTimestampMask = 3;
     }
 };
 
@@ -277,17 +255,11 @@ public:
         consensus.QIP6Height = 0;
         consensus.QIP7Height = 0;
         consensus.nOfflineStakeHeight = 1;
-        consensus.nReduceBlocktimeHeight = 0;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.QIP9PosLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // The new POS-limit activated after QIP9
-        consensus.RBTPosLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 16 * 60; // 16 minutes (960 = 832 + 128; multiplier is 832)
-        consensus.nPowTargetTimespanV2 = 4000;
-        consensus.nRBTPowTargetTimespan = 1000;
-        consensus.nPowTargetSpacing = 2 * 64;
-        consensus.nRBTPowTargetSpacing = 32;
+        consensus.nTargetTimespan = 1000;
+        consensus.nTargetSpacing = 32;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.fPoSNoRetargeting = true;
@@ -340,19 +312,14 @@ public:
             0
         };
 
-        consensus.nBlocktimeDownscaleFactor = 4;
         consensus.nCoinbaseMaturity = 500;
-        consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
-        consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // qtum halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
 
         consensus.nLastPOWBlock = 0x7fffffff;
         consensus.nLastBigReward = 5000;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
-        consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
-        consensus.nStakeTimestampMask = 15;
-        consensus.nRBTStakeTimestampMask = 3;
+        consensus.nStakeTimestampMask = 3;
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,120);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,110);
@@ -416,21 +383,15 @@ public:
     : CRegTestParams(args)
     {
         // Activate the the BIPs for regtest as in Bitcoin
-        consensus.QIP6Height = consensus.nBlocktimeDownscaleFactor*500 + 500;
+        consensus.QIP6Height = 0;
         consensus.QIP7Height = 0; // QIP7 activated on regtest
 
         // QTUM have 500 blocks of maturity, increased values for regtest in unit tests in order to correspond with it
         consensus.nSubsidyHalvingInterval = 750;
-        consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*750;
-        consensus.nRuleChangeActivationThreshold = consensus.nBlocktimeDownscaleFactor*558; // 75% for testchains
-        consensus.nMinerConfirmationWindow = consensus.nBlocktimeDownscaleFactor*744; // Faster than normal for regtest (744 instead of 2016)
 
-        consensus.nBlocktimeDownscaleFactor = 4;
         consensus.nCoinbaseMaturity = 500;
-        consensus.nRBTCoinbaseMaturity = consensus.nBlocktimeDownscaleFactor*500;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity*2; // Increase the check point span for the reorganization tests from 500 to 1000
-        consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity*2; // Increase the check point span for the reorganization tests from 500 to 1000
     }
 };
 
@@ -506,10 +467,7 @@ void UpdateConstantinopleBlockHeight(int nHeight)
 void CChainParams::UpdateDifficultyChangeBlockHeight(int nHeight)
 {
     consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-    consensus.nSubsidyHalvingIntervalV2 = consensus.nBlocktimeDownscaleFactor*985500; // qtum halving every 4 years (nSubsidyHalvingInterval * nBlocktimeDownscaleFactor)
-    consensus.posLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-    consensus.QIP9PosLimit = uint256S("0000000000001fffffffffffffffffffffffffffffffffffffffffffffffffff");
-    consensus.RBTPosLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
+    consensus.posLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
     consensus.fPowAllowMinDifficultyBlocks = false;
     consensus.fPowNoRetargeting = true;
     consensus.fPoSNoRetargeting = false;
@@ -539,16 +497,6 @@ void CChainParams::UpdateDelegationsAddress(const uint160& address)
 void UpdateDelegationsAddress(const uint160& address)
 {
     const_cast<CChainParams*>(globalChainParams.get())->UpdateDelegationsAddress(address);
-}
-
-void CChainParams::UpdateReduceBlocktimeHeight(int nHeight)
-{
-    consensus.nReduceBlocktimeHeight = nHeight;
-}
-
-void UpdateReduceBlocktimeHeight(int nHeight)
-{
-    const_cast<CChainParams*>(globalChainParams.get())->UpdateReduceBlocktimeHeight(nHeight);
 }
 
 void CChainParams::UpdatePowAllowMinDifficultyBlocks(bool fValue)

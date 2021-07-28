@@ -1324,13 +1324,6 @@ bool AppInitParameterInteraction()
         if (!chainparams.MineBlocksOnDemand()) {
             return InitError("Short block time height may only be overridden on regtest.");
         }
-
-        int reduceblocktimeheight = gArgs.GetArg("-reduceblocktimeheight", 0);
-        if(reduceblocktimeheight >= 0)
-        {
-            UpdateReduceBlocktimeHeight(reduceblocktimeheight);
-            LogPrintf("Activate short block time at block height %d\n.", reduceblocktimeheight);
-        }
     }
 
     if (gArgs.IsArgSet("-powallowmindifficultyblocks")) {

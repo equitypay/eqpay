@@ -42,18 +42,6 @@ void updateMinerParams(int nHeight, const Consensus::Params& consensusParams, bo
 {
     static unsigned int timeDownscale = 1;
     static unsigned int timeDefault = 1;
-    unsigned int timeDownscaleTmp = consensusParams.TimestampDownscaleFactor(nHeight);
-    if(timeDownscale != timeDownscaleTmp)
-    {
-        timeDownscale = timeDownscaleTmp;
-        unsigned int targetSpacing =  consensusParams.TargetSpacing(nHeight);
-        nMaxStakeLookahead = std::max(MAX_STAKE_LOOKAHEAD / timeDownscale, timeDefault);
-        nMaxStakeLookahead = std::min(nMaxStakeLookahead, targetSpacing);
-        nBytecodeTimeBuffer = std::max(BYTECODE_TIME_BUFFER / timeDownscale, timeDefault);
-        nStakeTimeBuffer = std::max(STAKE_TIME_BUFFER / timeDownscale, timeDefault);
-        nMinerSleep = std::max(STAKER_POLLING_PERIOD / timeDownscale, timeDefault);
-        nMinerWaitWalidBlock = std::max(STAKER_WAIT_FOR_WALID_BLOCK / timeDownscale, timeDefault);
-    }
 
     // Sleep for 20 seconds when mining with minimum difficulty to avoid creating blocks every 4 seconds
     if(minDifficulty && nMinerSleep != STAKER_POLLING_PERIOD_MIN_DIFFICULTY)

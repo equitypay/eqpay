@@ -503,9 +503,8 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
         next->BuildSkip();
         ::ChainActive().SetTip(next);
     }
-    int blocktimeDownscaleFactor = consensusParams.BlocktimeDownscaleFactor(::ChainActive().Tip()->nHeight + 1);
     BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey, true, true));
-    BOOST_CHECK(calculateReward(pblocktemplate->block) == 400000000/blocktimeDownscaleFactor);
+    BOOST_CHECK(calculateReward(pblocktemplate->block) == 400000000);
     // Extend to a 210000-long block chain.
     while (::ChainActive().Tip()->nHeight < 1427004) {
         CBlockIndex* prev = ::ChainActive().Tip();
@@ -518,9 +517,8 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
         ::ChainActive().SetTip(next);
     }
 
-    blocktimeDownscaleFactor = consensusParams.BlocktimeDownscaleFactor(::ChainActive().Tip()->nHeight + 1);
     BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey, true, true));
-    BOOST_CHECK(calculateReward(pblocktemplate->block) == 200000000/blocktimeDownscaleFactor);
+    BOOST_CHECK(calculateReward(pblocktemplate->block) == 200000000);
 
     // invalid p2sh txn in *m_node.mempool, template creation fails
     tx.vin[0].prevout.hash = txFirst[0]->GetHash();

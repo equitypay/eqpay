@@ -69,7 +69,7 @@ bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t 
 
     // Get height
     int nHeight = pindexPrev->nHeight + 1;
-    bool fNoBNOverflow = nHeight >= Params().GetConsensus().nReduceBlocktimeHeight;
+    bool fNoBNOverflow = true;
 
     // Base target
     arith_uint256 bnTarget;
