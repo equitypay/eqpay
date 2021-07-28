@@ -73,7 +73,6 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
-        consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
@@ -161,7 +160,6 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
-        consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
@@ -245,7 +243,6 @@ class CRegTestParams : public CChainParams {
 public:
     explicit CRegTestParams(const ArgsManager& args) {
         strNetworkID =  CBaseChainParams::REGTEST;
-        consensus.nSubsidyHalvingInterval = 985500;
         consensus.QIP6Height = 0;
         consensus.QIP7Height = 0;
         consensus.nOfflineStakeHeight = 1;
@@ -377,9 +374,6 @@ public:
         consensus.QIP6Height = 0;
         consensus.QIP7Height = 0; // QIP7 activated on regtest
 
-        // QTUM have 500 blocks of maturity, increased values for regtest in unit tests in order to correspond with it
-        consensus.nSubsidyHalvingInterval = 750;
-
         consensus.nCoinbaseMaturity = 500;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity*2; // Increase the check point span for the reorganization tests from 500 to 1000
@@ -457,7 +451,6 @@ void UpdateConstantinopleBlockHeight(int nHeight)
 
 void CChainParams::UpdateDifficultyChangeBlockHeight(int nHeight)
 {
-    consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
     consensus.posLimit = uint256S("0000000000003fffffffffffffffffffffffffffffffffffffffffffffffffff");
     consensus.fPowAllowMinDifficultyBlocks = false;
     consensus.fPowNoRetargeting = true;

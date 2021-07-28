@@ -1439,7 +1439,22 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
-    return 20000 * COIN;
+    // Distribute dev fund on first block
+    if (nHeight == 1)
+        return 9000000 * COIN;
+
+    int nSubsidyHalvingInterval = 1577880;
+    int halvings = nHeight / nSubsidyHalvingInterval;
+    CAmount nSubsidy = 4 * COIN;
+
+    // Force block reward to zero when right shift is undefined.
+    if (halvings >= 64)
+        return 0;
+
+    // Subsidy is cut in half every nSubsidyHalvingInterval blocks.
+    nSubsidy >>= halvings;
+
+    return nSubsidy;
 }
 
 CoinsViews::CoinsViews(

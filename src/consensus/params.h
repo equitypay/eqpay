@@ -44,8 +44,6 @@ struct BIP9Deployment {
  */
 struct Params {
     uint256 hashGenesisBlock;
-    int nSubsidyHalvingInterval;
-    int nSubsidyHalvingIntervalV2;
     /** Block height at which QIP6 becomes active */
     int QIP6Height;
     /** Block height at which QIP7 becomes active */
@@ -82,10 +80,6 @@ struct Params {
     int64_t StakeTimestampMask(int height) const
     {
         return nStakeTimestampMask;
-    }
-    int SubsidyHalvingInterval(int height) const
-    {
-        return nSubsidyHalvingInterval;
     }
     int64_t TargetSpacing(int height) const
     {
