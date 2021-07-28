@@ -92,7 +92,6 @@ public:
     const ChainTxData& TxData() const { return chainTxData; }
     std::string EVMGenesisInfo() const;
     std::string EVMGenesisInfo(int nHeight) const;
-    void UpdateOpSenderBlockHeight(int nHeight);
     void UpdateBtcEcrecoverBlockHeight(int nHeight);
     void UpdateConstantinopleBlockHeight(int nHeight);
     void UpdateDifficultyChangeBlockHeight(int nHeight);
@@ -146,11 +145,6 @@ const CChainParams &Params();
  * @throws std::runtime_error when the chain is not supported.
  */
 void SelectParams(const std::string& chain);
-
-/**
- * Allows modifying the Op Sender block height regtest parameter.
- */
-void UpdateOpSenderBlockHeight(int nHeight);
 
 /**
  * Allows modifying the btc_ecrecover block height regtest parameter.

@@ -1249,20 +1249,6 @@ bool AppInitParameterInteraction()
 
     nMaxTipAge = gArgs.GetArg("-maxtipage", DEFAULT_MAX_TIP_AGE);
 
-    if (gArgs.IsArgSet("-opsenderheight")) {
-        // Allow overriding opsender block for testing
-        if (!chainparams.MineBlocksOnDemand()) {
-            return InitError("Op Sender block height may only be overridden on regtest.");
-        }
-
-        int opsenderBlock = gArgs.GetArg("-opsenderheight", 0);
-        if(opsenderBlock >= 0)
-        {
-            UpdateOpSenderBlockHeight(opsenderBlock);
-            LogPrintf("Activate Op Sender at block height %d\n.", opsenderBlock);
-        }
-    }
-
     if (gArgs.IsArgSet("-btcecrecoverheight")) {
         // Allow overriding btc_ecrecover block for testing
         if (!chainparams.MineBlocksOnDemand()) {

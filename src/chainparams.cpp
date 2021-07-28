@@ -74,7 +74,6 @@ public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.QIP5Height = 466600;
         consensus.QIP6Height = 466600;
         consensus.QIP7Height = 466600;
         consensus.QIP9Height = 466600;
@@ -178,7 +177,6 @@ public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.QIP5Height = 446320;
         consensus.QIP6Height = 446320;
         consensus.QIP7Height = 446320;
         consensus.QIP9Height = 446320;
@@ -278,7 +276,6 @@ public:
     explicit CRegTestParams(const ArgsManager& args) {
         strNetworkID =  CBaseChainParams::REGTEST;
         consensus.nSubsidyHalvingInterval = 985500;
-        consensus.QIP5Height = 0;
         consensus.QIP6Height = 0;
         consensus.QIP7Height = 0;
         consensus.QIP9Height = 0;
@@ -487,16 +484,6 @@ std::string CChainParams::EVMGenesisInfo(int nHeight) const
 dev::eth::Network CChainParams::GetEVMNetwork() const
 {
     return dev::eth::Network::qtumMainNetwork;
-}
-
-void CChainParams::UpdateOpSenderBlockHeight(int nHeight)
-{
-    consensus.QIP5Height = nHeight;
-}
-
-void UpdateOpSenderBlockHeight(int nHeight)
-{
-    const_cast<CChainParams*>(globalChainParams.get())->UpdateOpSenderBlockHeight(nHeight);
 }
 
 void CChainParams::UpdateBtcEcrecoverBlockHeight(int nHeight)

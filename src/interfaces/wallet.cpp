@@ -734,7 +734,7 @@ public:
         spendableAddresses = availableAddresses(*locked_chain, false);
         allAddresses = availableAddresses(*locked_chain, true);
         int num_blocks = locked_chain->getHeight().get_value_or(-1);
-        includeZeroValue = num_blocks >= Params().GetConsensus().QIP5Height;
+        includeZeroValue = true;
 
         return true;
     }

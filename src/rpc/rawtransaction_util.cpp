@@ -212,15 +212,12 @@ CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniVal
                 scriptPubKey = CScript() << CScriptNum(VersionVM::GetEVMDefault().toRaw()) << CScriptNum(nGasLimit) << CScriptNum(nGasPrice) << ParseHex(datahex) << ParseHex(contractaddress) << OP_CALL;
             }
 
-             // Build op_sender script
-            if(fHasSender && ::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
-            {
-                const PKHash *keyID = boost::get<PKHash>(&senderAddress);
-                if(!keyID)
-                    throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Only pubkeyhash addresses are supported");
-                std::vector<unsigned char> scriptSig;
-                scriptPubKey = (CScript() << CScriptNum(addresstype::PUBKEYHASH) << ToByteVector(*keyID) << ToByteVector(scriptSig) << OP_SENDER) + scriptPubKey;
-            }
+            // Build op_sender script
+            const PKHash *keyID = boost::get<PKHash>(&senderAddress);
+            if(!keyID)
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Only pubkeyhash addresses are supported");
+            std::vector<unsigned char> scriptSig;
+            scriptPubKey = (CScript() << CScriptNum(addresstype::PUBKEYHASH) << ToByteVector(*keyID) << ToByteVector(scriptSig) << OP_SENDER) + scriptPubKey;
 
             CTxOut out(nAmount, scriptPubKey);
             rawTx.vout.push_back(out);

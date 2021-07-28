@@ -2189,9 +2189,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex* pindex, const Consens
     }
 
     // Start support sender address in contract output
-    if (pindex->nHeight >= consensusparams.QIP5Height) {
-        flags |= SCRIPT_OUTPUT_SENDER;
-    }
+    flags |= SCRIPT_OUTPUT_SENDER;
 
     return flags;
 }
@@ -2200,9 +2198,7 @@ unsigned int GetContractScriptFlags(int nHeight, const Consensus::Params& consen
     unsigned int flags = SCRIPT_EXEC_BYTE_CODE;
 
     // Start support sender address in contract output
-    if (nHeight >= consensusparams.QIP5Height) {
-        flags |= SCRIPT_OUTPUT_SENDER;
-    }
+    flags |= SCRIPT_OUTPUT_SENDER;
 
     return flags;
 }
@@ -2295,9 +2291,6 @@ bool GetSpentCoinFromMainChain(const CBlockIndex* pforkPrev, COutPoint prevoutSt
 bool CheckOpSender(const CTransaction& tx, const CChainParams& chainparams, int nHeight){
     if(!tx.HasOpSender())
         return true;
-
-    if(!(nHeight >= chainparams.GetConsensus().QIP5Height))
-        return false;
 
     // Check that the sender address inside the output is only valid for contract outputs
     for (const CTxOut& txout : tx.vout)

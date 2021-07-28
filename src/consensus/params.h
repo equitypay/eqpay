@@ -46,8 +46,6 @@ struct Params {
     uint256 hashGenesisBlock;
     int nSubsidyHalvingInterval;
     int nSubsidyHalvingIntervalV2;
-    /** Block height at which QIP5 becomes active */
-    int QIP5Height;
     /** Block height at which QIP6 becomes active */
     int QIP6Height;
     /** Block height at which QIP7 becomes active */

@@ -977,26 +977,14 @@ static UniValue createcontract(const JSONRPCRequest& request){
                 coinControl.destChange=senderAddress;
             }
         }
-        else
-        {
-            // Create op sender transaction when op sender is activated
-            if(!(::ChainActive().Height() >= Params().GetConsensus().QIP5Height))
-                throw JSONRPCError(RPC_TYPE_ERROR, "Sender address does not have any unspent outputs");
-        }
 
-        if(::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
-        {
-            // Set the sender address
-            signSenderAddress = senderAddress;
-        }
+        // Set the sender address
+        signSenderAddress = senderAddress;
     }
     else
     {
-        if(::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
-        {
-            // If no sender address provided set to the default sender address
-            SetDefaultSignSenderAddress(pwallet, *locked_chain, signSenderAddress);
-        }
+        // If no sender address provided set to the default sender address
+        SetDefaultSignSenderAddress(pwallet, *locked_chain, signSenderAddress);
     }
     EnsureWalletIsUnlocked(pwallet);
 
@@ -1017,23 +1005,19 @@ static UniValue createcontract(const JSONRPCRequest& request){
 
     // Build OP_EXEC script
     CScript scriptPubKey = CScript() << CScriptNum(VersionVM::GetEVMDefault().toRaw()) << CScriptNum(nGasLimit) << CScriptNum(nGasPrice) << ParseHex(bytecode) <<OP_CREATE;
-    if(::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
+    if(IsValidDestination(signSenderAddress))
     {
-        if(IsValidDestination(signSenderAddress))
-        {
-            CKeyID key_id = GetKeyForDestination(spk_man, signSenderAddress);
-            CKey key;
-            if (!spk_man.GetKey(key_id, key)) {
-                throw JSONRPCError(RPC_WALLET_ERROR, "Private key not available");
-            }
-            std::vector<unsigned char> scriptSig;
-            scriptPubKey = (CScript() << CScriptNum(addresstype::PUBKEYHASH) << ToByteVector(key_id) << ToByteVector(scriptSig) << OP_SENDER) + scriptPubKey;
+        CKeyID key_id = GetKeyForDestination(spk_man, signSenderAddress);
+        CKey key;
+        if (!spk_man.GetKey(key_id, key)) {
+            throw JSONRPCError(RPC_WALLET_ERROR, "Private key not available");
         }
-        else
-        {
-            // OP_SENDER will always be used when QIP5Height is active
-            throw JSONRPCError(RPC_TYPE_ERROR, "Sender address fail to set for OP_SENDER.");
-        }
+        std::vector<unsigned char> scriptSig;
+        scriptPubKey = (CScript() << CScriptNum(addresstype::PUBKEYHASH) << ToByteVector(key_id) << ToByteVector(scriptSig) << OP_SENDER) + scriptPubKey;
+    }
+    else
+    {
+        throw JSONRPCError(RPC_TYPE_ERROR, "Sender address fail to set for OP_SENDER.");
     }
 
     // Create and send the transaction
@@ -1199,26 +1183,14 @@ UniValue SendToContract(interfaces::Chain::Lock& locked_chain, CWallet* const pw
                 coinControl.destChange=senderAddress;
             }
         }
-        else
-        {
-            // Create op sender transaction when op sender is activated
-            if(!(::ChainActive().Height() >= Params().GetConsensus().QIP5Height))
-                throw JSONRPCError(RPC_TYPE_ERROR, "Sender address does not have any unspent outputs");
-        }
 
-        if(::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
-        {
-            // Set the sender address
-            signSenderAddress = senderAddress;
-        }
+        // Set the sender address
+        signSenderAddress = senderAddress;
     }
     else
     {
-        if(::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
-        {
-            // If no sender address provided set to the default sender address
-            SetDefaultSignSenderAddress(pwallet, locked_chain, signSenderAddress);
-        }
+        // If no sender address provided set to the default sender address
+        SetDefaultSignSenderAddress(pwallet, locked_chain, signSenderAddress);
     }
 
     EnsureWalletIsUnlocked(pwallet);
@@ -1240,23 +1212,19 @@ UniValue SendToContract(interfaces::Chain::Lock& locked_chain, CWallet* const pw
 
     // Build OP_EXEC_ASSIGN script
     CScript scriptPubKey = CScript() << CScriptNum(VersionVM::GetEVMDefault().toRaw()) << CScriptNum(nGasLimit) << CScriptNum(nGasPrice) << ParseHex(datahex) << ParseHex(contractaddress) << OP_CALL;
-    if(::ChainActive().Height() >= Params().GetConsensus().QIP5Height)
+    if(IsValidDestination(signSenderAddress))
     {
-        if(IsValidDestination(signSenderAddress))
-        {
-            CKeyID key_id = GetKeyForDestination(spk_man, signSenderAddress);
-            CKey key;
-            if (!spk_man.GetKey(key_id, key)) {
-                throw JSONRPCError(RPC_WALLET_ERROR, "Private key not available");
-            }
-            std::vector<unsigned char> scriptSig;
-            scriptPubKey = (CScript() << CScriptNum(addresstype::PUBKEYHASH) << ToByteVector(key_id) << ToByteVector(scriptSig) << OP_SENDER) + scriptPubKey;
+        CKeyID key_id = GetKeyForDestination(spk_man, signSenderAddress);
+        CKey key;
+        if (!spk_man.GetKey(key_id, key)) {
+            throw JSONRPCError(RPC_WALLET_ERROR, "Private key not available");
         }
-        else
-        {
-            // OP_SENDER will always be used when QIP5Height is active
-            throw JSONRPCError(RPC_TYPE_ERROR, "Sender address fail to set for OP_SENDER.");
-        }
+        std::vector<unsigned char> scriptSig;
+        scriptPubKey = (CScript() << CScriptNum(addresstype::PUBKEYHASH) << ToByteVector(key_id) << ToByteVector(scriptSig) << OP_SENDER) + scriptPubKey;
+    }
+    else
+    {
+        throw JSONRPCError(RPC_TYPE_ERROR, "Sender address fail to set for OP_SENDER.");
     }
 
     // Create and send the transaction
