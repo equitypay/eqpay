@@ -195,8 +195,6 @@ public:
                                     consensus.nCoinbaseMaturity;
         consensus.nLastMPoSBlock = 679999;
 
-
-        consensus.nFixUTXOCacheHFHeight = 100000;
         consensus.nEnableHeaderSignatureHeight = 399100;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
@@ -322,7 +320,6 @@ public:
                                     consensus.nCoinbaseMaturity;
         consensus.nLastMPoSBlock = 624999;
 
-        consensus.nFixUTXOCacheHFHeight = 84500;
         consensus.nEnableHeaderSignatureHeight = 391993;
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
@@ -427,7 +424,6 @@ public:
         consensus.nFirstMPoSBlock = 5000;
         consensus.nLastMPoSBlock = 0;
 
-        consensus.nFixUTXOCacheHFHeight=0;
         consensus.nEnableHeaderSignatureHeight = 0;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;

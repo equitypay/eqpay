@@ -104,7 +104,6 @@ struct Params {
     int nLastPOWBlock;
     int nFirstMPoSBlock;
     int nMPoSRewardRecipients;
-    int nFixUTXOCacheHFHeight;
     int nEnableHeaderSignatureHeight;
     /** Block sync-checkpoint span*/
     int nCheckpointSpan;
