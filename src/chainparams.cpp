@@ -148,9 +148,6 @@ public:
 
         consensus.nCoinbaseMaturity = 500;
 
-        consensus.nLastPOWBlock = 5000;
-        consensus.nLastBigReward = 5000;
-
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
         consensus.nStakeTimestampMask = 3;
@@ -235,9 +232,6 @@ public:
 
         consensus.nCoinbaseMaturity = 500;
 
-        consensus.nLastPOWBlock = 5000;
-        consensus.nLastBigReward = 5000;
-
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
         consensus.nStakeTimestampMask = 3;
@@ -313,9 +307,6 @@ public:
         };
 
         consensus.nCoinbaseMaturity = 500;
-
-        consensus.nLastPOWBlock = 0x7fffffff;
-        consensus.nLastBigReward = 5000;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
@@ -471,7 +462,6 @@ void CChainParams::UpdateDifficultyChangeBlockHeight(int nHeight)
     consensus.fPowAllowMinDifficultyBlocks = false;
     consensus.fPowNoRetargeting = true;
     consensus.fPoSNoRetargeting = false;
-    consensus.nLastPOWBlock = 5000;
 }
 
 void UpdateDifficultyChangeBlockHeight(int nHeight)

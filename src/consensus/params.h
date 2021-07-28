@@ -67,11 +67,9 @@ struct Params {
     int64_t nTargetTimespan;
     uint256 nMinimumChainWork;
     uint256 defaultAssumeValid;
-    int nLastPOWBlock;
     /** Block sync-checkpoint span*/
     int nCheckpointSpan;
     uint160 delegationsAddress;
-    int nLastBigReward;
     uint32_t nStakeTimestampMask;
     /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
     int nCoinbaseMaturity;
