@@ -189,11 +189,6 @@ public:
 
         consensus.nLastPOWBlock = 5000;
         consensus.nLastBigReward = 5000;
-        consensus.nMPoSRewardRecipients = 10;
-        consensus.nFirstMPoSBlock = consensus.nLastPOWBlock + 
-                                    consensus.nMPoSRewardRecipients + 
-                                    consensus.nCoinbaseMaturity;
-        consensus.nLastMPoSBlock = 679999;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
@@ -313,11 +308,6 @@ public:
 
         consensus.nLastPOWBlock = 5000;
         consensus.nLastBigReward = 5000;
-        consensus.nMPoSRewardRecipients = 10;
-        consensus.nFirstMPoSBlock = consensus.nLastPOWBlock + 
-                                    consensus.nMPoSRewardRecipients + 
-                                    consensus.nCoinbaseMaturity;
-        consensus.nLastMPoSBlock = 624999;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
@@ -418,9 +408,6 @@ public:
 
         consensus.nLastPOWBlock = 0x7fffffff;
         consensus.nLastBigReward = 5000;
-        consensus.nMPoSRewardRecipients = 10;
-        consensus.nFirstMPoSBlock = 5000;
-        consensus.nLastMPoSBlock = 0;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.nRBTCheckpointSpan = consensus.nRBTCoinbaseMaturity;
@@ -615,11 +602,6 @@ void CChainParams::UpdateDifficultyChangeBlockHeight(int nHeight)
     consensus.fPowNoRetargeting = true;
     consensus.fPoSNoRetargeting = false;
     consensus.nLastPOWBlock = 5000;
-    consensus.nMPoSRewardRecipients = 10;
-    consensus.nFirstMPoSBlock = consensus.nLastPOWBlock + 
-                                consensus.nMPoSRewardRecipients + 
-                                consensus.nCoinbaseMaturity;
-    consensus.nLastMPoSBlock = 0;
 }
 
 void UpdateDifficultyChangeBlockHeight(int nHeight)
@@ -645,16 +627,6 @@ void CChainParams::UpdateDelegationsAddress(const uint160& address)
 void UpdateDelegationsAddress(const uint160& address)
 {
     const_cast<CChainParams*>(globalChainParams.get())->UpdateDelegationsAddress(address);
-}
-
-void CChainParams::UpdateLastMPoSBlockHeight(int nHeight)
-{
-    consensus.nLastMPoSBlock = nHeight;
-}
-
-void UpdateLastMPoSBlockHeight(int nHeight)
-{
-    const_cast<CChainParams*>(globalChainParams.get())->UpdateLastMPoSBlockHeight(nHeight);
 }
 
 void CChainParams::UpdateReduceBlocktimeHeight(int nHeight)

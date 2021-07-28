@@ -566,7 +566,6 @@ void SetupServerArgs()
     gArgs.AddArg("-difficultychangeheight=<n>", "Use given block height to check difficulty change fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-offlinestakingheight=<n>", "Use given block height to check offline staking fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-delegationsaddress=<adr>", "Use given contract delegations address for offline staking fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
-    gArgs.AddArg("-lastmposheight=<n>", "Use given block height to check remove mpos fork (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-reduceblocktimeheight=<n>", "Use given block height to check blocks with reduced target spacing (regtest-only)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-powallowmindifficultyblocks", "Use given value for pow allow min difficulty blocks parameter (regtest-only, default: 1)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-pownoretargeting", "Use given value for pow no retargeting parameter (regtest-only, default: 1)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
@@ -1331,20 +1330,6 @@ bool AppInitParameterInteraction()
         {
             UpdateDelegationsAddress(uint160(ParseHex(delegationsAddress)));
             LogPrintf("Activate delegations address %s\n.", delegationsAddress);
-        }
-    }
-
-    if (gArgs.IsArgSet("-lastmposheight")) {
-        // Allow overriding last MPoS block for testing
-        if (!chainparams.MineBlocksOnDemand()) {
-            return InitError("Last MPoS block height may only be overridden on regtest.");
-        }
-
-        int lastMPosBlockHeight = gArgs.GetArg("-lastmposheight", 0);
-        if(lastMPosBlockHeight >= 0)
-        {
-            UpdateLastMPoSBlockHeight(lastMPosBlockHeight);
-            LogPrintf("Set last MPoS block height %d\n.", lastMPosBlockHeight);
         }
     }
 

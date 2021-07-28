@@ -799,7 +799,7 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
             if(gasAllTxs > dev::u256(blockGasLimit))
                 return state.Invalid(TxValidationResult::TX_GAS_EXCEEDS_LIMIT, "bad-txns-gas-exceeds-blockgaslimit");
 
-            //don't allow less than DGP set minimum gas price to prevent MPoS greedy mining/spammers
+            //don't allow less than DGP set minimum gas price to prevent PoS greedy mining/spammers
             if(v.rootVM!=0 && (uint64_t)qtumTransaction.gasPrice() < minGasPrice)
                 return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-tx-low-gas-price", "AcceptToMempool(): Contract execution has lower gas price than allowed");
         }
@@ -1290,7 +1290,7 @@ bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensu
     // Check the kernel hash
     CBlockIndex* pindexPrev = (*mi).second;
 
-    if(pindexPrev->nHeight >= consensusParams.nEnableHeaderSignatureHeight && !CheckRecoveredPubKeyFromBlockSignature(pindexPrev, block, ::ChainstateActive().CoinsTip())) {
+    if(!CheckRecoveredPubKeyFromBlockSignature(pindexPrev, block, ::ChainstateActive().CoinsTip())) {
         return error("Failed signature check");
     }
 
@@ -2050,15 +2050,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
         pblocktree->EraseHeightIndex(pindex->nHeight);
     }
 
-    // The stake and delegate index is needed for MPoS, update it while MPoS is active
-    const CChainParams& chainparams = Params();
-    if(pindex->nHeight <= chainparams.GetConsensus().nLastMPoSBlock)
-    {
-        pblocktree->EraseStakeIndex(pindex->nHeight);
-        if(pindex->IsProofOfStake() && pindex->HasProofOfDelegation())
-            pblocktree->EraseDelegateIndex(pindex->nHeight);
-    }
-
     //////////////////////////////////////////////////// // qtum
     if (pfClean == NULL && fAddressIndex) {
         if (!pblocktree->EraseAddressIndex(addressIndex)) {
@@ -2469,54 +2460,24 @@ bool CheckReward(const CBlock& block, BlockValidationState& state, int nHeight, 
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount", strprintf("CheckReward(): coinstake pays too much (actual=%d vs limit=%d)", nActualStakeReward, blockReward));
 
         // The first proof-of-stake blocks get full reward, the rest of them are split between recipients
-        int rewardRecipients = 1;
         int nPrevHeight = nHeight -1;
-        if(nPrevHeight >= consensusParams.nFirstMPoSBlock && nPrevHeight < consensusParams.nLastMPoSBlock)
-            rewardRecipients = consensusParams.nMPoSRewardRecipients;
-
-        // Check reward recipients number
-        if(rewardRecipients < 1)
-            return error("CheckReward(): invalid reward recipients");
 
         // Check reward can cover the gas refunds
         if(blockReward < gasRefunds){
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-gas-greater-than-reward", "CheckReward(): Block Reward is less than total gas refunds");
         }
 
-        CAmount splitReward = (blockReward - gasRefunds) / rewardRecipients;
-
         // Check that the reward is in the second output for the staker and the third output for the delegate
         // Delegation contract data like the fee is checked in CheckProofOfStake
         if(block.HasProofOfDelegation())
         {
-            CAmount nReward = blockReward - gasRefunds - splitReward * (rewardRecipients -1);
+            CAmount nReward = blockReward - gasRefunds;
             CAmount nValueStaker = block.vtx[offset]->vout[1].nValue;
             CAmount nValueDelegate = delegateOutputExist ? block.vtx[offset]->vout[2].nValue : 0;
             CAmount nMinedReward = nValueStaker + nValueDelegate - nValueCoinPrev;
             if(nReward != nMinedReward)
                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-delegate-reward", "CheckReward(): The block reward is not split correctly between the staker and the delegate");
         }
-
-        //if only 1 then no MPoS logic required
-        if(rewardRecipients == 1){
-            return true;
-        }
-
-        // Generate the list of mpos outputs including all of their parameters
-        std::vector<CTxOut> mposOutputList;
-        if(!GetMPoSOutputs(mposOutputList, splitReward, nPrevHeight, consensusParams))
-            return error("CheckReward(): cannot create the list of MPoS outputs");
-      
-        for(size_t i = 0; i < mposOutputList.size(); i++){
-            it=std::find(vTempVouts.begin(), vTempVouts.end(), mposOutputList[i]);
-            if(it==vTempVouts.end()){
-                return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-mpos-missing", "CheckReward(): An MPoS participant was not properly paid");
-            }else{
-                vTempVouts.erase(it);
-            }
-        }
-
-        vTempVouts.clear();
     }
 
     return true;
@@ -3351,7 +3312,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                 if(gasAllTxs > dev::u256(blockGasLimit))
                     return state.Invalid(BlockValidationResult::BLOCK_GAS_EXCEEDS_LIMIT, "bad-txns-gas-exceeds-blockgaslimit");
 
-                //don't allow less than DGP set minimum gas price to prevent MPoS greedy mining/spammers
+                //don't allow less than DGP set minimum gas price to prevent PoS greedy mining/spammers
                 if(v.rootVM!=0 && (uint64_t)qtx.gasPrice() < minGasPrice)
                     return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-tx-low-gas-price", "ConnectBlock(): Contract execution has lower gas price than allowed");
             }
@@ -3575,33 +3536,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
         {
             if (!pblocktree->WriteHeightIndex(e.second.first, e.second.second))
                 return AbortNode(state, "Failed to write height index");
-        }
-    }
-
-    // The stake and delegate index is needed for MPoS, update it while MPoS is active
-    if(pindex->nHeight <= chainparams.GetConsensus().nLastMPoSBlock)
-    {
-        if(block.IsProofOfStake()){
-            // Read the public key from the second output
-            std::vector<unsigned char> vchPubKey;
-            uint160 pkh;
-            if(GetBlockPublicKey(block, vchPubKey))
-            {
-                pkh = uint160(ToByteVector(CPubKey(vchPubKey).GetID()));
-                pblocktree->WriteStakeIndex(pindex->nHeight, pkh);
-            }else{
-                pblocktree->WriteStakeIndex(pindex->nHeight, uint160());
-            }
-
-            if(block.HasProofOfDelegation())
-            {
-                uint160 address;
-                uint8_t fee = 0;
-                GetBlockDelegation(block, pkh, address, fee, view);
-                pblocktree->WriteDelegateIndex(pindex->nHeight, address, fee);
-            }
-        }else{
-            pblocktree->WriteStakeIndex(pindex->nHeight, uint160());
         }
     }
 

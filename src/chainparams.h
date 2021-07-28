@@ -98,7 +98,6 @@ public:
     void UpdateDifficultyChangeBlockHeight(int nHeight);
     void UpdateOfflineStakingBlockHeight(int nHeight);
     void UpdateDelegationsAddress(const uint160& address);
-    void UpdateLastMPoSBlockHeight(int nHeight);
     void UpdateReduceBlocktimeHeight(int nHeight);
     void UpdatePowAllowMinDifficultyBlocks(bool fValue);
     void UpdatePowNoRetargeting(bool fValue);
@@ -177,12 +176,6 @@ void UpdateOfflineStakingBlockHeight(int nHeight);
  * Allows modifying the delegations address regtest parameter.
  */
 void UpdateDelegationsAddress(const uint160& address);
-
-/**
- * @brief UpdateLastMPoSBlockHeight Last mpos block height
- * @param nHeight Block height
- */
-void UpdateLastMPoSBlockHeight(int nHeight);
 
 /**
  * Allows modifying the reduce block time height regtest parameter.
