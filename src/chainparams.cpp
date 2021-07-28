@@ -74,7 +74,7 @@ public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.QIP6Height = 466600;
+        consensus.QIP6Height = 1;
         consensus.QIP7Height = 466600;
         consensus.QIP9Height = 466600;
         consensus.nOfflineStakeHeight = 1;
@@ -177,7 +177,7 @@ public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.QIP6Height = 446320;
+        consensus.QIP6Height = 1;
         consensus.QIP7Height = 446320;
         consensus.QIP9Height = 446320;
         consensus.nOfflineStakeHeight = 1;
