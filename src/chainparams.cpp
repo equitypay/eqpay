@@ -74,7 +74,6 @@ public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
         consensus.QIP5Height = 466600;
         consensus.QIP6Height = 466600;
         consensus.QIP7Height = 466600;
@@ -179,7 +178,6 @@ public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
         consensus.QIP5Height = 446320;
         consensus.QIP6Height = 446320;
         consensus.QIP7Height = 446320;
@@ -280,7 +278,6 @@ public:
     explicit CRegTestParams(const ArgsManager& args) {
         strNetworkID =  CBaseChainParams::REGTEST;
         consensus.nSubsidyHalvingInterval = 985500;
-        consensus.MinBIP9WarningHeight = 0;
         consensus.QIP5Height = 0;
         consensus.QIP6Height = 0;
         consensus.QIP7Height = 0;

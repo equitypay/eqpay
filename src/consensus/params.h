@@ -46,9 +46,6 @@ struct Params {
     uint256 hashGenesisBlock;
     int nSubsidyHalvingInterval;
     int nSubsidyHalvingIntervalV2;
-    /** Don't warn about unknown BIP 9 activations below this height.
-     * This prevents us from warning about the CSV and segwit activations. */
-    int MinBIP9WarningHeight;
     /** Block height at which QIP5 becomes active */
     int QIP5Height;
     /** Block height at which QIP6 becomes active */
