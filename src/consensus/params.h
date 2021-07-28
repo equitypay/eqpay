@@ -46,8 +46,6 @@ struct Params {
     uint256 hashGenesisBlock;
     int nSubsidyHalvingInterval;
     int nSubsidyHalvingIntervalV2;
-    /** Block height at which CSV (BIP68, BIP112 and BIP113) becomes active */
-    int CSVHeight;
     /** Block height at which Segwit (BIP141, BIP143 and BIP147) becomes active.
      * Note that segwit v0 script rules are enforced on all blocks except the
      * BIP 16 exception blocks. */

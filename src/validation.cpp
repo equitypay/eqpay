@@ -2182,9 +2182,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex* pindex, const Consens
     flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
 
     // Start enforcing BIP112 (CHECKSEQUENCEVERIFY)
-    if (pindex->nHeight >= consensusparams.CSVHeight) {
-        flags |= SCRIPT_VERIFY_CHECKSEQUENCEVERIFY;
-    }
+    flags |= SCRIPT_VERIFY_CHECKSEQUENCEVERIFY;
 
     // Start enforcing BIP147 NULLDUMMY (activated simultaneously with segwit)
     if (IsWitnessEnabled(pindex->pprev, consensusparams)) {
@@ -2981,9 +2979,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
     // Start enforcing BIP68 (sequence locks)
     int nLockTimeFlags = 0;
-    if (pindex->nHeight >= chainparams.GetConsensus().CSVHeight) {
-        nLockTimeFlags |= LOCKTIME_VERIFY_SEQUENCE;
-    }
+    nLockTimeFlags |= LOCKTIME_VERIFY_SEQUENCE;
 
     // Get the script flags for this block
     unsigned int flags = GetBlockScriptFlags(pindex, chainparams.GetConsensus());
@@ -5044,10 +5040,8 @@ static bool ContextualCheckBlock(const CBlock& block, BlockValidationState& stat
 
     // Start enforcing BIP113 (Median Time Past).
     int nLockTimeFlags = 0;
-    if (nHeight >= consensusParams.CSVHeight) {
-        assert(pindexPrev != nullptr);
-        nLockTimeFlags |= LOCKTIME_MEDIAN_TIME_PAST;
-    }
+    assert(pindexPrev != nullptr);
+    nLockTimeFlags |= LOCKTIME_MEDIAN_TIME_PAST;
 
     int64_t nLockTimeCutoff = (nLockTimeFlags & LOCKTIME_MEDIAN_TIME_PAST)
                               ? pindexPrev->GetMedianTimePast()

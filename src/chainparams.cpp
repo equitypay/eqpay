@@ -74,7 +74,6 @@ public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.CSVHeight = 6048;
         consensus.SegwitHeight = 6048;
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
         consensus.QIP5Height = 466600;
@@ -181,7 +180,6 @@ public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.nSubsidyHalvingInterval = 985500; // qtum halving every 4 years
-        consensus.CSVHeight = 6048; // 00000000025e930139bac5c6c31a403776da130831ab85be56578f3fa75369bb
         consensus.SegwitHeight = 6048; // 00000000002b980fcd729daaa248fd9316a5200e9b367f4ff2c42453e84201ca
         consensus.MinBIP9WarningHeight = 8064; // segwit activation height + miner confirmation window
         consensus.QIP5Height = 446320;
@@ -284,7 +282,6 @@ public:
     explicit CRegTestParams(const ArgsManager& args) {
         strNetworkID =  CBaseChainParams::REGTEST;
         consensus.nSubsidyHalvingInterval = 985500;
-        consensus.CSVHeight = 432; // CSV activated on regtest (Used in rpc activation tests)
         consensus.SegwitHeight = 0; // SEGWIT is always activated on regtest unless overridden
         consensus.MinBIP9WarningHeight = 0;
         consensus.QIP5Height = 0;
