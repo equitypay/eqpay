@@ -11,6 +11,14 @@
 #include <crypto/common.h>
 #include <pubkey.h>
 
+// yespower
+#include <crypto/yespower/yespower.h>
+#include <streams.h>
+#include <version.h>
+
+// yespower exit()
+#include <stdlib.h>
+
 // Used to serialize the header without signature
 // Workaround due to removing serialization templates in Bitcoin Core 0.18
 class CBlockHeaderSign
@@ -74,6 +82,27 @@ uint256 CBlockHeader::GetHash() const
 uint256 CBlockHeader::GetHashWithoutSign() const
 {
     return SerializeHash(CBlockHeaderSign(*this), SER_GETHASH);
+}
+
+uint256 CBlockHeader::GetWorkHash() const
+{
+    static const yespower_params_t yespower_1_0_sugarchain = {
+        .version = YESPOWER_1_0,
+        .N = 2048,
+        .r = 32,
+        .pers = (const uint8_t *)"Satoshi Nakamoto 31/Oct/2008 Proof-of-work is essentially one-CPU-one-vote",
+        .perslen = 74
+    };
+
+    uint256 hash;
+    CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
+    ss << *this;
+    if (yespower_tls((const uint8_t *)&ss[0], ss.size(), &yespower_1_0_sugarchain, (yespower_binary_t *)&hash)) {
+        fprintf(stderr, "Error: CBlockHeaderUncached::GetPoWHash(): failed to compute PoW hash (out of memory?)\n");
+        exit(1);
+    }
+
+    return hash;
 }
 
 std::string CBlock::ToString() const

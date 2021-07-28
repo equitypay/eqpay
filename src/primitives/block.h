@@ -74,6 +74,8 @@ public:
 
     uint256 GetHash() const;
 
+    uint256 GetWorkHash() const;
+
     uint256 GetHashWithoutSign() const;
 
     int64_t GetBlockTime() const

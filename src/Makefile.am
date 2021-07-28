@@ -438,7 +438,10 @@ crypto_libbitcoin_crypto_base_a_SOURCES = \
   cpp-ethereum/utils/libscrypt/sha256.h \
   cpp-ethereum/utils/libscrypt/slowequals.c \
   cpp-ethereum/utils/libscrypt/slowequals.h \
-  cpp-ethereum/utils/libscrypt/sysendian.h
+  cpp-ethereum/utils/libscrypt/sysendian.h \
+  crypto/yespower/sha256.c \
+  crypto/yespower/yespower.h \
+  crypto/yespower/yespower-opt.c
 
 if USE_ASM
 crypto_libbitcoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
