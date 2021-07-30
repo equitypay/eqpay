@@ -1443,16 +1443,15 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (nHeight == 1)
         return 9000000 * COIN;
 
-    int nSubsidyHalvingInterval = 1577880;
-    int halvings = nHeight / nSubsidyHalvingInterval;
-    CAmount nSubsidy = 4 * COIN;
+    int nSubsidyHalvingInterval = 525960;
+    int nEpoch = nHeight / nSubsidyHalvingInterval;
+    CAmount nSubsidy = 2 * COIN;
 
-    // Force block reward to zero when right shift is undefined.
-    if (halvings >= 64)
-        return 0;
+    // Tail emission
+    if (nEpoch > 16)
+        return 0.01;
 
-    // Subsidy is cut in half every nSubsidyHalvingInterval blocks.
-    nSubsidy >>= halvings;
+    nSubsidy -= 0.13 * nEpoch;
 
     return nSubsidy;
 }
