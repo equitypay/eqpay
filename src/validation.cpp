@@ -1276,7 +1276,7 @@ bool GetTransaction(const uint256& hash, CTransactionRef& txOut, const Consensus
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams)
 {
     // Check for proof of work block header
-    return CheckProofOfWork(block.GetHash(), block.nBits, consensusParams);
+    return CheckProofOfWork(block.GetWorkHash(), block.nBits, consensusParams);
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams)

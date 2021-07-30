@@ -77,7 +77,7 @@ public:
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
-        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nTargetTimespan = 2000;
         consensus.nTargetSpacing = 64;
@@ -164,7 +164,7 @@ public:
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
-        consensus.powLimit = uint256S("0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nTargetTimespan = 2000;
         consensus.nTargetSpacing = 64;
