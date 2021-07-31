@@ -140,6 +140,9 @@ public:
     //! pointer to the hash of the block, if any. Memory is owned by this CBlockIndex
     const uint256* phashBlock{nullptr};
 
+    //! pointer to the work hash of the block, if any. Memory is owned by this CBlockIndex
+    const uint256* phashWork{nullptr};
+
     //! pointer to the index of the predecessor of this block
     CBlockIndex* pprev{nullptr};
 
@@ -253,6 +256,11 @@ public:
     uint256 GetBlockHash() const
     {
         return *phashBlock;
+    }
+
+    uint256 GetBlockWorkHash() const
+    {
+        return *phashWork;
     }
 
     /**

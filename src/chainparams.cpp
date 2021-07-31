@@ -25,6 +25,40 @@
 #include "arith_uint256.h"
 /////////////////////////////////////////////
 
+#include <arith_uint256.h>
+
+void GenesisGenerator(CBlock genesis) {
+    printf("Searching for genesis block...\n");
+
+    uint256 hash;
+    bool fNegative;
+    bool fOverflow;
+    arith_uint256 bnTarget;
+    bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
+
+    while(true)
+    {
+        hash = genesis.GetWorkHash();
+        if (UintToArith256(hash) <= bnTarget)
+            break;
+        if ((genesis.nNonce & 0xFFF) == 0)
+        {
+            printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, hash.ToString().c_str(), bnTarget.ToString().c_str());
+        }
+        ++genesis.nNonce;
+        if (genesis.nNonce == 0)
+        {
+            printf("NONCE WRAPPED, incrementing time\n");
+            ++genesis.nTime;
+        }
+    }
+
+    printf("block.nNonce = %u \n", genesis.nNonce);
+    printf("block.GetIndexHash = %s\n", genesis.GetHash().ToString().c_str());
+    printf("block.GetWorkHash = %s\n", genesis.GetWorkHash().ToString().c_str());
+    printf("block.MerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str());
+}
+
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     CMutableTransaction txNew;
@@ -94,7 +128,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // qtum
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x02caf7a26b995e5054462715a4d31e1a7ff220c53fead7c06de720ac54510433"); // 888000
+        consensus.defaultAssumeValid = uint256S("0xc4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3"); // 888000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -110,11 +144,10 @@ public:
         m_assumed_blockchain_size = 8;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1504695029, 8026361, 0x1f00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1627744188, 169, 0x1f3fffff, 1, 2 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000075aef83cf2853580f8ae8ce6f8c3096cfa21d98334d6e3f95e5582ed986c"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
-
+        assert(consensus.hashGenesisBlock == uint256S("0xc4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3"));
+        assert(genesis.hashMerkleRoot == uint256S("0xbf9afef60b6f9b28e419388aef8dd89540a9634670e710273ddb4d0b1e38cdbb"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,50);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
@@ -133,16 +166,14 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("000075aef83cf2853580f8ae8ce6f8c3096cfa21d98334d6e3f95e5582ed986c")},
+                { 0, uint256S("c4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 76b1e67fcff0fcfd078d499c65494cee4319f256da09f5fdefa574433f7d4e3c (height 709065)
-            1602362976, // * UNIX timestamp of last known number of transactions
-            4340534, // * total number of transactions between genesis and that timestamp
-            //   (the tx=... number in the SetBestChain debug.log lines)
-            0.02433574394826639 // * estimated number of transactions per second after that timestamp
+            0,
+            0,
+            0
         };
 
         consensus.nCoinbaseMaturity = 500;

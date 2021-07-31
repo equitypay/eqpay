@@ -1311,12 +1311,12 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
 {
     // Get the hash of the proof
     // After validating the PoS block the computed hash proof is saved in the block index, which is used to check the index
-    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockHash() : block.hashProof;
+    uint256 hashProof = block.IsProofOfWork() ? block.GetBlockWorkHash() : block.hashProof;
     // Check for proof after the hash proof is computed
     if(block.IsProofOfStake()){
         //blocks are loaded out of order, so checking PoS kernels here is not practical
         return true; //CheckKernel(block.pprev, block.nBits, block.nTime, block.prevoutStake);
-    }else{
+    } else {
         return CheckProofOfWork(hashProof, block.nBits, consensusParams, false);
     }
 }
@@ -4408,6 +4408,8 @@ CBlockIndex* BlockManager::AddToBlockIndex(const CBlockHeader& block)
 
     // Check for duplicate
     uint256 hash = block.GetHash();
+    uint256 hashWork = block.GetWorkHash();
+
     BlockMap::iterator it = m_block_index.find(hash);
     if (it != m_block_index.end())
         return it->second;
@@ -4422,6 +4424,7 @@ CBlockIndex* BlockManager::AddToBlockIndex(const CBlockHeader& block)
     if (pindexNew->IsProofOfStake())
         ::ChainstateActive().setStakeSeen.insert(std::make_pair(pindexNew->prevoutStake, pindexNew->nTime));
     pindexNew->phashBlock = &((*mi).first);
+    pindexNew->phashWork = &hashWork;
     BlockMap::iterator miPrev = m_block_index.find(block.hashPrevBlock);
     if (miPrev != m_block_index.end())
     {
@@ -5029,7 +5032,9 @@ static bool ContextualCheckBlock(const CBlock& block, BlockValidationState& stat
 
     // Start enforcing BIP113 (Median Time Past).
     int nLockTimeFlags = 0;
-    assert(pindexPrev != nullptr);
+    if (nHeight > 0)
+        assert(pindexPrev != nullptr);
+
     nLockTimeFlags |= LOCKTIME_MEDIAN_TIME_PAST;
 
     int64_t nLockTimeCutoff = (nLockTimeFlags & LOCKTIME_MEDIAN_TIME_PAST)
@@ -5541,10 +5546,12 @@ bool TestBlockValidity(BlockValidationState& state, const CChainParams& chainpar
     assert(pindexPrev && pindexPrev == ::ChainActive().Tip());
     CCoinsViewCache viewNew(&::ChainstateActive().CoinsTip());
     uint256 block_hash(block.GetHash());
+    uint256 block_work_hash(block.GetWorkHash());
     CBlockIndex indexDummy(block);
     indexDummy.pprev = pindexPrev;
     indexDummy.nHeight = pindexPrev->nHeight + 1;
     indexDummy.phashBlock = &block_hash;
+    indexDummy.phashWork = &block_work_hash;
 
     // NOTE: CheckBlockHeader is called by CheckBlock
     if (!ContextualCheckBlockHeader(block, state, chainparams, pindexPrev, GetAdjustedTime()))
@@ -5758,7 +5765,7 @@ fs::path GetBlockPosFilename(const FlatFilePos &pos)
     return BlockFileSeq().FileName(pos);
 }
 
-CBlockIndex * BlockManager::InsertBlockIndex(const uint256& hash)
+CBlockIndex * BlockManager::InsertBlockIndex(const uint256& hash, const uint256& hashWork)
 {
     AssertLockHeld(cs_main);
 
@@ -5774,6 +5781,7 @@ CBlockIndex * BlockManager::InsertBlockIndex(const uint256& hash)
     CBlockIndex* pindexNew = new CBlockIndex();
     mi = m_block_index.insert(std::make_pair(hash, pindexNew)).first;
     pindexNew->phashBlock = &((*mi).first);
+    pindexNew->phashWork = &hashWork;
 
     return pindexNew;
 }
