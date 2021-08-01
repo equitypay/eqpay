@@ -93,9 +93,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
  *   vMerkleTree: 4a5e1e
  */
-static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
+static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, const char* pszTimestamp)
 {
-    const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
     const CScript genesisOutputScript = CScript() << ParseHex("040d61d8653448c98731ee5fffd303c15e71ec2057b77f11ab3601979728cdaff2d68afbba14e4fa0bc44f2072b0b23ef63717f8cdfbe58dcd33f32b6afe98741a") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -144,8 +143,10 @@ public:
         m_assumed_blockchain_size = 8;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1627744188, 169, 0x1f3fffff, 1, 2 * COIN);
+        const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
+        genesis = CreateGenesisBlock(1627744188, 169, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
+
         assert(consensus.hashGenesisBlock == uint256S("0xc4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3"));
         assert(genesis.hashMerkleRoot == uint256S("0xbf9afef60b6f9b28e419388aef8dd89540a9634670e710273ddb4d0b1e38cdbb"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
@@ -223,8 +224,10 @@ public:
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1504695029, 7349697, 0x1f00ffff, 1, 50 * COIN);
+        const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
+        genesis = CreateGenesisBlock(1504695029, 7349697, 0x1f00ffff, 1, 50 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
+
         assert(consensus.hashGenesisBlock == uint256S("0x0000e803ee215c0684ca0d2f9220594d3f828617972aad66feb2ba51f5e14222"));
         assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
 
@@ -308,8 +311,10 @@ public:
 
         UpdateActivationParametersFromArgs(args);
 
-        genesis = CreateGenesisBlock(1504695029, 17, 0x207fffff, 1, 50 * COIN);
+        const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
+        genesis = CreateGenesisBlock(1504695029, 17, 0x207fffff, 1, 50 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
+
         assert(consensus.hashGenesisBlock == uint256S("0x665ed5b402ac0b44efc37d8926332994363e8a7278b7ee9a58fb972efadae943"));
         assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
 
