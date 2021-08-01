@@ -9,6 +9,7 @@
 #include <primitives/transaction.h>
 #include <serialize.h>
 #include <uint256.h>
+#include <sync.h>
 
 /** Nodes collect new transactions into a block, hash them into a hash tree,
  * and scan through nonce values to make the block's hash satisfy proof-of-work
@@ -17,7 +18,7 @@
  * in the block is a special one that creates a new coin owned by the creator
  * of the block.
  */
-class CBlockHeader
+class CBlockHeaderUncached
 {
 public:
     // header
@@ -32,7 +33,7 @@ public:
     // proof-of-stake specific fields
     COutPoint prevoutStake;
     std::vector<unsigned char> vchBlockSigDlgt; // The delegate is 65 bytes or 0 bytes, it can be added in the signature paramether at the end to avoid compatibility problems
-    CBlockHeader()
+    CBlockHeaderUncached()
     {
         SetNull();
     }
@@ -112,7 +113,7 @@ public:
 
     bool HasProofOfDelegation() const;
 
-    CBlockHeader& operator=(const CBlockHeader& other) //qtum
+    CBlockHeaderUncached& operator=(const CBlockHeaderUncached& other) //qtum
     {
         if (this != &other)
         {
@@ -131,6 +132,34 @@ public:
     }
 };
 
+class CBlockHeader : public CBlockHeaderUncached
+{
+public:
+    mutable RecursiveMutex cacheLock;
+    mutable uint256 cacheIndexHash, cacheWorkHash;
+    mutable bool cacheInit;
+
+    CBlockHeader()
+    {
+        cacheInit = false;
+    }
+
+    CBlockHeader(const CBlockHeader& header)
+    {
+        *this = header;
+    }
+
+    CBlockHeader& operator=(const CBlockHeader& header)
+    {
+        *(CBlockHeaderUncached*)this = (CBlockHeaderUncached)header;
+        cacheInit = header.cacheInit;
+        cacheIndexHash = header.cacheIndexHash;
+        cacheWorkHash = header.cacheWorkHash;
+        return *this;
+    }
+
+    uint256 GetWorkHashCached() const;
+};
 
 class CBlock : public CBlockHeader
 {

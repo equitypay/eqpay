@@ -10,6 +10,7 @@
 #include <util/strencodings.h>
 #include <crypto/common.h>
 #include <pubkey.h>
+#include <sync.h>
 
 // yespower
 #include <crypto/yespower/yespower.h>
@@ -24,7 +25,7 @@
 class CBlockHeaderSign
 {
 public:
-    CBlockHeaderSign(const CBlockHeader& header)
+    CBlockHeaderSign(const CBlockHeaderUncached& header)
     {
         fHasProofOfDelegation = header.HasProofOfDelegation();
         nVersion = header.nVersion;
@@ -74,17 +75,17 @@ private:
     std::vector<unsigned char> vchBlockDlgt;
 };
 
-uint256 CBlockHeader::GetHash() const
+uint256 CBlockHeaderUncached::GetHash() const
 {
     return SerializeHash(*this);
 }
 
-uint256 CBlockHeader::GetHashWithoutSign() const
+uint256 CBlockHeaderUncached::GetHashWithoutSign() const
 {
     return SerializeHash(CBlockHeaderSign(*this), SER_GETHASH);
 }
 
-uint256 CBlockHeader::GetWorkHash() const
+uint256 CBlockHeaderUncached::GetWorkHash() const
 {
     static const yespower_params_t yespower_1_0_sugarchain = {
         .version = YESPOWER_1_0,
@@ -103,6 +104,23 @@ uint256 CBlockHeader::GetWorkHash() const
     }
 
     return hash;
+}
+
+uint256 CBlockHeader::GetWorkHashCached() const
+{
+    uint256 indexHash = GetHash();
+    LOCK(cacheLock);
+    if (cacheInit) {
+        if (indexHash != cacheIndexHash) {
+            fprintf(stderr, "Error: CBlockHeader: block hash changed unexpectedly\n");
+            exit(1);
+        }
+    } else {
+        cacheWorkHash = IsProofOfWork() ? GetWorkHash() : indexHash;
+        cacheIndexHash = indexHash;
+        cacheInit = true;
+    }
+    return cacheWorkHash;
 }
 
 std::string CBlock::ToString() const
@@ -126,7 +144,7 @@ std::string CBlock::ToString() const
     return s.str();
 }
 
-std::vector<unsigned char> CBlockHeader::GetBlockSignature() const
+std::vector<unsigned char> CBlockHeaderUncached::GetBlockSignature() const
 {
     if(vchBlockSigDlgt.size() < 2 * CPubKey::COMPACT_SIGNATURE_SIZE)
     {
@@ -136,7 +154,7 @@ std::vector<unsigned char> CBlockHeader::GetBlockSignature() const
     return std::vector<unsigned char>(vchBlockSigDlgt.begin(), vchBlockSigDlgt.end() - CPubKey::COMPACT_SIGNATURE_SIZE );
 }
 
-std::vector<unsigned char> CBlockHeader::GetProofOfDelegation() const
+std::vector<unsigned char> CBlockHeaderUncached::GetProofOfDelegation() const
 {
     if(vchBlockSigDlgt.size() < 2 * CPubKey::COMPACT_SIGNATURE_SIZE)
     {
@@ -147,12 +165,12 @@ std::vector<unsigned char> CBlockHeader::GetProofOfDelegation() const
 
 }
 
-bool CBlockHeader::HasProofOfDelegation() const
+bool CBlockHeaderUncached::HasProofOfDelegation() const
 {
     return vchBlockSigDlgt.size() >= 2 * CPubKey::COMPACT_SIGNATURE_SIZE;
 }
 
-void CBlockHeader::SetBlockSignature(const std::vector<unsigned char> &vchSign)
+void CBlockHeaderUncached::SetBlockSignature(const std::vector<unsigned char> &vchSign)
 {
     if(HasProofOfDelegation())
     {
@@ -166,7 +184,7 @@ void CBlockHeader::SetBlockSignature(const std::vector<unsigned char> &vchSign)
     }
 }
 
-void CBlockHeader::SetProofOfDelegation(const std::vector<unsigned char> &vchPoD)
+void CBlockHeaderUncached::SetProofOfDelegation(const std::vector<unsigned char> &vchPoD)
 {
     std::vector<unsigned char> vchSign = GetBlockSignature();
     if(vchSign.size() != CPubKey::COMPACT_SIGNATURE_SIZE)

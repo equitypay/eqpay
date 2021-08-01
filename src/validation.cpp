@@ -1276,7 +1276,7 @@ bool GetTransaction(const uint256& hash, CTransactionRef& txOut, const Consensus
 bool CheckHeaderPoW(const CBlockHeader& block, const Consensus::Params& consensusParams)
 {
     // Check for proof of work block header
-    return CheckProofOfWork(block.GetWorkHash(), block.nBits, consensusParams);
+    return CheckProofOfWork(block.GetWorkHashCached(), block.nBits, consensusParams);
 }
 
 bool CheckHeaderPoS(const CBlockHeader& block, const Consensus::Params& consensusParams)
@@ -4408,7 +4408,7 @@ CBlockIndex* BlockManager::AddToBlockIndex(const CBlockHeader& block)
 
     // Check for duplicate
     uint256 hash = block.GetHash();
-    uint256 hashWork = block.GetWorkHash();
+    uint256 hashWork = block.GetWorkHashCached();
 
     BlockMap::iterator it = m_block_index.find(hash);
     if (it != m_block_index.end())
@@ -5509,6 +5509,23 @@ bool ProcessNewBlock(const CChainParams& chainparams, const std::shared_ptr<cons
 {
     AssertLockNotHeld(cs_main);
 
+    uint256 hash = pblock->GetHash();
+    {
+        LOCK(cs_main);
+        BlockMap::iterator miSelf = g_blockman.m_block_index.find(hash);
+        CBlockIndex *pindex = nullptr;
+        if (miSelf != g_blockman.m_block_index.end()) {
+            // Block header is already known
+            pindex = miSelf->second;
+            if (!pblock->cacheInit && pindex->cacheInit) {
+                LOCK(pblock->cacheLock);
+                pblock->cacheInit = true;
+                pblock->cacheIndexHash = pindex->cacheIndexHash;
+                pblock->cacheWorkHash = pindex->cacheWorkHash;
+            }
+        }
+    }
+
     {
         CBlockIndex *pindex = nullptr;
         if (fNewBlock) *fNewBlock = false;
@@ -5546,7 +5563,7 @@ bool TestBlockValidity(BlockValidationState& state, const CChainParams& chainpar
     assert(pindexPrev && pindexPrev == ::ChainActive().Tip());
     CCoinsViewCache viewNew(&::ChainstateActive().CoinsTip());
     uint256 block_hash(block.GetHash());
-    uint256 block_work_hash(block.GetWorkHash());
+    uint256 block_work_hash(block.GetWorkHashCached());
     CBlockIndex indexDummy(block);
     indexDummy.pprev = pindexPrev;
     indexDummy.nHeight = pindexPrev->nHeight + 1;

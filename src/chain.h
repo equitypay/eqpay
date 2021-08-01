@@ -195,6 +195,10 @@ public:
     uint256 hashProof{}; // qtum
     uint64_t nMoneySupply{0};
 
+    //! (memory only)
+    bool cacheInit{false};
+    uint256 cacheIndexHash, cacheWorkHash;
+
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     int32_t nSequenceId{0};
 
@@ -214,7 +218,10 @@ public:
           hashStateRoot{block.hashStateRoot},
           hashUTXORoot{block.hashUTXORoot},
           vchBlockSigDlgt{block.vchBlockSigDlgt},
-          prevoutStake{block.prevoutStake}
+          prevoutStake{block.prevoutStake},
+          cacheInit{block.cacheInit},
+          cacheIndexHash{block.cacheIndexHash},
+          cacheWorkHash{block.cacheWorkHash}
     {
     }
 
@@ -250,6 +257,9 @@ public:
         block.hashUTXORoot   = hashUTXORoot; // qtum
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
         block.prevoutStake   = prevoutStake;
+        block.cacheInit      = cacheInit;
+        block.cacheIndexHash = cacheIndexHash;
+        block.cacheWorkHash  = cacheWorkHash;
         return block;
     }
 
