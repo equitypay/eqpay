@@ -213,7 +213,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // qtum
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x6bb6312088d81ca5484460b3466c66c01ff7d1cd4ef91e1dc9555a15b51d025d"); // 944000
+        consensus.defaultAssumeValid = uint256S("0xfaaffa8f618b6f063707211602e1a4763ce7aef94371ebe23f2da6a4353b189b"); // 944000
 
         pchMessageStart[0] = 0x0d;
         pchMessageStart[1] = 0x22;
@@ -224,12 +224,12 @@ public:
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
-        const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
-        genesis = CreateGenesisBlock(1504695029, 7349697, 0x1f00ffff, 1, 50 * COIN, pszTimestamp);
+        const char* pszTimestamp = "U.S. Debt Ceiling Suspension Ends, Congress Unclear on Next Step | Aug 1, 2021 Bloomberg";
+        genesis = CreateGenesisBlock(1627829561, 87, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0000e803ee215c0684ca0d2f9220594d3f828617972aad66feb2ba51f5e14222"));
-        assert(genesis.hashMerkleRoot == uint256S("0xed34050eb5909ee535fcb07af292ea55f3d2f291187617b44d3282231405b96d"));
+        assert(consensus.hashGenesisBlock == uint256S("0xfaaffa8f618b6f063707211602e1a4763ce7aef94371ebe23f2da6a4353b189b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6b25cef5cf941fa342bc0a490d680a6f31e4fc32a3b8f5c09e82d818abf919ac"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -252,7 +252,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0000e803ee215c0684ca0d2f9220594d3f828617972aad66feb2ba51f5e14222")},
+                {0, uint256S("faaffa8f618b6f063707211602e1a4763ce7aef94371ebe23f2da6a4353b189b")},
             }
         };
 
@@ -262,7 +262,7 @@ public:
             0
         };
 
-        consensus.nCoinbaseMaturity = 500;
+        consensus.nCoinbaseMaturity = 10;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
