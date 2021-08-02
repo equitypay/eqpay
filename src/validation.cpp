@@ -5563,7 +5563,7 @@ bool TestBlockValidity(BlockValidationState& state, const CChainParams& chainpar
     assert(pindexPrev && pindexPrev == ::ChainActive().Tip());
     CCoinsViewCache viewNew(&::ChainstateActive().CoinsTip());
     uint256 block_hash(block.GetHash());
-    uint256 block_work_hash(block.GetWorkHashCached());
+    uint256 block_work_hash(block.GetWorkHash());
     CBlockIndex indexDummy(block);
     indexDummy.pprev = pindexPrev;
     indexDummy.nHeight = pindexPrev->nHeight + 1;
