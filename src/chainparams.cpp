@@ -111,7 +111,7 @@ public:
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.posLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.posLimit = uint256S("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nTargetTimespan = 2000;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -197,7 +197,7 @@ public:
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.posLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nTargetTimespan = 2000;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -213,7 +213,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // qtum
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xfaaffa8f618b6f063707211602e1a4763ce7aef94371ebe23f2da6a4353b189b"); // 944000
+        consensus.defaultAssumeValid = uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792");
 
         pchMessageStart[0] = 0x0d;
         pchMessageStart[1] = 0x22;
@@ -225,10 +225,10 @@ public:
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "U.S. Debt Ceiling Suspension Ends, Congress Unclear on Next Step | Aug 1, 2021 Bloomberg";
-        genesis = CreateGenesisBlock(1627829561, 87, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1627946420, 923, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0xfaaffa8f618b6f063707211602e1a4763ce7aef94371ebe23f2da6a4353b189b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792"));
         assert(genesis.hashMerkleRoot == uint256S("0x6b25cef5cf941fa342bc0a490d680a6f31e4fc32a3b8f5c09e82d818abf919ac"));
 
         vFixedSeeds.clear();
@@ -252,7 +252,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("faaffa8f618b6f063707211602e1a4763ce7aef94371ebe23f2da6a4353b189b")},
+                {0, uint256S("3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792")},
             }
         };
 
