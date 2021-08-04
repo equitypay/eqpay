@@ -16,11 +16,3 @@ unsigned int dgpMaxProtoMsgLength = 8000000;
 
 unsigned int dgpMaxTxSigOps = 16000;
 
-void updateBlockSizeParams(unsigned int newBlockSize){
-    unsigned int newSizeForParams=WITNESS_SCALE_FACTOR*newBlockSize;
-    dgpMaxBlockSerSize=newSizeForParams;
-    dgpMaxBlockWeight=newSizeForParams;
-    dgpMaxBlockSigOps=(int64_t)(newSizeForParams/100);
-    dgpMaxTxSigOps = (unsigned int)(dgpMaxBlockSigOps/5);
-    dgpMaxProtoMsgLength=newSizeForParams;
-}
