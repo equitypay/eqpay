@@ -24,12 +24,15 @@
 #include <util/system.h>
 #include <net.h>
 #include <key_io.h>
+#include <shutdown.h>
 #ifdef ENABLE_WALLET
 #include <wallet/wallet.h>
 #endif
 
 #include <algorithm>
 #include <utility>
+
+#include <boost/thread.hpp>
 
 unsigned int nMaxStakeLookahead = MAX_STAKE_LOOKAHEAD;
 unsigned int nBytecodeTimeBuffer = BYTECODE_TIME_BUFFER;
@@ -1870,4 +1873,104 @@ void RefreshDelegates(CWallet *pwallet, bool refreshMyDelegates, bool refreshSta
         }
     }
 }
+
+
+
+
+
+static bool ProcessBlockFound(const std::shared_ptr<const CBlock> &pblock, const CChainParams& chainparams)
+{
+    LogPrintf("%s\n", pblock->ToString());
+    LogPrintf("generated %s\n", FormatMoney(pblock->vtx[0]->vout[0].nValue));
+
+    // Found a solution
+    {
+        LOCK(cs_main);
+        if (pblock->hashPrevBlock != ::ChainActive().Tip()->GetBlockHash())
+            return error("ProcessBlockFound -- generated block is stale");
+    }
+
+    // Process this block the same as if we had received it from another node
+    if (!ProcessNewBlock(chainparams, pblock, true, nullptr))
+        return error("ProcessBlockFound -- ProcessNewBlock() failed, block not accepted");
+
+    return true;
+}
+
+void static SoloMiner(const CTxDestination& destination, const CChainParams& chainparams, CConnman& connman)
+{
+    LogPrintf("SoloMiner -- started\n");
+    SetThreadPriority(THREAD_PRIORITY_LOWEST);
+    RenameThread("mbc-solo-miner");
+
+    std::vector<std::shared_ptr<CWallet>> wallets = GetWallets();
+    CWallet * const pwallet = (wallets.size() > 0) ? wallets[0].get() : nullptr;
+
+    if (!pwallet)
+        return;
+
+    unsigned int nExtraNonce = 0;
+    CScript coinbase_script = GetScriptForDestination(destination);
+
+    while (true)
+    {
+        try {
+            std::unique_ptr<CBlockTemplate> pblocktemplate(BlockAssembler(mempool, Params()).CreateNewBlock(coinbase_script, true, false, nullptr, 0, GetAdjustedTime()+POW_MINER_MAX_TIME));
+            if (!pblocktemplate.get())
+                LogPrintf("SoloMiner -- Couldn't create new block\n");
+
+            CBlock *pblock = &pblocktemplate->block;
+            {
+                LOCK(cs_main);
+                IncrementExtraNonce(pblock, ::ChainActive().Tip(), nExtraNonce);
+            }
+
+            while (pblock->nNonce < std::numeric_limits<uint32_t>::max() && !CheckProofOfWork(pblock->GetWorkHash(), pblock->nBits, Params().GetConsensus()) && !ShutdownRequested()) {
+                ++pblock->nNonce;
+            }
+
+            if (ShutdownRequested()) {
+                break;
+            }
+
+            if (pblock->nNonce == std::numeric_limits<uint32_t>::max()) {
+                continue;
+            }
+
+            std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(*pblock);
+            if (!ProcessNewBlock(Params(), shared_pblock, true, nullptr))
+                LogPrintf("SoloMiner -- ProcessNewBlock, block not accepted\n");
+
+        } catch (const boost::thread_interrupted&) {
+            LogPrintf("SoloMiner -- terminated\n");
+            break;
+        } catch (const std::runtime_error &e) {
+            LogPrintf("SoloMiner -- runtime error: %s\n", e.what());
+            break;
+        }
+    }
+}
+
+void GenerateSolo(bool fGenerate, int nThreads, CTxDestination destination, const CChainParams& chainparams, CConnman &connman)
+{
+    static boost::thread_group* minerThreads = NULL;
+
+    if (nThreads < 0)
+        nThreads = GetNumCores();
+
+    if (minerThreads != NULL)
+    {
+        minerThreads->interrupt_all();
+        delete minerThreads;
+        minerThreads = NULL;
+    }
+
+    if (nThreads == 0 || !fGenerate)
+        return;
+
+    minerThreads = new boost::thread_group();
+    for (int i = 0; i < nThreads; i++)
+        minerThreads->create_thread(boost::bind(&SoloMiner, destination, boost::cref(chainparams), boost::ref(connman)));
+}
+
 #endif
