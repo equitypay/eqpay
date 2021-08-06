@@ -1449,7 +1449,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 
     // Tail emission
     if (nEpoch > 16)
-        return 0.01;
+        return 0.01 * COIN;
 
     nSubsidy -= 0.13 * COIN * nEpoch;
 
