@@ -1451,7 +1451,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (nEpoch > 16)
         return 0.01;
 
-    nSubsidy -= 0.13 * nEpoch;
+    nSubsidy -= 0.13 * COIN * nEpoch;
 
     return nSubsidy;
 }
