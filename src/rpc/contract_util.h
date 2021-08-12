@@ -3,7 +3,7 @@
 
 #include <univalue.h>
 #include <validation.h>
-#include <qtum/qtumtoken.h>
+#include <eqpay/eqpaytoken.h>
 
 UniValue CallToContract(const UniValue& params);
 
@@ -27,7 +27,7 @@ void parseParam(const UniValue& val, std::vector<boost::optional<dev::h256>> &h2
 /**
  * @brief The CallToken class Read available token data
  */
-class CallToken : public QtumTokenExec, public QtumToken
+class CallToken : public EqPayTokenExec, public EqPayToken
 {
 public:
     CallToken();

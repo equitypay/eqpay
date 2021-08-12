@@ -35,7 +35,7 @@ from test_framework.util import (
     hex_str_to_bytes,
 )
 
-from test_framework.qtumconfig import COINBASE_MATURITY
+from test_framework.eqpayconfig import COINBASE_MATURITY
 
 class MempoolAcceptanceTest(BitcoinTestFramework):
     def set_test_params(self):

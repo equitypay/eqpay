@@ -145,10 +145,10 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EqPayGUI</name>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Qtum មួយ</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន EqPay មួយ</translation>
     </message>
     </context>
 <context>
@@ -310,6 +310,6 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>eqpay-core</name>
     </context>
 </TS>

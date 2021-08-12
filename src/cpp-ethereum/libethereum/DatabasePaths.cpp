@@ -16,7 +16,7 @@ DatabasePaths::DatabasePaths(fs::path const& _rootPath, h256 const& _genesisHash
 {
     // Allow an empty root path and empty genesis hash since they are required by the tests
     m_rootPath = _rootPath;
-#ifdef QTUM_BUILD
+#ifdef EQPAY_BUILD
     m_chainPath = m_rootPath / fs::path(toHex(_genesisHash.ref().cropped(0, 4))) / fs::path(toString(c_databaseVersion));
 #else
     m_chainPath = m_rootPath / fs::path(toHex(_genesisHash.ref().cropped(0, 4)));
@@ -24,7 +24,7 @@ DatabasePaths::DatabasePaths(fs::path const& _rootPath, h256 const& _genesisHash
     m_statePath = m_chainPath / fs::path("state");
     m_blocksPath = m_chainPath / fs::path("blocks");
 
-#ifdef QTUM_BUILD
+#ifdef EQPAY_BUILD
     auto const extrasRootPath = m_chainPath;
 #else
     auto const extrasRootPath = m_chainPath / fs::path(toString(c_databaseVersion));

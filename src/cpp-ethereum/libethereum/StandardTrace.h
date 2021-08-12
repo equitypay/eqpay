@@ -4,7 +4,7 @@
 
 #pragma once
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 #include <json/json.h>
 #endif
 #include <libdevcore/Common.h>
@@ -34,7 +34,7 @@ public:
 
     // Output json trace to stream, one line per op
     explicit StandardTrace(std::ostream& _outStream) noexcept : m_outStream{&_outStream} {}
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
     // Append json trace to given (array) value
     explicit StandardTrace(Json::Value& _outValue) noexcept : m_outValue{&_outValue} {}
 #endif
@@ -57,7 +57,7 @@ private:
     bool m_showMnemonics = false;
     std::vector<Instruction> m_lastInst;
     std::ostream* m_outStream = nullptr;
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
     Json::Value* m_outValue = nullptr;
     Json::FastWriter m_fastWriter;
 #endif

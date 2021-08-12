@@ -66,7 +66,7 @@ struct NetworkRestartNotSupported : virtual dev::Exception {};
 /// The ECDHE agreement failed during RLPx handshake.
 struct ECDHEError: virtual Exception {};
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 #define NET_GLOBAL_LOGGER(NAME, SEVERITY)                      \
     BOOST_LOG_INLINE_GLOBAL_LOGGER_CTOR_ARGS(g_##NAME##Logger, \
         boost::log::sources::severity_channel_logger_mt<>,     \
@@ -266,7 +266,7 @@ public:
     std::atomic<PeerType> peerType{PeerType::Optional};
 };
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 inline boost::log::formatting_ostream& operator<<(
     boost::log::formatting_ostream& _strm, Node const& _node)
 {
@@ -288,7 +288,7 @@ inline std::ostream& operator<<(std::ostream& _strm, NodeID const& _id)
     return _strm;
 }
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 inline boost::log::formatting_ostream& operator<<(
     boost::log::formatting_ostream& _strm, PeerSessionInfo const& _peerSessionInfo)
 {

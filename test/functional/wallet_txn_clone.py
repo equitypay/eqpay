@@ -12,7 +12,7 @@ from test_framework.util import (
     disconnect_nodes,
 )
 from test_framework.messages import CTransaction, COIN
-from test_framework.qtumconfig import *
+from test_framework.eqpayconfig import *
 
 class TxnMallTest(BitcoinTestFramework):
     def set_test_params(self):

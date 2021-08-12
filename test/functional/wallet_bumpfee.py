@@ -26,8 +26,8 @@ from test_framework.util import (
     connect_nodes,
     hex_str_to_bytes,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY
-from test_framework.qtum import generatesynchronized
+from test_framework.eqpayconfig import COINBASE_MATURITY
+from test_framework.eqpay import generatesynchronized
 
 WALLET_PASSPHRASE = "test"
 WALLET_PASSPHRASE_TIMEOUT = 3600

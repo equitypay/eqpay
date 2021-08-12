@@ -62,8 +62,8 @@
         <translation>收款地址</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>這些是你要付款過去的 Qtum 位址。在付款之前，務必要檢查金額和收款位址是否正確。</translation>
+        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>這些是你要付款過去的 EqPay 位址。在付款之前，務必要檢查金額和收款位址是否正確。</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -156,8 +156,8 @@
         <translation>確認錢包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>警告: 如果你將錢包加密後又忘記密碼，你就會&lt;b&gt;失去所有 Qtum 了&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR EQPAYS&lt;/b&gt;!</source>
+        <translation>警告: 如果你將錢包加密後又忘記密碼，你就會&lt;b&gt;失去所有 EqPay 了&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -216,7 +216,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EqPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>簽署訊息... &amp;m</translation>
@@ -294,8 +294,8 @@
         <translation>正在為磁碟區塊重建索引...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>付款至一個 Qtum 位址</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation>付款至一個 EqPay 位址</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -338,8 +338,8 @@
         <translation>說明 &amp;H</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>要求付款 (產生QR碼 qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and eqpay: URIs)</source>
+        <translation>要求付款 (產生QR碼 eqpay: URIs)</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -389,8 +389,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EqPay</source>
+        <translation>EqPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -433,8 +433,8 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>輸入一個 Qtum 位址 (例如 %1)</translation>
+        <source>Enter a EqPay address (e.g. %1)</source>
+        <translation>輸入一個 EqPay 位址 (例如 %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -647,6 +647,6 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>eqpay-core</name>
     </context>
 </TS>

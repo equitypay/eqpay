@@ -116,7 +116,7 @@ libethashseal/genesis/test/.deps/libbitcoin_common_a-homesteadToDaoAt5Test.Po
 libethashseal/genesis/test/.deps/libbitcoin_common_a-homesteadToEIP150At5Test.Po
 libethashseal/genesis/test/.deps/libbitcoin_common_a-mainNetworkNoProofTest.Po
 libethashseal/genesis/test/.deps/libbitcoin_common_a-mainNetworkTest.Po
-libethashseal/genesis/test/.deps/libbitcoin_common_a-qtumTestNetwork.Po
+libethashseal/genesis/test/.deps/libbitcoin_common_a-eqpayTestNetwork.Po
 libethashseal/genesis/test/.deps/libbitcoin_common_a-transitionnetTest.Po
 libethcore/.deps/libbitcoin_common_a-LogEntry.Po
 libethcore/.deps/libbitcoin_common_a-TransactionBase.Po

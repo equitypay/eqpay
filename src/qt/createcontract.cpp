@@ -56,7 +56,7 @@ CreateContract::CreateContract(const PlatformStyle *platformStyle, QWidget *pare
     m_ABIFunctionField = new ABIFunctionField(platformStyle, ABIFunctionField::Create, ui->scrollAreaConstructor);
     ui->scrollAreaConstructor->setWidget(m_ABIFunctionField);
     ui->labelBytecode->setToolTip(tr("The bytecode of the contract"));
-    ui->labelSenderAddress->setToolTip(tr("The qtum address that will be used to create the contract."));
+    ui->labelSenderAddress->setToolTip(tr("The eqpay address that will be used to create the contract."));
 
     m_tabInfo = new TabBarInfo(ui->stackedWidget);
     m_tabInfo->addTab(0, tr("Create Contract"));
@@ -114,7 +114,7 @@ void CreateContract::setModel(WalletModel *_model)
     if (m_model && m_model->getOptionsModel())
         connect(m_model->getOptionsModel(), &OptionsModel::displayUnitChanged, this, &CreateContract::updateDisplayUnit);
 
-    // update the display unit, to not use the default ("QTUM")
+    // update the display unit, to not use the default ("EQPAY")
     updateDisplayUnit();
 }
 
@@ -232,7 +232,7 @@ void CreateContract::on_gasInfoChanged(quint64 blockGasLimit, quint64 minGasPric
 {
     Q_UNUSED(nGasPrice);
     ui->labelGasLimit->setToolTip(tr("Gas limit. Default = %1, Max = %2").arg(DEFAULT_GAS_LIMIT_OP_CREATE).arg(blockGasLimit));
-    ui->labelGasPrice->setToolTip(tr("Gas price: QTUM price per gas unit. Default = %1, Min = %2").arg(QString::fromStdString(FormatMoney(DEFAULT_GAS_PRICE))).arg(QString::fromStdString(FormatMoney(minGasPrice))));
+    ui->labelGasPrice->setToolTip(tr("Gas price: EQPAY price per gas unit. Default = %1, Min = %2").arg(QString::fromStdString(FormatMoney(DEFAULT_GAS_PRICE))).arg(QString::fromStdString(FormatMoney(minGasPrice))));
     ui->lineEditGasPrice->SetMinValue(minGasPrice);
     ui->lineEditGasLimit->setMaximum(blockGasLimit);
 }

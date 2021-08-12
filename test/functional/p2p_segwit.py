@@ -81,8 +81,8 @@ from test_framework.util import (
     assert_raises_rpc_error,
     bytes_to_hex_str,
 )
-from test_framework.qtumconfig import *
-from test_framework.qtum import generatesynchronized
+from test_framework.eqpayconfig import *
+from test_framework.eqpay import generatesynchronized
 from test_framework.messages import COIN
 
 # The versionbit bit used to signal activation of SegWit

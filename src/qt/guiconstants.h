@@ -43,11 +43,11 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Qtum"
-#define QAPP_ORG_DOMAIN "qtum.org"
-#define QAPP_APP_NAME_DEFAULT "Qtum-Qt"
-#define QAPP_APP_NAME_TESTNET "Qtum-Qt-testnet"
-#define QAPP_APP_NAME_REGTEST "Qtum-Qt-regtest"
+#define QAPP_ORG_NAME "EqPay"
+#define QAPP_ORG_DOMAIN "eqpay.org"
+#define QAPP_APP_NAME_DEFAULT "EqPay-Qt"
+#define QAPP_APP_NAME_TESTNET "EqPay-Qt-testnet"
+#define QAPP_APP_NAME_REGTEST "EqPay-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};
@@ -55,10 +55,10 @@ static constexpr uint64_t GB_BYTES{1000000000};
 // Default prune target displayed in GUI.
 static constexpr int DEFAULT_PRUNE_TARGET_GB{2};
 
-/* Mainnet qtum explorer uri */
-#define QTUM_INFO_MAINNET "<a href='https://qtum.info/%1/%2'>%2</a>"
+/* Mainnet eqpay explorer uri */
+#define EQPAY_INFO_MAINNET "<a href='https://eqpay.info/%1/%2'>%2</a>"
 
-/* Testnet qtum explorer uri */
-#define QTUM_INFO_TESTNET "<a href='https://testnet.qtum.info/%1/%2'>%2</a>"
+/* Testnet eqpay explorer uri */
+#define EQPAY_INFO_TESTNET "<a href='https://testnet.eqpay.info/%1/%2'>%2</a>"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

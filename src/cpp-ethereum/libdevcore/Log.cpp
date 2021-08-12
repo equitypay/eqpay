@@ -7,7 +7,7 @@
 #include <pthread.h>
 #endif
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 
 #include <boost/core/null_deleter.hpp>
 #include <boost/log/attributes/clock.hpp>

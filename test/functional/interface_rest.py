@@ -23,8 +23,8 @@ from test_framework.util import (
 )
 from test_framework.messages import CBlockHeader
 
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
-from test_framework.qtum import convert_btc_address_to_qtum, generatesynchronized
+from test_framework.eqpayconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.eqpay import convert_btc_address_to_eqpay, generatesynchronized
 
 BLOCK_HEADER_SIZE = len(CBlockHeader().serialize())
 
@@ -84,7 +84,7 @@ class RESTTest (BitcoinTestFramework):
         self.log.info("Mine blocks and send Bitcoin to node 1")
 
         # Random address so node1's balance doesn't increase
-        not_related_address = convert_btc_address_to_qtum("2MxqoHEdNQTyYeX1mHcbrrpzgojbosTpCvJ")
+        not_related_address = convert_btc_address_to_eqpay("2MxqoHEdNQTyYeX1mHcbrrpzgojbosTpCvJ")
 
         self.nodes[0].generate(1)
         self.sync_all()

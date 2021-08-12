@@ -56,7 +56,7 @@ from test_framework.util import (
     hex_str_to_bytes,
     softfork_active,
 )
-from test_framework.qtumconfig import *
+from test_framework.eqpayconfig import *
 
 TESTING_TX_COUNT = 83  # Number of testing transactions: 1 BIP113 tx, 16 BIP68 txs, 66 BIP112 txs (see comments above)
 COINBASE_BLOCK_COUNT = TESTING_TX_COUNT  # Number of coinbase blocks we need to generate as inputs for our txs

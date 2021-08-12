@@ -104,7 +104,7 @@ UniValue importprivkey(const JSONRPCRequest& request)
             "may report that the imported key exists but related transactions are still missing, leading to temporarily incorrect/bogus balances and unspent outputs until rescan completes.\n"
             "Note: Use \"getwalletinfo\" to query the scanning progress.\n",
                 {
-                    {"qtumprivkey", RPCArg::Type::STR, RPCArg::Optional::NO, "The private key (see dumpprivkey)"},
+                    {"eqpayprivkey", RPCArg::Type::STR, RPCArg::Optional::NO, "The private key (see dumpprivkey)"},
                     {"label", RPCArg::Type::STR, /* default */ "current label if address exists, otherwise \"\"", "An optional label"},
                     {"rescan", RPCArg::Type::BOOL, /* default */ "true", "Rescan the wallet for transactions"},
                 },
@@ -241,7 +241,7 @@ UniValue importaddress(const JSONRPCRequest& request)
             "as change, and not show up in many RPCs.\n"
             "Note: Use \"getwalletinfo\" to query the scanning progress.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The Qtum address (or hex-encoded script)"},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The EqPay address (or hex-encoded script)"},
                     {"label", RPCArg::Type::STR, /* default */ "\"\"", "An optional label"},
                     {"rescan", RPCArg::Type::BOOL, /* default */ "true", "Rescan the wallet for transactions"},
                     {"p2sh", RPCArg::Type::BOOL, /* default */ "false", "Add the P2SH version of the script as well"},
@@ -311,7 +311,7 @@ UniValue importaddress(const JSONRPCRequest& request)
 
             pwallet->ImportScriptPubKeys(strLabel, scripts, false /* have_solving_data */, true /* apply_label */, 1 /* timestamp */);
         } else {
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address or script");
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EqPay address or script");
         }
     }
     if (fRescan)
@@ -689,7 +689,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
                 "\nReveals the private key corresponding to 'address'.\n"
                 "Then the importprivkey can be used with this output\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address for the private key"},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The eqpay address for the private key"},
                 },
                 RPCResult{
                     RPCResult::Type::STR, "key", "The private key"
@@ -711,7 +711,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
     std::string strAddress = request.params[0].get_str();
     CTxDestination dest = DecodeDestination(strAddress);
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EqPay address");
         if (pwallet->m_wallet_unlock_staking_only)
             throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Wallet is unlocked for staking only.");
     }
@@ -738,7 +738,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
             RPCHelpMan{"dumpwallet",
                 "\nDumps all wallet keys in a human-readable format to a server-side file. This does not allow overwriting existing files.\n",
                 {
-                    {"filename", RPCArg::Type::STR, RPCArg::Optional::NO, "The filename with path (either absolute or relative to qtumd)"},
+                    {"filename", RPCArg::Type::STR, RPCArg::Optional::NO, "The filename with path (either absolute or relative to eqpayd)"},
                 },
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
@@ -791,7 +791,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
     std::sort(vKeyBirth.begin(), vKeyBirth.end());
 
     // produce output
-    file << strprintf("# Wallet dump created by Qtum %s\n", CLIENT_BUILD);
+    file << strprintf("# Wallet dump created by EqPay %s\n", CLIENT_BUILD);
     file << strprintf("# * Created on %s\n", FormatISO8601DateTime(GetTime()));
     const Optional<int> tip_height = locked_chain->getHeight();
     file << strprintf("# * Best block at time of backup was %i (%s),\n", tip_height.get_value_or(-1), tip_height ? locked_chain->getBlockHash(*tip_height).ToString() : "(missing block hash)");
@@ -1449,7 +1449,7 @@ UniValue importmulti(const JSONRPCRequest& mainRequest)
                                       "block from time %d, which is after or within %d seconds of key creation, and "
                                       "could contain transactions pertaining to the key. As a result, transactions "
                                       "and coins using this key may not appear in the wallet. This error could be "
-                                      "caused by pruning or data corruption (see qtumd log for details) and could "
+                                      "caused by pruning or data corruption (see eqpayd log for details) and could "
                                       "be dealt with by downloading and rescanning the relevant blocks (see -reindex "
                                       "and -rescan options).",
                                 GetImportTimestamp(request, now), scannedTime - TIMESTAMP_WINDOW - 1, TIMESTAMP_WINDOW)));

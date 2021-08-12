@@ -33,8 +33,8 @@ from .util import (
     sync_blocks,
     sync_mempools,
 )
-from .qtumconfig import COINBASE_MATURITY
-from .qtum import generatesynchronized
+from .eqpayconfig import COINBASE_MATURITY
+from .eqpay import generatesynchronized
 
 
 class TestStatus(Enum):
@@ -182,8 +182,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
         self.config = config
-        self.options.bitcoind = os.getenv("BITCOIND", default=config["environment"]["BUILDDIR"] + '/src/qtumd' + config["environment"]["EXEEXT"])
-        self.options.bitcoincli = os.getenv("BITCOINCLI", default=config["environment"]["BUILDDIR"] + '/src/qtum-cli' + config["environment"]["EXEEXT"])
+        self.options.bitcoind = os.getenv("BITCOIND", default=config["environment"]["BUILDDIR"] + '/src/eqpayd' + config["environment"]["EXEEXT"])
+        self.options.bitcoincli = os.getenv("BITCOINCLI", default=config["environment"]["BUILDDIR"] + '/src/eqpay-cli' + config["environment"]["EXEEXT"])
 
         os.environ['PATH'] = os.pathsep.join([
             os.path.join(config['environment']['BUILDDIR'], 'src'),
@@ -581,7 +581,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
 
             os.rmdir(cache_path('wallets'))  # Remove empty wallets dir
             for entry in os.listdir(cache_path()):
-                if entry not in ['chainstate', 'blocks', 'stateQtum']:  # Only keep chainstate and blocks folder
+                if entry not in ['chainstate', 'blocks', 'stateEqPay']:  # Only keep chainstate and blocks folder
                     os.remove(cache_path(entry))
 
         for i in range(self.num_nodes):

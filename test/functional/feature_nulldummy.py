@@ -19,8 +19,8 @@ from test_framework.messages import CTransaction
 from test_framework.script import CScript
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, bytes_to_hex_str
-from test_framework.qtumconfig import COINBASE_MATURITY, ENABLE_REDUCED_BLOCK_TIME
-from test_framework.qtum import generatesynchronized
+from test_framework.eqpayconfig import COINBASE_MATURITY, ENABLE_REDUCED_BLOCK_TIME
+from test_framework.eqpay import generatesynchronized
 
 NULLDUMMY_ERROR = "non-mandatory-script-verify-flag (Dummy CHECKMULTISIG argument must be zero)"
 

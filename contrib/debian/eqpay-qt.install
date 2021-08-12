@@ -1,0 +1,6 @@
+usr/local/bin/eqpay-qt usr/bin
+share/pixmaps/eqpay32.xpm usr/share/pixmaps
+share/pixmaps/eqpay16.xpm usr/share/pixmaps
+share/pixmaps/eqpay128.png usr/share/pixmaps
+debian/eqpay-qt.desktop usr/share/applications
+debian/eqpay-qt.protocol usr/share/kde4/services/

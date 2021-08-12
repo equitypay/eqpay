@@ -66,12 +66,12 @@
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw Qtumadressen om betalingen mee te verzenden. Controleer altijd het bedrag en het ontvangstadres voordat u uw qtums verzendt.</translation>
+        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit zijn uw EqPayadressen om betalingen mee te verzenden. Controleer altijd het bedrag en het ontvangstadres voordat u uw eqpays verzendt.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Dit zijn jouw Qtum adressen voor het ontvangen van betalingen. Gebruik de 'Nieuwe ontvangst adres maken' knop in de ontvangst tab om een nieuwe adres te maken.</translation>
+        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Dit zijn jouw EqPay adressen voor het ontvangen van betalingen. Gebruik de 'Nieuwe ontvangst adres maken' knop in de ontvangst tab om een nieuwe adres te maken.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +168,8 @@
         <translation>Bevestig versleuteling van de portemonnee</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW QTUMS VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR EQPAYS&lt;/b&gt;!</source>
+        <translation>Waarschuwing: Als u uw portemonnee versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW EQPAYS VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -188,8 +188,8 @@
         <translation>Voer de oude wachtwoordzin en de nieuwe wachtwoordzin in voor de portemonnee.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation>Onthoud dat het versleutelen van uw portemonnee uw qtums niet volledig kan beschermen tegen diefstal, bijvoorbeeld door malware die uw computer infecteert.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your eqpays from being stolen by malware infecting your computer.</source>
+        <translation>Onthoud dat het versleutelen van uw portemonnee uw eqpays niet volledig kan beschermen tegen diefstal, bijvoorbeeld door malware die uw computer infecteert.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EqPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Onderteken bericht...</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy is &lt;b&gt;ingeschakeld&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Verstuur munten naar een Qtumadres</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation>Verstuur munten naar een EqPayadres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Versleutel de geheime sleutels die bij uw portemonnee horen</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Onderteken berichten met uw Qtumadressen om te bewijzen dat u deze adressen bezit</translation>
+        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <translation>Onderteken berichten met uw EqPayadressen om te bewijzen dat u deze adressen bezit</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifiëer handtekeningen om zeker te zijn dat de berichten zijn ondertekend met de gespecificeerde Qtumadressen</translation>
+        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
+        <translation>Verifiëer handtekeningen om zeker te zijn dat de berichten zijn ondertekend met de gespecificeerde EqPayadressen</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -422,8 +422,8 @@
         <translation>Tab-werkbalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Vraag betaling aan (genereert QR-codes en qtum: URI's)</translation>
+        <source>Request payments (generates QR codes and eqpay: URIs)</source>
+        <translation>Vraag betaling aan (genereert QR-codes en eqpay: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -438,8 +438,8 @@
         <translation>&amp;Opdrachtregelopties</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
-        <translation><numerusform>%n actieve verbinding met Qtumnetwerk</numerusform><numerusform>%n actieve verbindingen met Qtumnetwerk</numerusform></translation>
+        <source>%n active connection(s) to EqPay network</source>
+        <translation><numerusform>%n actieve verbinding met EqPaynetwerk</numerusform><numerusform>%n actieve verbindingen met EqPaynetwerk</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -498,8 +498,8 @@
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>Open een qtum: URI</translation>
+        <source>Open a eqpay: URI</source>
+        <translation>Open een eqpay: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -518,8 +518,8 @@
         <translation>Portemonnee Sluiten</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation>Toon het %1 hulpbericht om een lijst te krijgen met mogelijke Qtum commandoregelopties</translation>
+        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
+        <translation>Toon het %1 hulpbericht om een lijst te krijgen met mogelijke EqPay commandoregelopties</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -630,8 +630,8 @@
         <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;gesloten&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>Een fatale fout heeft zich voorgedaan. Qtum kan niet veilig worden verdergezet en wordt afgesloten.</translation>
+        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
+        <translation>Een fatale fout heeft zich voorgedaan. EqPay kan niet veilig worden verdergezet en wordt afgesloten.</translation>
     </message>
 </context>
 <context>
@@ -875,8 +875,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Bewerk verzendadres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>Het opgegeven adres "%1" is een ongeldig Qtumadres.</translation>
+        <source>The entered address "%1" is not a valid EqPay address.</source>
+        <translation>Het opgegeven adres "%1" is een ongeldig EqPayadres.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -972,8 +972,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Gebruik een aangepaste gegevensmap:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EqPay</source>
+        <translation>EqPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -988,8 +988,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Gemiddeld %1 GB aan data zal worden opgeslagen in deze map.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation>%1 zal een kopie van de blokketen van Qtum downloaden en opslaan.</translation>
+        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <translation>%1 zal een kopie van de blokketen van EqPay downloaden en opslaan.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1023,12 +1023,12 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
-        <translation>Recente transacties zijn mogelijk nog niet zichtbaar. De balans van de portemonnee is daarom mogelijk niet correct. Deze informatie is correct zodra de synchronisatie met het Qtum-netwerk is voltooid, zoals onderaan beschreven.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the eqpay network, as detailed below.</source>
+        <translation>Recente transacties zijn mogelijk nog niet zichtbaar. De balans van de portemonnee is daarom mogelijk niet correct. Deze informatie is correct zodra de synchronisatie met het EqPay-netwerk is voltooid, zoals onderaan beschreven.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Poging om qtums te besteden die door "nog niet weergegeven" transacties worden beïnvloed, worden niet door het netwerk geaccepteerd.</translation>
+        <source>Attempting to spend eqpays that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Poging om eqpays te besteden die door "nog niet weergegeven" transacties worden beïnvloed, worden niet door het netwerk geaccepteerd.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1078,8 +1078,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open qtum URI</source>
-        <translation>Open qtum-URI</translation>
+        <source>Open eqpay URI</source>
+        <translation>Open eqpay-URI</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1224,8 +1224,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>&amp;Spendeer onbevestigd wisselgeld</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Open de Qtumpoort automatisch op de router. Dit werkt alleen als de router UPnP ondersteunt en het aanstaat.</translation>
+        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Open de EqPaypoort automatisch op de router. Dit werkt alleen als de router UPnP ondersteunt en het aanstaat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1240,8 +1240,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Sta inkomende verbindingen toe</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation>Verbind met het Qtumnetwerk via een SOCKS5 proxy.</translation>
+        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
+        <translation>Verbind met het EqPaynetwerk via een SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1276,8 +1276,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Maak verbinding met Qtumnetwerk door een aparte SOCKS5-proxy voor verborgen diensten van Tor.</translation>
+        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Maak verbinding met EqPaynetwerk door een aparte SOCKS5-proxy voor verborgen diensten van Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1387,8 +1387,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Uw portemonnee synchroniseert automatisch met het Qtumnetwerk nadat een verbinding is gelegd, maar dit proces is nog niet voltooid.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn. Uw portemonnee synchroniseert automatisch met het EqPaynetwerk nadat een verbinding is gelegd, maar dit proces is nog niet voltooid.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1462,16 +1462,16 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Fout bij betalingsverzoek</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>Kan qtum niet starten: click-to-pay handler</translation>
+        <source>Cannot start eqpay: click-to-pay handler</source>
+        <translation>Kan eqpay niet starten: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>URI-behandeling</translation>
     </message>
     <message>
-        <source>'qtum://' is not a valid URI. Use 'qtum:' instead.</source>
-        <translation>'qtum://' is niet een geldige URI. Gebruik 'qtum:' in plaats daarvan.</translation>
+        <source>'eqpay://' is not a valid URI. Use 'eqpay:' instead.</source>
+        <translation>'eqpay://' is niet een geldige URI. Gebruik 'eqpay:' in plaats daarvan.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.</source>
@@ -1490,8 +1490,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Ongeldig betalingsadres %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation>URI kan niet verwerkt worden! Dit kan het gevolg zijn van een ongeldig Qtum adres of misvormde URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
+        <translation>URI kan niet verwerkt worden! Dit kan het gevolg zijn van een ongeldig EqPay adres of misvormde URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1532,8 +1532,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Voer een Qtumadres in (bijv. %1)</translation>
+        <source>Enter a EqPay address (e.g. %1)</source>
+        <translation>Voer een EqPayadres in (bijv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2001,8 +2001,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>&amp;Bericht</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation>Een optioneel bericht om bij te voegen aan het betalingsverzoek, welke zal getoond worden wanneer het verzoek is geopend. Opmerking: Het bericht zal niet worden verzonden met de betaling over het Qtumnetwerk.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
+        <translation>Een optioneel bericht om bij te voegen aan het betalingsverzoek, welke zal getoond worden wanneer het verzoek is geopend. Opmerking: Het bericht zal niet worden verzonden met de betaling over het EqPaynetwerk.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2282,8 +2282,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Verberg transactiekosteninstellingen</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
-        <translation>De minimale toeslag betalen is prima mits het transactievolume kleiner is dan de ruimte in de blokken. Let wel op dat dit tot gevolg kan hebben dat een transactie nooit wordt bevestigd als er meer vraag is naar qtumtransacties dan het netwerk kan verwerken.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for eqpay transactions than the network can process.</source>
+        <translation>De minimale toeslag betalen is prima mits het transactievolume kleiner is dan de ruimte in de blokken. Let wel op dat dit tot gevolg kan hebben dat een transactie nooit wordt bevestigd als er meer vraag is naar eqpaytransacties dan het netwerk kan verwerken.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2354,8 +2354,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Cr&amp;eëer Ongetekend</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Creëert een Partially Signed Qtum Transaction (PSBT) om te gebruiken met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
+        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Creëert een Partially Signed EqPay Transaction (PSBT) om te gebruiken met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2378,8 +2378,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Weet u zeker dat u wilt verzenden?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Gelieve je transactie-voorstel te controleren. Dit zal een Partially Signed Qtum Transaction (PSBT) maken die je kan kopiëren en dan tekenen met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Gelieve je transactie-voorstel te controleren. Dit zal een Partially Signed EqPay Transaction (PSBT) maken die je kan kopiëren en dan tekenen met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
     </message>
     <message>
         <source>or</source>
@@ -2470,8 +2470,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation><numerusform>Schatting is dat bevestiging begint over %n blok.</numerusform><numerusform>Schatting is dat bevestiging begint over %n blokken.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Waarschuwing: Ongeldig Qtumadres</translation>
+        <source>Warning: Invalid EqPay address</source>
+        <translation>Waarschuwing: Ongeldig EqPayadres</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2509,8 +2509,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Kies een eerder gebruikt adres</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>Het Qtumadres om betaling aan te versturen</translation>
+        <source>The EqPay address to send the payment to</source>
+        <translation>Het EqPayadres om betaling aan te versturen</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2533,8 +2533,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Het te sturen bedrag in de geselecteerde eenheid</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>De transactiekosten zal worden afgetrokken van het bedrag dat verstuurd wordt. De ontvangers zullen minder qtums ontvangen dan ingevoerd is in het hoeveelheidsveld. Als er meerdere ontvangers geselecteerd zijn, dan worden de transactiekosten gelijk verdeeld.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less eqpays than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>De transactiekosten zal worden afgetrokken van het bedrag dat verstuurd wordt. De ontvangers zullen minder eqpays ontvangen dan ingevoerd is in het hoeveelheidsveld. Als er meerdere ontvangers geselecteerd zijn, dan worden de transactiekosten gelijk verdeeld.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2561,8 +2561,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Vul een label voor dit adres in om het aan de lijst met gebruikte adressen toe te voegen</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>Een bericht dat werd toegevoegd aan de qtum: URI welke wordt opgeslagen met de transactie ter referentie. Opmerking: Dit bericht zal niet worden verzonden over het Qtumnetwerk.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
+        <translation>Een bericht dat werd toegevoegd aan de eqpay: URI welke wordt opgeslagen met de transactie ter referentie. Opmerking: Dit bericht zal niet worden verzonden over het EqPaynetwerk.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2595,12 +2595,12 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>&amp;Onderteken bericht</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>U kunt berichten/overeenkomsten ondertekenen met uw adres om te bewijzen dat u Qtums kunt versturen. Wees voorzichtig met het ondertekenen van iets vaags of willekeurigs, omdat phishingaanvallen u kunnen proberen te misleiden tot het ondertekenen van overeenkomsten om uw identiteit aan hen toe te vertrouwen. Onderteken alleen volledig gedetailleerde verklaringen voordat u akkoord gaat.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive eqpays sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>U kunt berichten/overeenkomsten ondertekenen met uw adres om te bewijzen dat u EqPays kunt versturen. Wees voorzichtig met het ondertekenen van iets vaags of willekeurigs, omdat phishingaanvallen u kunnen proberen te misleiden tot het ondertekenen van overeenkomsten om uw identiteit aan hen toe te vertrouwen. Onderteken alleen volledig gedetailleerde verklaringen voordat u akkoord gaat.</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation>Het Qtumadres om bericht mee te ondertekenen</translation>
+        <source>The EqPay address to sign the message with</source>
+        <translation>Het EqPayadres om bericht mee te ondertekenen</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2631,8 +2631,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Onderteken een bericht om te bewijzen dat u een bepaald Qtumadres bezit</translation>
+        <source>Sign the message to prove you own this EqPay address</source>
+        <translation>Onderteken een bericht om te bewijzen dat u een bepaald EqPayadres bezit</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2655,8 +2655,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Voer het adres van de ontvanger in, bericht (zorg ervoor dat de regeleinden, spaties, tabs etc. precies kloppen) en onderteken onderaan om het bericht te verifiëren. Wees voorzicht om niet meer in de ondertekening te lezen dan in het getekende bericht zelf, om te voorkomen dat je wordt aangevallen met een man-in-the-middle attack. Houd er mee rekening dat dit alleen de ondertekende partij bewijst met het ontvangen adres, er kan niet bewezen worden dat er een transactie heeft plaatsgevonden!</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation>Het Qtumadres waarmee het bericht ondertekend is</translation>
+        <source>The EqPay address the message was signed with</source>
+        <translation>Het EqPayadres waarmee het bericht ondertekend is</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2667,8 +2667,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>De handtekening waarmee het bericht ondertekend werd</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Controleer een bericht om te verifiëren dat het gespecificeerde Qtumadres het bericht heeft ondertekend.</translation>
+        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
+        <translation>Controleer een bericht om te verifiëren dat het gespecificeerde EqPayadres het bericht heeft ondertekend.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3318,7 +3318,7 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>eqpay-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation>Uitgegeven onder de MIT software licentie, zie het bijgevoegde bestand %s of %s</translation>

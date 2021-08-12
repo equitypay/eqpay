@@ -49,10 +49,10 @@ static const CFeeRate DEFAULT_MAX_RAW_TX_FEE_RATE{1 * COIN};
 
 static void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry)
 {
-    // Call into TxToUniv() in qtum-common to decode the transaction hex.
+    // Call into TxToUniv() in eqpay-common to decode the transaction hex.
     //
     // Blockchain contextual information (confirmations and blocktime) is not
-    // available to code in qtum-common, so we query them here and push the
+    // available to code in eqpay-common, so we query them here and push the
     // data into the returned UniValue.
     TxToUniv(tx, uint256(), entry, true, RPCSerializationFlags());
 
@@ -184,7 +184,7 @@ static UniValue gethexaddress(const JSONRPCRequest& request) {
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid EqPay address");
     }
 
     const PKHash *keyID = boost::get<PKHash>(&dest);
@@ -286,7 +286,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
                                          {RPCResult::Type::STR, "type", "The type, eg 'pubkeyhash'"},
                                          {RPCResult::Type::ARR, "addresses", "",
                                          {
-                                             {RPCResult::Type::STR, "address", "qtum address"},
+                                             {RPCResult::Type::STR, "address", "eqpay address"},
                                          }},
                                      }},
                                  }},
@@ -361,7 +361,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
         return EncodeHexTx(*tx, RPCSerializationFlags());
     }
 
-    //////////////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////////////// // eqpay
     int nHeight = 0;
     int nConfirmations = 0;
     int nBlockTime = 0;
@@ -560,7 +560,7 @@ static UniValue createrawtransaction(const JSONRPCRequest& request)
                         {
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
                                 {
-                                    {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT},
+                                    {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the eqpay address, the value (float or string) is the amount in " + CURRENCY_UNIT},
                                 },
                                 },
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
@@ -572,10 +572,10 @@ static UniValue createrawtransaction(const JSONRPCRequest& request)
                                 {
                                     {"contractAddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "Valid contract address (valid hash160 hex data)"},
                                     {"data", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "Hex data to add in the call output"},
-                                    {"amount", RPCArg::Type::AMOUNT,  /* default */ "0", "Value in QTUM to send with the call, should be a valid amount, default 0"},
+                                    {"amount", RPCArg::Type::AMOUNT,  /* default */ "0", "Value in EQPAY to send with the call, should be a valid amount, default 0"},
                                     {"gasLimit", RPCArg::Type::NUM,  RPCArg::Optional::OMITTED, "The gas limit for the transaction"},
                                     {"gasPrice", RPCArg::Type::NUM,  RPCArg::Optional::OMITTED, "The gas price for the transaction"},
-                                    {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED, "The qtum address that will be used to create the contract."},
+                                    {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED, "The eqpay address that will be used to create the contract."},
                                 },
                                 },
                              {"contract", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "(create contract)",
@@ -583,7 +583,7 @@ static UniValue createrawtransaction(const JSONRPCRequest& request)
                                      {"bytecode", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "contract bytcode."},
                                      {"gasLimit", RPCArg::Type::NUM,  RPCArg::Optional::OMITTED, "The gas limit for the transaction"},
                                      {"gasPrice", RPCArg::Type::NUM,  RPCArg::Optional::OMITTED, "The gas price for the transaction"},
-                                     {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED, "The qtum address that will be used to create the contract."},
+                                     {"senderaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::OMITTED, "The eqpay address that will be used to create the contract."},
                                  },
                                  },
                         },
@@ -684,7 +684,7 @@ static UniValue decoderawtransaction(const JSONRPCRequest& request)
                                     {RPCResult::Type::STR, "type", "The type, eg 'pubkeyhash'"},
                                     {RPCResult::Type::ARR, "addresses", "",
                                     {
-                                        {RPCResult::Type::STR, "address", "qtum address"},
+                                        {RPCResult::Type::STR, "address", "eqpay address"},
                                     }},
                                 }},
                             }},
@@ -739,7 +739,7 @@ static UniValue decodescript(const JSONRPCRequest& request)
                         {RPCResult::Type::NUM, "reqSigs", "The required signatures"},
                         {RPCResult::Type::ARR, "addresses", "",
                         {
-                            {RPCResult::Type::STR, "address", "qtum address"},
+                            {RPCResult::Type::STR, "address", "eqpay address"},
                         }},
                         {RPCResult::Type::STR, "p2sh", "address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH)"},
                         {RPCResult::Type::OBJ, "segwit", "Result of a witness script public key wrapping this redeem script (not returned if the script is a P2SH or witness)",
@@ -1291,7 +1291,7 @@ static std::string WriteHDKeypath(std::vector<uint32_t>& keypath)
 UniValue decodepsbt(const JSONRPCRequest& request)
 {
             RPCHelpMan{"decodepsbt",
-                "\nReturn a JSON object representing the serialized, base64-encoded partially signed Qtum transaction.\n",
+                "\nReturn a JSON object representing the serialized, base64-encoded partially signed EqPay transaction.\n",
                 {
                     {"psbt", RPCArg::Type::STR, RPCArg::Optional::NO, "The PSBT base64 string"},
                 },
@@ -1322,7 +1322,7 @@ UniValue decodepsbt(const JSONRPCRequest& request)
                                         {RPCResult::Type::STR, "asm", "The asm"},
                                         {RPCResult::Type::STR_HEX, "hex", "The hex"},
                                         {RPCResult::Type::STR, "type", "The type, eg 'pubkeyhash'"},
-                                        {RPCResult::Type::STR, "address"," Qtum address if there is one"},
+                                        {RPCResult::Type::STR, "address"," EqPay address if there is one"},
                                     }},
                                 }},
                                 {RPCResult::Type::OBJ_DYN, "partial_signatures", /* optional */ true, "",
@@ -1600,7 +1600,7 @@ UniValue decodepsbt(const JSONRPCRequest& request)
 UniValue combinepsbt(const JSONRPCRequest& request)
 {
             RPCHelpMan{"combinepsbt",
-                "\nCombine multiple partially signed Qtum transactions into one transaction.\n"
+                "\nCombine multiple partially signed EqPay transactions into one transaction.\n"
                 "Implements the Combiner role.\n",
                 {
                     {"txs", RPCArg::Type::ARR, RPCArg::Optional::NO, "The base64 strings of partially signed transactions",
@@ -1726,7 +1726,7 @@ UniValue createpsbt(const JSONRPCRequest& request)
                         {
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",
                                 {
-                                    {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the qtum address, the value (float or string) is the amount in " + CURRENCY_UNIT},
+                                    {"address", RPCArg::Type::AMOUNT, RPCArg::Optional::NO, "A key-value pair. The key (string) is the eqpay address, the value (float or string) is the amount in " + CURRENCY_UNIT},
                                 },
                                 },
                             {"", RPCArg::Type::OBJ, RPCArg::Optional::OMITTED, "",

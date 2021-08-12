@@ -68,7 +68,7 @@ from test_framework.segwit_addr import (
     encode,
     decode,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY
+from test_framework.eqpayconfig import COINBASE_MATURITY
 
 class AddressTypeTest(BitcoinTestFramework):
     def set_test_params(self):

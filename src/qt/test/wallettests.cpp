@@ -235,7 +235,7 @@ void TestGUI(interfaces::Node& node)
             QString paymentText = rlist->toPlainText();
             QStringList paymentTextList = paymentText.split('\n');
             QCOMPARE(paymentTextList.at(0), QString("Payment information").toUpper());
-            QVERIFY(paymentTextList.at(2).indexOf(QString("URI: qtum:")) != -1);
+            QVERIFY(paymentTextList.at(2).indexOf(QString("URI: eqpay:")) != -1);
             QVERIFY(paymentTextList.at(3).indexOf(QString("Address:")) != -1);
             QCOMPARE(paymentTextList.at(4), QString("Amount: 0.00000001 ") + QString::fromStdString(CURRENCY_UNIT));
             QCOMPARE(paymentTextList.at(5), QString("Label: TEST_LABEL_1"));

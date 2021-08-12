@@ -66,12 +66,12 @@
         <translation>Endereços de receção</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estes são os seus endereços Qtum para enviar pagamentos. Verifique sempre o valor e o endereço de receção antes de enviar moedas.</translation>
+        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estes são os seus endereços EqPay para enviar pagamentos. Verifique sempre o valor e o endereço de receção antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Estes são os endereços Qtum para receiver pagamentos. Use o botão "Criar novo endereço para receiver" para crier novo endereço.</translation>
+        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Estes são os endereços EqPay para receiver pagamentos. Use o botão "Criar novo endereço para receiver" para crier novo endereço.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +168,8 @@
         <translation>Confirmar encriptação da carteira</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>Aviso: se encriptar a sua carteira e perder a sua frase de segurnça, &lt;b&gt;PERDERÁ TODOS OS SEUS QTUMS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR EQPAYS&lt;/b&gt;!</source>
+        <translation>Aviso: se encriptar a sua carteira e perder a sua frase de segurnça, &lt;b&gt;PERDERÁ TODOS OS SEUS EQPAYS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -188,8 +188,8 @@
         <translation>Insira a password antiga e a nova para a carteira.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation>Lembra se que encrostar a sua carteira não o pode defender na totalidade os seus qtums de serem roubados por um malware que possa infectar o seu computador.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your eqpays from being stolen by malware infecting your computer.</source>
+        <translation>Lembra se que encrostar a sua carteira não o pode defender na totalidade os seus eqpays de serem roubados por um malware que possa infectar o seu computador.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EqPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Assinar &amp;mensagem...</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy está &lt;b&gt;ativado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar moedas para um endereço Qtum</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation>Enviar moedas para um endereço EqPay</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Encriptar as chaves privadas que pertencem à sua carteira</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Assine as mensagens com os seus endereços Qtum para provar que é o proprietário dos mesmos</translation>
+        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <translation>Assine as mensagens com os seus endereços EqPay para provar que é o proprietário dos mesmos</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço Qtum especificado</translation>
+        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
+        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço EqPay especificado</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -422,8 +422,8 @@
         <translation>Barra de ferramentas dos separadores</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Solicitar pagamentos (gera códigos QR e qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and eqpay: URIs)</source>
+        <translation>Solicitar pagamentos (gera códigos QR e eqpay: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -438,8 +438,8 @@
         <translation>&amp;Opções da linha de &amp;comando</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
-        <translation><numerusform>%n ligação ativa à rede Qtum</numerusform><numerusform>%n ligações ativas à rede Qtum</numerusform></translation>
+        <source>%n active connection(s) to EqPay network</source>
+        <translation><numerusform>%n ligação ativa à rede EqPay</numerusform><numerusform>%n ligações ativas à rede EqPay</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -498,8 +498,8 @@
         <translation>&amp;Endereços de receção</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>Abrir um qtum URI</translation>
+        <source>Open a eqpay: URI</source>
+        <translation>Abrir um eqpay URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -518,7 +518,7 @@
         <translation>Fechar a carteira</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
         <translation>Mostrar a mensagem de ajuda %1 para obter uma lista com possíveis opções a usar na linha de comandos.</translation>
     </message>
     <message>
@@ -630,8 +630,8 @@
         <translation>A carteira está &lt;b&gt;encriptada&lt;/b&gt; e atualmente &lt;b&gt;bloqueada&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>Ocorreu um erro fatal. O Qtum não pode continuar com segurança e irá fechar.</translation>
+        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
+        <translation>Ocorreu um erro fatal. O EqPay não pode continuar com segurança e irá fechar.</translation>
     </message>
 </context>
 <context>
@@ -874,8 +874,8 @@
         <translation>Editar o endereço de envio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>O endereço introduzido "%1" não é um endereço qtum válido.</translation>
+        <source>The entered address "%1" is not a valid EqPay address.</source>
+        <translation>O endereço introduzido "%1" não é um endereço eqpay válido.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -971,8 +971,8 @@
         <translation>Utilizar uma pasta de dados personalizada:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EqPay</source>
+        <translation>EqPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,8 +987,8 @@
         <translation>Aproximadamente %1 GB de dados irão ser guardados nesta pasta.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation>%1 irá descarregar e armazenar uma cópia da cadeia de blocos da Qtum.</translation>
+        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <translation>%1 irá descarregar e armazenar uma cópia da cadeia de blocos da EqPay.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1022,12 +1022,12 @@
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the eqpay network, as detailed below.</source>
         <translation>Transações recentes podem não ser visíveis por agora, portanto o saldo da sua carteira pode estar incorreto. Esta informação será corrigida quando a sua carteira acabar de sincronizar com a rede, como está explicado em baixo.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Tentar enviar qtums que estão afetadas por transações ainda não exibidas não será aceite pela rede.</translation>
+        <source>Attempting to spend eqpays that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Tentar enviar eqpays que estão afetadas por transações ainda não exibidas não será aceite pela rede.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1077,8 +1077,8 @@
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open qtum URI</source>
-        <translation>Abrir um qtum URI</translation>
+        <source>Open eqpay URI</source>
+        <translation>Abrir um eqpay URI</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1224,8 +1224,8 @@
         <translation>&amp;Gastar troco não confirmado</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir a porta do cliente qtum automaticamente no seu router. Isto apenas funciona se o seu router suportar UPnP e este se encontrar ligado.</translation>
+        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir a porta do cliente eqpay automaticamente no seu router. Isto apenas funciona se o seu router suportar UPnP e este se encontrar ligado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1240,8 +1240,8 @@
         <translation>Permitir ligações de "a receber"</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation>Conectar à rede da Qtum através dum proxy SOCLS5.</translation>
+        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
+        <translation>Conectar à rede da EqPay através dum proxy SOCLS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1276,8 +1276,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Ligar à rede Qtum através de um proxy SOCKS5 separado para utilizar os serviços ocultos do Tor.</translation>
+        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Ligar à rede EqPay através de um proxy SOCKS5 separado para utilizar os serviços ocultos do Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1387,8 +1387,8 @@
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede Qtum depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede EqPay depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1462,16 +1462,16 @@
         <translation>Erro do pedido de pagamento</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>Impossível iniciar o controlador de qtum: click-to-pay</translation>
+        <source>Cannot start eqpay: click-to-pay handler</source>
+        <translation>Impossível iniciar o controlador de eqpay: click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>Manuseamento de URI</translation>
     </message>
     <message>
-        <source>'qtum://' is not a valid URI. Use 'qtum:' instead.</source>
-        <translation>'qtum://' não é um URI válido. Utilize 'qtum:'.</translation>
+        <source>'eqpay://' is not a valid URI. Use 'eqpay:' instead.</source>
+        <translation>'eqpay://' não é um URI válido. Utilize 'eqpay:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.</source>
@@ -1490,8 +1490,8 @@
         <translation>Endereço de pagamento inválido %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation>URI não foi lido corretamente! Isto pode ser causado por um endereço Qtum inválido ou por parâmetros URI malformados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
+        <translation>URI não foi lido corretamente! Isto pode ser causado por um endereço EqPay inválido ou por parâmetros URI malformados.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1532,8 +1532,8 @@
         <translation>Quantia</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Introduza um endereço Qtum (ex. %1)</translation>
+        <source>Enter a EqPay address (e.g. %1)</source>
+        <translation>Introduza um endereço EqPay (ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2001,8 +2001,8 @@
         <translation>&amp;Mensagem:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede Qtum.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
+        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede EqPay.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2282,7 +2282,7 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Esconder configurações de taxas de transação</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for eqpay transactions than the network can process.</source>
         <translation>Quando o volume de transações é maior que o espaço nos blocos, os mineradores, bem como os nós de retransmissão, podem impor uma taxa mínima. Pagar apenas esta taxa mínima é muito bom, mas esteja ciente que isso pode resultar numa transação nunca confirmada, uma vez que há mais pedidos para transações do que a rede pode processar.</translation>
     </message>
     <message>
@@ -2354,8 +2354,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Criar não assinado</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Cria uma transação de Qtum parcialmente assinada (PSBT)(sigla em inglês) para ser usada por exemplo com uma carteira %1 offline ou uma carteira de hardware compatível com PSBT.</translation>
+        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Cria uma transação de EqPay parcialmente assinada (PSBT)(sigla em inglês) para ser usada por exemplo com uma carteira %1 offline ou uma carteira de hardware compatível com PSBT.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2378,8 +2378,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Tem a certeza que deseja enviar?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Por favor, reveja sua proposta de transação. Isto irá produzir uma transação de Qtum parcialmente assinada (PSBT)(sigla em inglês) a qual você pode copiar e então assinar com por exemplo uma carteira %1 offiline ou uma carteira de hardware compatível com PSBT</translation>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Por favor, reveja sua proposta de transação. Isto irá produzir uma transação de EqPay parcialmente assinada (PSBT)(sigla em inglês) a qual você pode copiar e então assinar com por exemplo uma carteira %1 offiline ou uma carteira de hardware compatível com PSBT</translation>
     </message>
     <message>
         <source>or</source>
@@ -2470,8 +2470,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation><numerusform>Estimado para iniciar a confirmação dentro de %n bloco.</numerusform><numerusform>Estimado para iniciar a confirmação dentro de %n blocos.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Aviso: endereço Qtum inválido</translation>
+        <source>Warning: Invalid EqPay address</source>
+        <translation>Aviso: endereço EqPay inválido</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2509,8 +2509,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Escolha o endereço utilizado anteriormente</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>O endereço Qtum para enviar o pagamento</translation>
+        <source>The EqPay address to send the payment to</source>
+        <translation>O endereço EqPay para enviar o pagamento</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2533,8 +2533,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>A quantidade para enviar na unidade selecionada</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>A taxa será deduzida ao valor que está a ser enviado. O destinatário irá receber menos qtums do que as que inseridas no campo do valor. Se estiverem selecionados múltiplos destinatários, a taxa será repartida equitativamente.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less eqpays than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>A taxa será deduzida ao valor que está a ser enviado. O destinatário irá receber menos eqpays do que as que inseridas no campo do valor. Se estiverem selecionados múltiplos destinatários, a taxa será repartida equitativamente.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2561,8 +2561,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Introduza uma etiqueta para este endereço para o adicionar à sua lista de endereços usados</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>Uma mensagem que estava anexada ao URI qtum: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede Qtum.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
+        <translation>Uma mensagem que estava anexada ao URI eqpay: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede EqPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2595,12 +2595,12 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>&amp;Assinar Mensagem</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive eqpays sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Pode assinar mensagens com os seus endereços para provar que são seus. Tenha atenção ao assinar mensagens ambíguas, pois ataques de phishing podem tentar enganá-lo de modo a assinar a sua identidade para os atacantes. Apenas assine declarações detalhadas com as quais concorde.</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation>O endereço Qtum para designar a mensagem</translation>
+        <source>The EqPay address to sign the message with</source>
+        <translation>O endereço EqPay para designar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2631,8 +2631,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Copiar a assinatura atual para a área de transferência</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Assine uma mensagem para provar que é dono deste endereço Qtum</translation>
+        <source>Sign the message to prove you own this EqPay address</source>
+        <translation>Assine uma mensagem para provar que é dono deste endereço EqPay</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2655,8 +2655,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Introduza o endereço de assinatura, mensagem (assegure-se que copia quebras de linha, espaços, tabulações, etc. exatamente) e assinatura abaixo para verificar a mensagem. Tenha atenção para não ler mais na assinatura do que o que estiver na mensagem assinada, para evitar ser enganado por um atacante que se encontre entre si e quem assinou a mensagem.</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation>O endereço Qtum com que a mensagem foi designada</translation>
+        <source>The EqPay address the message was signed with</source>
+        <translation>O endereço EqPay com que a mensagem foi designada</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2667,8 +2667,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>A assinatura dada quando a mensagem foi assinada</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço Qtum especificado</translation>
+        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
+        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço EqPay especificado</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3318,7 +3318,7 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>eqpay-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation>Distribuído sob licença de software MIT, veja o ficheiro %s ou %s</translation>

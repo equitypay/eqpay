@@ -10,7 +10,7 @@
 #include <libdevcore/Assertions.h>
 #include <libdevcore/SHA3.h>
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 static_assert(CRYPTOPP_VERSION == 820, "Wrong Crypto++ version");
 #endif
 

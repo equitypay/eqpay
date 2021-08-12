@@ -11,7 +11,7 @@ from test_framework.util import (
     assert_raises_rpc_error,
     connect_nodes,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY
+from test_framework.eqpayconfig import COINBASE_MATURITY
 
 def reset_balance(node, discardaddr):
     '''Throw away all owned coins by the node so it gets a balance of 0.'''

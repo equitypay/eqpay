@@ -160,7 +160,7 @@ void ExtVM::selfdestruct(Address _a)
     // http://martin.swende.se/blog/Ethereum_quirks_and_vulns.html). There is one test case
     // witnessing the current consensus
     // 'GeneralStateTests/stSystemOperationsTest/suicideSendEtherPostDeath.json'.
-#ifdef QTUM_BUILD
+#ifdef EQPAY_BUILD
     if(!m_s.addressInUse(_a)){
         m_sealEngine.deleteAddresses.insert(_a);
     }

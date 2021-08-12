@@ -9,9 +9,9 @@
 #include <pubkey.h>
 #include <script/script.h>
 
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
-#include <qtum/qtumtransaction.h>
+#include <eqpay/eqpaystate.h>
+#include <eqpay/eqpayDGP.h>
+#include <eqpay/eqpaytransaction.h>
 #include <validation.h>
 #include <streams.h>
 
@@ -199,7 +199,7 @@ txnouttype Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned 
                 else
                     break;
             }
-            /////////////////////////////////////////////////////////// qtum
+            /////////////////////////////////////////////////////////// eqpay
             else if (opcode2 == OP_VERSION)
             {
                 if(0 <= opcode1 && opcode1 <= OP_PUSHDATA4)
@@ -654,7 +654,7 @@ bool ExtractDestination(const COutPoint& prevout, const CScript& scriptPubKey, C
         return true;
     }
     else if (whichType == TX_CREATE) {
-        addressRet = PKHash(uint160(QtumState::createQtumAddress(uintToh256(prevout.hash), prevout.n).asBytes()));
+        addressRet = PKHash(uint160(EqPayState::createEqPayAddress(uintToh256(prevout.hash), prevout.n).asBytes()));
         return true;
     }
     return false;

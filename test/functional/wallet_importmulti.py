@@ -21,7 +21,7 @@ from test_framework.script import (
 )
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.descriptors import descsum_create
-from test_framework.qtumconfig import *
+from test_framework.eqpayconfig import *
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -32,7 +32,7 @@ from test_framework.wallet_util import (
     get_multisig,
     test_address,
 )
-from test_framework.qtum import convert_btc_bech32_address_to_qtum, convert_btc_address_to_qtum
+from test_framework.eqpay import convert_btc_bech32_address_to_eqpay, convert_btc_address_to_eqpay
 
 class ImportMultiTest(BitcoinTestFramework):
     def set_test_params(self):
@@ -575,8 +575,8 @@ class ImportMultiTest(BitcoinTestFramework):
 
         # Test ranged descriptor fails if range is not specified
         xpriv = "tprv8ZgxMBicQKsPeuVhWwi6wuMQGfPKi9Li5GtX35jVNknACgqe3CY4g5xgkfDDJcmtF7o1QnxWDRYw4H5P26PXq7sbcUkEqeR4fg3Kxp2tigg"
-        addresses = [convert_btc_address_to_qtum("2N7yv4p8G8yEaPddJxY41kPihnWvs39qCMf"), convert_btc_address_to_qtum("2MsHxyb2JS3pAySeNUsJ7mNnurtpeenDzLA")] # hdkeypath=m/0'/0'/0' and 1'
-        addresses += [convert_btc_bech32_address_to_qtum("bcrt1qrd3n235cj2czsfmsuvqqpr3lu6lg0ju7scl8gn"), convert_btc_bech32_address_to_qtum("bcrt1qfqeppuvj0ww98r6qghmdkj70tv8qpchehegrg8")] # wpkh subscripts corresponding to the above addresses
+        addresses = [convert_btc_address_to_eqpay("2N7yv4p8G8yEaPddJxY41kPihnWvs39qCMf"), convert_btc_address_to_eqpay("2MsHxyb2JS3pAySeNUsJ7mNnurtpeenDzLA")] # hdkeypath=m/0'/0'/0' and 1'
+        addresses += [convert_btc_bech32_address_to_eqpay("bcrt1qrd3n235cj2czsfmsuvqqpr3lu6lg0ju7scl8gn"), convert_btc_bech32_address_to_eqpay("bcrt1qfqeppuvj0ww98r6qghmdkj70tv8qpchehegrg8")] # wpkh subscripts corresponding to the above addresses
         desc = "sh(wpkh(" + xpriv + "/0'/0'/*'" + "))"
         self.log.info("Ranged descriptor import should fail without a specified range")
         self.test_importmulti({"desc": descsum_create(desc),
@@ -614,7 +614,7 @@ class ImportMultiTest(BitcoinTestFramework):
 
         # Test importing a descriptor containing a WIF private key
         wif_priv = "cTe1f5rdT8A8DFgVWTjyPwACsDPJM9ff4QngFxUixCSvvbg1x6sh"
-        address = convert_btc_address_to_qtum("2MuhcG52uHPknxDgmGPsV18jSHFBnnRgjPg")
+        address = convert_btc_address_to_eqpay("2MuhcG52uHPknxDgmGPsV18jSHFBnnRgjPg")
         desc = "sh(wpkh(" + wif_priv + "))"
         self.log.info("Should import a descriptor with a WIF private key as spendable")
         self.test_importmulti({"desc": descsum_create(desc),

@@ -66,12 +66,12 @@
         <translation>Helbideak jasotzen</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hauek dira zuk dirua jaso dezaketen Qtum helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
+        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hauek dira zuk dirua jaso dezaketen EqPay helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Hauek dira ordainketak jasotzeko zure Qtum helbideak. Jaso taulako 'Jasotzeko helbide berri bat sortu' botoia erabili helbide berri bat sortzeko.</translation>
+        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Hauek dira ordainketak jasotzeko zure EqPay helbideak. Jaso taulako 'Jasotzeko helbide berri bat sortu' botoia erabili helbide berri bat sortzeko.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -168,8 +168,8 @@
         <translation>Diruorroaren enkriptazioa berretsi</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>Abisua: Diruzorroa enkriptatzen baduzu eta zure pasahitza galtzen baduzu, &lt;b&gt;QTUM GUZTIAK GALDUKO DITUZU&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR EQPAYS&lt;/b&gt;!</source>
+        <translation>Abisua: Diruzorroa enkriptatzen baduzu eta zure pasahitza galtzen baduzu, &lt;b&gt;EQPAY GUZTIAK GALDUKO DITUZU&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -188,8 +188,8 @@
         <translation>Diruzorroaren pasahitz zahar zein berria sartu.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation>Gogoan izan diruzorroaren enkripzioak ezin dituela zure qtumak zure ordenagailuan izan dezakezun malware batengandik lapurtuak izatetik guztiz babestu .</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your eqpays from being stolen by malware infecting your computer.</source>
+        <translation>Gogoan izan diruzorroaren enkripzioak ezin dituela zure eqpayak zure ordenagailuan izan dezakezun malware batengandik lapurtuak izatetik guztiz babestu .</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EqPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Mezua zinatu</translation>
@@ -358,8 +358,8 @@
         <translation>Blokeak diskoan berriro zerrendatzen...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Bidali txanponak Qtum helbide batera</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation>Bidali txanponak EqPay helbide batera</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -386,8 +386,8 @@
         <translation>Lehio nagusia erakutsi edo izkutatu</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Egiaztatu mesua Qtum helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
+        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
+        <translation>Egiaztatu mesua EqPay helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -681,8 +681,8 @@
         <translation>Ongietorri %1-ra</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>EqPay</source>
+        <translation>EqPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1243,7 +1243,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>eqpay-core</name>
     <message>
         <source>Loading wallet...</source>
         <translation>Diru-zorroa kargatzen</translation>

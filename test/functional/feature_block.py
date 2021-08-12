@@ -50,7 +50,7 @@ from test_framework.script import (
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal
 from data import invalid_txs
-from test_framework.qtumconfig import *
+from test_framework.eqpayconfig import *
 
 #  Use this class for tests that require behavior other than normal "mininode" behavior.
 #  For now, it is used to serialize a bloated varint (b64).
@@ -98,7 +98,7 @@ class FullBlockTest(BitcoinTestFramework):
         self.block_heights[self.genesis_hash] = 0
         self.spendable_outputs = []
 
-        # Create a new block -> QTUM: not possible since the coinbase script must strictly conform to bip34 from genesis
+        # Create a new block -> EQPAY: not possible since the coinbase script must strictly conform to bip34 from genesis
         #b_dup_cb = self.next_block('dup_cb')
         #b_dup_cb.vtx[0].vin[0].scriptSig = DUPLICATE_COINBASE_SCRIPT_SIG
         #b_dup_cb.vtx[0].rehash()
@@ -815,8 +815,8 @@ class FullBlockTest(BitcoinTestFramework):
         #
         #self.log.info("Reject a block with a transaction with a duplicate hash of a previous transaction (BIP30)")
         #self.move_tip(60)
-        # QTUM: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
-        # QTUM: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
+        # EQPAY: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
+        # EQPAY: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
         #self.log.info("Reject a block with a transaction with a duplicate hash of a previous transaction (BIP30)")
         #self.move_tip(60)
         #b61 = self.next_block(61, spend=out[18])

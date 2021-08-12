@@ -11,7 +11,7 @@ from test_framework import messages
 from test_framework.mininode import P2PDataStore, NetworkThread
 from test_framework.test_framework import BitcoinTestFramework
 
-from test_framework.qtumconfig import FACTOR_REDUCED_BLOCK_TIME
+from test_framework.eqpayconfig import FACTOR_REDUCED_BLOCK_TIME
 
 class msg_unrecognized:
     """Nonsensical message. Modeled after similar types in test_framework.messages."""

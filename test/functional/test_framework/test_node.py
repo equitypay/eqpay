@@ -32,8 +32,8 @@ from .util import (
     p2p_port,
     EncodeDecimal,
 )
-from .qtum import convert_btc_address_to_qtum
-from .qtumconfig import ENABLE_REDUCED_BLOCK_TIME
+from .eqpay import convert_btc_address_to_eqpay
+from .eqpayconfig import ENABLE_REDUCED_BLOCK_TIME
 
 BITCOIND_PROC_WAIT_TIMEOUT = 60
 
@@ -71,7 +71,7 @@ class TestNode():
 
         self.index = i
         self.datadir = datadir
-        self.bitcoinconf = os.path.join(self.datadir, "qtum.conf")
+        self.bitcoinconf = os.path.join(self.datadir, "eqpay.conf")
         self.stdout_dir = os.path.join(self.datadir, "stdout")
         self.stderr_dir = os.path.join(self.datadir, "stderr")
         self.chain = chain
@@ -132,18 +132,18 @@ class TestNode():
     AddressKeyPair = collections.namedtuple('AddressKeyPair', ['address', 'key'])
     PRIV_KEYS = [
             # address , privkey
-            AddressKeyPair(convert_btc_address_to_qtum('mjTkW3DjgyZck4KbiRusZsqTgaYTxdSz6z'), 'cVpF924EspNh8KjYsfhgY96mmxvT6DgdWiTYMtMjuM74hJaU5psW'),
-            AddressKeyPair(convert_btc_address_to_qtum('msX6jQXvxiNhx3Q62PKeLPrhrqZQdSimTg'), 'cUxsWyKyZ9MAQTaAhUQWJmBbSvHMwSmuv59KgxQV7oZQU3PXN3KE'),
-            AddressKeyPair(convert_btc_address_to_qtum('mnonCMyH9TmAsSj3M59DsbH8H63U3RKoFP'), 'cTrh7dkEAeJd6b3MRX9bZK8eRmNqVCMH3LSUkE3dSFDyzjU38QxK'),
-            AddressKeyPair(convert_btc_address_to_qtum('mqJupas8Dt2uestQDvV2NH3RU8uZh2dqQR'), 'cVuKKa7gbehEQvVq717hYcbE9Dqmq7KEBKqWgWrYBa2CKKrhtRim'),
-            AddressKeyPair(convert_btc_address_to_qtum('msYac7Rvd5ywm6pEmkjyxhbCDKqWsVeYws'), 'cQDCBuKcjanpXDpCqacNSjYfxeQj8G6CAtH1Dsk3cXyqLNC4RPuh'),
-            AddressKeyPair(convert_btc_address_to_qtum('n2rnuUnwLgXqf9kk2kjvVm8R5BZK1yxQBi'), 'cQakmfPSLSqKHyMFGwAqKHgWUiofJCagVGhiB4KCainaeCSxeyYq'),
-            AddressKeyPair(convert_btc_address_to_qtum('myzuPxRwsf3vvGzEuzPfK9Nf2RfwauwYe6'), 'cQMpDLJwA8DBe9NcQbdoSb1BhmFxVjWD5gRyrLZCtpuF9Zi3a9RK'),
-            AddressKeyPair(convert_btc_address_to_qtum('mumwTaMtbxEPUswmLBBN3vM9oGRtGBrys8'), 'cSXmRKXVcoouhNNVpcNKFfxsTsToY5pvB9DVsFksF1ENunTzRKsy'),
-            AddressKeyPair(convert_btc_address_to_qtum('mpV7aGShMkJCZgbW7F6iZgrvuPHjZjH9qg'), 'cSoXt6tm3pqy43UMabY6eUTmR3eSUYFtB2iNQDGgb3VUnRsQys2k'),
-            AddressKeyPair(convert_btc_address_to_qtum('mq4fBNdckGtvY2mijd9am7DRsbRB4KjUkf'), 'cN55daf1HotwBAgAKWVgDcoppmUNDtQSfb7XLutTLeAgVc3u8hik'),
-            AddressKeyPair(convert_btc_address_to_qtum('mpFAHDjX7KregM3rVotdXzQmkbwtbQEnZ6'), 'cT7qK7g1wkYEMvKowd2ZrX1E5f6JQ7TM246UfqbCiyF7kZhorpX3'),
-            AddressKeyPair(convert_btc_address_to_qtum('mzRe8QZMfGi58KyWCse2exxEFry2sfF2Y7'), 'cPiRWE8KMjTRxH1MWkPerhfoHFn5iHPWVK5aPqjW8NxmdwenFinJ'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mjTkW3DjgyZck4KbiRusZsqTgaYTxdSz6z'), 'cVpF924EspNh8KjYsfhgY96mmxvT6DgdWiTYMtMjuM74hJaU5psW'),
+            AddressKeyPair(convert_btc_address_to_eqpay('msX6jQXvxiNhx3Q62PKeLPrhrqZQdSimTg'), 'cUxsWyKyZ9MAQTaAhUQWJmBbSvHMwSmuv59KgxQV7oZQU3PXN3KE'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mnonCMyH9TmAsSj3M59DsbH8H63U3RKoFP'), 'cTrh7dkEAeJd6b3MRX9bZK8eRmNqVCMH3LSUkE3dSFDyzjU38QxK'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mqJupas8Dt2uestQDvV2NH3RU8uZh2dqQR'), 'cVuKKa7gbehEQvVq717hYcbE9Dqmq7KEBKqWgWrYBa2CKKrhtRim'),
+            AddressKeyPair(convert_btc_address_to_eqpay('msYac7Rvd5ywm6pEmkjyxhbCDKqWsVeYws'), 'cQDCBuKcjanpXDpCqacNSjYfxeQj8G6CAtH1Dsk3cXyqLNC4RPuh'),
+            AddressKeyPair(convert_btc_address_to_eqpay('n2rnuUnwLgXqf9kk2kjvVm8R5BZK1yxQBi'), 'cQakmfPSLSqKHyMFGwAqKHgWUiofJCagVGhiB4KCainaeCSxeyYq'),
+            AddressKeyPair(convert_btc_address_to_eqpay('myzuPxRwsf3vvGzEuzPfK9Nf2RfwauwYe6'), 'cQMpDLJwA8DBe9NcQbdoSb1BhmFxVjWD5gRyrLZCtpuF9Zi3a9RK'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mumwTaMtbxEPUswmLBBN3vM9oGRtGBrys8'), 'cSXmRKXVcoouhNNVpcNKFfxsTsToY5pvB9DVsFksF1ENunTzRKsy'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mpV7aGShMkJCZgbW7F6iZgrvuPHjZjH9qg'), 'cSoXt6tm3pqy43UMabY6eUTmR3eSUYFtB2iNQDGgb3VUnRsQys2k'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mq4fBNdckGtvY2mijd9am7DRsbRB4KjUkf'), 'cN55daf1HotwBAgAKWVgDcoppmUNDtQSfb7XLutTLeAgVc3u8hik'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mpFAHDjX7KregM3rVotdXzQmkbwtbQEnZ6'), 'cT7qK7g1wkYEMvKowd2ZrX1E5f6JQ7TM246UfqbCiyF7kZhorpX3'),
+            AddressKeyPair(convert_btc_address_to_eqpay('mzRe8QZMfGi58KyWCse2exxEFry2sfF2Y7'), 'cPiRWE8KMjTRxH1MWkPerhfoHFn5iHPWVK5aPqjW8NxmdwenFinJ'),
     ]
 
     def get_deterministic_priv_key(self):

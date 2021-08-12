@@ -147,12 +147,12 @@
         <translation>받는 주소</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>송금이 가능한 QTUM 주소입니다. 송금 전에 반드시 주소와 금액이 정확한지 확인해주세요. </translation>
+        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>송금이 가능한 EQPAY 주소입니다. 송금 전에 반드시 주소와 금액이 정확한지 확인해주세요. </translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>지불 수신용 QTUM주소. 신규 주소를 만들려면 'Create new receiving address' 버튼을 사용하세요.</translation>
+        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>지불 수신용 EQPAY주소. 신규 주소를 만들려면 'Create new receiving address' 버튼을 사용하세요.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -257,8 +257,8 @@
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>경고: 암호화 이후 비밀번호를 잃어버리면 &lt;b&gt;지갑에 있는 모든 QTUM을 잃게됩니다&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR EQPAYS&lt;/b&gt;!</source>
+        <translation>경고: 암호화 이후 비밀번호를 잃어버리면 &lt;b&gt;지갑에 있는 모든 EQPAY을 잃게됩니다&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -273,7 +273,7 @@
         <translation>새로운 지갑 비밀번호를 입력하세요. 암호는 10개 이상의 문자 또는 8개 이상의 단어로 입력하세요.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your eqpays from being stolen by malware infecting your computer.</source>
         <translation>지갑을 암호화 해도 컴퓨터에 바이러스가 있을시 안전하기 않다는 것을 참고하세요.</translation>
     </message>
     <message>
@@ -347,7 +347,7 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
         <translation type="unfinished">심각한 에러가 발생하여 클라이언트가 안전하게 실행될 수 없어 종료될 예정입니다. </translation>
     </message>
     <message>
@@ -363,16 +363,16 @@
         <translation type="unfinished">보내기</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation type="unfinished">QTUM 주소로 QTUM 코인 보내기</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation type="unfinished">EQPAY 주소로 EQPAY 코인 보내기</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
         <translation type="unfinished">받기 </translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">지불 요청 (QR 코드 생성과 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and eqpay: URIs)</source>
+        <translation type="unfinished">지불 요청 (QR 코드 생성과 eqpay: URI)</translation>
     </message>
     <message>
         <source>Smart &amp;Contracts</source>
@@ -519,15 +519,15 @@
         <translation type="unfinished">메시지 서명</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation type="unfinished">소유하고 있는 QTUM 주소의 키로 메시지 서명을 하여 해당 QTUM 주소의 소유권을 증명하세요. </translation>
+        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <translation type="unfinished">소유하고 있는 EQPAY 주소의 키로 메시지 서명을 하여 해당 EQPAY 주소의 소유권을 증명하세요. </translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation type="unfinished">메시지 검증</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
         <translation type="unfinished">메시지 검증. 메시지에 특정 퀀텀 주소의 서명이 있는지 확인 </translation>
     </message>
     <message>
@@ -551,8 +551,8 @@
         <translation type="unfinished">받을 주소</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>qtum: URI 열기</translation>
+        <source>Open a eqpay: URI</source>
+        <translation>eqpay: URI 열기</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
@@ -583,7 +583,7 @@
         <translation type="unfinished">커멘드 라인 옵션</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
         <translation type="unfinished">%1 도움 정보 표시로 사용 가능한 커멘드 라인 옵션 리스트 불러오기</translation>
     </message>
     <message>
@@ -639,8 +639,8 @@
         <translation type="unfinished">지갑：</translation>
     </message>
     <message>
-        <source>New version of Qtum wallet is available on the Qtum source code repository: &lt;br /&gt; %1. &lt;br /&gt;It is recommended to download it and update this application</source>
-        <translation type="unfinished">최신 버전의 Qtum 지갑은 Qtum 소스코드 레포지토리 &lt;br /&gt; %1. &lt;br /&gt;에서 받을 수 있습니다. 다운로드 및 업데이트를 권장 드립니다. </translation>
+        <source>New version of EqPay wallet is available on the EqPay source code repository: &lt;br /&gt; %1. &lt;br /&gt;It is recommended to download it and update this application</source>
+        <translation type="unfinished">최신 버전의 EqPay 지갑은 EqPay 소스코드 레포지토리 &lt;br /&gt; %1. &lt;br /&gt;에서 받을 수 있습니다. 다운로드 및 업데이트를 권장 드립니다. </translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -651,9 +651,9 @@
         <translation type="unfinished">%1 클라이언트</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
+        <source>%n active connection(s) to EqPay network</source>
         <translation type="unfinished">
-            <numerusform>QTUM네트워크에 대한 활성화된 연결은 %n 개입니다.</numerusform>
+            <numerusform>EQPAY네트워크에 대한 활성화된 연결은 %n 개입니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -719,8 +719,8 @@
         <translation type="unfinished">해당 지점 이후 거래 내역이 없습니다. </translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation type="unfinished">QTUM</translation>
+        <source>EqPay</source>
+        <translation type="unfinished">EQPAY</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1343,8 +1343,8 @@
         <translation type="unfinished">컨트랙트의 바이트 코드</translation>
     </message>
     <message>
-        <source>The qtum address that will be used to create the contract.</source>
-        <translation type="unfinished">컨트랙트 생성을 위한 Qtum주소</translation>
+        <source>The eqpay address that will be used to create the contract.</source>
+        <translation type="unfinished">컨트랙트 생성을 위한 EqPay주소</translation>
     </message>
     <message>
         <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
@@ -1375,8 +1375,8 @@
         <translation type="unfinished">가스 상한액. 디폴트 = %1, 최고 = %2.</translation>
     </message>
     <message>
-        <source>Gas price: QTUM price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 QTUM 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <source>Gas price: EQPAY price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 EQPAY 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
 </context>
 <context>
@@ -1414,8 +1414,8 @@
         <translation>송금주소 편집</translation>
     </message>
     <message>
-        <source>The entered address &quot;%1&quot; is not a valid Qtum address.</source>
-        <translation>입력한 주소 %1는 유효한 QTUM 주소가 아닙니다. </translation>
+        <source>The entered address &quot;%1&quot; is not a valid EqPay address.</source>
+        <translation>입력한 주소 %1는 유효한 EQPAY 주소가 아닙니다. </translation>
     </message>
     <message>
         <source>Address &quot;%1&quot; already exists as a receiving address with label &quot;%2&quot; and so cannot be added as a sending address.</source>
@@ -1551,8 +1551,8 @@
         <translation>사용자 지정 데이터 디렉터리 사용</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>QTUM</translation>
+        <source>EqPay</source>
+        <translation>EQPAY</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -1563,8 +1563,8 @@
         <translation>해당 디렉토리에 약 %1 GB의 데이터를 저장할 예정입니다. </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation>%1이 QTUM 블록체인을 다운로드 및 저장할 예정입니다. </translation>
+        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <translation>%1이 EQPAY 블록체인을 다운로드 및 저장할 예정입니다. </translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1606,12 +1606,12 @@
         <translation>서식</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the eqpay network, as detailed below.</source>
         <translation>최근 거래 미반영으로 잔액이 정확하지 않을 수 있습니다. 해당 정보는 퀀텀 네트워크 동기화 후 수정될 예정입니다. 제세한 내용은 아래와 같습니다. </translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>네트워크는 미확인된 거래에 속한 QTUM 사용을 승인하지 않습니다 </translation>
+        <source>Attempting to spend eqpays that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>네트워크는 미확인된 거래에 속한 EQPAY 사용을 승인하지 않습니다 </translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1674,8 +1674,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open qtum URI</source>
-        <translation>QTUM URI 열기</translation>
+        <source>Open eqpay URI</source>
+        <translation>EQPAY URI 열기</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1820,7 +1820,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>승인 대기 중인 잔액 사용</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="vanished">라우터에서 자동으로 퀀텀 클라이언트 실행하기. 해당 기능은 라우터에 UPnP 옵션이 활성화되어 있을 경우에만 유효합니다. </translation>
     </message>
     <message>
@@ -1836,8 +1836,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>연결 유입 허용</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation type="vanished">SOCKS5 프록시를 통해 QTUM 네트워크 연결</translation>
+        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
+        <translation type="vanished">SOCKS5 프록시를 통해 EQPAY 네트워크 연결</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1872,7 +1872,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="vanished">Tor 히든 서비스에서 별도의 SOCKS5 프록시를 통해 퀀텀 네트워크 연결</translation>
     </message>
     <message>
@@ -2000,16 +2000,16 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="unfinished">업데이트 확인</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">라우터에서 자동으로 QTUM 클라이언트 실행하기. 해당 기능은 라우터에 UPnP 옵션이 활성화되어 있을 경우에만 유효합니다. </translation>
+        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation type="unfinished">라우터에서 자동으로 EQPAY 클라이언트 실행하기. 해당 기능은 라우터에 UPnP 옵션이 활성화되어 있을 경우에만 유효합니다. </translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">SOCKS5 프록시를 통해 QTUM 네트워크 연결</translation>
+        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">SOCKS5 프록시를 통해 EQPAY 네트워크 연결</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation type="unfinished">Tor 히든 서비스에서 별도의 SOCKS5 프록시를 통해 QTUM 네트워크 연결</translation>
+        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation type="unfinished">Tor 히든 서비스에서 별도의 SOCKS5 프록시를 통해 EQPAY 네트워크 연결</translation>
     </message>
     <message>
         <source>User Interface &amp;style:</source>
@@ -2035,7 +2035,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>서식</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
         <translation>현재 표시된 내용은 지난 정보일 수 있습니다. 퀀텀 네트워크에 연결 후 동기화를 실행하지만 아직 완료되진 않았습니다. </translation>
     </message>
     <message>
@@ -2160,8 +2160,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>지불 요청 에러</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>无法启动 qtum 协议的“
+        <source>Cannot start eqpay: click-to-pay handler</source>
+        <translation>无法启动 eqpay 协议的“
 一键支付”处理器</translation>
     </message>
     <message>
@@ -2169,8 +2169,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>URI 처리</translation>
     </message>
     <message>
-        <source>&apos;qtum://&apos; is not a valid URI. Use &apos;qtum:&apos; instead.</source>
-        <translation type="vanished">‘qtum://’은 유효한 URI이 아닙니다. &apos;qtum:&apos;로 대체해주세요. </translation>
+        <source>&apos;eqpay://&apos; is not a valid URI. Use &apos;eqpay:&apos; instead.</source>
+        <translation type="vanished">‘eqpay://’은 유효한 URI이 아닙니다. &apos;eqpay:&apos;로 대체해주세요. </translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.</source>
@@ -2189,7 +2189,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>무효한 송금 주소 %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
         <translation>URI 주소를 분석할 수 없습니다. 무효한 퀀텀 주소 또는 URI 파라미터 서식 오류일 수 있습니다. </translation>
     </message>
     <message>
@@ -2201,8 +2201,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>지불 요청 네트워크와 클라이언트 네트워크가 매칭되지 않습니다. </translation>
     </message>
     <message>
-        <source>&apos;qtum://&apos; is not a valid URI. Use &apos;qtum:&apos; instead.</source>
-        <translation type="unfinished">qtum://&apos;은 유효한 URI이 아닙니다. &apos;qtum:&apos;로 대체해주세요.</translation>
+        <source>&apos;eqpay://&apos; is not a valid URI. Use &apos;eqpay:&apos; instead.</source>
+        <translation type="unfinished">eqpay://&apos;은 유효한 URI이 아닙니다. &apos;eqpay:&apos;로 대체해주세요.</translation>
     </message>
 </context>
 <context>
@@ -2239,8 +2239,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>QTUM 주소를 입력해주세요 (예시, %1)</translation>
+        <source>Enter a EqPay address (e.g. %1)</source>
+        <translation>EQPAY 주소를 입력해주세요 (예시, %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2437,7 +2437,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>EqPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation type="vanished">메시지 서명</translation>
@@ -2547,8 +2547,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">프록시 &lt;b&gt;활성화&lt;/b&gt;：%1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation type="vanished">QTUM 주소로 QTUM 코인 보내기</translation>
+        <source>Send coins to a EqPay address</source>
+        <translation type="vanished">EQPAY 주소로 EQPAY 코인 보내기</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -2563,8 +2563,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">메시지 검증</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation type="vanished">QTUM</translation>
+        <source>EqPay</source>
+        <translation type="vanished">EQPAY</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -2587,11 +2587,11 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">지갑 프라이빗 키 암호화</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation type="vanished">소유하고 있는 QTUM 주소의 키로 메시지 서명을 하여 해당 QTUM 주소의 소유권을 증명하세요. </translation>
+        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <translation type="vanished">소유하고 있는 EQPAY 주소의 키로 메시지 서명을 하여 해당 EQPAY 주소의 소유권을 증명하세요. </translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
         <translation type="vanished">메시지 검증. 메시지에 특정 퀀텀 주소의 서명이 있는지 확인 </translation>
     </message>
     <message>
@@ -2611,8 +2611,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">탭 툴바</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="vanished">지불 요청 (QR 코드 생성과 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and eqpay: URIs)</source>
+        <translation type="vanished">지불 요청 (QR 코드 생성과 eqpay: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -2627,9 +2627,9 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">커멘드 라인 옵션</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
+        <source>%n active connection(s) to EqPay network</source>
         <translation type="vanished">
-            <numerusform>QTUM네트워크에 대한 활성화된 연결은 %n 개입니다.</numerusform>
+            <numerusform>EQPAY네트워크에 대한 활성화된 연결은 %n 개입니다.</numerusform>
         </translation>
     </message>
     <message>
@@ -2691,8 +2691,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">받는 주소</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>qtum: URI 열기</translation>
+        <source>Open a eqpay: URI</source>
+        <translation>eqpay: URI 열기</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -2711,7 +2711,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">지갑 닫기</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
         <translation type="vanished">%1 도움 정보 표시로 사용 가능한 커멘드 라인 옵션 리스트 불러오기</translation>
     </message>
     <message>
@@ -2823,7 +2823,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">지갑이 &lt;b&gt;암호화&lt;/b&gt;되었고 현재는 &lt;b&gt;락업&lt;/b&gt;상태입니다.</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
         <translation type="vanished">심각한 에러가 발생하여 클라이언트가 안전하게 실행될 수 없어 종료될 예정입니다. </translation>
     </message>
 </context>
@@ -3161,7 +3161,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>메시지</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
         <translation>지불 요청에 메시지를 추가할 수 있습니다. 지불 요청 확인 시 메시지 확인이 가능합니다. 주의: 메시지는 퀀텀 네트워크를 통해 전달되는 것은 아닙니다. </translation>
     </message>
     <message>
@@ -3560,7 +3560,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>거래 수수료 설정 숨기기</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for eqpay transactions than the network can process.</source>
         <translation type="vanished">거래량이 블록 공간보다 작을 경우, 마이너, 노드는 최소 수수료 제한을 실행합니다. 최소 수수료로 지불할 수도 있지만 거래량이 퀀텀 네트워크의 처리 한도를 넘어선다면 해당 거래는 장시간 동안 승인을 받지 못할 수 있습니다. </translation>
     </message>
     <message>
@@ -3730,8 +3730,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>경고: 무효한 QTUM 주소</translation>
+        <source>Warning: Invalid EqPay address</source>
+        <translation>경고: 무효한 EQPAY 주소</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3762,7 +3762,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">수수료를 1,000 사토시로 지정했지만 거래가 250 바이트일 경우, &apos;kB 당 수수료&apos; 기준으로 볼 때 250 사토시이지만, &apos;최소 수수료&apos; 기준으로 계산한다면 1,000 사토시를 지불해야 합니다. 1kB 보다 큰 거래는 kB를 기준으로 계산합니다.  </translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for eqpay transactions than the network can process.</source>
         <translation type="unfinished">거래량이 블록 공간보다 작을 경우, 마이너, 노드는 최소 수수료 제한을 실행합니다. 최소 수수료로 지불할 수도 있지만 거래량이 퀀텀 네트워크의 처리 한도를 넘어선다면 해당 거래는 장시간 동안 승인을 받지 못할 수 있습니다. </translation>
     </message>
 </context>
@@ -3785,7 +3785,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>이전에 사용했던 주소 선택</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
+        <source>The EqPay address to send the payment to</source>
         <translation>지불 목적 주소</translation>
     </message>
     <message>
@@ -3805,7 +3805,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>해당 항목 제거</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less eqpays than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>거래 수수료가 송금 총액에서 차감됩니다. 받는이가 받을 금액은 입력하신 금액보다 적을 예정이고 여러 명이 받는다면 수수료는 균등하게 차감될 예정입니다. </translation>
     </message>
     <message>
@@ -3833,7 +3833,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>해당 주소에 라벨을 추가하여 사용했던 리스트에 추가해주세요. </translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
         <translation>퀀텀 URI에 첨부된 메시지는 참조를 위해 거래와 함께 저장됩니다. 주의: 메시지는 퀀텀 네트워크를 통해 전달되는 것은 아닙니다. </translation>
     </message>
     <message>
@@ -3920,11 +3920,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">자금과 데이터를 받을 컨트랙트 주소</translation>
     </message>
     <message>
-        <source>The amount in QTUM to send. Default = 0.</source>
-        <translation type="unfinished">보낼 QTUM 개수. 디폴트는 0</translation>
+        <source>The amount in EQPAY to send. Default = 0.</source>
+        <translation type="unfinished">보낼 EQPAY 개수. 디폴트는 0</translation>
     </message>
     <message>
-        <source>The qtum address that will be used as sender.</source>
+        <source>The eqpay address that will be used as sender.</source>
         <translation type="unfinished">보낸 주소로 사용될 퀀텀 주소</translation>
     </message>
     <message>
@@ -3960,8 +3960,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">가스 상한액. 디폴트 = %1, 최고 = %2.</translation>
     </message>
     <message>
-        <source>Gas price: QTUM price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 QTUM 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <source>Gas price: EQPAY price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 EQPAY 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
 </context>
 <context>
@@ -4019,8 +4019,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">가스 상한액. 디폴트 = %1, 최고 = %2.</translation>
     </message>
     <message>
-        <source>Gas price: QTUM price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 QTUM 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <source>Gas price: EQPAY price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 EQPAY 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
     <message>
         <source>Are you sure you want to send? &lt;br /&gt;&lt;br /&gt;</source>
@@ -4065,11 +4065,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>메시지 서명</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>소유하고 계신 주소로 메시지/협의에 대해 서명하여 해당 주소를 통해 QTUM을 받을 수 있음을 증명할 수 있습니다. 피싱 공격을 예방하기 위해 명확하지 않은 내용 또는 랜덤 메시지에 대한 서명은 삼가 하시고 메시지에 대해 충분히 동의할 경우에만 서명하세요. </translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive eqpays sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>소유하고 계신 주소로 메시지/협의에 대해 서명하여 해당 주소를 통해 EQPAY을 받을 수 있음을 증명할 수 있습니다. 피싱 공격을 예방하기 위해 명확하지 않은 내용 또는 랜덤 메시지에 대한 서명은 삼가 하시고 메시지에 대해 충분히 동의할 경우에만 서명하세요. </translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
+        <source>The EqPay address to sign the message with</source>
         <translation>메시지 서명에 사용된 퀀텀 주소</translation>
     </message>
     <message>
@@ -4101,7 +4101,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>시스템 클립보드에 해당 서명 복사</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
+        <source>Sign the message to prove you own this EqPay address</source>
         <translation>메시지 서명을 통해 퀀텀 주소의 소유권을 증명하세요</translation>
     </message>
     <message>
@@ -4125,11 +4125,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>받는이의 주소와 메시지 (띄어쓰기, 빈칸, 부호 등이 정확한지 확인해주세요)를 입력하고 서명하여 아래 메시지를 검증하세요. 미들맨의 공격을 예방하기 위해 서명된 메시지 외에는 읽지 않을 것을 권장 드립니다. 받는이가 서명한 주소라는 것만 증명할 수 있고 그 외에 어떤 거래도 증명할 수 없다는 것을 유의해주시길 바랍니다. </translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
+        <source>The EqPay address the message was signed with</source>
         <translation>메시지 서명에 사용된 퀀텀 주소</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
+        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
         <translation>메시지 검증을 통해 지정된 퀀텀 주소를 통해 서명한 것을 확인하세요. </translation>
     </message>
     <message>
@@ -4223,8 +4223,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">스테이킹</translation>
     </message>
     <message>
-        <source>0.000 000 00 QTUM</source>
-        <translation type="unfinished">0.000 000 00 QTUM</translation>
+        <source>0.000 000 00 EQPAY</source>
+        <translation type="unfinished">0.000 000 00 EQPAY</translation>
     </message>
     <message>
         <source>Staking</source>
@@ -4243,8 +4243,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">블록 보상</translation>
     </message>
     <message>
-        <source>4 QTUM/Block</source>
-        <translation type="unfinished">4 QTUM / 블록</translation>
+        <source>4 EQPAY/Block</source>
+        <translation type="unfinished">4 EQPAY / 블록</translation>
     </message>
     <message>
         <source>Network weight:</source>
@@ -5163,8 +5163,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation type="unfinished">Qtum Core</translation>
+        <source>EqPay Core</source>
+        <translation type="unfinished">EqPay Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -5694,7 +5694,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>eqpay-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="vanished">MIT 소프트웨어 라이센스를 통해 배포합니다. 첨부된 %s 파일 또는 %s 를 확인하세요. </translation>
@@ -5720,8 +5720,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="vanished">HTTP 서비스를 활성화하지 못했습니다. 디버그 로그에서 더 많은 정보를 확인하세요. </translation>
     </message>
     <message>
-        <source>Qtum Core</source>
-        <translation type="vanished">Qtum Core</translation>
+        <source>EqPay Core</source>
+        <translation type="vanished">EqPay Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

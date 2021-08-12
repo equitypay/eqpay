@@ -12,7 +12,7 @@ from test_framework.util import (
     disconnect_nodes,
     find_output,
 )
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD
+from test_framework.eqpayconfig import INITIAL_BLOCK_REWARD
 
 
 class TxnMallTest(BitcoinTestFramework):

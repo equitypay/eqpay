@@ -40,7 +40,7 @@
 #include <pos.h>
 #include <txdb.h>
 #include <util/convert.h>
-#include <qtum/qtumdelegation.h>
+#include <eqpay/eqpaydelegation.h>
 #include <util/tokenstr.h>
 #include <rpc/contract_util.h>
 
@@ -209,12 +209,12 @@ UniValue blockheaderToJSON(const CBlockIndex* tip, const CBlockIndex* blockindex
     result.pushKV("difficulty", GetDifficulty(blockindex));
     result.pushKV("chainwork", blockindex->nChainWork.GetHex());
     result.pushKV("nTx", (uint64_t)blockindex->nTx);
-    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // eqpay
+    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // eqpay
 
     if(blockindex->IsProofOfStake()){
-        result.pushKV("prevoutStakeHash", blockindex->prevoutStake.hash.GetHex()); // qtum
-        result.pushKV("prevoutStakeVoutN", (int64_t)blockindex->prevoutStake.n); // qtum
+        result.pushKV("prevoutStakeHash", blockindex->prevoutStake.hash.GetHex()); // eqpay
+        result.pushKV("prevoutStakeVoutN", (int64_t)blockindex->prevoutStake.n); // eqpay
     }
 
     if (blockindex->pprev)
@@ -246,12 +246,12 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* tip, const CBlockIn
     result.pushKV("version", block.nVersion);
     result.pushKV("versionHex", strprintf("%08x", block.nVersion));
     result.pushKV("merkleroot", block.hashMerkleRoot.GetHex());
-    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // eqpay
+    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // eqpay
 
     if(blockindex->IsProofOfStake()){
-        result.pushKV("prevoutStakeHash", blockindex->prevoutStake.hash.GetHex()); // qtum
-        result.pushKV("prevoutStakeVoutN", (int64_t)blockindex->prevoutStake.n); // qtum
+        result.pushKV("prevoutStakeHash", blockindex->prevoutStake.hash.GetHex()); // eqpay
+        result.pushKV("prevoutStakeVoutN", (int64_t)blockindex->prevoutStake.n); // eqpay
     }
 
     UniValue txs(UniValue::VARR);
@@ -524,7 +524,7 @@ static UniValue getdifficulty(const JSONRPCRequest& request)
 
 static std::vector<RPCResult> MempoolEntryDescription() { return {
     RPCResult{RPCResult::Type::NUM, "vsize", "virtual transaction size as defined in BIP 141. This is different from actual serialized size for witness transactions as witness data is discounted."},
-    RPCResult{RPCResult::Type::NUM, "size", "(DEPRECATED) same as vsize. Only returned if qtumd is started with -deprecatedrpc=size\n"
+    RPCResult{RPCResult::Type::NUM, "size", "(DEPRECATED) same as vsize. Only returned if eqpayd is started with -deprecatedrpc=size\n"
                                             "size will be completely removed in v0.20."},
     RPCResult{RPCResult::Type::NUM, "weight", "transaction weight as defined in BIP 141."},
     RPCResult{RPCResult::Type::STR_AMOUNT, "fee", "transaction fee in " + CURRENCY_UNIT + " (DEPRECATED)"},
@@ -1183,7 +1183,7 @@ static UniValue getblock(const JSONRPCRequest& request)
     return blockToJSON(block, tip, pblockindex, verbosity >= 2);
 }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // eqpay
 UniValue callcontract(const JSONRPCRequest& request)
 {
             RPCHelpMan{"callcontract",
@@ -1543,7 +1543,7 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
             RPCHelpMan{"getdelegationinfoforaddress",
                 "\nGet delegation information for an address.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address string"},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The eqpay address string"},
                 },
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
@@ -1576,13 +1576,13 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
     }
 
     // Get delegation for an address
-    QtumDelegation qtumDelegation;
+    EqPayDelegation eqpayDelegation;
     Delegation delegation;
     uint160 address = uint160(*pkhash);
-    if(!qtumDelegation.GetDelegation(address, delegation)) {
+    if(!eqpayDelegation.GetDelegation(address, delegation)) {
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Failed to get delegation");
     }
-    bool verified = qtumDelegation.VerifyDelegation(address, delegation);
+    bool verified = eqpayDelegation.VerifyDelegation(address, delegation);
 
     // Fill the json object with information
     UniValue result(UniValue::VOBJ);
@@ -1636,7 +1636,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
                 "requires -logevents to be enabled\n"
                 "\nGet the current list of delegates for a super staker.\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address string for staker"},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The eqpay address string for staker"},
                 },
                RPCResult{
             RPCResult::Type::ARR, "", "",
@@ -1676,14 +1676,14 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
     }
 
     // Get delegations for staker
-    QtumDelegation qtumDelegation;
+    EqPayDelegation eqpayDelegation;
     std::vector<DelegationEvent> events;
     uint160 address = uint160(*pkhash);
     DelegationsStakerFilter filter(address);
-    if(!qtumDelegation.FilterDelegationEvents(events, filter)) {
+    if(!eqpayDelegation.FilterDelegationEvents(events, filter)) {
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Failed to get delegations for staker");
     }
-    std::map<uint160, Delegation> delegations = qtumDelegation.DelegationsFromEvents(events);
+    std::map<uint160, Delegation> delegations = eqpayDelegation.DelegationsFromEvents(events);
 
     // Get chain parameters
     std::map<COutPoint, uint32_t> immatureStakes = GetImmatureStakes();
@@ -1885,8 +1885,8 @@ UniValue gettxout(const JSONRPCRequest& request)
                                 {RPCResult::Type::STR_HEX, "hex", ""},
                                 {RPCResult::Type::NUM, "reqSigs", "Number of required signatures"},
                                 {RPCResult::Type::STR_HEX, "type", "The type, eg pubkeyhash"},
-                                {RPCResult::Type::ARR, "addresses", "array of qtum addresses",
-                                    {{RPCResult::Type::STR, "address", "qtum address"}}},
+                                {RPCResult::Type::ARR, "addresses", "array of eqpay addresses",
+                                    {{RPCResult::Type::STR, "address", "eqpay address"}}},
                             }},
                         {RPCResult::Type::BOOL, "coinbase", "Coinbase or not"},
                     }},
@@ -3324,7 +3324,7 @@ static UniValue qrc20balanceof(const JSONRPCRequest& request)
                 "\nReturns the token balance for address\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address"},
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO,  "The qtum address to check token balance"},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO,  "The eqpay address to check token balance"},
                 },
                 RPCResult{
                     RPCResult::Type::STR, "balance", "The token balance of the chosen address"},
@@ -3364,8 +3364,8 @@ static UniValue qrc20allowance(const JSONRPCRequest& request)
                 "\nReturns remaining tokens allowed to spend for an address\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address"},
-                    {"addressFrom", RPCArg::Type::STR, RPCArg::Optional::NO,  "The qtum address of the account owning tokens"},
-                    {"addressTo", RPCArg::Type::STR, RPCArg::Optional::NO,  "The qtum address of the account able to transfer the tokens"},
+                    {"addressFrom", RPCArg::Type::STR, RPCArg::Optional::NO,  "The eqpay address of the account owning tokens"},
+                    {"addressTo", RPCArg::Type::STR, RPCArg::Optional::NO,  "The eqpay address of the account able to transfer the tokens"},
                 },
                 RPCResult{
                     RPCResult::Type::STR, "allowance", "Amount of remaining tokens allowed to spent"},
@@ -3404,7 +3404,7 @@ static UniValue qrc20listtransactions(const JSONRPCRequest& request)
                 "\nReturns transactions history for a specific address.\n",
                 {
                     {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address."},
-                    {"addresss", RPCArg::Type::STR, RPCArg::Optional::NO,  "The qtum address to get history for."},
+                    {"addresss", RPCArg::Type::STR, RPCArg::Optional::NO,  "The eqpay address to get history for."},
                     {"fromBlock", RPCArg::Type::NUM, /* default */ "0", "The number of the earliest block."},
                     {"minconf", RPCArg::Type::NUM, /* default */ "6", "Minimal number of confirmations."},
                 },
@@ -3413,8 +3413,8 @@ static UniValue qrc20listtransactions(const JSONRPCRequest& request)
                 {
                     {RPCResult::Type::OBJ, "", "",
                         {
-                            {RPCResult::Type::STR, "receiver", "The receiver qtum address"},
-                            {RPCResult::Type::STR, "sender", "The sender qtum address"},
+                            {RPCResult::Type::STR, "receiver", "The receiver eqpay address"},
+                            {RPCResult::Type::STR, "sender", "The sender eqpay address"},
                             {RPCResult::Type::STR_AMOUNT, "amount", "The transferred token amount"},
                             {RPCResult::Type::NUM, "confirmations", "The number of confirmations of the most recent transaction included"},
                             {RPCResult::Type::STR_HEX, "blockHash", "The block hash"},

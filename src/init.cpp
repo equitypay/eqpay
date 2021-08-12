@@ -109,7 +109,7 @@ static const char* DEFAULT_ASMAP_FILENAME="ip_asn.map";
 /**
  * The PID file facilities.
  */
-static const char* BITCOIN_PID_FILENAME = "qtumd.pid";
+static const char* BITCOIN_PID_FILENAME = "eqpayd.pid";
 
 static fs::path GetPidFile()
 {
@@ -189,7 +189,7 @@ void Shutdown(NodeContext& node)
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    util::ThreadRename("qtum-shutoff");
+    util::ThreadRename("eqpay-shutoff");
 
 #ifdef ENABLE_WALLET
     // Force stop the stakers before any other components
@@ -632,7 +632,7 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/qtumproject/qtum>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/eqpayproject/eqpay>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i").translated, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -740,7 +740,7 @@ void DeleteBlockChainData()
     // Delete block chain data paths
     fs::remove_all(GetDataDir() / "chainstate");
     fs::remove_all(GetBlocksDir());
-    fs::remove_all(GetDataDir() / "stateQtum");
+    fs::remove_all(GetDataDir() / "stateEqPay");
     fs::remove(GetDataDir() / "banlist.dat");
     fs::remove(GetDataDir() / FEE_ESTIMATES_FILENAME);
     fs::remove(GetDataDir() / "mempool.dat");
@@ -1463,7 +1463,7 @@ bool AppInitMain(NodeContext& node)
                 LogInstance().m_file_path.string()));
     }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // eqpay
     dev::g_logPost(std::string("\n\n\n\n\n\n\n\n\n\n"), NULL);
 //////////////////////////////////////////////////////////////////////
 
@@ -1879,7 +1879,7 @@ bool AppInitMain(NodeContext& node)
                 break;
             }
 
-                /////////////////////////////////////////////////////////// qtum
+                /////////////////////////////////////////////////////////// eqpay
                 if((gArgs.IsArgSet("-dgpstorage") && gArgs.IsArgSet("-dgpevm")) || (!gArgs.IsArgSet("-dgpstorage") && gArgs.IsArgSet("-dgpevm")) ||
                   (!gArgs.IsArgSet("-dgpstorage") && !gArgs.IsArgSet("-dgpevm"))){
                     fGettingValuesDGP = true;
@@ -1888,16 +1888,16 @@ bool AppInitMain(NodeContext& node)
                 }
 
                 dev::eth::NoProof::init();
-                fs::path qtumStateDir = GetDataDir() / "stateQtum";
-                bool fStatus = fs::exists(qtumStateDir);
-                const std::string dirQtum(qtumStateDir.string());
+                fs::path eqpayStateDir = GetDataDir() / "stateEqPay";
+                bool fStatus = fs::exists(eqpayStateDir);
+                const std::string dirEqPay(eqpayStateDir.string());
                 const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-                dev::eth::BaseState existsQtumstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
-                globalState = std::unique_ptr<QtumState>(new QtumState(dev::u256(0), QtumState::openDB(dirQtum, hashDB, dev::WithExisting::Trust), dirQtum, existsQtumstate));
+                dev::eth::BaseState existsEqPaystate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
+                globalState = std::unique_ptr<EqPayState>(new EqPayState(dev::u256(0), EqPayState::openDB(dirEqPay, hashDB, dev::WithExisting::Trust), dirEqPay, existsEqPaystate));
                 dev::eth::ChainParams cp(chainparams.EVMGenesisInfo());
                 globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
-                pstorageresult.reset(new StorageResults(qtumStateDir.string()));
+                pstorageresult.reset(new StorageResults(eqpayStateDir.string()));
                 if (fReset) {
                     pstorageresult->wipeResults();
                 }
@@ -1917,7 +1917,7 @@ bool AppInitMain(NodeContext& node)
                 fIsVMlogFile = fs::exists(GetDataDir() / "vmExecLogs.json");
                 ///////////////////////////////////////////////////////////
 
-                /////////////////////////////////////////////////////////////// // qtum
+                /////////////////////////////////////////////////////////////// // eqpay
                 if (fAddressIndex != gArgs.GetBoolArg("-addrindex", DEFAULT_ADDRINDEX)) {
                     strLoadError = _("You need to rebuild the database using -reindex to change -addrindex").translated;
                     break;
@@ -1951,8 +1951,8 @@ bool AppInitMain(NodeContext& node)
             try {
                 LOCK(cs_main);
 
-                QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-                globalSealEngine->setQtumSchedule(qtumDGP.getGasSchedule(::ChainActive().Height() + (::ChainActive().Height()+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
+                EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+                globalSealEngine->setEqPaySchedule(eqpayDGP.getGasSchedule(::ChainActive().Height() + (::ChainActive().Height()+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
 
                 if (!is_coinsview_empty) {
                     uiInterface.InitMessage(_("Verifying blocks...").translated);

@@ -7,7 +7,7 @@
 Test that the DERSIG soft-fork activates at (regtest) height 1251.
 """
 
-# QTUM note: this test always runs without the reduceblocktime fork activated to allow testing pre bip66
+# EQPAY note: this test always runs without the reduceblocktime fork activated to allow testing pre bip66
 
 from test_framework.blocktools import create_coinbase, create_block, create_transaction
 from test_framework.messages import msg_block

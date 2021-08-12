@@ -193,7 +193,7 @@ public:
 
     /// Execute @a _txCount transactions of a given block.
     /// This will change the state accordingly.
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
     void executeBlockTransactions(Block const& _block, unsigned _txCount, LastBlockHashesFace const& _lastHashes, SealEngineFace const& _sealEngine);
 #endif
 
@@ -213,7 +213,7 @@ public:
 
     /// Add some amount to balance.
     /// Will initialise the address if it has never been used.
-    virtual void addBalance(Address const& _id, u256 const& _amount); // qtum
+    virtual void addBalance(Address const& _id, u256 const& _amount); // eqpay
 
     /// Subtract the @p _value amount from the balance of @p _addr account.
     /// @throws NotEnoughCash if the balance of the account is less than the
@@ -366,7 +366,7 @@ protected:
 
 std::ostream& operator<<(std::ostream& _out, State const& _s);
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 State& createIntermediateState(State& o_s, Block const& _block, unsigned _txIndex, BlockChain const& _bc);
 #endif
 

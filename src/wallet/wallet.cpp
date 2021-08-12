@@ -5709,15 +5709,15 @@ bool CWallet::RemoveSuperStakerEntry(const uint256& superStakerHash, bool fFlush
     return true;
 }
 
-void CWallet::StakeQtums(bool fStake, CConnman* connman)
+void CWallet::StakeEqPays(bool fStake, CConnman* connman)
 {
-    ::StakeQtums(fStake, this, connman, stakeThread);
+    ::StakeEqPays(fStake, this, connman, stakeThread);
 }
 
 void CWallet::StartStake(CConnman *connman)
 {
     m_enabled_staking = true;
-    StakeQtums(true, connman);
+    StakeEqPays(true, connman);
 }
 
 void CWallet::StopStake()
@@ -5731,7 +5731,7 @@ void CWallet::StopStake()
     {
         m_stop_staking_thread = true;
         m_enabled_staking = false;
-        StakeQtums(false, 0);
+        StakeEqPays(false, 0);
         stakeThread = 0;
         m_stop_staking_thread = false;
     }

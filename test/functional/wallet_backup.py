@@ -41,8 +41,8 @@ from test_framework.util import (
     assert_raises_rpc_error,
     connect_nodes,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
-from test_framework.qtum import generatesynchronized
+from test_framework.eqpayconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.eqpay import generatesynchronized
 
 class WalletBackupTest(BitcoinTestFramework):
     def set_test_params(self):

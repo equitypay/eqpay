@@ -1,5 +1,5 @@
 ---
-name: "qtum-core-linux-0.20"
+name: "eqpay-core-linux-0.20"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -38,18 +38,18 @@ packages:
 - "libmicrohttpd-dev"
 - "libminiupnpc-dev"
 remotes:
-- "url": "https://github.com/qtumproject/qtum.git"
-  "dir": "qtum"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
-  "dir": "cpp-eth-qtum"
+- "url": "https://github.com/eqpayproject/eqpay.git"
+  "dir": "eqpay"
+- "url": "https://github.com/eqpayproject/cpp-eth-eqpay.git"
+  "dir": "cpp-eth-eqpay"
 files: []
 script: |
   set -e -o pipefail
 
   #this is a hack since gitian has no natural support for submodules
   #make sure this file exists... 
-  cp -r cpp-eth-qtum/* qtum/src/cpp-ethereum
-  cat qtum/src/cpp-ethereum/utils/libscrypt/b64.c 
+  cp -r cpp-eth-eqpay/* eqpay/src/cpp-ethereum
+  cat eqpay/src/cpp-ethereum/utils/libscrypt/b64.c 
 
   WRAP_DIR=$HOME/wrapped
   HOSTS="x86_64-linux-gnu arm-linux-gnueabihf aarch64-linux-gnu riscv64-linux-gnu"
@@ -134,7 +134,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd qtum
+  cd eqpay
   BASEPREFIX="${PWD}/depends"
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -156,7 +156,7 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/$(echo "${HOSTS}" | awk '{print $1;}')/share/config.site ./configure --prefix=/
   make V=1 dist
-  SOURCEDIST=$(echo qtum-*.tar.gz)
+  SOURCEDIST=$(echo eqpay-*.tar.gz)
   DISTNAME=${SOURCEDIST/%.tar.gz}
 
   # Workaround for tarball not building with the bare tag version (prep)

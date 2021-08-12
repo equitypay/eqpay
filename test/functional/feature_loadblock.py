@@ -20,7 +20,7 @@ from test_framework.test_framework import (
     BitcoinTestFramework,
 )
 from test_framework.util import assert_equal, wait_until
-from test_framework.qtumconfig import COINBASE_MATURITY
+from test_framework.eqpayconfig import COINBASE_MATURITY
 
 class LoadblockTest(BitcoinTestFramework):
     def set_test_params(self):

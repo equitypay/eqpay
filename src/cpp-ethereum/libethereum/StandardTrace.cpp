@@ -22,7 +22,7 @@ bool changesStorage(Instruction _inst)
 void StandardTrace::operator()(uint64_t _steps, uint64_t PC, Instruction inst, bigint newMemSize,
     bigint gasCost, bigint gas, VMFace const* _vm, ExtVMFace const* voidExt)
 {
-#ifdef QTUM_BUILD
+#ifdef EQPAY_BUILD
     return;
 #else
     (void)_steps;

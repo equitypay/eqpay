@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Qtum-Qt</string>
+  <string>EqPay-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Qtum-Qt</string>
+  <string>EqPay-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.qtumproject.Qtum-Qt</string>
+  <string>org.eqpayproject.EqPay-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.qtum.QtumPayment</string>
+      <string>org.eqpay.EqPayPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>qtum</string>
+        <string>eqpay</string>
       </array>
     </dict>
   </array>

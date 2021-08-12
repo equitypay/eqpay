@@ -11,7 +11,7 @@ from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
-from test_framework.qtumconfig import *
+from test_framework.eqpayconfig import *
 import json
 import os
 

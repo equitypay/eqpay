@@ -19,7 +19,7 @@ from test_framework.util import (
     assert_raises_rpc_error,
     get_rpc_proxy,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.eqpayconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
 
 FEATURE_LATEST = 169900
 

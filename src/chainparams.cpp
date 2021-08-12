@@ -19,7 +19,7 @@
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>
 
-///////////////////////////////////////////// // qtum
+///////////////////////////////////////////// // eqpay
 #include <libdevcore/SHA3.h>
 #include <libdevcore/RLP.h>
 #include "arith_uint256.h"
@@ -77,8 +77,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
     genesis.hashPrevBlock.SetNull();
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
-    genesis.hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // qtum
-    genesis.hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // qtum
+    genesis.hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // eqpay
+    genesis.hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // eqpay
     return genesis;
 }
 
@@ -124,7 +124,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // qtum
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xc4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3"); // 888000
@@ -210,7 +210,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // qtum
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792");
@@ -462,7 +462,7 @@ std::string CChainParams::EVMGenesisInfo(int nHeight) const
 
 dev::eth::Network CChainParams::GetEVMNetwork() const
 {
-    return dev::eth::Network::qtumMainNetwork;
+    return dev::eth::Network::eqpayMainNetwork;
 }
 
 void CChainParams::UpdateBtcEcrecoverBlockHeight(int nHeight)

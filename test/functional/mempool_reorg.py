@@ -11,8 +11,8 @@ that spend (directly or indirectly) coinbase transactions.
 from test_framework.blocktools import create_raw_transaction
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
-from test_framework.qtumconfig import *
-from test_framework.qtum import generatesynchronized
+from test_framework.eqpayconfig import *
+from test_framework.eqpay import generatesynchronized
 
 class MempoolCoinbaseTest(BitcoinTestFramework):
     def set_test_params(self):

@@ -21,7 +21,7 @@ using namespace dev;
 
 namespace fs = boost::filesystem;
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 static_assert(BOOST_VERSION >= 106400, "Wrong boost headers version");
 #endif
 

@@ -208,7 +208,7 @@ bool CScript::IsPayToScriptHash() const
             (*this)[22] == OP_EQUAL);
 }
 
-///////////////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////////////// // eqpay
 bool CScript::IsPayToPubkey() const
 {
     if (this->size() == 35 && (*this)[0] == 33 && (*this)[34] == OP_CHECKSIG

@@ -46,11 +46,11 @@ bool BCLog::Logger::StartLogging()
 
     assert(m_buffering);
     assert(m_fileout == nullptr);
-    assert(m_fileoutVM == nullptr); // qtum
+    assert(m_fileoutVM == nullptr); // eqpay
 
     if (m_print_to_file) {
         assert(!m_file_path.empty());
-        assert(!m_file_pathVM.empty()); // qtum
+        assert(!m_file_pathVM.empty()); // eqpay
         m_fileout = fsbridge::fopen(m_file_path, "a");
         m_fileoutVM = fsbridge::fopen(m_file_pathVM, "a");
         if (!m_fileout || !m_fileoutVM) {
@@ -69,7 +69,7 @@ bool BCLog::Logger::StartLogging()
         m_buffering = false;
     }
 
-    ///////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////// // eqpay
     if (m_fileoutVM) {
         m_buffering = false;
     }
@@ -312,7 +312,7 @@ void BCLog::Logger::LogPrintStr(const std::string& str, bool useVMLog)
         cb(str_prefixed);
     }
     if (m_print_to_file) {
-        //////////////////////////////// // qtum
+        //////////////////////////////// // eqpay
         FILE* file = m_fileout;
         if(useVMLog){
             file = m_fileoutVM;

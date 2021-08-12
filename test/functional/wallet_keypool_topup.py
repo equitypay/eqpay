@@ -18,7 +18,7 @@ from test_framework.util import (
     assert_equal,
     connect_nodes,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY
+from test_framework.eqpayconfig import COINBASE_MATURITY
 
 
 class KeypoolRestoreTest(BitcoinTestFramework):

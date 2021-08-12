@@ -7,7 +7,7 @@
 from test_framework.blocktools import create_raw_transaction
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal
-from test_framework.qtumconfig import *
+from test_framework.eqpayconfig import *
 
 
 class MempoolCoinbaseTest(BitcoinTestFramework):

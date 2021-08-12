@@ -28,8 +28,8 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
-    uint256 hashStateRoot; // qtum
-    uint256 hashUTXORoot; // qtum
+    uint256 hashStateRoot; // eqpay
+    uint256 hashUTXORoot; // eqpay
     // proof-of-stake specific fields
     COutPoint prevoutStake;
     std::vector<unsigned char> vchBlockSigDlgt; // The delegate is 65 bytes or 0 bytes, it can be added in the signature paramether at the end to avoid compatibility problems
@@ -48,8 +48,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        READWRITE(hashStateRoot); // qtum
-        READWRITE(hashUTXORoot); // qtum
+        READWRITE(hashStateRoot); // eqpay
+        READWRITE(hashUTXORoot); // eqpay
         READWRITE(prevoutStake);
         READWRITE(vchBlockSigDlgt);
     }
@@ -62,8 +62,8 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
-        hashStateRoot.SetNull(); // qtum
-        hashUTXORoot.SetNull(); // qtum
+        hashStateRoot.SetNull(); // eqpay
+        hashUTXORoot.SetNull(); // eqpay
         vchBlockSigDlgt.clear();
         prevoutStake.SetNull();
     }
@@ -85,7 +85,7 @@ public:
     }
     
     // ppcoin: two types of block: proof-of-work or proof-of-stake
-    virtual bool IsProofOfStake() const //qtum
+    virtual bool IsProofOfStake() const //eqpay
     {
         return !prevoutStake.IsNull();
     }
@@ -113,7 +113,7 @@ public:
 
     bool HasProofOfDelegation() const;
 
-    CBlockHeaderUncached& operator=(const CBlockHeaderUncached& other) //qtum
+    CBlockHeaderUncached& operator=(const CBlockHeaderUncached& other) //eqpay
     {
         if (this != &other)
         {
@@ -196,7 +196,7 @@ public:
         fChecked = false;
     }
 
-    std::pair<COutPoint, unsigned int> GetProofOfStake() const //qtum
+    std::pair<COutPoint, unsigned int> GetProofOfStake() const //eqpay
     {
         return IsProofOfStake()? std::make_pair(prevoutStake, nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
@@ -210,8 +210,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
-        block.hashStateRoot  = hashStateRoot; // qtum
-        block.hashUTXORoot   = hashUTXORoot; // qtum
+        block.hashStateRoot  = hashStateRoot; // eqpay
+        block.hashUTXORoot   = hashUTXORoot; // eqpay
         block.vchBlockSigDlgt    = vchBlockSigDlgt;
         block.prevoutStake   = prevoutStake;
         return block;

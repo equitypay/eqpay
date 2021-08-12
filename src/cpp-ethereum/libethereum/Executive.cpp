@@ -4,7 +4,7 @@
 
 #include "Executive.h"
 #include "Block.h"
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 #include "BlockChain.h"
 #endif
 #include "ExtVM.h"
@@ -46,7 +46,7 @@ std::string dumpStorage(ExtVM const& _ext)
 };
 }  // namespace
 
-#ifndef QTUM_BUILD
+#ifndef EQPAY_BUILD
 Executive::Executive(Block& _s, BlockChain const& _bc, unsigned _level)
   : m_s(_s.mutableState()),
     m_envInfo(_s.info(), _bc.lastBlockHashes(), 0, _bc.chainID()),
@@ -225,7 +225,7 @@ bool Executive::call(CallParameters const& _p, u256 const& _gasPrice, Address co
         }
     }
 
-    //////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////// // eqpay
     if(!m_s.addressInUse(_p.receiveAddress))
         m_sealEngine.deleteAddresses.insert(_p.receiveAddress);
     ////////////////////////////////////////////////
