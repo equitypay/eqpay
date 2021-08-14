@@ -2352,7 +2352,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
 </context>
 <context>
-    <name>QRCToken</name>
+    <name>EQRCToken</name>
     <message>
         <source>Form</source>
         <translation type="unfinished">表单</translation>

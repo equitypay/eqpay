@@ -17,16 +17,16 @@ class PlatformStyle;
 class QMenu;
 
 namespace Ui {
-class QRCToken;
+class EQRCToken;
 }
 
-class QRCToken : public QWidget
+class EQRCToken : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit QRCToken(const PlatformStyle *platformStyle, QWidget *parent = 0);
-    ~QRCToken();
+    explicit EQRCToken(const PlatformStyle *platformStyle, QWidget *parent = 0);
+    ~EQRCToken();
 
     void setModel(WalletModel *_model);
     void setClientModel(ClientModel *clientModel);
@@ -52,7 +52,7 @@ public Q_SLOTS:
     void on_addToken();
 
 private:
-    Ui::QRCToken *ui;
+    Ui::EQRCToken *ui;
     SendTokenPage* m_sendTokenPage;
     ReceiveTokenPage* m_receiveTokenPage;
     AddTokenPage* m_addTokenPage;

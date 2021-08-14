@@ -74,7 +74,7 @@ namespace GUIUtil
     /** Copy a field of the currently selected entry of a view to the clipboard. Does nothing if nothing
         is selected.
        @param[in] role    Data role to extract from the model
-       @see  QRCToken::copyTokenAddress
+       @see  EQRCToken::copyTokenAddress
      */
     void copyEntryDataFromList(QAbstractItemView *view, int role=Qt::EditRole);
 
