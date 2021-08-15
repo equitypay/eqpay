@@ -20,8 +20,8 @@ static const int MarginTop = 0;
 static const int MarginBottom = 8;
 static const int ButtonSpacing = 2;
 static const int SubNavPaddingRight = 40;
-static const int LogoHeight = 60;
-static const int LogoWidth = 90;
+static const int LogoHeight = 50;
+static const int LogoWidth = 150;
 }
 using namespace NavigationBar_NS;
 
@@ -222,7 +222,7 @@ void NavigationBar::buildUi()
             QHBoxLayout *hLayout = new QHBoxLayout();
             hLayout->setContentsMargins(0,0,0,10);
             QLabel *labelLogo = new QLabel(this);
-            labelLogo->setFixedSize(LogoHeight, LogoWidth);
+            labelLogo->setFixedSize(LogoWidth, LogoHeight);
             labelLogo->setObjectName("labelLogo");
             hLayout->addWidget(labelLogo);
             vboxLayout->addLayout(hLayout);

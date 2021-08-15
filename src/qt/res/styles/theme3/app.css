@@ -8,9 +8,8 @@ QWidget{
 Main Window CSS
 --------------------------------------------*/
 QMainWindow{
-    background-color: #4f9fde;
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.273, stop:0 rgba(36, 62, 130, 255), stop:1 rgba(22, 170, 214, 255));
     border: 0px solid transparent;
-    background-image: url(":/styles/theme3/app-icons/bg");
     background-position: bottom left;
     background-repeat: no-repeat;
 }
@@ -31,10 +30,10 @@ QMainWindow .QFrame#frameBalances,
 #frameRecentTransactions,
 #frameRequest,
 #frameFee{
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 QMainWindow .QFrame#frameContract{
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 QFrame#hLine,
 #hLine2,
@@ -45,20 +44,20 @@ QFrame#hLine,
 QFrame#hContractLine,
 #hContractLine2,
 #OverviewPage #hLine{
-    border-top: 4px solid #e4ebf5;
+    border-top: 4px solid #f5f7fa;
 }
 QFrame#vLine,
 #vLine2{
     border-left: 1px solid transparent;
 }
 WalletFrame{
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 QDialog{
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 QLabel{
-    color: #6b80af;
+    color: #245380;
 }
 QLabel::disabled{
     color: rgba(107, 128, 175, 20%);
@@ -70,26 +69,23 @@ QLabel#labelGeneral,
     color: #049ee8;
 }
 .QWidget#widget_header{
-    background-color: #e4ebf5;
+    background-color: #f5f7fa;
 }
 QLabel#overriddenByCommandLineLabel{
-    color: #6b80af;
+    color: #245380;
 }
 NavigationBar #labelLogo{
     image:url(":/icons/logo");
 }
-NavigationBar #hLineLogo,
-NavigationBar #hLineStatus{
-    border-top: 1px solid #61a9e1;
-}
+
 /*-------------------------------------------- 
 Line Edit CSS
 --------------------------------------------*/
 QLineEdit{
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 2px;
     background-color: #ffffff;
-    color: #6b80af;
+    color: #245380;
     padding: 4px;
 }
 QLineEdit::hover:!read-only{
@@ -103,25 +99,25 @@ QLineEdit::disabled{
     color: rgba(107, 128, 175, 20%);
 }
 QAbstractItemView#autoCompleterPopup{
-    background-color: #e4ebf5;
+    background-color: #f5f7fa;
     border: none;
     padding: 4px;
 }
 QAbstractItemView#autoCompleterPopup::item{
-    background-color: #e4ebf5;
-    color: #6b80af;
+    background-color: #f5f7fa;
+    color: #245380;
     padding: 4px;
     padding-left: 10px;
 }
 QAbstractItemView#autoCompleterPopup::item:selected {
-    background-color: #6b80af;
+    background-color: #245380;
     color: #ffffff;
 }
 /*--------------------------------------------
 List Viev CSS
 --------------------------------------------*/
 QListView {
-    background-color: #f2f7fd;
+    background-color: #ffffff;
     border: none;
 }
 /*--------------------------------------------
@@ -129,9 +125,9 @@ Combo Box CSS
 --------------------------------------------*/
 QComboBox {
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 2px;
     background-color: #ffffff;
-    color: #6b80af;
+    color: #245380;
     padding: 4px;
     padding-left: 10px;
     padding-right: 8px;
@@ -153,18 +149,18 @@ QComboBox:down-arrow {
 }
 QComboBox QAbstractItemView::item {
     background-color: #d5dde9;
-    color: #6b80af;
+    color: #245380;
     padding: 4px;
     padding-left: 10px;
 }
 QComboBox QAbstractItemView::item:selected {
-    background-color: #6b80af;
+    background-color: #245380;
     color: #ffffff;
 }
 QComboBox QAbstractItemView{
     background-color: #d5dde9;
     border: none;
-    border-radius: 6px;
+    border-radius: 2px;
     padding: 6px 0px;
     margin-top: 5px;
     margin-bottom: 3px;
@@ -186,10 +182,10 @@ QGroupBox
 {
     border: 0px solid transparent; 
     margin-top: 20px;
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 QGroupBox::title {
-    color: #6b80af;
+    color: #245380;
     subcontrol-position: top left;
     left: -3px;
     padding: -40px 3px 0px 3px;
@@ -258,8 +254,8 @@ QAbstractSpinBox {
     background-position: right;
     background-repeat: no-repeat;
     border: 1px solid #d5dde9;
-    border-radius: 14px;
-    color: #6b80af;
+    border-radius: 2px;
+    color: #245380;
     padding-left: 12px;
 }
 QAbstractSpinBox:hover {
@@ -358,7 +354,7 @@ QScrollBar:vertical {
 QScrollBar::handle:vertical {
     border: none;
     background: #d5dde9;
-    border-radius: 4px;
+    border-radius: 2px;
     min-height: 45px;
 }
 QScrollBar::handle:vertical:disabled {
@@ -375,7 +371,7 @@ QTextEdit QScrollBar:vertical {
 QTextEdit QScrollBar::handle:vertical {
     border: none;
     background: #d5dde9;
-    border-radius: 5px;
+    border-radius: 2px;
     min-height: 30px;
 }
 QTextEdit QScrollBar::handle:vertical:disabled {
@@ -392,7 +388,7 @@ QPlainTextEdit QScrollBar:vertical {
 QPlainTextEdit QScrollBar::handle:vertical {
     border: none;
     background: #d5dde9;
-    border-radius: 5px;
+    border-radius: 2px;
     min-height: 30px;
 }
 QPlainTextEdit QScrollBar::handle:vertical:disabled {
@@ -409,7 +405,7 @@ QComboBox QScrollBar:vertical {
 QComboBox QScrollBar::handle:vertical {
     border: none;
     background: #ffffff;
-    border-radius: 5px;
+    border-radius: 2px;
     min-height: 30px;
 }
 QComboBox QScrollBar::handle:vertical:disabled {
@@ -445,7 +441,7 @@ QScrollBar:horizontal {
 QScrollBar::handle:horizontal {
     border: none;
     background: #d5dde9;
-    border-radius: 4px;
+    border-radius: 2px;
     min-width: 45px;
 }
 QScrollBar::handle:horizontal:disabled {
@@ -455,14 +451,14 @@ QScrollBar::handle:horizontal:disabled {
 Table View CSS
 --------------------------------------------*/
 QHeaderView{
-    color: #6b80af;
+    color: #245380;
     background-color: transparent;
     border: none;
 }
 QHeaderView:section{
     padding: 6px 20px 6px 6px;
     border: none;
-    background-color: #e4ebf5;
+    background-color: #f5f7fa;
 }
 QHeaderView::down-arrow {
     image: url(":/styles/theme2/app-icons/down_arrow");
@@ -479,7 +475,7 @@ QHeaderView::up-arrow {
     margin-bottom: 1px;
 }
 QTableView{
-    color: #6b80af;
+    color: #245380;
     background-color: #ffffff;
     border: none;
     font: normal;
@@ -516,7 +512,7 @@ QTextEdit CSS
 --------------------------------------------*/
 QTextEdit {
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 2px;
     background-color: #ffffff;
     color: #000000;
     padding-left: 5px;
@@ -536,7 +532,7 @@ QPlainTextEdit CSS
 --------------------------------------------*/
 QPlainTextEdit {
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 2px;
     background-color: #ffffff;
     color: #000000;
     padding-left: 5px;
@@ -555,12 +551,12 @@ QPlainTextEdit::disabled {
 Status Bar CSS
 --------------------------------------------*/
 QStatusBar{
-    background: #e4ebf5;
-    color: #6b80af;
+    background: #f5f7fa;
+    color: #245380;
 }
 QStatusBar QLabel{
     border: 1px solid transparent;
-    color: #6b80af;
+    color: #245380;
     font: 10pt;
 }
 QStatusBar::item {
@@ -574,24 +570,24 @@ UnitDisplayStatusBarControl {
     color: #ffffff; 
     background: transparent;
     border: 1px solid #73bdec;
-    border-radius: 12px;
+    border-radius: 2px;
     font: 16px;
     padding: 0px;
 }
 UnitDisplayStatusBarControl QMenu::item {
     background-color: #d5dde9;
-    color: #6b80af;
+    color: #245380;
     padding: 4px;
     padding-left: 10px;
 }
 UnitDisplayStatusBarControl QMenu::item:selected {
-    background-color: #6b80af;
+    background-color: #245380;
     color: #ffffff;
 }
 UnitDisplayStatusBarControl QMenu{
     background-color: #d5dde9;
     border: none;
-    border-radius: 6px;
+    border-radius: 2px;
     padding: 10px 0px;
     margin: 0px;
 }
@@ -599,7 +595,7 @@ UnitDisplayStatusBarControl QMenu{
 Progress Bar CSS
 --------------------------------------------*/
 QProgressBar {
-    background-color: #f2f7fd;
+    background-color: #ffffff;
     font: 10pt;
     color: #94ccf2;
     border-radius: 0px;
@@ -640,25 +636,25 @@ QTabBar::tab:disabled {
 QTabWidget::pane {
     border: none;
     border-top: none;
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 TitleBar QTabBar::tab {
     padding: 5px 0px;
 }
 #widgetTitle, #widgetWallet {
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 /*--------------------------------------------
 MenuBar CSS
 --------------------------------------------*/
 QMenuBar {
-    background: #e4ebf5;
+    background: #f5f7fa;
 }
 QMenuBar::item {
     background-color: transparent;
     padding: 5px 6px;
-    border-radius: 4px;
-    color: #6b80af;
+    border-radius: 2px;
+    color: #245380;
 }
 QMenuBar::item:selected {
     border: none;
@@ -677,10 +673,10 @@ QMenu::item {
     border: none;
     padding: 5px 32px;
     background-color: #d5dde9;
-    color: #6b80af;
+    color: #245380;
 }
 QMenu::item:selected {
-    background-color: #6b80af;
+    background-color: #245380;
     color:#ffffff;
 }
 QMenu::separator{
@@ -697,11 +693,11 @@ QMenu::item:disabled {
 Check Box CSS
 --------------------------------------------*/
 QCheckBox{
-    color: #6b80af;
+    color: #245380;
     outline-style: none;
 }
 QCheckBox:hover, QCheckBox:checked {
-    color: #6b80af;
+    color: #245380;
 }
 QCheckBox:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -741,11 +737,11 @@ QCheckBox:indicator:indeterminate:disabled {
 Radio Button CSS
 --------------------------------------------*/
 QRadioButton{
-    color: #6b80af;
+    color: #245380;
     outline-style: none;
 }
 QRadioButton:hover, QRadioButton:checked {
-    color: #6b80af;
+    color: #245380;
 }
 QRadioButton:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -783,7 +779,7 @@ QWidget#buttonsContainerWhite,
     background: #ffffff;
 }
 QWidget#ReceiveRequestDialog {
-    background: #f2f7fd;
+    background: #ffffff;
 }
 QTextEdit#outUri {
     border: none;
@@ -821,7 +817,7 @@ QPushButton {
     color: #26a1e3; 
     background: transparent;
     border: 1px solid #d5dde9;
-    border-radius: 14px;
+    border-radius: 2px;
     min-width: 5em;
     padding: 6px;
     margin: 0px;
@@ -846,7 +842,7 @@ QScrollArea {
     border:none;
 }
 QWidget#scrollAreaWidgetContents, QWidget#detailWidget {
-    background: #f2f7fd;
+    background: #ffffff;
 }
 .ABIFunctionField{
 	background: transparent;
@@ -855,13 +851,13 @@ QWidget#scrollAreaWidgetContents, QWidget#detailWidget {
 Debug Dialog CSS
 --------------------------------------------*/
 QWidget#RPCConsole{
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 /*--------------------------------------------
 Shut Down Window CSS
 --------------------------------------------*/
 QWidget#shutdownWindow{
-    background-color: #f2f7fd;
+    background-color: #ffffff;
 }
 /*--------------------------------------------
 Tool Button CSS
@@ -923,7 +919,7 @@ QCalendarWidget QAbstractItemView
 {
     background-color: #373535;
     alternate-background-color: #2E2C2C;
-    color: #6b80af;
+    color: #245380;
     padding-bottom:-1px;
 }
 QCalendarWidget QAbstractItemView:disabled {
@@ -937,15 +933,15 @@ Modal Overlay CSS
     border: none;
     font: 1pt;
     color: transparent;
-    border-radius: 4px;
+    border-radius: 2px;
     height: 9px;
 }
 #ModalOverlay QProgressBar::chunk {
     background-color: #26a1e3;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 #ModalOverlay QLabel { 
-    color: #6b80af;  
+    color: #245380;  
 }
 #ModalOverlay #labelNumberOfBlocksLeft, 
 #ModalOverlay #labelLastBlockTime, 
@@ -958,8 +954,8 @@ Modal Overlay CSS
     font: 20pt;
 }
 #contentWidget{
-    background: #e4ebf5;
-    border-radius: 14px;
+    background: #f5f7fa;
+    border-radius: 2px;
 }
 #contentWidget #buttonsContainerWhite{
     border-bottom-right-radius: 12px;
@@ -1002,7 +998,7 @@ Stake Page Widget CSS
     background-color: #ffffff;
     border: 1px dotted #b5bfd7;
     color: #b5bfd7;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 #frameStakeInfo #labelAssets{
     color: #000000;
@@ -1013,10 +1009,10 @@ Stake Page Widget CSS
 #frameStakeInfo #labelReward,
 #frameStakeInfo #labelROI,
 #frameStakeInfo #labelStaking{
-    color: #6b80af;
+    color: #245380;
 }
 #frameStakeInfo #hLine{
-    border-top: 1px solid #e4ebf5;
+    border-top: 1px solid #f5f7fa;
 }
 /*--------------------------------------------
 Overview Page Widget CSS
@@ -1047,7 +1043,7 @@ Overview Page Widget CSS
 #widgetRecent #showMoreButton{
     min-width: 3em;
     padding: 1px;
-    border-radius: 8px;
+    border-radius: 2px;
     min-height: 16px;
     font: 8pt;
 }
@@ -1055,8 +1051,8 @@ Overview Page Widget CSS
 #widgetTransaction #buttonReceive{
     padding: 6px;
     min-width: 8em;
-    border-radius: 18px;
-    border: 1px solid #4f9fde;
+    border-radius: 2px;
+    border: 1px solid #1793cf;
 }
 /*--------------------------------------------
 Token Page Widget CSS
@@ -1066,14 +1062,14 @@ Token Page Widget CSS
 }
 #widgetQRFrame{
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 #widgetQRFrame::disabled{
     background-color: rgba(255, 255, 255, 20%);
 }
 #widgetQRMargin{
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 2px;
     border: 1px solid #d5dde9;
 }
 #widgetQRMargin::disabled{
@@ -1082,13 +1078,13 @@ Token Page Widget CSS
 }
 #tokenItemFrame, #delegationItemFrame, #superStakerItemFrame{
     background-color: #ffffff;
-    border-radius: 6px;
+    border-radius: 2px;
 }
 TokenListWidget{
-    background-color: #e4ebf5;
+    background-color: #f5f7fa;
 }
 TokenItemWidget #tokenName{
-    color: #6b80af;
+    color: #245380;
     font: 13pt;
 }
 TokenItemWidget #tokenBalance{
@@ -1101,13 +1097,13 @@ TokenItemWidget #senderAddress{
 }
 TokenItemWidget #tokenLogo{
     background-color: #a1daff;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 DelegationListWidget{
-    background-color: #e4ebf5;
+    background-color: #f5f7fa;
 }
 DelegationItemWidget #labelFee{
-    color: #6b80af;
+    color: #245380;
     font: 13pt;
 }
 DelegationItemWidget #labelStaker{
@@ -1120,13 +1116,13 @@ DelegationItemWidget #labelAddress{
 }
 DelegationItemWidget #delegationLogo{
     background-color: #a1daff;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 SuperStakerListWidget{
-    background-color: #e4ebf5;
+    background-color: #f5f7fa;
 }
 SuperStakerItemWidget #labelFee{
-    color: #6b80af;
+    color: #245380;
     font: 13pt;
 }
 SuperStakerItemWidget #labelStaker{
@@ -1139,18 +1135,18 @@ SuperStakerItemWidget #labelAddress{
 }
 SuperStakerItemWidget #superStakerLogo{
     background-color: #a1daff;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 SuperStakerItemWidget #buttonDelegations{
     min-width: 7em;
     padding: 1px;
-    border-radius: 8px;
+    border-radius: 2px;
     min-height: 16px;
     font: 8pt;
 }
 QFrame #frameStakerConfig{
     border: 1px solid #d5dde9;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 /*--------------------------------------------
 Send Coins Dialog CSS
@@ -1160,7 +1156,7 @@ SendCoinsDialog #labelBalance{
 }
 SendCoinsDialog QScrollArea{
     border: 1px solid #d5dde9;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 SendCoinsDialog #scrollAreaWidgetContents{
     margin: 3px;
@@ -1168,7 +1164,7 @@ SendCoinsDialog #scrollAreaWidgetContents{
 QFrame #frameFee,
 QWidget #coinControlContentsWidget{
     border: 1px solid #d5dde9;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 SendCoinsDialog QScrollBar:vertical{
     border-top-right-radius: 5px;
@@ -1195,5 +1191,5 @@ Delegate and Staker Page Widget CSS
     font: 13pt;
 }
 #vLineAssets{
-    border-left: 1px solid #e4ebf5;
+    border-left: 1px solid #f5f7fa;
 }
