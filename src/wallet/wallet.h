@@ -111,7 +111,6 @@ static const int32_t DEFAULT_STAKER_MAX_UTXO_SCRIPT_CACHE = 200000;
 
 class CCoinControl;
 class COutput;
-class CReserveKey;
 class CScript;
 class CWalletTx;
 class CTokenTx;

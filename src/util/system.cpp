@@ -1227,22 +1227,6 @@ void ReplaceInt(const int64_t& number, const std::string& key, std::string& str)
     str = str_replaced;
 }
 
-void RenameThread(const char* name)
-{
-#if defined(PR_SET_NAME)
-    // Only the first 15 characters are used (16 - NUL terminator)
-    ::prctl(PR_SET_NAME, name, 0, 0, 0);
-#elif (defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__DragonFly__))
-    pthread_set_name_np(pthread_self(), name);
-
-#elif defined(MAC_OSX)
-    pthread_setname_np(name);
-#else
-    // Prevent warnings for unused parameters...
-    (void)name;
-#endif
-}
-
 namespace util {
 #ifdef WIN32
 WinCmdLineArgs::WinCmdLineArgs()

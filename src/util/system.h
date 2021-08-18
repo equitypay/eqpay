@@ -50,7 +50,6 @@ extern const char * const BITCOIN_CONF_FILENAME;
 
 void SetupEnvironment();
 bool SetupNetworking();
-void RenameThread(const char* name);
 
 template<typename... Args>
 bool error(const char* fmt, const Args&... args)

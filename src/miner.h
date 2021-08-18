@@ -335,7 +335,4 @@ void RefreshDelegates(CWallet *pwallet, bool myDelegates, bool stakerDelegates);
 void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned int& nExtraNonce);
 int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParams, const CBlockIndex* pindexPrev);
 
-/** Run the miner threads */
-void GenerateSolo(bool fGenerate, int nThreads, CTxDestination destination, const CChainParams& chainparams, CConnman &connman);
-
 #endif // BITCOIN_MINER_H
