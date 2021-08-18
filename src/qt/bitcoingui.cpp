@@ -337,8 +337,8 @@ void BitcoinGUI::createActions()
     delegationAction = new QAction(tr("Delegations"), this);
     superStakerAction = new QAction(tr("Super Staking"), this);
 
-    EQRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/eqrctoken"), tr("&QRC Tokens"), this);
-    EQRCTokenAction->setStatusTip(tr("QRC Tokens (send, receive or add Tokens in list)"));
+    EQRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/eqrctoken"), tr("&EQRC Tokens"), this);
+    EQRCTokenAction->setStatusTip(tr("EQRC Tokens (send, receive or add Tokens in list)"));
     EQRCTokenAction->setToolTip(EQRCTokenAction->statusTip());
     EQRCTokenAction->setCheckable(true);
     EQRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));

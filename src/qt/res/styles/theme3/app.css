@@ -44,7 +44,7 @@ QFrame#hLine,
 QFrame#hContractLine,
 #hContractLine2,
 #OverviewPage #hLine{
-    border-top: 4px solid #f5f7fa;
+    border-top: 4px solid #f3f3f3;
 }
 QFrame#vLine,
 #vLine2{
@@ -69,7 +69,7 @@ QLabel#labelGeneral,
     color: #049ee8;
 }
 .QWidget#widget_header{
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
 }
 QLabel#overriddenByCommandLineLabel{
     color: #245380;
@@ -99,12 +99,12 @@ QLineEdit::disabled{
     color: rgba(107, 128, 175, 20%);
 }
 QAbstractItemView#autoCompleterPopup{
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
     border: none;
     padding: 4px;
 }
 QAbstractItemView#autoCompleterPopup::item{
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
     color: #245380;
     padding: 4px;
     padding-left: 10px;
@@ -458,7 +458,7 @@ QHeaderView{
 QHeaderView:section{
     padding: 6px 20px 6px 6px;
     border: none;
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
 }
 QHeaderView::down-arrow {
     image: url(":/styles/theme2/app-icons/down_arrow");
@@ -488,7 +488,7 @@ QTableView::item{
 }
 QTableView::item:selected{
     qproperty-showGrid: false;
-    background: #26a1e3;
+    background: #1c70af;
     color: #ffffff;
 }
 QHeaderView::disabled{
@@ -551,7 +551,7 @@ QPlainTextEdit::disabled {
 Status Bar CSS
 --------------------------------------------*/
 QStatusBar{
-    background: #f5f7fa;
+    background: #f3f3f3;
     color: #245380;
 }
 QStatusBar QLabel{
@@ -569,7 +569,7 @@ QStatusBar QLabel::disabled{
 UnitDisplayStatusBarControl {
     color: #ffffff; 
     background: transparent;
-    border: 1px solid #73bdec;
+    border: 1px solid #188eca;
     border-radius: 2px;
     font: 16px;
     padding: 0px;
@@ -602,7 +602,7 @@ QProgressBar {
     text-align: center;
 }
 QProgressBar::chunk {
-    background-color: #26a1e3;
+    background-color: #1c70af;
     border-radius: 0px;
 }
 QProgressBar::disabled {
@@ -648,7 +648,7 @@ TitleBar QTabBar::tab {
 MenuBar CSS
 --------------------------------------------*/
 QMenuBar {
-    background: #f5f7fa;
+    background: #f3f3f3;
 }
 QMenuBar::item {
     background-color: transparent;
@@ -658,7 +658,7 @@ QMenuBar::item {
 }
 QMenuBar::item:selected {
     border: none;
-    color: #26a1e3;
+    color: #1c70af;
 }
 QMenuBar::item:disabled {
     color: rgba(107, 128, 175, 20%);
@@ -814,7 +814,7 @@ QBalloonTip QPushButton::disabled {
 Push Button CSS
 --------------------------------------------*/
 QPushButton {
-    color: #26a1e3; 
+    color: #233f83;
     background: transparent;
     border: 1px solid #d5dde9;
     border-radius: 2px;
@@ -937,7 +937,7 @@ Modal Overlay CSS
     height: 9px;
 }
 #ModalOverlay QProgressBar::chunk {
-    background-color: #26a1e3;
+    background-color: #1c70af;
     border-radius: 2px;
 }
 #ModalOverlay QLabel { 
@@ -954,7 +954,7 @@ Modal Overlay CSS
     font: 20pt;
 }
 #contentWidget{
-    background: #f5f7fa;
+    background: #f3f3f3;
     border-radius: 2px;
 }
 #contentWidget #buttonsContainerWhite{
@@ -1012,7 +1012,7 @@ Stake Page Widget CSS
     color: #245380;
 }
 #frameStakeInfo #hLine{
-    border-top: 1px solid #f5f7fa;
+    border-top: 1px solid #f3f3f3;
 }
 /*--------------------------------------------
 Overview Page Widget CSS
@@ -1038,6 +1038,7 @@ Overview Page Widget CSS
     image:url(":/icons/bitcoin");
     padding: 5px;
     border: 1px solid #e3eaf3;
+    display: none;
 }
 
 #widgetRecent #showMoreButton{
@@ -1052,7 +1053,7 @@ Overview Page Widget CSS
     padding: 6px;
     min-width: 8em;
     border-radius: 2px;
-    border: 1px solid #1793cf;
+    border: 1px solid #233f83;
 }
 /*--------------------------------------------
 Token Page Widget CSS
@@ -1081,7 +1082,7 @@ Token Page Widget CSS
     border-radius: 2px;
 }
 TokenListWidget{
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
 }
 TokenItemWidget #tokenName{
     color: #245380;
@@ -1100,7 +1101,7 @@ TokenItemWidget #tokenLogo{
     border-radius: 2px;
 }
 DelegationListWidget{
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
 }
 DelegationItemWidget #labelFee{
     color: #245380;
@@ -1119,7 +1120,7 @@ DelegationItemWidget #delegationLogo{
     border-radius: 2px;
 }
 SuperStakerListWidget{
-    background-color: #f5f7fa;
+    background-color: #f3f3f3;
 }
 SuperStakerItemWidget #labelFee{
     color: #245380;
@@ -1191,5 +1192,5 @@ Delegate and Staker Page Widget CSS
     font: 13pt;
 }
 #vLineAssets{
-    border-left: 1px solid #f5f7fa;
+    border-left: 1px solid #f3f3f3;
 }

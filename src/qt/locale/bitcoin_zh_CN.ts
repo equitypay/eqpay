@@ -407,12 +407,12 @@
         <translation type="unfinished">查看交易历史</translation>
     </message>
     <message>
-        <source>&amp;QRC Tokens</source>
-        <translation type="unfinished">QRCtoken</translation>
+        <source>&amp;EQRC Tokens</source>
+        <translation type="unfinished">EQRCtoken</translation>
     </message>
     <message>
-        <source>QRC Tokens (send, receive or add Tokens in list)</source>
-        <translation type="unfinished">QRCtoken（在列表内发送、接收或添加token）</translation>
+        <source>EQRC Tokens (send, receive or add Tokens in list)</source>
+        <translation type="unfinished">EQRCtoken（在列表内发送、接收或添加token）</translation>
     </message>
     <message>
         <source>E&amp;xit</source>

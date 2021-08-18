@@ -411,11 +411,11 @@
         <translation type="unfinished">거래 기록 조회</translation>
     </message>
     <message>
-        <source>&amp;QRC Tokens</source>
+        <source>&amp;EQRC Tokens</source>
         <translation type="unfinished">QRC 토큰</translation>
     </message>
     <message>
-        <source>QRC Tokens (send, receive or add Tokens in list)</source>
+        <source>EQRC Tokens (send, receive or add Tokens in list)</source>
         <translation type="unfinished">QRC 토큰 (입출금 또는 리스트에 추가)</translation>
     </message>
     <message>
