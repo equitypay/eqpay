@@ -7118,3 +7118,14 @@ std::map<COutPoint, uint32_t> GetImmatureStakes()
     return immatureStakes;
 }
 //////////////////////////////////////////////////////////////////////////////////
+
+
+int GetTotalBlocksEstimate(const CCheckpointData& data) EXCLUSIVE_LOCKS_REQUIRED(cs_main)
+{
+    const MapCheckpoints& checkpoints = data.mapCheckpoints;
+
+    if (checkpoints.empty())
+        return 0;
+
+    return checkpoints.rbegin()->first;
+}

@@ -18,6 +18,7 @@
 #include <pow.h>
 #include <pos.h>
 #include <primitives/transaction.h>
+#include <shutdown.h>
 #include <timedata.h>
 #include <util/convert.h>
 #include <util/moneystr.h>
@@ -30,6 +31,11 @@
 
 #include <algorithm>
 #include <utility>
+
+#include <validation.h>
+#include <util/threadnames.h>
+#include <thread>
+#include <boost/thread/thread.hpp>
 
 unsigned int nMaxStakeLookahead = MAX_STAKE_LOOKAHEAD;
 unsigned int nBytecodeTimeBuffer = BYTECODE_TIME_BUFFER;
@@ -1869,6 +1875,202 @@ void RefreshDelegates(CWallet *pwallet, bool refreshMyDelegates, bool refreshSta
             }
         }
     }
+}
+
+
+
+// Solo Miner
+double hashrate = 0.;
+bool fGenerateSolo = false;
+static int64_t timeElapsed = 30000;
+double dHashesPerMin = 0.0;
+int64_t nHPSTimerStart = 0;
+unsigned int nExtraNonce = 0;
+
+bool CheckWork(CBlock* pblock, CWallet& wallet, ReserveDestination& reservedest)
+{
+    arith_uint256 hashBlock = UintToArith256(pblock->GetWorkHash());
+    arith_uint256 hashTarget = arith_uint256().SetCompact(pblock->nBits);
+
+    LogPrintf("CheckWork() : new proof-of-work block found  \n  hash: %s  \ntarget: %s\n", hashBlock.GetHex().c_str(), hashTarget.GetHex().c_str());
+
+    if (hashBlock > hashTarget)
+        return error("CheckWork() : proof-of-work not meeting target");
+
+    // Debug print
+    pblock->print();
+
+    // Found a solution
+    {
+        LOCK(cs_main);
+        auto hashBestChain = ::ChainstateActive().CoinsTip().GetBestBlock();
+        if (pblock->hashPrevBlock != hashBestChain)
+            return error("CheckWork() : generated block is stale");
+
+        // Remove destination from key pool
+        reservedest.KeepDestination();
+
+        // Track how many getdata requests this block gets
+        {
+            LOCK(wallet.cs_wallet);
+        }
+
+        // Process this block the same as if we had received it from another node
+        std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(*pblock);
+        if (!ProcessNewBlock(Params(), shared_pblock, true, nullptr))
+            return error("CheckWork() : ProcessBlock, block not accepted");
+    }
+
+    return true;
+}
+
+static // Return maximum amount of blocks that other nodes claim to have
+int GetNumBlocksOfPeers()
+{
+    return GetTotalBlocksEstimate(Params().Checkpoints());
+}
+
+void Miner(CWallet *pwallet, CConnman &connman)
+{
+    LogPrintf("Miner started\n");
+    SetThreadPriority(THREAD_PRIORITY_LOWEST);
+    util::ThreadRename("eqpay-solo-miner");
+
+    // Each thread has it's own nonce
+    ReserveDestination reservedest(pwallet, DEFAULT_ADDRESS_TYPE);
+
+    CTxDestination dest;
+    bool ret = reservedest.GetReservedDestination(dest, true);
+    if (!ret)
+    {
+        return;
+    }
+    CScript scriptChange;
+    scriptChange = GetScriptForDestination(dest);
+
+    nExtraNonce += 1;
+    try
+    {
+        while (fGenerateSolo)
+        {
+            while (::ChainstateActive().IsInitialBlockDownload() || connman.GetNodeCount(CConnman::CONNECTIONS_ALL) < 1 || ::ChainActive().Tip()->nHeight < GetNumBlocksOfPeers()){
+                LogPrintf("Mining inactive while chain is syncing...\n");
+                break;
+                // MilliSleep(5000);
+            }
+
+            // Create new block
+            unsigned int nTransactionsUpdatedLast = mempool.GetTransactionsUpdated();
+            CBlockIndex* pindexPrev = ::ChainActive().Tip();
+            std::unique_ptr<CBlockTemplate> pblocktemplate(BlockAssembler(mempool, Params()).CreateNewBlock(scriptChange, true, false, nullptr, 0, GetAdjustedTime() + POW_MINER_MAX_TIME));
+            if (!pblocktemplate.get())
+                return;
+
+            CBlock *pblock = &pblocktemplate->block;
+            IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
+            LogPrintf("Miner thread running on block %s (%lu bytes)\n", pindexPrev->nHeight, ::GetSerializeSize(*pblock, PROTOCOL_VERSION));
+
+            // Search
+            int64_t nStart = GetTime();
+            uint256 hashTarget = ArithToUint256(arith_uint256().SetCompact(pblock->nBits));
+            while (fGenerateSolo)
+            {
+                unsigned int nHashesDone = 0;
+                if (fGenerateSolo)
+                {
+                    if (CheckProofOfWork(pblock->GetWorkHash(), pblock->nBits, Params().GetConsensus()))
+                    {
+                        // Found a solution
+                        LogPrintf("Miner found a solution\n");
+                        SetThreadPriority(THREAD_PRIORITY_NORMAL);
+                        CheckWork(pblock, *pwallet, reservedest);
+                        SetThreadPriority(THREAD_PRIORITY_LOWEST);
+                    }
+                    nHashesDone += 1;
+                    pblock->nNonce += 1;
+                }
+
+                // Hash meter
+                static int64_t nHashCounter;
+                {
+                    static RecursiveMutex cs;
+                    {
+                        LOCK(cs);
+                        if (nHPSTimerStart == 0)
+                        {
+                            nHPSTimerStart = GetTimeMillis();
+                            nHashCounter = 0;
+                        }
+                        else
+                            nHashCounter += nHashesDone;
+
+                        if (GetTimeMillis() - nHPSTimerStart > timeElapsed)
+                        {
+                            dHashesPerMin = 60000.0 * nHashCounter / (GetTimeMillis() - nHPSTimerStart);
+                            nHPSTimerStart = GetTimeMillis();
+                            nHashCounter = 0;
+                            updateHashrate(dHashesPerMin);
+                            LogPrintf("Total local hashrate: %6.0f hashes/min\n", hashrate);
+                        }
+                    }
+                }
+
+                // Check for stop or if block needs to be rebuilt
+                boost::this_thread::interruption_point();
+                if (!fGenerateSolo)
+                    break;
+                if (ShutdownRequested())
+                    return;
+                if (connman.GetNodeCount(CConnman::CONNECTIONS_ALL) < 1)
+                    break;
+                if (pblock->nNonce >= 0xffff0000)
+                    break;
+                if (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60)
+                    break;
+                if (pindexPrev != ::ChainActive().Tip())
+                    break;
+
+                // Update nTime every few seconds
+                UpdateTime(pblock, Params().GetConsensus(), pindexPrev);
+            }
+        }
+    }
+    catch (boost::thread_interrupted)
+    {
+        hashrate = 0;
+        nExtraNonce = 0;
+        LogPrintf("Miner terminated\n");
+        throw;
+    }
+}
+
+void GenerateSolo(bool fGenerate, CWallet* pwallet, int nThreads, CConnman &connman)
+{
+    fGenerateSolo = fGenerate;
+    static boost::thread_group* minerThreads = NULL;
+
+    if (nThreads <= 0)
+        nThreads = std::thread::hardware_concurrency();
+
+    if (minerThreads != NULL)
+    {
+        minerThreads->interrupt_all();
+        delete minerThreads;
+        minerThreads = NULL;
+    }
+
+    if (nThreads == 0 || !fGenerate)
+        return;
+
+    minerThreads = new boost::thread_group();
+    for (int i = 0; i < nThreads; i++)
+        minerThreads->create_thread(boost::bind(&Miner, pwallet, boost::ref(connman)));
+        // minerThreads->create_thread(std::bind(&Miner, pwallet, connman));
+}
+
+void updateHashrate(double nHashrate)
+{
+    hashrate = nHashrate;
 }
 
 #endif

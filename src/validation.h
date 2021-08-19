@@ -11,6 +11,7 @@
 #endif
 
 #include <amount.h>
+#include <chainparams.h>
 #include <coins.h>
 #include <crypto/common.h> // for ReadLE64
 #include <fs.h>
@@ -1032,5 +1033,7 @@ inline bool IsBlockPruned(const CBlockIndex* pblockindex)
 
 //! Get transaction gas fee
 CAmount GetTxGasFee(const CMutableTransaction& tx);
+
+int GetTotalBlocksEstimate(const CCheckpointData& data) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
 
 #endif // BITCOIN_VALIDATION_H

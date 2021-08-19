@@ -9,6 +9,8 @@
 #include <chain.h>
 #include <primitives/block.h>
 #include <uint256.h>
+#include <timedata.h>
+#include <validation.h>
 
 namespace {
     // returns a * exp(p/q) where |p/q| is small

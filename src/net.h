@@ -38,6 +38,7 @@
 
 class CScheduler;
 class CNode;
+class CWallet;
 class BanMan;
 
 /** Default for -whitelistrelay. */
@@ -480,6 +481,7 @@ private:
 
     friend struct CConnmanTest;
     friend struct ConnmanTestMsg;
+    friend void Miner(CWallet *pwallet);
 };
 void Discover();
 void StartMapPort();

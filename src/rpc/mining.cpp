@@ -34,6 +34,7 @@
 #include <validationinterface.h>
 #include <versionbitsinfo.h>
 #include <warnings.h>
+#include <wallet/rpcwallet.h>
 
 #include <util/time.h>
 #ifdef ENABLE_WALLET
@@ -327,6 +328,83 @@ static UniValue getmininginfo(const JSONRPCRequest& request)
 
     obj.pushKV("chain",            Params().NetworkIDString());
     obj.pushKV("warnings",         GetWarnings(false));
+    return obj;
+}
+
+UniValue minerstart(const JSONRPCRequest& request)
+{
+    std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
+    CWallet* const pwallet = wallet.get();
+
+    if (!EnsureWalletIsAvailable(pwallet, request.fHelp)) {
+        return false;
+    }
+
+    RPCHelpMan{"minerstart",
+        "\nStart mining.",
+        {
+            {"nthreads", RPCArg::Type::NUM, RPCArg::Optional::OMITTED, "Number of thread to allocate to mining."},
+        },
+        RPCResult{
+            RPCResult::Type::OBJ, "", "",
+            {
+                {RPCResult::Type::STR, "status", "Mining status (active/stopped)"},
+                {RPCResult::Type::NUM, "nthreads", "Number of thread allocated"},
+            }
+        },
+        RPCExamples{
+            HelpExampleCli("minerstart", "")
+        },
+    }.Check(request);
+
+    int nThreads = 0;
+    if (!request.params[0].isNull()) {
+        nThreads = request.params[0].get_int();
+    }
+
+    LOCK(cs_main);
+
+    GenerateSolo(true, pwallet, nThreads, *g_rpc_node->connman);
+
+    UniValue obj(UniValue::VOBJ);
+    obj.pushKV("status",   "active");
+    obj.pushKV("nthreads", nThreads);
+
+    return obj;
+}
+
+UniValue minerstop(const JSONRPCRequest& request)
+{
+    std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
+    CWallet* const pwallet = wallet.get();
+
+    if (!EnsureWalletIsAvailable(pwallet, request.fHelp)) {
+        return false;
+    }
+
+    RPCHelpMan{"minerstop",
+        "\nStop mining.",
+        {},
+        RPCResult{
+            RPCResult::Type::OBJ, "", "",
+            {
+                {RPCResult::Type::STR, "status", "Mining status (active/stopped)"},
+                {RPCResult::Type::NUM, "nthreads", "Number of thread allocated"},
+            }
+        },
+        RPCExamples{
+            HelpExampleCli("minerstop", "")
+        },
+    }.Check(request);
+
+    LOCK(cs_main);
+
+    GenerateSolo(false, pwallet, 0, *g_rpc_node->connman);
+
+    UniValue obj(UniValue::VOBJ);
+    obj.pushKV("status",   "stopped");
+    obj.pushKV("nthreads", 0);
+
     return obj;
 }
 
@@ -1155,6 +1233,9 @@ static const CRPCCommand commands[] =
 
     { "mining",             "getsubsidy",             &getsubsidy,             {"height"} },
     { "mining",             "getstakinginfo",         &getstakinginfo,         {} },
+
+    { "miner",              "minerstart",             &minerstart,             {"nthreads"} },
+    { "miner",              "minerstop",              &minerstop,              {} },
 
     { "generating",         "generatetoaddress",      &generatetoaddress,      {"nblocks","address","maxtries"} },
     { "generating",         "generatetodescriptor",   &generatetodescriptor,   {"num_blocks","descriptor","maxtries"} },
