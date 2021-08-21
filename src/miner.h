@@ -327,7 +327,7 @@ private:
 
 #ifdef ENABLE_WALLET
 /** Generate a new block, without valid proof-of-work */
-void StakeEqPays(bool fStake, CWallet *pwallet, CConnman* connman, boost::thread_group*& stakeThread);
+void StartStaking(bool fStake, CWallet *pwallet, CConnman* connman, boost::thread_group*& stakeThread);
 void RefreshDelegates(CWallet *pwallet, bool myDelegates, bool stakerDelegates);
 #endif
 

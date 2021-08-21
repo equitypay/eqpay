@@ -1829,7 +1829,7 @@ void ThreadStakeMiner(CWallet *pwallet, CConnman* connman)
     miner = 0;
 }
 
-void StakeEqPays(bool fStake, CWallet *pwallet, CConnman* connman, boost::thread_group*& stakeThread)
+void StartStaking(bool fStake, CWallet *pwallet, CConnman* connman, boost::thread_group*& stakeThread)
 {
     if (stakeThread != nullptr)
     {
