@@ -1411,6 +1411,19 @@ public:
             [fn](CWallet*, const uint160& id, ChangeType status) { fn(id, status); }));
     }
 
+
+
+    void startMining() override
+    {
+        m_wallet->StartMining(1);
+    }
+
+    void stopMining() override
+    {
+        m_wallet->StopMining();
+    }
+
+
     std::shared_ptr<CWallet> m_wallet;
     EqPayDelegation m_eqpayDelegation;
 };

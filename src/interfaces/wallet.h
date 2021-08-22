@@ -427,6 +427,9 @@ public:
     //! Get staker address balance.
     virtual bool getStakerAddressBalance(const std::string& staker, CAmount& balance, CAmount& stake, CAmount& weight) = 0;
 
+    virtual void startMining() = 0;
+    virtual void stopMining() = 0;
+
     //! Register handler for unload message.
     using UnloadFn = std::function<void()>;
     virtual std::unique_ptr<Handler> handleUnload(UnloadFn fn) = 0;

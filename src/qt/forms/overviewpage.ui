@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>738</width>
-    <height>446</height>
+    <width>866</width>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1112,10 +1112,20 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QWidget" name="widget" native="true"/>
+           </item>
           </layout>
          </widget>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="generateButton">
+        <property name="text">
+         <string>Start mining</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

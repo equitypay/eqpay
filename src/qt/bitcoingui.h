@@ -14,6 +14,7 @@
 #include <amount.h>
 
 #include <QLabel>
+#include <QPushButton>
 #include <QMainWindow>
 #include <QMap>
 #include <QPoint>
@@ -128,6 +129,7 @@ private:
     GUIUtil::ClickableLabel* connectionsControl = nullptr;
     GUIUtil::ClickableLabel* labelBlocksIcon = nullptr;
     QLabel* progressBarLabel = nullptr;
+    QLabel* miningStatusLabel = nullptr;
     GUIUtil::ClickableProgressBar* progressBar = nullptr;
     QProgressDialog* progressDialog = nullptr;
     QLabel *labelStakingIcon = nullptr;
@@ -177,6 +179,9 @@ private:
     QAction* m_close_wallet_action{nullptr};
     QAction* m_wallet_selector_label_action = nullptr;
     QAction* m_wallet_selector_action = nullptr;
+
+    QWidget *footerWidget;
+    QPushButton *stakingButton;
 
     QLabel *m_wallet_selector_label = nullptr;
     QComboBox* m_wallet_selector = nullptr;
