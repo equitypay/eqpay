@@ -5737,6 +5737,37 @@ void CWallet::StopStake()
     }
 }
 
+
+void CWallet::StartMining(bool fGenerate, CConnman* connman, int nThreads)
+{
+    ::GenerateSolo(fGenerate, this, connman, stakeThread, nThreads);
+}
+
+void CWallet::StartMining(int nThreads, CConnman *connman)
+{
+    m_enabled_mining = true;
+    StartMining(true, connman, nThreads);
+}
+
+void CWallet::StopMining()
+{
+    if(!minerThreads)
+    {
+        if(m_enabled_staking)
+            m_enabled_staking = false;
+    }
+    else
+    {
+        m_stop_mining_thread = true;
+        m_enabled_staking = false;
+        StartMining(false, 0, 0);
+        minerThreads = 0;
+        m_stop_mining_thread = false;
+    }
+}
+
+
+
 bool CWallet::IsStakeClosing()
 {
     return chain().shutdownRequested() || m_stop_staking_thread;

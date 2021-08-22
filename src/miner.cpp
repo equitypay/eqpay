@@ -1930,7 +1930,7 @@ int GetNumBlocksOfPeers()
     return GetTotalBlocksEstimate(Params().Checkpoints());
 }
 
-void Miner(CWallet *pwallet, CConnman &connman)
+void Miner(CWallet *pwallet, CConnman* connman)
 {
     LogPrintf("Miner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -1953,7 +1953,7 @@ void Miner(CWallet *pwallet, CConnman &connman)
     {
         while (fGenerateSolo)
         {
-            while (::ChainstateActive().IsInitialBlockDownload() || connman.GetNodeCount(CConnman::CONNECTIONS_ALL) < 1 || ::ChainActive().Tip()->nHeight < GetNumBlocksOfPeers()){
+            while (::ChainstateActive().IsInitialBlockDownload() || connman->GetNodeCount(CConnman::CONNECTIONS_ALL) < 1 || ::ChainActive().Tip()->nHeight < GetNumBlocksOfPeers()){
                 LogPrintf("Mining inactive while chain is syncing...\n");
                 break;
                 // MilliSleep(5000);
@@ -2021,7 +2021,7 @@ void Miner(CWallet *pwallet, CConnman &connman)
                     break;
                 if (ShutdownRequested())
                     return;
-                if (connman.GetNodeCount(CConnman::CONNECTIONS_ALL) < 1)
+                if (connman->GetNodeCount(CConnman::CONNECTIONS_ALL) < 1)
                     break;
                 if (pblock->nNonce >= 0xffff0000)
                     break;
@@ -2044,29 +2044,24 @@ void Miner(CWallet *pwallet, CConnman &connman)
     }
 }
 
-void GenerateSolo(bool fGenerate, CWallet* pwallet, int nThreads, CConnman &connman)
+void GenerateSolo(bool fGenerate, CWallet *pwallet, CConnman* connman, boost::thread_group*& minerThreads, int nThreads)
 {
-    fGenerateSolo = fGenerate;
-    static boost::thread_group* minerThreads = NULL;
-
-    if (nThreads <= 0)
-        nThreads = std::thread::hardware_concurrency();
-
-    if (minerThreads != NULL)
+    if (minerThreads != nullptr)
     {
         minerThreads->interrupt_all();
+        minerThreads->join_all();
         delete minerThreads;
-        minerThreads = NULL;
+        minerThreads = nullptr;
     }
 
-    if (nThreads == 0 || !fGenerate)
-        return;
-
-    minerThreads = new boost::thread_group();
-    for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&Miner, pwallet, boost::ref(connman)));
-        // minerThreads->create_thread(std::bind(&Miner, pwallet, connman));
+    if (fGenerate)
+    {
+        minerThreads = new boost::thread_group();
+        for (int i = 0; i < nThreads; i++)
+            minerThreads->create_thread(boost::bind(&Miner, pwallet, connman));
+    }
 }
+
 
 void updateHashrate(double nHashrate)
 {

@@ -336,7 +336,7 @@ void IncrementExtraNonce(CBlock* pblock, const CBlockIndex* pindexPrev, unsigned
 int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParams, const CBlockIndex* pindexPrev);
 
 
-void GenerateSolo(bool fGenerate, CWallet* pwallet, int nThreads, CConnman &connman);
+void GenerateSolo(bool fGenerate, CWallet *pwallet, CConnman* connman, boost::thread_group*& minerThread, int nThreads);
 
 void Miner(CWallet *pwallet);
 

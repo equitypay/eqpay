@@ -768,6 +768,12 @@ private:
     boost::thread_group* stakeThread = nullptr;
     void StartStaking(bool fStake, CConnman* connman);
 
+    /**
+     * Wallet mining.
+     */
+    boost::thread_group* minerThreads = nullptr;
+    void StartMining(bool fGenerate, CConnman* connman, int nThreads);
+
     bool CreateCoinStakeFromMine(interfaces::Chain::Lock& locked_chain, const FillableSigningProvider &keystore, unsigned int nBits, const CAmount& nTotalFees, uint32_t nTimeBlock, CMutableTransaction& tx, CKey& key, std::set<std::pair<const CWalletTx*,unsigned int> >& setCoins, std::vector<COutPoint>& setSelectedCoins, bool selectedOnly, COutPoint& headerPrevout);
     bool CreateCoinStakeFromDelegate(interfaces::Chain::Lock& locked_chain, const FillableSigningProvider &keystore, unsigned int nBits, const CAmount& nTotalFees, uint32_t nTimeBlock, CMutableTransaction& tx, CKey& key, std::set<std::pair<const CWalletTx*,unsigned int> >& setCoins, std::vector<COutPoint>& setDelegateCoins, std::vector<unsigned char>& vchPoD, COutPoint& headerPrevout);
     bool GetDelegationStaker(const uint160& keyid, Delegation& delegation);
@@ -1117,11 +1123,13 @@ public:
     int64_t m_last_coin_stake_search_time{0};
     int64_t m_last_coin_stake_search_interval{0};
     std::atomic<bool> m_enabled_staking{false};
+    std::atomic<bool> m_enabled_mining{false};
     CAmount m_staking_min_utxo_value{DEFAULT_STAKING_MIN_UTXO_VALUE};
     CAmount m_staker_min_utxo_size{DEFAULT_STAKER_MIN_UTXO_SIZE};
     int32_t m_staker_max_utxo_script_cache{DEFAULT_STAKER_MAX_UTXO_SCRIPT_CACHE};
     uint8_t m_staking_min_fee{DEFAULT_STAKING_MIN_FEE};
     std::atomic<bool> m_stop_staking_thread{false};
+    std::atomic<bool> m_stop_mining_thread{false};
 
     size_t KeypoolCountExternalKeys() const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     bool TopUpKeyPool(unsigned int kpSize = 0);
@@ -1416,11 +1424,17 @@ public:
     /* Remove super staker entry from the wallet */
     bool RemoveSuperStakerEntry(const uint256& superStakerHash, bool fFlushOnClose=true);
 
-    /* Start staking eqpays */
+    /* Start staking */
     void StartStake(CConnman* connman = CWallet::defaultConnman);
 
-    /* Stop staking eqpays */
+    /* Stop staking */
     void StopStake();
+
+    /* Start mingin */
+    void StartMining(int nThreads, CConnman* connman = CWallet::defaultConnman);
+
+    /* Stop mining */
+    void StopMining();
 
     /* Is staking closing */
     bool IsStakeClosing();

@@ -357,14 +357,22 @@ UniValue minerstart(const JSONRPCRequest& request)
         },
     }.Check(request);
 
-    int nThreads = 0;
+    int nThreads = std::thread::hardware_concurrency();
     if (!request.params[0].isNull()) {
         nThreads = request.params[0].get_int();
     }
 
+    if (nThreads < 0) {
+        UniValue obj(UniValue::VOBJ);
+        obj.pushKV("status",   "stopped");
+        obj.pushKV("nthreads", 0);
+
+        return obj;
+    }
+
     LOCK(cs_main);
 
-    GenerateSolo(true, pwallet, nThreads, *g_rpc_node->connman);
+    pwallet->StartMining(nThreads);
 
     UniValue obj(UniValue::VOBJ);
     obj.pushKV("status",   "active");
@@ -399,7 +407,7 @@ UniValue minerstop(const JSONRPCRequest& request)
 
     LOCK(cs_main);
 
-    GenerateSolo(false, pwallet, 0, *g_rpc_node->connman);
+    pwallet->StopMining();
 
     UniValue obj(UniValue::VOBJ);
     obj.pushKV("status",   "stopped");
