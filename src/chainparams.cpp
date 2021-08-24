@@ -194,6 +194,7 @@ public:
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
+        // consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");

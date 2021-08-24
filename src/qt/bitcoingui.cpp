@@ -329,16 +329,15 @@ void BitcoinGUI::createActions()
     sendToContractAction = new QAction(tr("Send To"), this);
     callContractAction = new QAction(tr("Call"), this);
 
-    walletStakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Stake"), this);
-    walletStakeAction->setStatusTip(tr("Show stake of wallet"));
-    walletStakeAction->setToolTip(walletStakeAction->statusTip());
-    walletStakeAction->setCheckable(true);
-    walletStakeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
-    tabGroup->addAction(walletStakeAction);
-
-    stakeAction = new QAction(tr("Staking"), this);
     delegationAction = new QAction(tr("Delegations"), this);
     superStakerAction = new QAction(tr("Super Staking"), this);
+
+    stakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Stake"), this);
+    stakeAction->setStatusTip(tr("Show stake of wallet"));
+    stakeAction->setToolTip(stakeAction->statusTip());
+    stakeAction->setCheckable(true);
+    stakeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
+    tabGroup->addAction(stakeAction);
 
     miningAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Mining"), this);
     miningAction->setStatusTip(tr("Show mining of wallet"));
@@ -636,11 +635,7 @@ void BitcoinGUI::createToolBars()
         contractActions.append(sendToContractAction);
         contractActions.append(callContractAction);
         appNavigationBar->mapGroup(smartContractAction, contractActions);
-        QList<QAction*> walletStakeActions;
-        walletStakeActions.append(stakeAction);
-        walletStakeActions.append(delegationAction);
-        walletStakeActions.append(superStakerAction);
-        appNavigationBar->mapGroup(walletStakeAction, walletStakeActions);
+        appNavigationBar->addAction(stakeAction);
         appNavigationBar->addAction(miningAction);
         appNavigationBar->addAction(EQRCTokenAction);
         appNavigationBar->buildUi();
@@ -864,7 +859,6 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     stakeAction->setEnabled(enabled);
     delegationAction->setEnabled(enabled);
     superStakerAction->setEnabled(enabled);
-    walletStakeAction->setEnabled(enabled);
     m_close_wallet_action->setEnabled(enabled);
 }
 
