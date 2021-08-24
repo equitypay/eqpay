@@ -25,6 +25,7 @@
 #include <qt/eqrctoken.h>
 #include <qt/restoredialog.h>
 #include <qt/stakepage.h>
+#include <qt/miningpage.h>
 #include <qt/delegationpage.h>
 #include <qt/superstakerpage.h>
 #include <qt/walletframe.h>
@@ -79,6 +80,7 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
     EQRCTokenPage = new EQRCToken(platformStyle);
 
     stakePage = new StakePage(platformStyle);
+    miningPage = new MiningPage(platformStyle);
     delegationPage = new DelegationPage(platformStyle);
     superStakerPage = new SuperStakerPage(platformStyle);
 
@@ -91,6 +93,7 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
     addWidget(stakePage);
     addWidget(delegationPage);
     addWidget(superStakerPage);
+    addWidget(miningPage);
 
     connect(overviewPage, &OverviewPage::outOfSyncWarningClicked, this, &WalletView::requestedSyncWarningInfo);
 
@@ -133,6 +136,7 @@ void WalletView::setClientModel(ClientModel *_clientModel)
     stakePage->setClientModel(_clientModel);
     delegationPage->setClientModel(_clientModel);
     superStakerPage->setClientModel(_clientModel);
+    miningPage->setClientModel(_clientModel);
 }
 
 void WalletView::setWalletModel(WalletModel *_walletModel)
@@ -151,6 +155,7 @@ void WalletView::setWalletModel(WalletModel *_walletModel)
     stakePage->setWalletModel(_walletModel);
     delegationPage->setModel(_walletModel);
     superStakerPage->setModel(_walletModel);
+    miningPage->setWalletModel(_walletModel);
     usedReceivingAddressesPage->setModel(_walletModel ? _walletModel->getAddressTableModel() : nullptr);
     usedSendingAddressesPage->setModel(_walletModel ? _walletModel->getAddressTableModel() : nullptr);
 
@@ -297,6 +302,11 @@ void WalletView::gotoDelegationPage()
 void WalletView::gotoSuperStakerPage()
 {
     setCurrentWidget(superStakerPage);
+}
+
+void WalletView::gotoMiningPage()
+{
+    setCurrentWidget(miningPage);
 }
 
 void WalletView::gotoSignMessageTab(QString addr)

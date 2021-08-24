@@ -129,7 +129,6 @@ private:
     GUIUtil::ClickableLabel* connectionsControl = nullptr;
     GUIUtil::ClickableLabel* labelBlocksIcon = nullptr;
     QLabel* progressBarLabel = nullptr;
-    QLabel* miningStatusLabel = nullptr;
     GUIUtil::ClickableProgressBar* progressBar = nullptr;
     QProgressDialog* progressDialog = nullptr;
     QLabel *labelStakingIcon = nullptr;
@@ -167,6 +166,7 @@ private:
     QAction* callContractAction = nullptr;
     QAction* EQRCTokenAction = nullptr;
     QAction* stakeAction = nullptr;
+    QAction* miningAction = nullptr;
     QAction* sendTokenAction = nullptr;
     QAction* receiveTokenAction = nullptr;
     QAction* addTokenAction = nullptr;
@@ -314,6 +314,8 @@ public Q_SLOTS:
     void gotoTokenPage();
     /** Switch to stake page */
     void gotoStakePage();
+    /** Switch to mining page */
+    void gotoMiningPage();
     /** Switch to delegation page */
     void gotoDelegationPage();
     /** Switch to super staker page */

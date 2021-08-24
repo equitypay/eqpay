@@ -217,12 +217,8 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
         progressBar->setStyleSheet("QProgressBar { background-color: #e8e8e8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #FF8000, stop: 1 orange); border-radius: 7px; margin: 0px; }");
     }
 
-    miningStatusLabel = new QLabel();
-    miningStatusLabel->setText("Test");
-
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);
-    statusBar()->addPermanentWidget(miningStatusLabel);
 
     // Install event filter to be able to catch status tip events (QEvent::StatusTip)
     this->installEventFilter(this);
@@ -344,11 +340,18 @@ void BitcoinGUI::createActions()
     delegationAction = new QAction(tr("Delegations"), this);
     superStakerAction = new QAction(tr("Super Staking"), this);
 
+    miningAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Mining"), this);
+    miningAction->setStatusTip(tr("Show mining of wallet"));
+    miningAction->setToolTip(miningAction->statusTip());
+    miningAction->setCheckable(true);
+    miningAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+    tabGroup->addAction(miningAction);
+
     EQRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/eqrctoken"), tr("&EQRC Tokens"), this);
     EQRCTokenAction->setStatusTip(tr("EQRC Tokens (send, receive or add Tokens in list)"));
     EQRCTokenAction->setToolTip(EQRCTokenAction->statusTip());
     EQRCTokenAction->setCheckable(true);
-    EQRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+    EQRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     tabGroup->addAction(EQRCTokenAction);
 
 #ifdef ENABLE_WALLET
@@ -380,6 +383,8 @@ void BitcoinGUI::createActions()
     connect(delegationAction, SIGNAL(triggered()), this, SLOT(gotoDelegationPage()));
     connect(superStakerAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(superStakerAction, SIGNAL(triggered()), this, SLOT(gotoSuperStakerPage()));
+    connect(miningAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
+    connect(miningAction, &QAction::triggered, this, &BitcoinGUI::gotoMiningPage);
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(tr("E&xit"), this);
@@ -636,6 +641,7 @@ void BitcoinGUI::createToolBars()
         walletStakeActions.append(delegationAction);
         walletStakeActions.append(superStakerAction);
         appNavigationBar->mapGroup(walletStakeAction, walletStakeActions);
+        appNavigationBar->addAction(miningAction);
         appNavigationBar->addAction(EQRCTokenAction);
         appNavigationBar->buildUi();
         overviewAction->setChecked(true);
@@ -1032,6 +1038,12 @@ void BitcoinGUI::gotoStakePage()
 {
     stakeAction->setChecked(true);
     if (walletFrame) walletFrame->gotoStakePage();
+}
+
+void BitcoinGUI::gotoMiningPage()
+{
+    miningAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoMiningPage();
 }
 
 void BitcoinGUI::gotoSignMessageTab(QString addr)

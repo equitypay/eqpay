@@ -205,6 +205,13 @@ void WalletFrame::gotoStakePage()
         i.value()->gotoStakePage();
 }
 
+void WalletFrame::gotoMiningPage()
+{
+    QMap<WalletModel*, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoMiningPage();
+}
+
 void WalletFrame::gotoSignMessageTab(QString addr)
 {
     WalletView *walletView = currentWalletView();

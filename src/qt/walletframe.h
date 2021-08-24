@@ -83,6 +83,8 @@ public Q_SLOTS:
     void gotoTokenPage();
     /** Switch to stake page */
     void gotoStakePage();
+    /** Switch to minin page */
+    void gotoMiningPage();
     /** Switch to delegation page */
     void gotoDelegationPage();
     /** Switch to super staker page */

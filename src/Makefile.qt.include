@@ -40,6 +40,7 @@ QT_FORMS_UI = \
   qt/forms/restoredialog.ui \
   qt/forms/debugwindow.ui \
   qt/forms/stakepage.ui \
+  qt/forms/miningpage.ui \
   qt/forms/sendcoinsdialog.ui \
   qt/forms/sendcoinsentry.ui \
   qt/forms/sendtocontract.ui \
@@ -119,6 +120,7 @@ QT_MOC_CPP = \
   qt/moc_restoredialog.cpp \
   qt/moc_rpcconsole.cpp \
   qt/moc_stakepage.cpp \
+  qt/moc_miningpage.cpp \
   qt/moc_stakerdelegationview.cpp \
   qt/moc_sendcoinsdialog.cpp \
   qt/moc_sendcoinsentry.cpp \
@@ -166,6 +168,7 @@ QT_MOC = \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc \
+  qt/miningpage.moc \
   qt/tokenamountfield.moc \
   qt/tokenitemmodel.moc \
   qt/delegationitemmodel.moc \
@@ -257,6 +260,7 @@ BITCOIN_QT_H = \
   qt/splashscreen.h \
   qt/splitutxopage.h \
   qt/stakepage.h \
+  qt/miningpage.h \
   qt/stakerdelegationview.h \
   qt/styleSheet.h \
   qt/superstakeritemwidget.h \
@@ -454,6 +458,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/removedelegationpage.cpp \
   qt/restoredialog.cpp \
   qt/stakepage.cpp \
+  qt/miningpage.cpp \
   qt/stakerdelegationview.cpp \
   qt/sendcoinsdialog.cpp \
   qt/sendcoinsentry.cpp \
