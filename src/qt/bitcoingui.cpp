@@ -332,7 +332,7 @@ void BitcoinGUI::createActions()
     delegationAction = new QAction(tr("Delegations"), this);
     superStakerAction = new QAction(tr("Super Staking"), this);
 
-    stakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Stake"), this);
+    stakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/add_token"), tr("&Stake"), this);
     stakeAction->setStatusTip(tr("Show stake of wallet"));
     stakeAction->setToolTip(stakeAction->statusTip());
     stakeAction->setCheckable(true);

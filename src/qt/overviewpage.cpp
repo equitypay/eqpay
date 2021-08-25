@@ -28,8 +28,6 @@
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 
-#include <miner.h>
-
 #define NUM_ITEMS 5
 #define TOKEN_SIZE 40
 #define MARGIN 5
@@ -191,7 +189,6 @@ private:
 
 OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) :
     QWidget(parent),
-    miningState(false),
     ui(new Ui::OverviewPage),
     clientModel(nullptr),
     walletModel(nullptr),
@@ -231,10 +228,6 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     ui->listTransactions->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     connect(ui->listTransactions, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(showDetails()));
-
-    // Prepare update miner statistics
-    updateMiningStatsTimer = new QTimer(this);
-    connect(updateMiningStatsTimer, &QTimer::timeout, this, &OverviewPage::updateMiningStatistics);
 
     // start with displaying the "out of sync" warnings
     showOutOfSyncWarning(true);
@@ -435,39 +428,4 @@ void OverviewPage::on_buttonSend_clicked()
 void OverviewPage::on_buttonReceive_clicked()
 {
     Q_EMIT receiveCoinsClicked();
-}
-
-// Solo Mining
-void OverviewPage::manageMiningState(bool state)
-{
-    if (!walletModel)
-        return;
-
-    if (state != miningState)
-        miningState = state;
-
-    if (!miningState) {
-        updateMiningStatsTimer->stop();
-        walletModel->wallet().stopMining();  
-        ui->generateButton->setText("Start mining");
-    } else {
-        // Update stats every 5s
-        updateMiningStatsTimer->start(1000);
-        walletModel->wallet().startMining();
-        ui->generateButton->setText("Stop mining");
-    }
-}
-
-void OverviewPage::on_generateButton_clicked()
-{
-    if (!miningState)
-        OverviewPage::manageMiningState(true);
-    else
-        OverviewPage::manageMiningState(false);
-}
-
-
-void OverviewPage::updateMiningStatistics()
-{
-    std::cout << "Test4321\n\n";
 }

@@ -1411,11 +1411,9 @@ public:
             [fn](CWallet*, const uint160& id, ChangeType status) { fn(id, status); }));
     }
 
-
-
-    void startMining() override
+    void startMining(int nThreads) override
     {
-        m_wallet->StartMining(1);
+        m_wallet->StartMining(nThreads);
     }
 
     void stopMining() override

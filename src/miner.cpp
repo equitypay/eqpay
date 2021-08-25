@@ -1885,35 +1885,22 @@ bool fGenerateSolo = false;
 static int64_t timeElapsed = 30000;
 double dHashesPerMin = 0.0;
 int64_t nHPSTimerStart = 0;
-unsigned int nExtraNonce = 0;
 
-bool CheckWork(CBlock* pblock, CWallet& wallet, ReserveDestination& reservedest)
+bool CheckWork(CBlock* pblock)
 {
     arith_uint256 hashBlock = UintToArith256(pblock->GetWorkHash());
     arith_uint256 hashTarget = arith_uint256().SetCompact(pblock->nBits);
+    CBlockIndex* pindexPrev = ::ChainActive().Tip();
 
-    LogPrintf("CheckWork() : new proof-of-work block found  \n  hash: %s  \ntarget: %s\n", hashBlock.GetHex().c_str(), hashTarget.GetHex().c_str());
-
-    if (hashBlock > hashTarget)
+    if (hashBlock > hashTarget){
         return error("CheckWork() : proof-of-work not meeting target");
-
-    // Debug print
-    pblock->print();
-
-    // Found a solution
-    {
-        LOCK(cs_main);
-        auto hashBestChain = ::ChainstateActive().CoinsTip().GetBestBlock();
-        if (pblock->hashPrevBlock != hashBestChain)
+    } else {
+        if (pblock->hashPrevBlock != pindexPrev->GetBlockHash()){
             return error("CheckWork() : generated block is stale");
-
-        // Remove destination from key pool
-        reservedest.KeepDestination();
-
-        // Track how many getdata requests this block gets
-        {
-            LOCK(wallet.cs_wallet);
         }
+
+        pblock->print();
+        LogPrintf("New proof-of-work block found with: %s coins generated.\n", FormatMoney(pblock->vtx[0]->vout[0].nValue).c_str());
 
         // Process this block the same as if we had received it from another node
         std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(*pblock);
@@ -1948,15 +1935,15 @@ void Miner(CWallet *pwallet, CConnman* connman)
     CScript scriptChange;
     scriptChange = GetScriptForDestination(dest);
 
-    nExtraNonce += 1;
+    unsigned int nExtraNonce = 0;
     try
     {
         while (fGenerateSolo)
         {
             while (::ChainstateActive().IsInitialBlockDownload() || connman->GetNodeCount(CConnman::CONNECTIONS_ALL) < 1 || ::ChainActive().Tip()->nHeight < GetNumBlocksOfPeers()){
                 LogPrintf("Mining inactive while chain is syncing...\n");
+                UninterruptibleSleep(std::chrono::milliseconds{5000});
                 break;
-                // MilliSleep(5000);
             }
 
             // Create new block
@@ -1983,7 +1970,7 @@ void Miner(CWallet *pwallet, CConnman* connman)
                         // Found a solution
                         LogPrintf("Miner found a solution\n");
                         SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                        CheckWork(pblock, *pwallet, reservedest);
+                        CheckWork(pblock);
                         SetThreadPriority(THREAD_PRIORITY_LOWEST);
                     }
                     nHashesDone += 1;
@@ -2046,6 +2033,7 @@ void Miner(CWallet *pwallet, CConnman* connman)
 
 void GenerateSolo(bool fGenerate, CWallet *pwallet, CConnman* connman, boost::thread_group*& minerThreads, int nThreads)
 {
+    fGenerateSolo = fGenerate;
     if (minerThreads != nullptr)
     {
         minerThreads->interrupt_all();

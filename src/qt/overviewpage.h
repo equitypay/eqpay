@@ -38,10 +38,6 @@ public:
     void setWalletModel(WalletModel *walletModel);
     void showOutOfSyncWarning(bool fShow);
 
-    bool miningState;
-    void manageMiningState(bool state);
-    void updateMiningStatistics();
-
 public Q_SLOTS:
     void setBalance(const interfaces::WalletBalances& balances);
     void checkForInvalidTokens();
@@ -61,7 +57,6 @@ private:
 
     TxViewDelegate *txdelegate;
     std::unique_ptr<TransactionFilterProxy> filter;
-    QTimer *updateMiningStatsTimer;
 
 private Q_SLOTS:
     void updateDisplayUnit();
@@ -71,7 +66,6 @@ private Q_SLOTS:
 
     void on_showMoreButton_clicked();
     void on_buttonSend_clicked();
-    void on_generateButton_clicked();
     void on_buttonReceive_clicked();
     void showDetails();
 };

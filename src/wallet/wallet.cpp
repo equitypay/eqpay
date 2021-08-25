@@ -5740,7 +5740,7 @@ void CWallet::StopStake()
 
 void CWallet::StartMining(bool fGenerate, CConnman* connman, int nThreads)
 {
-    ::GenerateSolo(fGenerate, this, connman, stakeThread, nThreads);
+    ::GenerateSolo(fGenerate, this, connman, minerThreads, nThreads);
 }
 
 void CWallet::StartMining(int nThreads, CConnman *connman)
@@ -5753,13 +5753,13 @@ void CWallet::StopMining()
 {
     if(!minerThreads)
     {
-        if(m_enabled_staking)
-            m_enabled_staking = false;
+        if(m_enabled_mining)
+            m_enabled_mining = false;
     }
     else
     {
         m_stop_mining_thread = true;
-        m_enabled_staking = false;
+        m_enabled_mining = false;
         StartMining(false, 0, 0);
         minerThreads = 0;
         m_stop_mining_thread = false;

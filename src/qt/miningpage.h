@@ -31,18 +31,20 @@ public:
     void setClientModel(ClientModel *clientModel);
     void setWalletModel(WalletModel *walletModel);
 
-public Q_SLOTS:
-    void setBalance(const interfaces::WalletBalances& balances);
-
-Q_SIGNALS:
-    void transactionClicked(const QModelIndex &index);
+    bool miningState;
+    void manageMiningState(bool state, int nThreads);
+    void updateMiningStatistics();
+    void updateThreads(int value);
 
 private:
     Ui::MiningPage *ui;
     ClientModel *clientModel;
     WalletModel *walletModel;
 
+    QTimer *updateMiningStatsTimer;
+
 private Q_SLOTS:
+    void on_miningButton_clicked();
 };
 
 #endif // QTUM_QT_STAKEPAGE_H
