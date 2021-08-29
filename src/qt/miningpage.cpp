@@ -10,9 +10,12 @@
 #include <interfaces/wallet.h>
 #include <qt/transactiondescdialog.h>
 #include <qt/styleSheet.h>
+#include <qt/bitcoinunits.h>
 
+#include <util/check.h>
 #include <validation.h>
 #include <miner.h>
+#include <pow.h>
 
 #include <QSortFilterProxyModel>
 #include <QString>
@@ -23,7 +26,7 @@ Q_DECLARE_METATYPE(interfaces::WalletBalances)
 #include <qt/miningpage.moc>
 
 QString FormatHashrate(double hashrate) {
-    int nHashrate = hashrate;
+    uint64_t nHashrate = hashrate;
 
     if (nHashrate >= 1000000000) {
         return QString::number(nHashrate / 1000000000) + " Gh/m";
@@ -34,6 +37,30 @@ QString FormatHashrate(double hashrate) {
     } else {
         return QString::number(nHashrate) + " H/m";
     }
+}
+
+double GetDifficulty(uint32_t nBits)
+{
+    int nShift = (nBits >> 24) & 0xff;
+    double dDiff =
+        (double)0x0000ffff / (double)(nBits & 0x00ffffff);
+
+    while (nShift < 29)
+    {
+        dDiff *= 256.0;
+        nShift++;
+    }
+    while (nShift > 29)
+    {
+        dDiff /= 256.0;
+        nShift--;
+    }
+
+    return dDiff;
+}
+
+double GetNetworkHashPM() {
+    return ((GetDifficulty(GetNextWorkRequired(::ChainActive().Tip(), Params().GetConsensus(), false)) * pow(2, 32) * 10 / 60)) * 60;
 }
 
 MiningPage::MiningPage(const PlatformStyle *platformStyle, QWidget *parent) :
@@ -52,10 +79,16 @@ MiningPage::MiningPage(const PlatformStyle *platformStyle, QWidget *parent) :
     ui->threadSlider->setSingleStep(1);
 
     ui->threadLabel->setText(QString::number(1));
+    ui->networkLabel->setText(FormatHashrate(GetNetworkHashPM()));
 
     updateMiningStatsTimer = new QTimer(this);
+    updateNethashTimer = new QTimer(this);
+
     connect(updateMiningStatsTimer, &QTimer::timeout, this, &MiningPage::updateMiningStatistics);
+    connect(updateNethashTimer, &QTimer::timeout, this, &MiningPage::updateNetworkStatistics);
     connect(ui->threadSlider, &QSlider::valueChanged, this, &MiningPage::updateThreads);
+
+    updateNethashTimer->start(1000);
 }
 
 MiningPage::~MiningPage()
@@ -101,12 +134,37 @@ void MiningPage::on_miningButton_clicked()
     } else {
         MiningPage::manageMiningState(false, 0);
         ui->hashrateLabel->setText("0 H/m");
+
+        ui->labelDaily->setText("0.00000000 EQPAY");
+        ui->labelMonthly->setText("0.00000000 EQPAY");
+        ui->labelYearly->setText("0.00000000 EQPAY");
     }
 }
 
 void MiningPage::updateMiningStatistics()
 {
     ui->hashrateLabel->setText(FormatHashrate(hashrate));
+
+    CAmount nSubsidy = GetBlockSubsidy(::ChainActive().Tip()->nHeight, Params().GetConsensus());
+
+    CAmount nDailyPoW = (nSubsidy * 1440) / 2;
+    CAmount nMonthlyPoW = (nSubsidy * 43830) / 2;
+    CAmount nYearlyPoW = (nSubsidy * 525960) / 2;
+
+    double nethash = GetNetworkHashPM();
+    double percentage = hashrate / nethash;
+
+    if (percentage > 1)
+        percentage = 1;
+
+    ui->labelDaily->setText(BitcoinUnits::format(0, percentage * nDailyPoW) + " EQPAY");
+    ui->labelMonthly->setText(BitcoinUnits::format(0, percentage * nMonthlyPoW) + " EQPAY");
+    ui->labelYearly->setText(BitcoinUnits::format(0, percentage * nYearlyPoW) + " EQPAY");
+}
+
+void MiningPage::updateNetworkStatistics()
+{
+    ui->networkLabel->setText(FormatHashrate(GetNetworkHashPM()));
 }
 
 void MiningPage::updateThreads(int value)

@@ -34,6 +34,7 @@ public:
     bool miningState;
     void manageMiningState(bool state, int nThreads);
     void updateMiningStatistics();
+    void updateNetworkStatistics();
     void updateThreads(int value);
 
 private:
@@ -42,6 +43,7 @@ private:
     WalletModel *walletModel;
 
     QTimer *updateMiningStatsTimer;
+    QTimer *updateNethashTimer;
 
 private Q_SLOTS:
     void on_miningButton_clicked();
