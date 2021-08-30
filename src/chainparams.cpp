@@ -108,10 +108,10 @@ public:
         strNetworkID = CBaseChainParams::MAIN;
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
-        consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
+        consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.posLimit = uint256S("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nTargetTimespan = 2000;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -127,35 +127,34 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xc4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3"); // 888000
+        consensus.defaultAssumeValid = uint256S("0xd7f32a805388cd7077e73c0f8d410a5f296cc7dc08bc718231e05dedbe8db287"); // 888000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf1;
-        pchMessageStart[1] = 0xcf;
-        pchMessageStart[2] = 0xa6;
-        pchMessageStart[3] = 0xd3;
-        nDefaultPort = 3888;
+        pchMessageStart[0] = 0x80;
+        pchMessageStart[1] = 0x65;
+        pchMessageStart[2] = 0x89;
+        pchMessageStart[3] = 0x86;
+        nDefaultPort = 9998;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 8;
         m_assumed_chain_state_size = 1;
 
-        const char* pszTimestamp = "Sep 02, 2017 Bitcoin breaks $5,000 in latest price frenzy";
-        genesis = CreateGenesisBlock(1627744188, 169, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        const char* pszTimestamp = "Hubble Observes Enigmatic Herbig-Haro Object | Aug 30, 2021 Sci News";
+        genesis = CreateGenesisBlock(1630341010, 725, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-
-        assert(consensus.hashGenesisBlock == uint256S("0xc4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3"));
-        assert(genesis.hashMerkleRoot == uint256S("0xbf9afef60b6f9b28e419388aef8dd89540a9634670e710273ddb4d0b1e38cdbb"));
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,50);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
+        assert(consensus.hashGenesisBlock == uint256S("0xd7f32a805388cd7077e73c0f8d410a5f296cc7dc08bc718231e05dedbe8db287"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6f2751b1be09f5669b1b1296d417f2767c3df31d44b333e0f93c56a2b98df0db"));
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,70);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "qc";
+        bech32_hrp = "eqpay";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -167,7 +166,7 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("c4b5bce3cf83653cc3d50d681eb68e01ac741a885d23a2d242b7dcaa4863ccf3")},
+                { 0, uint256S("d7f32a805388cd7077e73c0f8d410a5f296cc7dc08bc718231e05dedbe8db287")},
             }
         };
 
@@ -177,7 +176,7 @@ public:
             0
         };
 
-        consensus.nCoinbaseMaturity = 500;
+        consensus.nCoinbaseMaturity = 300;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
@@ -194,7 +193,6 @@ public:
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
-        // consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
