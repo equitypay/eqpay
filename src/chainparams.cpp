@@ -127,7 +127,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xd7f32a805388cd7077e73c0f8d410a5f296cc7dc08bc718231e05dedbe8db287"); // 888000
+        consensus.defaultAssumeValid = uint256S("0xcbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb"); // 888000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -144,9 +144,9 @@ public:
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "Hubble Observes Enigmatic Herbig-Haro Object | Aug 30, 2021 Sci News";
-        genesis = CreateGenesisBlock(1630341010, 725, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1630380996, 1591, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xd7f32a805388cd7077e73c0f8d410a5f296cc7dc08bc718231e05dedbe8db287"));
+        assert(consensus.hashGenesisBlock == uint256S("0xcbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb"));
         assert(genesis.hashMerkleRoot == uint256S("0x6f2751b1be09f5669b1b1296d417f2767c3df31d44b333e0f93c56a2b98df0db"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
@@ -166,7 +166,7 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("d7f32a805388cd7077e73c0f8d410a5f296cc7dc08bc718231e05dedbe8db287")},
+                { 0, uint256S("cbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb")},
             }
         };
 
