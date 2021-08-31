@@ -87,18 +87,18 @@ uint256 CBlockHeaderUncached::GetHashWithoutSign() const
 
 uint256 CBlockHeaderUncached::GetWorkHash() const
 {
-    static const yespower_params_t yespower_1_0_sugarchain = {
+    static const yespower_params_t yespower_1_0_config = {
         .version = YESPOWER_1_0,
         .N = 2048,
         .r = 32,
-        .pers = (const uint8_t *)"Satoshi Nakamoto 31/Oct/2008 Proof-of-work is essentially one-CPU-one-vote",
-        .perslen = 74
+        .pers = (const uint8_t *)"The gods had gone away, and the ritual of the religion continued senselessly, uselessly.",
+        .perslen = 88
     };
 
     uint256 hash;
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
     ss << *this;
-    if (yespower_tls((const uint8_t *)&ss[0], ss.size(), &yespower_1_0_sugarchain, (yespower_binary_t *)&hash)) {
+    if (yespower_tls((const uint8_t *)&ss[0], ss.size(), &yespower_1_0_config, (yespower_binary_t *)&hash)) {
         fprintf(stderr, "Error: CBlockHeaderUncached::GetPoWHash(): failed to compute PoW hash (out of memory?)\n");
         exit(1);
     }
