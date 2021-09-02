@@ -67,7 +67,7 @@ void StakePage::setWalletModel(WalletModel *model)
     if(model && model->getOptionsModel())
     {
         transactionView->setModel(model);
-        transactionView->chooseType(6);
+        transactionView->chooseType(7);
         ui->checkStake->setChecked(model->wallet().getEnabledStaking());
 
         // Keep up to date with wallet

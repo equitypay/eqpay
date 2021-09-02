@@ -79,7 +79,8 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     typeWidget->addItem(tr("To yourself"), TransactionFilterProxy::TYPE(TransactionRecord::SendToSelf));
     typeWidget->addItem(tr("Contract Receive"), TransactionFilterProxy::TYPE(TransactionRecord::ContractRecv));
     typeWidget->addItem(tr("Contract Send"), TransactionFilterProxy::TYPE(TransactionRecord::ContractSend));
-    typeWidget->addItem(tr("Mined"), TransactionFilterProxy::TYPE(TransactionRecord::Generated));
+    typeWidget->addItem(tr("Mined"), TransactionFilterProxy::TYPE(TransactionRecord::Mining));
+    typeWidget->addItem(tr("Stake"), TransactionFilterProxy::TYPE(TransactionRecord::Staking));
     typeWidget->addItem(tr("Other"), TransactionFilterProxy::TYPE(TransactionRecord::Other));
 
     hlayout->addWidget(typeWidget);

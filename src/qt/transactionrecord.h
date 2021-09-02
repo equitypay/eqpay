@@ -76,7 +76,8 @@ public:
     enum Type
     {
         Other,
-        Generated,
+        Mining,
+        Staking,
         SendToAddress,
         SendToOther,
         RecvWithAddress,

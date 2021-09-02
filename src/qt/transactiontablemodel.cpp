@@ -373,8 +373,10 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
         return tr("Sent to");
     case TransactionRecord::SendToSelf:
         return tr("Payment to yourself");
-    case TransactionRecord::Generated:
+    case TransactionRecord::Mining:
         return tr("Mined");
+    case TransactionRecord::Staking:
+        return tr("Stake");
     case TransactionRecord::ContractRecv:
         return tr("Contract receive");
     case TransactionRecord::ContractSend:
@@ -388,8 +390,10 @@ QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord *wtx
 {
     switch(wtx->type)
     {
-    case TransactionRecord::Generated:
+    case TransactionRecord::Mining:
         return platformStyle->TableColorIcon(":/icons/tx_mined", PlatformStyle::Input);
+    case TransactionRecord::Staking:
+        return platformStyle->TableColorIcon(":/icons/add_token", PlatformStyle::Input);
     case TransactionRecord::RecvWithAddress:
     case TransactionRecord::RecvFromOther:
         return platformStyle->TableColorIcon(":/icons/receive_from", PlatformStyle::Input);
@@ -421,7 +425,8 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord *wtx, b
     case TransactionRecord::SendToAddress:
     case TransactionRecord::ContractRecv:
     case TransactionRecord::ContractSend:
-    case TransactionRecord::Generated:
+    case TransactionRecord::Mining:
+    case TransactionRecord::Staking:
         return lookupAddress(wtx->address, tooltip) + watchAddress;
     case TransactionRecord::SendToOther:
         return QString::fromStdString(wtx->address) + watchAddress;
@@ -441,7 +446,8 @@ QVariant TransactionTableModel::addressColor(const TransactionRecord *wtx) const
     case TransactionRecord::SendToAddress:
     case TransactionRecord::ContractSend:
     case TransactionRecord::ContractRecv:
-    case TransactionRecord::Generated:
+    case TransactionRecord::Mining:
+    case TransactionRecord::Staking:
         {
         QString label = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(wtx->address));
         if(label.isEmpty())
