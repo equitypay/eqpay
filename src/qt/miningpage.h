@@ -1,6 +1,7 @@
 #ifndef QTUM_QT_STAKEPAGE_H
 #define QTUM_QT_STAKEPAGE_H
 
+#include <qt/transactionview.h>
 #include <interfaces/wallet.h>
 
 #include <QWidget>
@@ -44,6 +45,9 @@ private:
 
     QTimer *updateMiningStatsTimer;
     QTimer *updateNethashTimer;
+
+    const PlatformStyle* const platformStyle;
+    TransactionView* transactionView;
 
 private Q_SLOTS:
     void on_miningButton_clicked();

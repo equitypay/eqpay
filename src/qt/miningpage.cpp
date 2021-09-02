@@ -9,6 +9,7 @@
 #include <qt/walletmodel.h>
 #include <interfaces/wallet.h>
 #include <qt/transactiondescdialog.h>
+#include <qt/transactionview.h>
 #include <qt/styleSheet.h>
 #include <qt/bitcoinunits.h>
 
@@ -63,17 +64,21 @@ double GetNetworkHashPM() {
     return ((GetDifficulty(GetNextWorkRequired(::ChainActive().Tip(), Params().GetConsensus(), false)) * pow(2, 32) * 10 / 60)) * 60;
 }
 
-MiningPage::MiningPage(const PlatformStyle *platformStyle, QWidget *parent) :
+MiningPage::MiningPage(const PlatformStyle *_platformStyle, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MiningPage),
+    platformStyle(_platformStyle),
     clientModel(nullptr),
     walletModel(nullptr),
-    miningState(false)
+    miningState(false),
+    transactionView(0)
 {
     ui->setupUi(this);
+    transactionView = new TransactionView(platformStyle, this, true);
+    ui->frameMiningRecords->layout()->addWidget(transactionView);
 
     ui->threadSlider->setMinimum(1);
-    ui->threadSlider->setMaximum(std::thread::hardware_concurrency());
+    ui->threadSlider->setMaximum(std::thread::hardware_concurrency() / 2);
     ui->threadSlider->setTickPosition(QSlider::TicksBothSides);
     ui->threadSlider->setTickInterval(1);
     ui->threadSlider->setSingleStep(1);
@@ -104,6 +109,11 @@ void MiningPage::setClientModel(ClientModel *model)
 void MiningPage::setWalletModel(WalletModel *model)
 {
     this->walletModel = model;
+    if(model && model->getOptionsModel())
+    {
+        transactionView->setModel(model);
+        transactionView->chooseType(6);
+    }
 }
 
 void MiningPage::manageMiningState(bool state, int nThreads)
