@@ -4959,9 +4959,7 @@ void CWallet::postInitProcess()
     chain().requestMempoolTransactions(*this);
 
     // Start mine proof-of-stake blocks in the background
-    if (gArgs.GetBoolArg("-staking", DEFAULT_STAKE)) {
-        StartStake();
-    }
+    StartStake(gArgs.GetBoolArg("-staking", DEFAULT_STAKE));
 }
 
 bool CWallet::BackupWallet(const std::string& strDest) const
@@ -5714,9 +5712,9 @@ void CWallet::StartStaking(bool fStake, CConnman* connman)
     ::StartStaking(fStake, this, connman, stakeThread);
 }
 
-void CWallet::StartStake(CConnman *connman)
+void CWallet::StartStake(bool status, CConnman *connman)
 {
-    m_enabled_staking = true;
+    m_enabled_staking = status;
     StartStaking(true, connman);
 }
 

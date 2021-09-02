@@ -1425,7 +1425,7 @@ public:
     bool RemoveSuperStakerEntry(const uint256& superStakerHash, bool fFlushOnClose=true);
 
     /* Start staking */
-    void StartStake(CConnman* connman = CWallet::defaultConnman);
+    void StartStake(bool status, CConnman* connman = CWallet::defaultConnman);
 
     /* Stop staking */
     void StopStake();
