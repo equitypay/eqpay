@@ -1,6 +1,6 @@
 # EqPay Sparknet Usage and Information
 
-EqPay is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about EqPay as well as links to join our community, go to https://eqpay.org
+EqPay is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about EqPay as well as links to join our community, go to https://equitypay.org
 
 Welcome to EqPay Sparknet, the first public testnet for the EqPay blockchain. Sparknet is designed primarily for developers, and as such documentation at this point will be technical and suited more for developers. The mainnet is expected to be released in September and will be suited for the general public. Testnet tokens do not hold any value and should not be traded for any monetary instruments. The testnet can be reset or forked at anytime as deemed necessary for development. Sparknet does not include support for Mutualized Proof Of Stake, or for the Decentralized Governance Protocol. Both of these features are implemented, and their code is available on alternative branches (check the pull requests), but have not been tested and proven stable enough to include in this testnet. They will be implemented in the 2nd public testnet for EqPay. 
 
@@ -186,7 +186,7 @@ When creating this contract transaction, nothing will immediately happen, when t
 * Q: "I used `createcontract`, but can't call my contract and it's not in listcontract" A: You probably did not provide enough gas for the contract's constructor to be executed and it's code persisted in the blockchain. The vm.log file should confirm this by saying how much gas was needed
 * Q: "I sent a large amount of gas but I never got a refund" A: Refunds are generated from the coinstake transaction, so you must wait 500 blocks for the gas refund to mature before it can be spent again
 * Q: "I used -reindex and now my node is taking forever to resync" A: Currently when doing a reindex, all contracts are reprocessed, so in a chain with many contract executions this can add up to a significant amount of time. This will be made faster in the future, as well as the initial syncing speed of nodes
-* Q: "I think I found a bug in EqPay" A: Please report any bugs at https://github.com/eqpayproject/eqpay/issues
+* Q: "I think I found a bug in EqPay" A: Please report any bugs at https://github.com/equitypay/eqpay/issues
 
 
 
@@ -234,6 +234,6 @@ These include the following, though there may be others introduced in the future
 * Only 1000 vouts can be generated from a single contract execution. Sending coins to the same contract multiple times results in a single vout being created, so the limitation is effectively that coins can only be sent to up to 1000 unique contract or pubkeyhash addresses, including balance changes between contracts. If this limit is exceeded, an Out Of Gas exception is generated and all state changes are reverted. 
 * Contract executions can not happen within coinbase or coinstake transactions
 
-Additional documents for the overall design and expected results of various operations is available at the ITD repository here: https://github.com/eqpayproject/eqpay-itds
+Additional documents for the overall design and expected results of various operations is available at the ITD repository here: https://github.com/equitypay/eqpay-itds
 
 

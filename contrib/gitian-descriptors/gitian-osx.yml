@@ -29,7 +29,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/eqpayproject/eqpay.git"
+- "url": "https://github.com/equitypay/eqpay.git"
   "dir": "eqpay"
 - "url": "https://github.com/eqpayproject/cpp-eth-eqpay.git"
   "dir": "cpp-eth-eqpay"

@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/eqpayproject/eqpay-detached-sigs.git"
+- "url": "https://github.com/equitypay/eqpay-detached-sigs.git"
   "dir": "signature"
 files:
 - "eqpay-osx-unsigned.tar.gz"

@@ -17,7 +17,7 @@ pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.6)
 
-git clone https://github.com/eqpayproject/eqpay --recursive
+git clone https://github.com/equitypay/eqpay --recursive
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.

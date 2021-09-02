@@ -632,7 +632,7 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/eqpayproject/eqpay>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/equitypay/eqpay>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i").translated, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

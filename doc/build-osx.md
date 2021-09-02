@@ -47,7 +47,7 @@ from the root of the repository.
 
 1. Clone the EqPay Core source code:
     ```shell
-    git clone --recursive https://github.com/eqpayproject/eqpay.git
+    git clone --recursive https://github.com/equitypay/eqpay.git
     cd eqpay
     ```
 

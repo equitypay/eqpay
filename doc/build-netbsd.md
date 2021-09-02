@@ -23,7 +23,7 @@ pkg-config
 python37
 gmp
 
-git clone https://github.com/eqpayproject/eqpay --recursive
+git clone https://github.com/equitypay/eqpay --recursive
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.

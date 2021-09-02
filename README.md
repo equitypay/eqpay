@@ -1,7 +1,7 @@
 What is EqPay?
 -------------
 
-EqPay is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with EqPay's Bitcoin-like UTXO blockchain. For more general information about EqPay as well as links to join our community, go to https://eqpay.org
+EqPay is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with EqPay's Bitcoin-like UTXO blockchain. For more general information about EqPay as well as links to join our community, go to https://equitypay.org
 
 Welcome to the EqPay Ignition Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on EqPay, we highly recommend using either testnet or regtest mode. 
 
@@ -28,14 +28,14 @@ Basic usage resources:
 * [Running EqPay on Amazon AWS using EqPay AMI](https://github.com/eqpayproject/documents/tree/master/en/EqPay-AWS)
 * [Encrypting and unlocking wallet](https://github.com/eqpayproject/documents/tree/master/en/Encrypt-and-Unlock-EqPay-Wallet)
 * [Testnet guide](https://github.com/eqpayproject/documents/blob/master/en/Testnet-User-Guide.md)
-* [Block explorer](https://eqpay.info), [Older explorer](https://explorer.eqpay.org)
+* [Block explorer](https://eqpay.info), [Older explorer](https://explorer.equitypay.org)
 
 
 Development resources:
 
 * [EqPay Book - A Developer's Guide To EQPAY](http://book.eqpay.site/en/)
 * [EqPay contract usage](https://docs.eqpay.site/en/QRC20-Token-Introduce.html)
-* [Deploying a custom token to EqPay](https://blog.eqpay.org/eqpay-custom-token-walkthrough-467d725fa27d)
+* [Deploying a custom token to EqPay](https://blog.equitypay.org/eqpay-custom-token-walkthrough-467d725fa27d)
 * [EqPayJS document](https://eqpayproject.github.io/eqpayjs-doc/)
 * [Smart contract ICO example](http://book.eqpay.site/en/part3/ico.htm)
 * [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-eqpay-sparknet-faucet)
@@ -53,15 +53,15 @@ Developer's Tools
 * Smart contract deployment tool
   * https://github.com/eqpayproject/solar
 * DApp JavaScript Library
-  * https://github.com/eqpayproject/eqpayjs
+  * https://github.com/equitypay/eqpayjs
 * A toolkit for building eqpay light wallets
-  * https://github.com/eqpayproject/eqpayjs-wallet
+  * https://github.com/equitypay/eqpayjs-wallet
 * CORS eqpayd RPC proxy for DApp
-  * https://github.com/eqpayproject/eqpayportal
+  * https://github.com/equitypay/eqpayportal
 * Docker images for running eqpay services
-  * https://github.com/eqpayproject/eqpay-docker
+  * https://github.com/equitypay/eqpay-docker
 * eqpay.info API that powers the block explorer and the EQPAY Web wallet
-  * https://github.com/eqpayproject/eqpayinfo-api#eqpayinfo-api-documentation
+  * https://github.com/equitypay/eqpayinfo-api#eqpayinfo-api-documentation
 
 
 What is EqPay Core?
@@ -99,7 +99,7 @@ User documentation https://github.com/eqpayproject/documents/tree/master/en/EQPA
 
 A light wallet that supports the Ledger and Trezor hardware wallets and is based on the well-known Electrum wallet software. 
 
-Download: https://github.com/eqpayproject/eqpay-electrum/releases
+Download: https://github.com/equitypay/eqpay-electrum/releases
 
 ### iOS and Android Wallets
 
@@ -107,7 +107,7 @@ These wallets run on mobile devices and synchronize quickly.
 
 Android Download: https://play.google.com/store/apps/details?id=org.eqpay.newwallet
 
-iOS Download: https://github.com/eqpayproject/eqpay-ios (open source, deprecated)
+iOS Download: https://github.com/equitypay/eqpay-ios (open source, deprecated)
 
 ### Ledger Chrome Wallet
 
@@ -121,13 +121,13 @@ How to install: https://ledger.zendesk.com/hc/en-us/articles/115003776913-How-to
 Make sure to check out these resources as well for more information and to keep up to date with all the latest news about EqPay. At least 1 developer is always around, so if you're developing on EqPay and need help, we'd love to welcome you to our community.
 
 *	@EqPay on Twitter https://twitter.com/eqpay
-* EqPay blog https://blog.eqpay.org/
+* EqPay blog https://blog.equitypay.org/
 *	EqPay Telegram Group https://t.me/eqpayofficial, other languages available
 * EqPay Discord https://discordapp.com/invite/wRfmkQ9
 *	/r/EqPay on Reddit https://www.reddit.com/r/EqPay/
-*	EqPay.org https://eqpay.org
+*	EqPay.org https://equitypay.org
 *	EqPay on Facebook https://www.facebook.com/EqPayOfficial/
-*	EqPay Forum https://forum.eqpay.org
+*	EqPay Forum https://forum.equitypay.org
 
 ### EqPay Smart Contract Limitations
 
@@ -143,7 +143,7 @@ Make sure to check out these resources as well for more information and to keep 
 
 ### Validate and Reproduce Binaries
 
-EqPay uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building EqPay are provided in [Gitan Building](https://github.com/eqpayproject/eqpay/blob/master/doc/gitian-building.md)
+EqPay uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building EqPay are provided in [Gitan Building](https://github.com/equitypay/eqpay/blob/master/doc/gitian-building.md)
 
 ### Build on Ubuntu
 
@@ -159,7 +159,7 @@ This is a quick start script for compiling EqPay on Ubuntu
     # If you want to build the Qt GUI:
     sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode
 
-    git clone https://github.com/eqpayproject/eqpay --recursive
+    git clone https://github.com/equitypay/eqpay --recursive
     cd eqpay
 
     # Note autogen will prompt to install some more dependencies if needed
@@ -169,7 +169,7 @@ This is a quick start script for compiling EqPay on Ubuntu
     
 ### Build on CentOS
 
-Here is a brief description for compiling EqPay on CentOS, for more details please refer to [the specific document](https://github.com/eqpayproject/eqpay/blob/master/doc/build-unix.md)
+Here is a brief description for compiling EqPay on CentOS, for more details please refer to [the specific document](https://github.com/equitypay/eqpay/blob/master/doc/build-unix.md)
 
     # Compiling boost manually
     sudo yum install python-devel bzip2-devel
@@ -189,7 +189,7 @@ Here is a brief description for compiling EqPay on CentOS, for more details plea
     sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
     
     # Building EqPay
-    git clone --recursive https://github.com/eqpayproject/eqpay.git
+    git clone --recursive https://github.com/equitypay/eqpay.git
     cd eqpay
     ./autogen.sh
     ./configure
@@ -220,7 +220,7 @@ NOTE: Building with Qt4 is still supported, however, could result in a broken UI
 
 1. Clone the eqpay source code and cd into `eqpay`
 
-        git clone --recursive https://github.com/eqpayproject/eqpay.git
+        git clone --recursive https://github.com/equitypay/eqpay.git
         cd eqpay
 
 2.  Build eqpay-core:
@@ -250,10 +250,10 @@ Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/eqpayproject/eqpay/tags) are created
+completely stable. [Tags](https://github.com/equitypay/eqpay/tags) are created
 regularly to indicate new official, stable release versions of EqPay.
 
-The contribution workflow is described in [CONTRIBUTING.md](https://github.com/eqpayproject/eqpay/blob/master/CONTRIBUTING.md)
+The contribution workflow is described in [CONTRIBUTING.md](https://github.com/equitypay/eqpay/blob/master/CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
 
 Testing

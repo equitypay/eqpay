@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#define EQPAY_RELEASES "https://github.com/eqpayproject/eqpay/releases"
+#define EQPAY_RELEASES "https://github.com/equitypay/eqpay/releases"
 
 class Version {
 
