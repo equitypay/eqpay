@@ -915,6 +915,49 @@ static UniValue getaccountinfo(const JSONRPCRequest& request)
     return result;
 }
 
+static UniValue getcontractcode(const JSONRPCRequest& request)
+{
+    RPCHelpMan{
+        "getcontractcode",
+        "\nGet contract code.\n",
+        {
+            {"address", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address"},
+            {"blockNum", RPCArg::Type::NUM, /* default */ "latest", "Number of block to get state from."},
+        },
+        RPCResult{
+            RPCResult::Type::STR, "", "(string)  code of the contract\n"},
+        RPCExamples{
+            HelpExampleCli("getcontractcode", "eb23c0b3e6042821da281a2e2364feb22dd543e3") + HelpExampleRpc("getcontractcode", "eb23c0b3e6042821da281a2e2364feb22dd543e3")},
+    }.Check(request);
+
+    LOCK(cs_main);
+
+    std::string strAddr = request.params[0].get_str();
+    if (strAddr.size() != 40 || !CheckHex(strAddr))
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Incorrect address");
+
+    TemporaryState ts(globalState);
+    if (request.params.size() > 1) {
+        if (request.params[1].isNum()) {
+            auto blockNum = request.params[1].get_int();
+            if (blockNum < 0 || blockNum > ::ChainActive().Height())
+                throw JSONRPCError(RPC_INVALID_PARAMS, "Incorrect block number");
+            auto pblockindex = ::ChainActive()[blockNum];
+            ts.SetRoot(uintToh256(pblockindex->hashStateRoot), uintToh256(pblockindex->hashUTXORoot));
+        } else {
+            throw JSONRPCError(RPC_INVALID_PARAMS, "Incorrect block number");
+        }
+    }
+
+    dev::Address addrAccount(strAddr);
+    if (!globalState->addressInUse(addrAccount))
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Address does not exist");
+
+    std::vector<uint8_t> code(globalState->code(addrAccount));
+
+    return HexStr(code.begin(), code.end());
+}
+
 static UniValue getstorage(const JSONRPCRequest& request)
 {
             RPCHelpMan{"getstorage",
@@ -1194,6 +1237,7 @@ UniValue callcontract(const JSONRPCRequest& request)
                     {"senderAddress", RPCArg::Type::STR, RPCArg::Optional::OMITTED_NAMED_ARG, "The sender address string"},
                     {"gasLimit", RPCArg::Type::NUM, RPCArg::Optional::OMITTED_NAMED_ARG, "The gas limit for executing the contract."},
                     {"amount", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "The amount in " + CURRENCY_UNIT + " to send. eg 0.1, default: 0"},
+                    {"blockNum", RPCArg::Type::NUM, "latest", "Block height"},
                 },
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
@@ -1540,25 +1584,24 @@ UniValue gettransactionreceipt(const JSONRPCRequest& request)
 
 UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
 {
-            RPCHelpMan{"getdelegationinfoforaddress",
-                "\nGet delegation information for an address.\n",
-                {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The eqpay address string"},
-                },
-                RPCResult{
-                    RPCResult::Type::OBJ, "", "",
-                    {
-                        {RPCResult::Type::STR, "staker", "The staker address"},
-                        {RPCResult::Type::NUM, "fee", "The percentage of the reward"},
-                        {RPCResult::Type::NUM, "blockHeight", "The block height"},
-                        {RPCResult::Type::STR_HEX, "PoD", "The proof of delegation"},
-                        {RPCResult::Type::BOOL, "verified", "Verify delegation"},
-                    }},
-                RPCExamples{
-                    HelpExampleCli("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-            + HelpExampleRpc("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-                },
-            }.Check(request);
+    RPCHelpMan{
+        "getdelegationinfoforaddress",
+        "\nGet delegation information for an address.\n",
+        {
+            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The qtum address string"},
+        },
+        RPCResult{
+            RPCResult::Type::OBJ, "", "",
+            {
+                {RPCResult::Type::STR, "staker", "The staker address"},
+                {RPCResult::Type::NUM, "fee", "The percentage of the reward"},
+                {RPCResult::Type::NUM, "blockHeight", "The block height"},
+                {RPCResult::Type::STR_HEX, "PoD", "The proof of delegation"},
+                {RPCResult::Type::BOOL, "verified", "Verify delegation"},
+            }},
+        RPCExamples{
+            HelpExampleCli("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd") + HelpExampleRpc("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")},
+    }.Check(request)
 
     LOCK(cs_main);
 
@@ -1579,7 +1622,7 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
     EqPayDelegation eqpayDelegation;
     Delegation delegation;
     uint160 address = uint160(*pkhash);
-    if(!eqpayDelegation.GetDelegation(address, delegation)) {
+    if (!eqpayDelegation.GetDelegation(address, delegation)) {
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Failed to get delegation");
     }
     bool verified = eqpayDelegation.VerifyDelegation(address, delegation);
@@ -1599,9 +1642,9 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
 class DelegationsStakerFilter : public IDelegationFilter
 {
 public:
-    DelegationsStakerFilter(const uint160& _address):
-        address(_address)
-    {}
+     DelegationsStakerFilter(const uint160& _address) : address(_address)
+    {
+    }
 
     bool Match(const DelegationEvent& event) const
     {
@@ -1632,30 +1675,30 @@ uint64_t getDelegateWeight(const uint160& keyid, const std::map<COutPoint, uint3
 
 UniValue getdelegationsforstaker(const JSONRPCRequest& request)
 {
-            RPCHelpMan{"getdelegationsforstaker",
-                "requires -logevents to be enabled\n"
-                "\nGet the current list of delegates for a super staker.\n",
-                {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The eqpay address string for staker"},
-                },
-               RPCResult{
+    RPCHelpMan{"getdelegationsforstaker",
+        "requires -logevents to be enabled\n"
+        "\nGet the current list of delegates for a super staker.\n",
+        {
+            {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The eqpay address string for staker"},
+        },
+        RPCResult{
             RPCResult::Type::ARR, "", "",
+        {
+            {RPCResult::Type::OBJ, "", "",
                 {
-                    {RPCResult::Type::OBJ, "", "",
-                        {
-                            {RPCResult::Type::STR, "delegate", "The delegate address"},
-                            {RPCResult::Type::STR, "staker", "The staker address"},
-                            {RPCResult::Type::NUM, "fee", "The percentage of the reward"},
-                            {RPCResult::Type::NUM, "blockHeight", "The block height"},
-                            {RPCResult::Type::NUM, "weight", "Delegate weight, displayed when address index is enabled"},
-                            {RPCResult::Type::STR_HEX, "PoD", "The proof of delegation"},
-                        }}
-                }},
-                RPCExamples{
-                    HelpExampleCli("getdelegationsforstaker", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-            + HelpExampleRpc("getdelegationsforstaker", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
-                },
-            }.Check(request);
+                    {RPCResult::Type::STR, "delegate", "The delegate address"},
+                    {RPCResult::Type::STR, "staker", "The staker address"},
+                    {RPCResult::Type::NUM, "fee", "The percentage of the reward"},
+                    {RPCResult::Type::NUM, "blockHeight", "The block height"},
+                    {RPCResult::Type::NUM, "weight", "Delegate weight, displayed when address index is enabled"},
+                    {RPCResult::Type::STR_HEX, "PoD", "The proof of delegation"},
+                }}
+        }},
+        RPCExamples{
+            HelpExampleCli("getdelegationsforstaker", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
+    + HelpExampleRpc("getdelegationsforstaker", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")
+        },
+    }.Check(request);
 
     if (!fLogEvents)
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Events indexing disabled");
@@ -1670,7 +1713,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid address");
     }
 
-    const PKHash *pkhash = boost::get<PKHash>(&dest);
+    const PKHash* pkhash = boost::get<PKHash>(&dest);
     if (!pkhash) {
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to public key hash");
     }
@@ -1680,7 +1723,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
     std::vector<DelegationEvent> events;
     uint160 address = uint160(*pkhash);
     DelegationsStakerFilter filter(address);
-    if(!eqpayDelegation.FilterDelegationEvents(events, filter)) {
+    if (!eqpayDelegation.FilterDelegationEvents(events, filter)) {
         throw JSONRPCError(RPC_INTERNAL_ERROR, "Failed to get delegations for staker");
     }
     std::map<uint160, Delegation> delegations = eqpayDelegation.DelegationsFromEvents(events);
@@ -1691,7 +1734,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
 
     // Fill the json object with information
     UniValue result(UniValue::VARR);
-    for (std::map<uint160, Delegation>::iterator it=delegations.begin(); it!=delegations.end(); it++){
+    for (std::map<uint160, Delegation>::iterator it = listcontractsdelegations.begin(); it != delegations.end(); it++){
         UniValue delegation(UniValue::VOBJ);
         delegation.pushKV("delegate", EncodeDestination(PKHash(it->first)));
         delegation.pushKV("staker", EncodeDestination(PKHash(it->second.staker)));
@@ -1762,6 +1805,75 @@ UniValue listcontracts(const JSONRPCRequest& request)
 	}
 
 	return result;
+}
+
+UniValue getblocktransactionreceipts(const JSONRPCRequest& request)
+{
+    RPCHelpMan{
+        "getblocktransactionreceipts",
+        "\nGet the transaction receipt.\n",
+        {
+            {"hash", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The block hash"},
+        },
+        RPCResult{
+            RPCResult::Type::ARR, "", "",
+            {{RPCResult::Type::OBJ, "", "",
+                {
+                    {RPCResult::Type::STR_HEX, "blockHash", "The block hash"},
+                    {RPCResult::Type::NUM, "blockNumber", "The block number"},
+                    {RPCResult::Type::STR_HEX, "transactionHash", "The transaction hash"},
+                    {RPCResult::Type::NUM, "transactionIndex", "The transaction index"},
+                    {RPCResult::Type::STR, "from", "The from address"},
+                    {RPCResult::Type::STR, "to", "The to address"},
+                    {RPCResult::Type::NUM, "cumulativeGasUsed", "The cumulative gas used"},
+                    {RPCResult::Type::NUM, "gasUsed", "The gas used"},
+                    {RPCResult::Type::STR_HEX, "contractAddress", "The contract address"},
+                    {RPCResult::Type::STR, "excepted", "The thrown exception"},
+                    {RPCResult::Type::STR_HEX, "bloom", "Bloom filter for light clients to quickly retrieve related logs"},
+                    {RPCResult::Type::ARR, "log", "The logs from the receipt",
+                        {
+                            {RPCResult::Type::STR, "address", "The contract address"},
+                            {RPCResult::Type::ARR, "topics", "The topic",
+                                {{RPCResult::Type::STR_HEX, "topic", "The topic"}}},
+                            {RPCResult::Type::STR_HEX, "data", "The logged data"},
+                        }},
+                }}}},
+        RPCExamples{
+            HelpExampleCli("getblocktransactionreceipts", "3b04bc73afbbcf02cfef2ca1127b60fb0baf5f8946a42df67f1659671a2ec53c")},
+    }
+        .Check(request);
+
+    if (!fLogEvents)
+        throw JSONRPCError(RPC_INTERNAL_ERROR, "Events indexing disabled");
+
+    LOCK(cs_main);
+
+    std::string hashTemp = request.params[0].get_str();
+    if (hashTemp.size() != 64) {
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Incorrect hash");
+    }
+
+    uint256 hash(uint256S(hashTemp));
+
+    const CBlockIndex* pblockindex = LookupBlockIndex(hash);
+    if (!pblockindex) {
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found");
+    }
+    const CBlock block = GetBlockChecked(pblockindex);
+
+    UniValue result(UniValue::VARR);
+    for (const auto& tx : block.vtx) {
+        if (tx->HasCreateOrCall()) {
+            const std::vector<TransactionReceiptInfo> transactionReceiptInfo = pstorageresult->getResult(uintToh256(tx->GetHash()));
+            for (const TransactionReceiptInfo& t : transactionReceiptInfo) {
+                UniValue tri(UniValue::VOBJ);
+                transactionReceiptInfoToJSON(t, tri);
+                result.push_back(tri);
+            }
+        }
+    }
+
+    return result;
 }
 
 static UniValue pruneblockchain(const JSONRPCRequest& request)
@@ -3513,13 +3625,14 @@ static const CRPCCommand commands[] =
     { "blockchain",         "savemempool",            &savemempool,            {} },
     { "blockchain",         "verifychain",            &verifychain,            {"checklevel","nblocks"} },
     { "blockchain",         "getaccountinfo",         &getaccountinfo,         {"contract_address"} },
+    { "blockchain",         "getcontractcode",        &getcontractcode,        {"address", "blockNum"} },
     { "blockchain",         "getstorage",             &getstorage,             {"address, index, blockNum"} },
 
     { "blockchain",         "preciousblock",          &preciousblock,          {"blockhash"} },
     { "blockchain",         "scantxoutset",           &scantxoutset,           {"action", "scanobjects"} },
     { "blockchain",         "getblockfilter",         &getblockfilter,         {"blockhash", "filtertype"} },
 
-    { "blockchain",         "callcontract",           &callcontract,           {"address","data", "senderAddress", "gasLimit", "amount"} },
+    { "blockchain",         "callcontract",           &callcontract,           {"address","data", "senderAddress", "gasLimit", "amount", "blockNum"} },
 
     { "blockchain",         "eqrc20name",              &eqrc20name,              {"address"} },
     { "blockchain",         "eqrc20symbol",            &eqrc20symbol,            {"address"} },
@@ -3539,6 +3652,7 @@ static const CRPCCommand commands[] =
     { "hidden",             "dumptxoutset",           &dumptxoutset,           {"path"} },
     { "blockchain",         "listcontracts",          &listcontracts,          {"start", "maxDisplay"} },
     { "blockchain",         "gettransactionreceipt",  &gettransactionreceipt,  {"hash"} },
+    { "blockchain",         "getblocktransactionreceipts",  &getblocktransactionreceipts,  {"hash"} },
     { "blockchain",         "searchlogs",             &searchlogs,             {"fromBlock", "toBlock", "address", "topics"} },
 
     { "blockchain",         "waitforlogs",            &waitforlogs,            {"fromBlock", "nblocks", "address", "topics"} },
