@@ -221,10 +221,12 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "eqrc20burnfrom", 6, "checkOutputs" },
     { "callcontract", 3, "gasLimit" },
     { "callcontract", 4, "amount" },
+    { "callcontract", 5, "blockNum" },
     { "reservebalance", 0, "reserve"},
     { "reservebalance", 1, "amount"},
     { "listcontracts", 0, "start" },
     { "listcontracts", 1, "maxDisplay" },
+    { "getcontractcode", 1, "blockNum" },
     { "getstorage", 2, "index" },
     { "getstorage", 1, "blockNum" },
     // Echo with conversion (For testing only)
