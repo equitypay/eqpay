@@ -123,14 +123,14 @@ ResultExecute EqPayState::execute(EnvInfo const& _envInfo, SealEngineFace const&
         //make sure to use empty transaction if no vouts made
         return ResultExecute{
             ex,
-            QtumTransactionReceipt(oldStateRoot, oldUTXORoot, gas, e.logs(), {}, {}),
+            EqPayTransactionReceipt(oldStateRoot, oldUTXORoot, gas, e.logs(), {}, {}),
             refund.vout.empty() ? CTransaction() : CTransaction(refund)
         };
     }else{
         if (res.excepted == dev::eth::TransactionException::None) {
             return ResultExecute{
                 res,
-                QtumTransactionReceipt(
+                EqPayTransactionReceipt(
                     rootHash(), rootHashUTXO(),
                     startGasUsed + e.gasUsed(),
                     e.logs(),
@@ -142,7 +142,7 @@ ResultExecute EqPayState::execute(EnvInfo const& _envInfo, SealEngineFace const&
         } else {
             return ResultExecute{
                 res,
-                QtumTransactionReceipt(rootHash(), rootHashUTXO(), startGasUsed + e.gasUsed(), e.logs(), {}, {}),
+                EqPayTransactionReceipt(rootHash(), rootHashUTXO(), startGasUsed + e.gasUsed(), e.logs(), {}, {}),
                 tx ? *tx : CTransaction()
             };
         }

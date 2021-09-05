@@ -33,7 +33,7 @@ struct Vin{
 
 class EqPayTransactionReceipt: public dev::eth::TransactionReceipt {
 public:
-    QtumTransactionReceipt(
+    EqPayTransactionReceipt(
         dev::h256 const& state_root, dev::h256 const& utxo_root,
         dev::u256 const& gas_used, dev::eth::LogEntries const& log,
         std::vector<std::pair<dev::Address, dev::bytes>>&& createdContracts,
