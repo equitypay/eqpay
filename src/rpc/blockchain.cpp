@@ -1601,7 +1601,7 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
             }},
         RPCExamples{
             HelpExampleCli("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd") + HelpExampleRpc("getdelegationinfoforaddress", "QM72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd")},
-    }.Check(request)
+    }.Check(request);
 
     LOCK(cs_main);
 
@@ -1734,7 +1734,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
 
     // Fill the json object with information
     UniValue result(UniValue::VARR);
-    for (std::map<uint160, Delegation>::iterator it = listcontractsdelegations.begin(); it != delegations.end(); it++){
+    for (std::map<uint160, Delegation>::iterator it = delegations.begin(); it != delegations.end(); it++){
         UniValue delegation(UniValue::VOBJ);
         delegation.pushKV("delegate", EncodeDestination(PKHash(it->first)));
         delegation.pushKV("staker", EncodeDestination(PKHash(it->second.staker)));

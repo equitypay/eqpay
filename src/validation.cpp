@@ -2367,11 +2367,10 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     return CallContract(addrContract, opcode, pblockindex, sender, gasLimit, nAmount);
 }
 
-std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, const dev::Address& sender, uint64_t gasLimit, CAmount nAmount){
+std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, CBlockIndex* pblockindex, const dev::Address& sender, uint64_t gasLimit, CAmount nAmount){
     CBlock block;
     CMutableTransaction tx;
 
-    CBlockIndex* pblockindex = ::BlockIndex()[::ChainActive().Tip()->GetBlockHash()];
     ReadBlockFromDisk(block, pblockindex, Params().GetConsensus());
     block.nTime = GetAdjustedTime();
 
@@ -2616,7 +2615,7 @@ bool ByteCodeExec::performByteCode(dev::eth::Permanence type){
             execRes.excepted = dev::eth::TransactionException::Unknown;
             result.push_back(ResultExecute{
                 execRes, 
-                EqPayTransactionReceipt(dev::h256(), dev::h256(), dev::u256(), dev::eth::LogEntries()), 
+                EqPayTransactionReceipt(dev::h256(), dev::h256(), dev::u256(), dev::eth::LogEntries(), {}, {}), 
                 CTransaction()
             });
             continue;
