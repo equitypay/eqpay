@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=0.17.6
-Name=EqPay Core
+Name=EquityPay Core
 Comment=Connect to the EqPay P2P Network
 Exec=eqpay-qt %u
 Terminal=false

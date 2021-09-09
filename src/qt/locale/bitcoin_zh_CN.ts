@@ -5164,8 +5164,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>EqPay Core</source>
-        <translation type="unfinished">EqPay Core</translation>
+        <source>EquityPay Core</source>
+        <translation type="unfinished">EquityPay Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -5693,8 +5693,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="vanished">无法启动HTTP服务，查看日志获取更多信息</translation>
     </message>
     <message>
-        <source>EqPay Core</source>
-        <translation type="vanished">EqPay Core</translation>
+        <source>EquityPay Core</source>
+        <translation type="vanished">EquityPay Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

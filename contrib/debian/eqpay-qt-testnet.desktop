@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=0.17.6
-Name=EqPay Core Testnet
+Name=EquityPay Core Testnet
 Comment=Connect to the EqPay P2P Network Testnet
 Exec=eqpay-qt -testnet %u
 Terminal=false

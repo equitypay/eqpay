@@ -1,15 +1,15 @@
-EqPay Core
+EquityPay Core
 =============
 
 Setup
 ---------------------
-EqPay Core is the original EqPay client and it builds the backbone of the network. It downloads and, by default, stores the entire history of EqPay transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+EquityPay Core is the original EqPay client and it builds the backbone of the network. It downloads and, by default, stores the entire history of EqPay transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download EqPay Core, visit [eqpaycore.org](https://www.eqpaycore.org/).
+To download EquityPay Core, visit [eqpaycore.org](https://www.eqpaycore.org/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run EqPay Core on your native platform.
+The following are some helpful notes on how to run EquityPay Core on your native platform.
 
 ### Unix
 
@@ -24,7 +24,7 @@ Unpack the files into a directory, and then run eqpay-qt.exe.
 
 ### macOS
 
-Drag EqPay Core to your applications folder, and then run EqPay Core.
+Drag EquityPay Core to your applications folder, and then run EquityPay Core.
 
 ### Need Help?
 

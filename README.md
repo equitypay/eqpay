@@ -12,7 +12,7 @@ The major features of the EqPay network include:
 3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc. 
 4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with EqPay. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
 
-Note: EqPay Core is considered beta software. We make no warranties or guarantees of its security or stability.
+Note: EquityPay Core is considered beta software. We make no warranties or guarantees of its security or stability.
 
 EqPay Documentation and Usage Resources
 ---------------
@@ -64,12 +64,12 @@ Developer's Tools
   * https://github.com/equitypay/eqpayinfo-api#eqpayinfo-api-documentation
 
 
-What is EqPay Core?
+What is EquityPay Core?
 ------------------
 
-EqPay Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the EqPay network. EqPay Core is considered the reference implementation for the EqPay network. 
+EquityPay Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the EqPay network. EquityPay Core is considered the reference implementation for the EqPay network. 
 
-EqPay Core currently implements the following:
+EquityPay Core currently implements the following:
 
 * Sending/Receiving EQPAY coins
 * Sending/Receiving QRC20 tokens on the EqPay network
@@ -85,7 +85,7 @@ EqPay Core currently implements the following:
 Alternative Wallets
 -------------------
 
-EqPay Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
+EquityPay Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
 
 ### EqPay Web Wallet
 
@@ -133,13 +133,13 @@ Make sure to check out these resources as well for more information and to keep 
 
 *	EVM smart contracts cannot receive coins from or send coins to any address type other than pay-to-pubkeyhash (starts with Q) addresses. This is due to a limitation in the EVM
 *	Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.
-*	Although all of the infrastructure is present, EqPay Core does not currently parse Solidity event data. You must parse this yourself using either searchlogs or -record-log-opcodes features.
+*	Although all of the infrastructure is present, EquityPay Core does not currently parse Solidity event data. You must parse this yourself using either searchlogs or -record-log-opcodes features.
 *	It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled. We hope to reenable this feature with release of the x86 virtual machine in 2020.
 *	In EqPay there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the coinbase operation in Solidity (this address is also the one registered for the continuous staker rewards after 500 blocks).
 
 ----------
 
-# Building EqPay Core
+# Building EquityPay Core
 
 ### Validate and Reproduce Binaries
 
@@ -216,7 +216,7 @@ Then install [Homebrew](https://brew.sh).
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-#### Build EqPay Core
+#### Build EquityPay Core
 
 1. Clone the eqpay source code and cd into `eqpay`
 

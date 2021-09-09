@@ -5163,8 +5163,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>EqPay Core</source>
-        <translation type="unfinished">EqPay Core</translation>
+        <source>EquityPay Core</source>
+        <translation type="unfinished">EquityPay Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -5720,8 +5720,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="vanished">HTTP 서비스를 활성화하지 못했습니다. 디버그 로그에서 더 많은 정보를 확인하세요. </translation>
     </message>
     <message>
-        <source>EqPay Core</source>
-        <translation type="vanished">EqPay Core</translation>
+        <source>EquityPay Core</source>
+        <translation type="vanished">EquityPay Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

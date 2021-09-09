@@ -972,7 +972,7 @@
     </message>
     <message>
         <source>EqPay</source>
-        <translation>EqPay Core</translation>
+        <translation>EquityPay Core</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>

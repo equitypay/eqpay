@@ -1166,8 +1166,8 @@ std::string CopyrightHolders(const std::string& strPrefix)
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
     // Make sure Bitcoin Core copyright is not removed by accident
-    if (copyright_devs.find("EqPay Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The EqPay Core Developers";
+    if (copyright_devs.find("EquityPay Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The EquityPay Core Developers";
     }
     return strCopyrightHolders;
 }
