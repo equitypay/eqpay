@@ -2016,7 +2016,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
 
                 if (pfClean == NULL && fAddressIndex) {
                     const auto &undo = txundo.vprevout[j];
-                    const bool isTxCoinStake = tx.IsCoinStake();
+                    const bool isTxCoinStake = tx.IsCoinStake() || tx.IsCoinBase();
                     const CTxIn input = tx.vin[j];
                     const CTxOut &prevout = view.GetOutputFor(input);
 
@@ -3281,7 +3281,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
             for (unsigned int k = 0; k < tx.vout.size(); k++) {
                 const CTxOut &out = tx.vout[k];
-                const bool isTxCoinStake = tx.IsCoinStake();
+                const bool isTxCoinStake = tx.IsCoinStake() || tx.IsCoinBase();
 
                 CTxDestination dest;
                 if (ExtractDestination({tx.GetHash(), k}, out.scriptPubKey, dest)) {
