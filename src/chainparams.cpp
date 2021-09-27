@@ -216,7 +216,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x318736b044a934237b84d347939ece63826ead1718d10a7d0eee863ccc1f99ab");
+        consensus.defaultAssumeValid = uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350");
 
         pchMessageStart[0] = 0x86;
         pchMessageStart[1] = 0x80;
@@ -228,9 +228,9 @@ public:
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "U.S. Debt Ceiling Suspension Ends, Congress Unclear on Next Step | Aug 1, 2021 Bloomberg";
-        genesis = CreateGenesisBlock(1631779133, 3510, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1632732913, 631, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x318736b044a934237b84d347939ece63826ead1718d10a7d0eee863ccc1f99ab"));
+        assert(consensus.hashGenesisBlock == uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350"));
         assert(genesis.hashMerkleRoot == uint256S("0x6b25cef5cf941fa342bc0a490d680a6f31e4fc32a3b8f5c09e82d818abf919ac"));
 
         vFixedSeeds.clear();
@@ -254,7 +254,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("318736b044a934237b84d347939ece63826ead1718d10a7d0eee863ccc1f99ab")},
+                {0, uint256S("317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350")},
             }
         };
 
