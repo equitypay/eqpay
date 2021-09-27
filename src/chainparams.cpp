@@ -112,7 +112,7 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 120;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -201,7 +201,7 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 120;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -285,7 +285,7 @@ public:
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
