@@ -112,7 +112,7 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -122,6 +122,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
+
+        // Diff
+        consensus.nDiffAdjustChange = 1000;
+        consensus.nDiffDamping = 1000;
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
@@ -193,11 +197,11 @@ public:
         strNetworkID = CBaseChainParams::TESTNET;
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
-        consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
+        consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -212,22 +216,21 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792");
+        consensus.defaultAssumeValid = uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350");
 
-        pchMessageStart[0] = 0x0d;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x15;
-        pchMessageStart[3] = 0x06;
-        nDefaultPort = 13888;
+        pchMessageStart[0] = 0x86;
+        pchMessageStart[1] = 0x80;
+        pchMessageStart[2] = 0x65;
+        pchMessageStart[3] = 0x89;
+        nDefaultPort = 19998;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "U.S. Debt Ceiling Suspension Ends, Congress Unclear on Next Step | Aug 1, 2021 Bloomberg";
-        genesis = CreateGenesisBlock(1627946420, 923, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1632732913, 631, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-
-        assert(consensus.hashGenesisBlock == uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792"));
+        assert(consensus.hashGenesisBlock == uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350"));
         assert(genesis.hashMerkleRoot == uint256S("0x6b25cef5cf941fa342bc0a490d680a6f31e4fc32a3b8f5c09e82d818abf919ac"));
 
         vFixedSeeds.clear();
@@ -239,7 +242,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tq";
+        bech32_hrp = "teqpay";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -251,7 +254,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792")},
+                {0, uint256S("317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350")},
             }
         };
 
@@ -282,7 +285,7 @@ public:
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
