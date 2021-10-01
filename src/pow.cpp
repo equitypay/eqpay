@@ -75,12 +75,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus:
     }
 
     if (fProofOfStake) {
-        return CalculateNextWorkRequired_QTUM(pindexPrev, pindexPrevPrev->GetBlockTime(), params);
+        return CalculateNextWorkRequiredPoS(pindexPrev, pindexPrevPrev->GetBlockTime(), params);
     } else {
-        return CalculateNextWorkRequired_Dash(pindexLast, params);
+        return CalculateNextWorkRequiredPoW(pindexLast, params);
     }
 
-    return CalculateNextWorkRequired(pindexPrev, params, fProofOfStake)
+    return CalculateNextWorkRequired(pindexPrev, params, fProofOfStake);
 
 }
 
@@ -195,7 +195,7 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, const Cons
 }
 
 // Use QTUM's difficulty adjust for PoS blocks only
-unsigned int CalculateNextWorkRequired_QTUM(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
+unsigned int CalculateNextWorkRequiredPoS(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
     if (params.fPoSNoRetargeting) {
         return pindexLast->nBits;
@@ -227,7 +227,7 @@ unsigned int CalculateNextWorkRequired_QTUM(const CBlockIndex* pindexLast, int64
 }
 
 // Use Dash's difficulty adjust for PoW blocks only
-unsigned int CalculateNextWorkRequired_Dash(const CBlockIndex* pindexLast, const Consensus::Params& params)
+unsigned int CalculateNextWorkRequiredPoW(const CBlockIndex* pindexLast, const Consensus::Params& params)
 {
     /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dash.org */
 
