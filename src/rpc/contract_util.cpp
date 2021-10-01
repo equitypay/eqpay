@@ -93,9 +93,9 @@ UniValue CallToContract(const UniValue& params)
 
     TemporaryState ts(globalState);
     int blockNum;
-    if (request.params.size() >= 6) {
-        if (request.params[5].isNum()) {
-            blockNum = request.params[5].get_int();
+    if (params.size() >= 6) {
+        if (params[5].isNum()) {
+            blockNum = params[5].get_int();
             if (blockNum < 0 || blockNum > ::ChainActive().Height())
                 throw JSONRPCError(RPC_INVALID_PARAMS, "Incorrect block number");
             ts.SetRoot(uintToh256(::ChainActive()[blockNum]->hashStateRoot), uintToh256(::ChainActive()[blockNum]->hashUTXORoot));
@@ -148,6 +148,20 @@ void assignJSON(UniValue& entry, const TransactionReceiptInfo& resExec) {
     entry.pushKV("bloom", resExec.bloom.hex());
     entry.pushKV("stateRoot", resExec.stateRoot.hex());
     entry.pushKV("utxoRoot", resExec.utxoRoot.hex());
+
+    UniValue createdContracts(UniValue::VARR);
+    for (const auto& item: resExec.createdContracts) {
+        UniValue contractItem(UniValue::VOBJ);
+        contractItem.pushKV("address", item.first.hex());
+        contractItem.pushKV("code", HexStr(item.second));
+        createdContracts.push_back(contractItem);
+    }
+    entry.pushKV("createdContracts", createdContracts);
+    UniValue destructedContracts(UniValue::VARR);
+    for (const dev::Address& contract : resExec.destructedContracts) {
+        destructedContracts.push_back(contract.hex());
+    }
+    entry.pushKV("destructedContracts", destructedContracts);
 }
 
 void assignJSON(UniValue& logEntry, const dev::eth::LogEntry& log,
@@ -162,19 +176,6 @@ void assignJSON(UniValue& logEntry, const dev::eth::LogEntry& log,
     }
     logEntry.pushKV("topics", topics);
     logEntry.pushKV("data", HexStr(log.data));
-    UniValue createdContracts(UniValue::VARR);
-    for (const auto& item: resExec.createdContracts) {
-        UniValue contractItem(UniValue::VOBJ);
-        contractItem.pushKV("address", item.first.hex());
-        contractItem.pushKV("code", HexStr(item.second));
-        createdContracts.push_back(contractItem);
-    }
-    entry.pushKV("createdContracts", createdContracts);
-    UniValue destructedContracts(UniValue::VARR);
-    for (const dev::Address& contract : resExec.destructedContracts) {
-        destructedContracts.push_back(contract.hex());
-    }
-    entry.pushKV("destructedContracts", destructedContracts);
 }
 
 void transactionReceiptInfoToJSON(const TransactionReceiptInfo& resExec, UniValue& entry) {
