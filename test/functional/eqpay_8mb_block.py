@@ -7,7 +7,7 @@ from test_framework.mininode import *
 from test_framework.blocktools import *
 from test_framework.eqpay import *
 
-class EqPay8MBBlock(BitcoinTestFramework):
+class EquityPay8MBBlock(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -84,4 +84,4 @@ class EqPay8MBBlock(BitcoinTestFramework):
         assert_equal(block_count+1, self.nodes[1].getblockcount())
 
 if __name__ == '__main__':
-    EqPay8MBBlock().main()
+    EquityPay8MBBlock().main()

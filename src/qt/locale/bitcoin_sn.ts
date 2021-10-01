@@ -64,7 +64,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>E&amp;xit</source>
         <translation>Buda</translation>
@@ -155,8 +155,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     </context>
 <context>
@@ -187,8 +187,8 @@
         <translation>Marii</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Nyora kero ye EqPay (sekuti %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Nyora kero ye EquityPay (sekuti %1)</translation>
     </message>
     <message>
         <source>%1 d</source>

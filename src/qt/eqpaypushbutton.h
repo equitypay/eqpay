@@ -4,11 +4,11 @@
 #include <QStyleOptionButton>
 #include <QIcon>
 
-class EqPayPushButton : public QPushButton
+class EquityPayPushButton : public QPushButton
 {
 public:
-    explicit EqPayPushButton(QWidget * parent = Q_NULLPTR);
-    explicit EqPayPushButton(const QString &text, QWidget *parent = Q_NULLPTR);
+    explicit EquityPayPushButton(QWidget * parent = Q_NULLPTR);
+    explicit EquityPayPushButton(const QString &text, QWidget *parent = Q_NULLPTR);
 
 protected:
     void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;

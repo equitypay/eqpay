@@ -665,7 +665,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="EqPayPushButton" name="addButton">
+         <widget class="EquityPayPushButton" name="addButton">
           <property name="toolTip">
            <string>Send to multiple recipients at once</string>
           </property>
@@ -1209,7 +1209,7 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>EqPayPushButton</class>
+   <class>EquityPayPushButton</class>
    <extends>QPushButton</extends>
    <header>qt/eqpaypushbutton.h</header>
   </customwidget>

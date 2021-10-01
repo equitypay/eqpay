@@ -39,7 +39,7 @@
     <item row="3" column="1">
      <widget class="QLabel" name="messageTextLabel">
       <property name="toolTip">
-       <string>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</string>
+       <string>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</string>
       </property>
       <property name="textFormat">
        <enum>Qt::PlainText</enum>
@@ -138,7 +138,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="payTo">
         <property name="toolTip">
-         <string>The EqPay address to send the payment to</string>
+         <string>The EquityPay address to send the payment to</string>
         </property>
        </widget>
       </item>

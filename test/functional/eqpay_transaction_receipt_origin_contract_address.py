@@ -12,7 +12,7 @@ def waitforlogs(node, contract_address):
     node.result = logs
 
 
-class EqPayTransactionReceiptOriginContractAddressTest(BitcoinTestFramework):
+class EquityPayTransactionReceiptOriginContractAddressTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -86,4 +86,4 @@ class EqPayTransactionReceiptOriginContractAddressTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayTransactionReceiptOriginContractAddressTest().main()
+    EquityPayTransactionReceiptOriginContractAddressTest().main()

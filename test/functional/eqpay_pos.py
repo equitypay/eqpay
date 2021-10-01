@@ -14,7 +14,7 @@ from test_framework.eqpayconfig import TIMESTAMP_MASK
 import io
 import struct
 
-class EqPayPOSTest(BitcoinTestFramework):
+class EquityPayPOSTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
@@ -394,4 +394,4 @@ class EqPayPOSTest(BitcoinTestFramework):
         return (block, block_sig_key)
 
 if __name__ == '__main__':
-    EqPayPOSTest().main()
+    EquityPayPOSTest().main()

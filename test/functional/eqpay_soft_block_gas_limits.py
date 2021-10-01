@@ -10,7 +10,7 @@ import sys
 import random
 
 
-class EqPaySoftMinerGasRelatedLimitsTest(BitcoinTestFramework):
+class EquityPaySoftMinerGasRelatedLimitsTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 8
@@ -173,4 +173,4 @@ class EqPaySoftMinerGasRelatedLimitsTest(BitcoinTestFramework):
         self.verify_hard_block_gas_limit_test()
 
 if __name__ == '__main__':
-    EqPaySoftMinerGasRelatedLimitsTest().main()
+    EquityPaySoftMinerGasRelatedLimitsTest().main()

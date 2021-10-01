@@ -209,11 +209,11 @@ BOOST_AUTO_TEST_CASE(condensingtransactionbehavior_tests){
     initState();
     dev::h256 hashTemp(hash);
 
-    std::vector<EqPayTransaction> txs;
+    std::vector<EquityPayTransaction> txs;
     std::vector<dev::Address> addresses;
     for(size_t i = 0; i < 3; i++){
-        txs.push_back(createEqPayTransaction(code[i], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), i));
-        addresses.push_back(createEqPayAddress(hashTemp, i));
+        txs.push_back(createEquityPayTransaction(code[i], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), i));
+        addresses.push_back(createEquityPayAddress(hashTemp, i));
         ++hashTemp;
     }
     auto result = executeBC(txs);
@@ -222,22 +222,22 @@ BOOST_AUTO_TEST_CASE(condensingtransactionbehavior_tests){
 
     txs.clear();
     for(size_t i = 0; i < 3; i++){
-        txs.push_back(createEqPayTransaction(code[i + 3], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[i]));
+        txs.push_back(createEquityPayTransaction(code[i + 3], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[i]));
     }
     result = executeBC(txs);
     balances = {0,0,0};
     checkRes(result.second, addresses, balances, 0);
 
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[6], 8000, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
+    txs.push_back(createEquityPayTransaction(code[6], 8000, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
     result = executeBC(txs);
     balances = {5000,2500,500};
     checkRes(result.second, addresses, balances, 1);
     checkTx(result.second.valueTransfers[0], 1, 3, {2500,5000,500});
 
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[7], 2000, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
-    txs.push_back(createEqPayTransaction(code[8], 2000, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
+    txs.push_back(createEquityPayTransaction(code[7], 2000, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
+    txs.push_back(createEquityPayTransaction(code[8], 2000, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
     result = executeBC(txs);
     balances = {0,11500,500};
     checkRes(result.second, addresses, balances, 2);
@@ -245,8 +245,8 @@ BOOST_AUTO_TEST_CASE(condensingtransactionbehavior_tests){
     checkTx(result.second.valueTransfers[1], 3, 1, {11500});
 
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[6], 2000, dev::u256(30000), dev::u256(1), hashTemp, addresses[1]));
-    txs.push_back(createEqPayTransaction(code[9], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[1]));
+    txs.push_back(createEquityPayTransaction(code[6], 2000, dev::u256(30000), dev::u256(1), hashTemp, addresses[1]));
+    txs.push_back(createEquityPayTransaction(code[9], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[1]));
     result = executeBC(txs);
     balances = {0,0,0};
     checkRes(result.second, addresses, balances, 2);
@@ -258,19 +258,19 @@ BOOST_AUTO_TEST_CASE(condensingtransactionbreadthways_tests){
     initState();
     dev::h256 hashTemp(hash);
     std::vector<dev::Address> addresses;
-    std::vector<EqPayTransaction> txs;
+    std::vector<EquityPayTransaction> txs;
     for(size_t i = 0; i < 3; i++){
-        txs.push_back(createEqPayTransaction(code[i], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), i));
-        addresses.push_back(createEqPayAddress(hashTemp, i));
+        txs.push_back(createEquityPayTransaction(code[i], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), i));
+        addresses.push_back(createEquityPayAddress(hashTemp, i));
         ++hashTemp;
     }
-    txs.push_back(createEqPayTransaction(code[10], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), 4));
-    addresses.push_back(createEqPayAddress(hashTemp, 4));
+    txs.push_back(createEquityPayTransaction(code[10], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), 4));
+    addresses.push_back(createEquityPayAddress(hashTemp, 4));
     auto result = executeBC(txs);
 
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[0], 15000, dev::u256(500000), dev::u256(1), hashTemp, addresses[3]));
-    txs.push_back(createEqPayTransaction(code[11], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[3]));
+    txs.push_back(createEquityPayTransaction(code[0], 15000, dev::u256(500000), dev::u256(1), hashTemp, addresses[3]));
+    txs.push_back(createEquityPayTransaction(code[11], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[3]));
 
     result = executeBC(txs);
     std::vector<dev::u256> balances = {5000,5000,5000,0};
@@ -283,15 +283,15 @@ BOOST_AUTO_TEST_CASE(condensingtransactiondeep_tests){
     initState();
     dev::h256 hashTemp(hash);
     std::vector<dev::Address> addresses;
-    std::vector<EqPayTransaction> txs;
+    std::vector<EquityPayTransaction> txs;
     for(size_t i = 12; i < 17; i++){
-        txs.push_back(createEqPayTransaction(code[i], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), i));
-        addresses.push_back(createEqPayAddress(hashTemp, i));
+        txs.push_back(createEquityPayTransaction(code[i], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), i));
+        addresses.push_back(createEquityPayAddress(hashTemp, i));
         ++hashTemp;
     }
     auto result = executeBC(txs);
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[11], 20000, dev::u256(500000), dev::u256(1), hashTemp, addresses[4]));
+    txs.push_back(createEquityPayTransaction(code[11], 20000, dev::u256(500000), dev::u256(1), hashTemp, addresses[4]));
     result = executeBC(txs);
     std::vector<dev::u256> balances = {1250,1250,2500,5000,10000};
     checkRes(result.second, addresses, balances, 1);
@@ -302,18 +302,18 @@ BOOST_AUTO_TEST_CASE(condensingtransactionsuicide_tests){
     initState();
     dev::h256 hashTemp(hash);
     std::vector<dev::Address> addresses;
-    std::vector<EqPayTransaction> txs;
-    txs.push_back(createEqPayTransaction(code[12], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), 0));
-    addresses.push_back(createEqPayAddress(hashTemp, 0));
+    std::vector<EquityPayTransaction> txs;
+    txs.push_back(createEquityPayTransaction(code[12], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), 0));
+    addresses.push_back(createEquityPayAddress(hashTemp, 0));
     
-    txs.push_back(createEqPayTransaction(code[17], 0, dev::u256(500000), dev::u256(1), ++hashTemp, dev::Address(), 1));
-    txs.push_back(createEqPayTransaction(valtype(), 13000, dev::u256(500000), dev::u256(1), hashTemp, createEqPayAddress(hashTemp, 1), 1));
+    txs.push_back(createEquityPayTransaction(code[17], 0, dev::u256(500000), dev::u256(1), ++hashTemp, dev::Address(), 1));
+    txs.push_back(createEquityPayTransaction(valtype(), 13000, dev::u256(500000), dev::u256(1), hashTemp, createEquityPayAddress(hashTemp, 1), 1));
 
-    addresses.push_back(createEqPayAddress(hashTemp, 1));
+    addresses.push_back(createEquityPayAddress(hashTemp, 1));
     auto result = executeBC(txs);
 
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[18], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[1]));
+    txs.push_back(createEquityPayTransaction(code[18], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[1]));
     result = executeBC(txs);
     std::vector<dev::u256> balances = {13000,0};
     checkRes(result.second, addresses, balances, 1);
@@ -324,16 +324,16 @@ BOOST_AUTO_TEST_CASE(condensingtransactionpaytopubkeyhash_tests){
     initState();
     dev::h256 hashTemp(hash);
     std::vector<dev::Address> addresses;
-    std::vector<EqPayTransaction> txs;
+    std::vector<EquityPayTransaction> txs;
 
-    txs.push_back(createEqPayTransaction(code[19], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), 13));
-    txs.push_back(createEqPayTransaction(valtype(), 13000, dev::u256(500000), dev::u256(1), hashTemp, createEqPayAddress(hashTemp, 13), 13));
+    txs.push_back(createEquityPayTransaction(code[19], 0, dev::u256(500000), dev::u256(1), hashTemp, dev::Address(), 13));
+    txs.push_back(createEquityPayTransaction(valtype(), 13000, dev::u256(500000), dev::u256(1), hashTemp, createEquityPayAddress(hashTemp, 13), 13));
 
-    addresses.push_back(createEqPayAddress(hashTemp, 13));
+    addresses.push_back(createEquityPayAddress(hashTemp, 13));
     auto result = executeBC(txs);
 
     txs.clear();
-    txs.push_back(createEqPayTransaction(code[11], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
+    txs.push_back(createEquityPayTransaction(code[11], 0, dev::u256(500000), dev::u256(1), hashTemp, addresses[0]));
     result = executeBC(txs);
     std::vector<dev::u256> balances = {6500,6500};
     checkRes(result.second, addresses, balances, 1);

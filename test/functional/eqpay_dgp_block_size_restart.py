@@ -15,7 +15,7 @@ import random
 """
 Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see eqpay-dgp.py
 """
-class EqPayDGPActivation(BitcoinTestFramework):
+class EquityPayDGPActivation(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -123,4 +123,4 @@ class EqPayDGPActivation(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayDGPActivation().main()
+    EquityPayDGPActivation().main()

@@ -145,10 +145,10 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន EqPay មួយ</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន EquityPay មួយ</translation>
     </message>
     </context>
 <context>

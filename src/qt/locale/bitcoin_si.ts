@@ -50,11 +50,11 @@
         <translation>ලබන ලිපින</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>මේවා ඔබගේ ගෙවීම් යැවීම සඳහා වන බිට්කොයින් ලිපින වේ. කාසි යැවීමට පෙර සෑම විටම මුදල සහ ලැබීමේ ලිපිනය පරීක්ෂා කරන්න.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
         <translation> මේවා ඔබගේ ගෙවීම් ලැබීම සඳහා වන බිට්කොයින් ලිපින වේ. නව ලිපින සෑදීම සඳහා ලැබීම් ටැබ් එකෙහි ඇති 'නව ලැබීමේ ලිපිනයක් සාදන්න' බොත්තම භාවිතා කරන්න.</translation>
     </message>
     <message>
@@ -212,7 +212,7 @@
     </message>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Browse transaction history</source>
         <translation>ගනුදෙනු ඉතිහාසය පිරික්සන්න</translation>

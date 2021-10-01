@@ -1619,7 +1619,7 @@ UniValue getdelegationinfoforaddress(const JSONRPCRequest& request)
     }
 
     // Get delegation for an address
-    EqPayDelegation eqpayDelegation;
+    EquityPayDelegation eqpayDelegation;
     Delegation delegation;
     uint160 address = uint160(*pkhash);
     if (!eqpayDelegation.GetDelegation(address, delegation)) {
@@ -1719,7 +1719,7 @@ UniValue getdelegationsforstaker(const JSONRPCRequest& request)
     }
 
     // Get delegations for staker
-    EqPayDelegation eqpayDelegation;
+    EquityPayDelegation eqpayDelegation;
     std::vector<DelegationEvent> events;
     uint160 address = uint160(*pkhash);
     DelegationsStakerFilter filter(address);

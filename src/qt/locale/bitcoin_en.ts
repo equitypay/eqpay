@@ -85,12 +85,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your EqPay addresses for receiving payments. Use the &apos;Create new receiving address&apos; button in the receive tab to create new addresses.</source>
+        <source>These are your EquityPay addresses for receiving payments. Use the &apos;Create new receiving address&apos; button in the receive tab to create new addresses.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -323,7 +323,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <location filename="../eqpaygui.cpp" line="+316"/>
         <source>Sign &amp;message...</source>
@@ -461,8 +461,8 @@
     </message>
     <message>
         <location line="-1028"/>
-        <source>Send coins to a EqPay address</source>
-        <translation>Send coins to a EqPay address</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Send coins to a EquityPay address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -506,13 +506,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Sign messages with your EqPay addresses to prove you own them</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Sign messages with your EquityPay addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verify messages to ensure they were signed with specified EqPay addresses</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verify messages to ensure they were signed with specified EquityPay addresses</translation>
     </message>
     <message>
         <location line="+111"/>
@@ -556,10 +556,10 @@
     </message>
     <message numerus="yes">
         <location line="+528"/>
-        <source>%n active connection(s) to EqPay network</source>
+        <source>%n active connection(s) to EquityPay network</source>
         <translation>
-            <numerusform>%n active connection to EqPay network</numerusform>
-            <numerusform>%n active connections to EqPay network</numerusform>
+            <numerusform>%n active connection to EquityPay network</numerusform>
+            <numerusform>%n active connections to EquityPay network</numerusform>
         </translation>
     </message>
     <message>
@@ -662,7 +662,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -793,7 +793,7 @@
     </message>
     <message>
         <location filename="../eqpay.cpp" line="+384"/>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1097,7 +1097,7 @@
     </message>
     <message>
         <location line="+75"/>
-        <source>The entered address &quot;%1&quot; is not a valid EqPay address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid EquityPay address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1216,8 +1216,8 @@
     </message>
     <message>
         <location filename="../intro.cpp" line="+32"/>
-        <source>EqPay</source>
-        <translation type="unfinished">EqPay</translation>
+        <source>EquityPay</source>
+        <translation type="unfinished">EquityPay</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -1236,7 +1236,7 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1544,8 +1544,8 @@
     </message>
     <message>
         <location line="+30"/>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1564,7 +1564,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1612,7 +1612,7 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1752,8 +1752,8 @@
     <message>
         <location line="+62"/>
         <location line="+386"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-139"/>
@@ -1886,7 +1886,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1937,7 +1937,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+111"/>
-        <source>Enter a EqPay address (e.g. %1)</source>
+        <source>Enter a EquityPay address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2582,7 +2582,7 @@
     </message>
     <message>
         <location line="-3"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3020,7 +3020,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+1"/>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3050,7 +3050,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+5"/>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EquityPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3168,7 +3168,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+100"/>
-        <source>Warning: Invalid EqPay address</source>
+        <source>Warning: Invalid EquityPay address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3218,7 +3218,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-7"/>
-        <source>The EqPay address to send the payment to</source>
+        <source>The EquityPay address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3286,7 +3286,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+58"/>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3334,7 +3334,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+18"/>
-        <source>The EqPay address to sign the message with</source>
+        <source>The EquityPay address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3377,8 +3377,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Sign the message to prove you own this EqPay address</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Sign the message to prove you own this EquityPay address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3408,7 +3408,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>The EqPay address the message was signed with</source>
+        <source>The EquityPay address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3425,8 +3425,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+9"/>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Verify the message to ensure it was signed with the specified EqPay address</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Verify the message to ensure it was signed with the specified EquityPay address</translation>
     </message>
     <message>
         <location line="+3"/>

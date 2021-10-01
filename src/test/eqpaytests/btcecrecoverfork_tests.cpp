@@ -107,17 +107,17 @@ BOOST_AUTO_TEST_CASE(checking_btcecrecover_after_fork){
     dev::h256 hashTx(HASHTX);
 
     // Create contract
-    std::vector<EqPayTransaction> txs;
-    txs.push_back(createEqPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
+    std::vector<EquityPayTransaction> txs;
+    txs.push_back(createEquityPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
     executeBC(txs);
 
     // Call btc_ecrecover
-    dev::Address proxy = createEqPayAddress(txs[0].getHashWith(), txs[0].getNVout());
-    std::vector<EqPayTransaction> txBtcEcrecover;
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    dev::Address proxy = createEquityPayAddress(txs[0].getHashWith(), txs[0].getNVout());
+    std::vector<EquityPayTransaction> txBtcEcrecover;
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
 
     // Execute contracts
     auto result = executeBC(txBtcEcrecover);
@@ -141,17 +141,17 @@ BOOST_AUTO_TEST_CASE(checking_btcecrecover_before_fork){
     dev::h256 hashTx(HASHTX);
 
     // Create contract
-    std::vector<EqPayTransaction> txs;
-    txs.push_back(createEqPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
+    std::vector<EquityPayTransaction> txs;
+    txs.push_back(createEquityPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
     executeBC(txs);
 
     // Call btc_ecrecover
-    dev::Address proxy = createEqPayAddress(txs[0].getHashWith(), txs[0].getNVout());
-    std::vector<EqPayTransaction> txBtcEcrecover;
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
-    txBtcEcrecover.push_back(createEqPayTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    dev::Address proxy = createEquityPayAddress(txs[0].getHashWith(), txs[0].getNVout());
+    std::vector<EquityPayTransaction> txBtcEcrecover;
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[2], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[3], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    txBtcEcrecover.push_back(createEquityPayTransaction(CODE[4], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
 
      // Execute contracts
     auto result = executeBC(txBtcEcrecover);

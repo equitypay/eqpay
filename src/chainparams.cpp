@@ -112,7 +112,7 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -123,11 +123,15 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
+        // Diff
+        consensus.nDiffAdjustChange = 1000;
+        consensus.nDiffDamping = 1000;
+
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xcbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb"); // 888000
+        consensus.defaultAssumeValid = uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"); // 888000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -137,17 +141,17 @@ public:
         pchMessageStart[0] = 0x80;
         pchMessageStart[1] = 0x65;
         pchMessageStart[2] = 0x89;
-        pchMessageStart[3] = 0x86;
+        pchMessageStart[3] = 0x76;
         nDefaultPort = 9998;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 8;
         m_assumed_chain_state_size = 1;
 
-        const char* pszTimestamp = "Hubble Observes Enigmatic Herbig-Haro Object | Aug 30, 2021 Sci News";
+        const char* pszTimestamp = "Tunguska-Sized Impact Destroyed Jordan Valley City 3,670 Years Ago | Sep 29, 2021 Sci News";
         genesis = CreateGenesisBlock(1630380996, 1591, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xcbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb"));
-        assert(genesis.hashMerkleRoot == uint256S("0x6f2751b1be09f5669b1b1296d417f2767c3df31d44b333e0f93c56a2b98df0db"));
+        assert(consensus.hashGenesisBlock == uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"));
+        assert(genesis.hashMerkleRoot == uint256S("0xaaed7f5c3953f815aca5127be6578651f9ca09e069696fa192e6f5990fffa7e1"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,70);
@@ -166,7 +170,7 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("cbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb")},
+                { 0, uint256S("4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83")},
             }
         };
 
@@ -176,7 +180,7 @@ public:
             0
         };
 
-        consensus.nCoinbaseMaturity = 300;
+        consensus.nCoinbaseMaturity = 150;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
@@ -195,9 +199,10 @@ public:
         consensus.QIP7Height = 1;
         consensus.nOfflineStakeHeight = 1;
         consensus.nMuirGlacierHeight = 1;
+        consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -212,22 +217,22 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792");
+        consensus.defaultAssumeValid = uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350");
 
-        pchMessageStart[0] = 0x0d;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x15;
-        pchMessageStart[3] = 0x06;
-        nDefaultPort = 13888;
+        pchMessageStart[0] = 0x86;
+        pchMessageStart[1] = 0x80;
+        pchMessageStart[2] = 0x65;
+        pchMessageStart[3] = 0x89;
+        nDefaultPort = 19998;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "U.S. Debt Ceiling Suspension Ends, Congress Unclear on Next Step | Aug 1, 2021 Bloomberg";
-        genesis = CreateGenesisBlock(1627946420, 923, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1632732913, 631, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792"));
+        assert(consensus.hashGenesisBlock == uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350"));
         assert(genesis.hashMerkleRoot == uint256S("0x6b25cef5cf941fa342bc0a490d680a6f31e4fc32a3b8f5c09e82d818abf919ac"));
 
         vFixedSeeds.clear();
@@ -239,7 +244,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tq";
+        bech32_hrp = "teqpay";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -251,7 +256,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("3075ec49640d4a015103482fd401fbffcaa679c1e351cc52567c227816351792")},
+                {0, uint256S("317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350")},
             }
         };
 
@@ -282,7 +287,7 @@ public:
         consensus.nMuirGlacierHeight = 1;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 2000;
+        consensus.nTargetTimespan = 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;

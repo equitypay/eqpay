@@ -107,7 +107,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a EqPay address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a EquityPay address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
@@ -569,10 +569,10 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "EqPay.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "EquityPay.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "EqPay (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("EqPay (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "EquityPay (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("EquityPay (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -697,9 +697,9 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=EqPay\n";
+            optionFile << "Name=EquityPay\n";
         else
-            optionFile << strprintf("Name=EqPay (%s)\n", chain);
+            optionFile << strprintf("Name=EquityPay (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -chain=%s\n", chain);
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";

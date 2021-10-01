@@ -13,7 +13,7 @@ pp = pprint.PrettyPrinter()
 
 OFFLINE_STAKING_ACTIVATION_HEIGHT = 3*COINBASE_MATURITY+101
 
-class EqPaySimpleDelegationContractTest(BitcoinTestFramework):
+class EquityPaySimpleDelegationContractTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 5
@@ -612,4 +612,4 @@ class EqPaySimpleDelegationContractTest(BitcoinTestFramework):
         self.sync_all()
 
 if __name__ == '__main__':
-    EqPaySimpleDelegationContractTest().main()
+    EquityPaySimpleDelegationContractTest().main()

@@ -6,15 +6,15 @@
 #include <boost/filesystem/operations.hpp>
 #include <fs.h>
 
-extern std::unique_ptr<EqPayState> globalState;
+extern std::unique_ptr<EquityPayState> globalState;
 
 inline void initState(){
     boost::filesystem::path pathTemp;		
     pathTemp = fs::temp_directory_path() / strprintf("test_bitcoin_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
     boost::filesystem::create_directories(pathTemp);
-    const std::string dirEqPay = pathTemp.string();
+    const std::string dirEquityPay = pathTemp.string();
     const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-    globalState = std::unique_ptr<EqPayState>(new EqPayState(dev::u256(0), EqPayState::openDB(dirEqPay, hashDB, dev::WithExisting::Trust), dirEqPay + "/eqpayDB", dev::eth::BaseState::Empty));
+    globalState = std::unique_ptr<EquityPayState>(new EquityPayState(dev::u256(0), EquityPayState::openDB(dirEquityPay, hashDB, dev::WithExisting::Trust), dirEquityPay + "/eqpayDB", dev::eth::BaseState::Empty));
 
     globalState->setRootUTXO(dev::sha3(dev::rlp(""))); // temp
 }
@@ -28,7 +28,7 @@ inline CBlock generateBlock(){
     return block;
 }
 
-inline dev::Address createEqPayAddress(dev::h256 hashTx, uint32_t voutNumber){
+inline dev::Address createEquityPayAddress(dev::h256 hashTx, uint32_t voutNumber){
     uint256 hashTXid(h256Touint(hashTx));
     std::vector<unsigned char> txIdAndVout(hashTXid.begin(), hashTXid.end());
     std::vector<unsigned char> voutNumberChrs;
@@ -46,12 +46,12 @@ inline dev::Address createEqPayAddress(dev::h256 hashTx, uint32_t voutNumber){
 }
 
 
-inline EqPayTransaction createEqPayTransaction(valtype data, dev::u256 value, dev::u256 gasLimit, dev::u256 gasPrice, dev::h256 hashTransaction, dev::Address recipient, int32_t nvout = 0){
-    EqPayTransaction txEth;
+inline EquityPayTransaction createEquityPayTransaction(valtype data, dev::u256 value, dev::u256 gasLimit, dev::u256 gasPrice, dev::h256 hashTransaction, dev::Address recipient, int32_t nvout = 0){
+    EquityPayTransaction txEth;
     if(recipient == dev::Address()){
-        txEth = EqPayTransaction(value, gasPrice, gasLimit, data, dev::u256(0));
+        txEth = EquityPayTransaction(value, gasPrice, gasLimit, data, dev::u256(0));
     } else {
-        txEth = EqPayTransaction(value, gasPrice, gasLimit, recipient, data, dev::u256(0));
+        txEth = EquityPayTransaction(value, gasPrice, gasLimit, recipient, data, dev::u256(0));
     }
     txEth.forceSender(dev::Address("0101010101010101010101010101010101010101"));
     txEth.setHashWith(hashTransaction);
@@ -60,9 +60,9 @@ inline EqPayTransaction createEqPayTransaction(valtype data, dev::u256 value, de
     return txEth;
 }
 
-inline std::pair<std::vector<ResultExecute>, ByteCodeExecResult> executeBC(std::vector<EqPayTransaction> txs){
+inline std::pair<std::vector<ResultExecute>, ByteCodeExecResult> executeBC(std::vector<EquityPayTransaction> txs){
     CBlock block(generateBlock());
-    EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+    EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
     uint64_t blockGasLimit = eqpayDGP.getBlockGasLimit(ChainActive().Tip()->nHeight + 1);
     ByteCodeExec exec(block, txs, blockGasLimit, ChainActive().Tip());
     exec.performByteCode();

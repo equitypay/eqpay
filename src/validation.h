@@ -46,7 +46,7 @@ class CWalletTx;
 #include <eqpay/storageresults.h>
 
 
-extern std::unique_ptr<EqPayState> globalState;
+extern std::unique_ptr<EquityPayState> globalState;
 extern std::shared_ptr<dev::eth::SealEngineFace> globalSealEngine;
 extern bool fRecordLogOpcodes;
 extern bool fIsVMlogFile;
@@ -54,7 +54,7 @@ extern bool fGettingValuesDGP;
 
 struct EthTransactionParams;
 using valtype = std::vector<unsigned char>;
-using ExtractEqPayTX = std::pair<std::vector<EqPayTransaction>, std::vector<EthTransactionParams>>;
+using ExtractEquityPayTX = std::pair<std::vector<EquityPayTransaction>, std::vector<EthTransactionParams>>;
 ///////////////////////////////////////////
 
 class CChainState;
@@ -540,13 +540,13 @@ struct ByteCodeExecResult{
     std::vector<CTransaction> valueTransfers;
 };
 
-class EqPayTxConverter{
+class EquityPayTxConverter{
 
 public:
 
-    EqPayTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL, unsigned int flags = SCRIPT_EXEC_BYTE_CODE) : txBit(tx), view(v), blockTransactions(blockTxs), sender(false), nFlags(flags){}
+    EquityPayTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL, unsigned int flags = SCRIPT_EXEC_BYTE_CODE) : txBit(tx), view(v), blockTransactions(blockTxs), sender(false), nFlags(flags){}
 
-    bool extractionEqPayTransactions(ExtractEqPayTX& eqpayTx);
+    bool extractionEquityPayTransactions(ExtractEquityPayTX& eqpayTx);
 
 private:
 
@@ -554,7 +554,7 @@ private:
 
     bool parseEthTXParams(EthTransactionParams& params);
 
-    EqPayTransaction createEthTX(const EthTransactionParams& etp, const uint32_t nOut);
+    EquityPayTransaction createEthTX(const EthTransactionParams& etp, const uint32_t nOut);
 
     size_t correctedStackSize(size_t size);
 
@@ -587,7 +587,7 @@ class ByteCodeExec {
 
 public:
 
-    ByteCodeExec(const CBlock& _block, std::vector<EqPayTransaction> _txs, const uint64_t _blockGasLimit, CBlockIndex* _pindex) : txs(_txs), block(_block), blockGasLimit(_blockGasLimit), pindex(_pindex) {}
+    ByteCodeExec(const CBlock& _block, std::vector<EquityPayTransaction> _txs, const uint64_t _blockGasLimit, CBlockIndex* _pindex) : txs(_txs), block(_block), blockGasLimit(_blockGasLimit), pindex(_pindex) {}
 
     bool performByteCode(dev::eth::Permanence type = dev::eth::Permanence::Committed);
 
@@ -601,7 +601,7 @@ private:
 
     dev::Address EthAddrFromScript(const CScript& scriptIn);
 
-    std::vector<EqPayTransaction> txs;
+    std::vector<EquityPayTransaction> txs;
 
     std::vector<ResultExecute> result;
 

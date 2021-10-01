@@ -66,12 +66,12 @@
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw EqPayadressen om betalingen mee te verzenden. Controleer altijd het bedrag en het ontvangstadres voordat u uw eqpays verzendt.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit zijn uw EquityPayadressen om betalingen mee te verzenden. Controleer altijd het bedrag en het ontvangstadres voordat u uw eqpays verzendt.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Dit zijn jouw EqPay adressen voor het ontvangen van betalingen. Gebruik de 'Nieuwe ontvangst adres maken' knop in de ontvangst tab om een nieuwe adres te maken.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Dit zijn jouw EquityPay adressen voor het ontvangen van betalingen. Gebruik de 'Nieuwe ontvangst adres maken' knop in de ontvangst tab om een nieuwe adres te maken.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Onderteken bericht...</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy is &lt;b&gt;ingeschakeld&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Verstuur munten naar een EqPayadres</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Verstuur munten naar een EquityPayadres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Versleutel de geheime sleutels die bij uw portemonnee horen</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Onderteken berichten met uw EqPayadressen om te bewijzen dat u deze adressen bezit</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Onderteken berichten met uw EquityPayadressen om te bewijzen dat u deze adressen bezit</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verifiëer handtekeningen om zeker te zijn dat de berichten zijn ondertekend met de gespecificeerde EqPayadressen</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verifiëer handtekeningen om zeker te zijn dat de berichten zijn ondertekend met de gespecificeerde EquityPayadressen</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>&amp;Opdrachtregelopties</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n actieve verbinding met EqPaynetwerk</numerusform><numerusform>%n actieve verbindingen met EqPaynetwerk</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n actieve verbinding met EquityPaynetwerk</numerusform><numerusform>%n actieve verbindingen met EquityPaynetwerk</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,8 +518,8 @@
         <translation>Portemonnee Sluiten</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Toon het %1 hulpbericht om een lijst te krijgen met mogelijke EqPay commandoregelopties</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Toon het %1 hulpbericht om een lijst te krijgen met mogelijke EquityPay commandoregelopties</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -630,8 +630,8 @@
         <translation>Portemonnee is &lt;b&gt;versleuteld&lt;/b&gt; en momenteel &lt;b&gt;gesloten&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Een fatale fout heeft zich voorgedaan. EqPay kan niet veilig worden verdergezet en wordt afgesloten.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Een fatale fout heeft zich voorgedaan. EquityPay kan niet veilig worden verdergezet en wordt afgesloten.</translation>
     </message>
 </context>
 <context>
@@ -875,8 +875,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Bewerk verzendadres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Het opgegeven adres "%1" is een ongeldig EqPayadres.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Het opgegeven adres "%1" is een ongeldig EquityPayadres.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -972,8 +972,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Gebruik een aangepaste gegevensmap:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -988,8 +988,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Gemiddeld %1 GB aan data zal worden opgeslagen in deze map.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 zal een kopie van de blokketen van EqPay downloaden en opslaan.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 zal een kopie van de blokketen van EquityPay downloaden en opslaan.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1024,7 +1024,7 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the eqpay network, as detailed below.</source>
-        <translation>Recente transacties zijn mogelijk nog niet zichtbaar. De balans van de portemonnee is daarom mogelijk niet correct. Deze informatie is correct zodra de synchronisatie met het EqPay-netwerk is voltooid, zoals onderaan beschreven.</translation>
+        <translation>Recente transacties zijn mogelijk nog niet zichtbaar. De balans van de portemonnee is daarom mogelijk niet correct. Deze informatie is correct zodra de synchronisatie met het EquityPay-netwerk is voltooid, zoals onderaan beschreven.</translation>
     </message>
     <message>
         <source>Attempting to spend eqpays that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1224,8 +1224,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>&amp;Spendeer onbevestigd wisselgeld</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Open de EqPaypoort automatisch op de router. Dit werkt alleen als de router UPnP ondersteunt en het aanstaat.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Open de EquityPaypoort automatisch op de router. Dit werkt alleen als de router UPnP ondersteunt en het aanstaat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1240,8 +1240,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Sta inkomende verbindingen toe</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Verbind met het EqPaynetwerk via een SOCKS5 proxy.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Verbind met het EquityPaynetwerk via een SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1276,8 +1276,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Maak verbinding met EqPaynetwerk door een aparte SOCKS5-proxy voor verborgen diensten van Tor.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Maak verbinding met EquityPaynetwerk door een aparte SOCKS5-proxy voor verborgen diensten van Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1387,8 +1387,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>De weergegeven informatie kan verouderd zijn. Uw portemonnee synchroniseert automatisch met het EqPaynetwerk nadat een verbinding is gelegd, maar dit proces is nog niet voltooid.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>De weergegeven informatie kan verouderd zijn. Uw portemonnee synchroniseert automatisch met het EquityPaynetwerk nadat een verbinding is gelegd, maar dit proces is nog niet voltooid.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1490,8 +1490,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Ongeldig betalingsadres %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>URI kan niet verwerkt worden! Dit kan het gevolg zijn van een ongeldig EqPay adres of misvormde URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>URI kan niet verwerkt worden! Dit kan het gevolg zijn van een ongeldig EquityPay adres of misvormde URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1532,8 +1532,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Voer een EqPayadres in (bijv. %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Voer een EquityPayadres in (bijv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2001,8 +2001,8 @@ Dit is ideaal voor alleen-lezen portommonees.</translation>
         <translation>&amp;Bericht</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Een optioneel bericht om bij te voegen aan het betalingsverzoek, welke zal getoond worden wanneer het verzoek is geopend. Opmerking: Het bericht zal niet worden verzonden met de betaling over het EqPaynetwerk.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Een optioneel bericht om bij te voegen aan het betalingsverzoek, welke zal getoond worden wanneer het verzoek is geopend. Opmerking: Het bericht zal niet worden verzonden met de betaling over het EquityPaynetwerk.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2354,8 +2354,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Cr&amp;eëer Ongetekend</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Creëert een Partially Signed EqPay Transaction (PSBT) om te gebruiken met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Creëert een Partially Signed EquityPay Transaction (PSBT) om te gebruiken met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2378,8 +2378,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Weet u zeker dat u wilt verzenden?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Gelieve je transactie-voorstel te controleren. Dit zal een Partially Signed EqPay Transaction (PSBT) maken die je kan kopiëren en dan tekenen met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EquityPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Gelieve je transactie-voorstel te controleren. Dit zal een Partially Signed EquityPay Transaction (PSBT) maken die je kan kopiëren en dan tekenen met b.v. een offline %1 wallet, of een PSBT-compatibele hardware wallet.</translation>
     </message>
     <message>
         <source>or</source>
@@ -2470,8 +2470,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation><numerusform>Schatting is dat bevestiging begint over %n blok.</numerusform><numerusform>Schatting is dat bevestiging begint over %n blokken.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Waarschuwing: Ongeldig EqPayadres</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Waarschuwing: Ongeldig EquityPayadres</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2509,8 +2509,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Kies een eerder gebruikt adres</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>Het EqPayadres om betaling aan te versturen</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>Het EquityPayadres om betaling aan te versturen</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2561,8 +2561,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Vul een label voor dit adres in om het aan de lijst met gebruikte adressen toe te voegen</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Een bericht dat werd toegevoegd aan de eqpay: URI welke wordt opgeslagen met de transactie ter referentie. Opmerking: Dit bericht zal niet worden verzonden over het EqPaynetwerk.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Een bericht dat werd toegevoegd aan de eqpay: URI welke wordt opgeslagen met de transactie ter referentie. Opmerking: Dit bericht zal niet worden verzonden over het EquityPaynetwerk.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2596,11 +2596,11 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive eqpays sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>U kunt berichten/overeenkomsten ondertekenen met uw adres om te bewijzen dat u EqPays kunt versturen. Wees voorzichtig met het ondertekenen van iets vaags of willekeurigs, omdat phishingaanvallen u kunnen proberen te misleiden tot het ondertekenen van overeenkomsten om uw identiteit aan hen toe te vertrouwen. Onderteken alleen volledig gedetailleerde verklaringen voordat u akkoord gaat.</translation>
+        <translation>U kunt berichten/overeenkomsten ondertekenen met uw adres om te bewijzen dat u EquityPays kunt versturen. Wees voorzichtig met het ondertekenen van iets vaags of willekeurigs, omdat phishingaanvallen u kunnen proberen te misleiden tot het ondertekenen van overeenkomsten om uw identiteit aan hen toe te vertrouwen. Onderteken alleen volledig gedetailleerde verklaringen voordat u akkoord gaat.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>Het EqPayadres om bericht mee te ondertekenen</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>Het EquityPayadres om bericht mee te ondertekenen</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2631,8 +2631,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Kopieer de huidige handtekening naar het systeemklembord</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Onderteken een bericht om te bewijzen dat u een bepaald EqPayadres bezit</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Onderteken een bericht om te bewijzen dat u een bepaald EquityPayadres bezit</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2655,8 +2655,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>Voer het adres van de ontvanger in, bericht (zorg ervoor dat de regeleinden, spaties, tabs etc. precies kloppen) en onderteken onderaan om het bericht te verifiëren. Wees voorzicht om niet meer in de ondertekening te lezen dan in het getekende bericht zelf, om te voorkomen dat je wordt aangevallen met een man-in-the-middle attack. Houd er mee rekening dat dit alleen de ondertekende partij bewijst met het ontvangen adres, er kan niet bewezen worden dat er een transactie heeft plaatsgevonden!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>Het EqPayadres waarmee het bericht ondertekend is</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>Het EquityPayadres waarmee het bericht ondertekend is</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2667,8 +2667,8 @@ Notitie: Omdat de vergoeding per byte wordt gerekend, zal een vergoeding van "10
         <translation>De handtekening waarmee het bericht ondertekend werd</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Controleer een bericht om te verifiëren dat het gespecificeerde EqPayadres het bericht heeft ondertekend.</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Controleer een bericht om te verifiëren dat het gespecificeerde EquityPayadres het bericht heeft ondertekend.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

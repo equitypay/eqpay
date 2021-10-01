@@ -21,7 +21,7 @@ UniValue executionResultToJSON(const dev::eth::ExecutionResult& exRes)
     return result;
 }
 
-UniValue transactionReceiptToJSON(const EqPayTransactionReceipt& txRec)
+UniValue transactionReceiptToJSON(const EquityPayTransactionReceipt& txRec)
 {
     UniValue result(UniValue::VOBJ);
     result.pushKV("stateRoot", txRec.stateRoot().hex());
@@ -429,7 +429,7 @@ UniValue SearchLogs(const UniValue& _params)
 
 CallToken::CallToken()
 {
-    setEqPayTokenExec(this);
+    setEquityPayTokenExec(this);
 }
 
 bool CallToken::execValid(const int &func, const bool &sendTo)
@@ -535,12 +535,12 @@ bool CallToken::execEvents(const int64_t &fromBlock, const int64_t &toBlock, con
             if(numTopics > 1)
             {
                 tokenEvent.sender = topicsList[1].get_str().substr(24);
-                ToEqPayAddress(tokenEvent.sender, tokenEvent.sender);
+                ToEquityPayAddress(tokenEvent.sender, tokenEvent.sender);
             }
             if(numTopics > 2)
             {
                 tokenEvent.receiver = topicsList[2].get_str().substr(24);
-                ToEqPayAddress(tokenEvent.receiver, tokenEvent.receiver);
+                ToEquityPayAddress(tokenEvent.receiver, tokenEvent.receiver);
             }
             tokenEvent.blockHash = uint256S(eventMap["blockHash"].get_str());
             tokenEvent.blockNumber = eventMap["blockNumber"].get_int64();

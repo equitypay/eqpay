@@ -66,12 +66,12 @@
         <translation>Adresa na koju se prima</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su Vaše EqPay adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su Vaše EquityPay adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Ovo su vaše EqPay adrese za primanje isplete. Upotrebite dugme 'Kreiraj novu adresu prijema' na kartici za prijem da biste kreirali nove adrese.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Ovo su vaše EquityPay adrese za primanje isplete. Upotrebite dugme 'Kreiraj novu adresu prijema' na kartici za prijem da biste kreirali nove adrese.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -244,7 +244,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Potpišite &amp;poruka...</translation>
@@ -342,8 +342,8 @@
         <translation>Ponovo obeležavam blokove na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Pošalji novčiće na EqPay adresu</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Pošalji novčiće na EquityPay adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -378,12 +378,12 @@
         <translation>Enkriptuj privatne ključeve novčanika</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Potpišite poruke sa svojim EqPay adresama da biste dokazali njihovo vlasništvo</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Potpišite poruke sa svojim EquityPay adresama da biste dokazali njihovo vlasništvo</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Proverite poruke da biste utvrdili sa kojim EqPay adresama su potpisane</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Proverite poruke da biste utvrdili sa kojim EquityPay adresama su potpisane</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -521,8 +521,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Error</source>

@@ -11,7 +11,7 @@ import time
 
 NUM_OUTPUTS = 1000
 
-class EqPayGasLimit(BitcoinTestFramework):
+class EquityPayGasLimit(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -57,4 +57,4 @@ class EqPayGasLimit(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayGasLimit().main()
+    EquityPayGasLimit().main()

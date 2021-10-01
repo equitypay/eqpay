@@ -11,7 +11,7 @@ import subprocess
 
 pp = pprint.PrettyPrinter()
 
-class EqPayEVMConstantinopleOpcodesTest(BitcoinTestFramework):
+class EquityPayEVMConstantinopleOpcodesTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -476,4 +476,4 @@ class EqPayEVMConstantinopleOpcodesTest(BitcoinTestFramework):
         self.extcodehash_test(should_fail=False)
 
 if __name__ == '__main__':
-    EqPayEVMConstantinopleOpcodesTest().main()
+    EquityPayEVMConstantinopleOpcodesTest().main()

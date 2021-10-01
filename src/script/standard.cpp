@@ -654,7 +654,7 @@ bool ExtractDestination(const COutPoint& prevout, const CScript& scriptPubKey, C
         return true;
     }
     else if (whichType == TX_CREATE) {
-        addressRet = PKHash(uint160(EqPayState::createEqPayAddress(uintToh256(prevout.hash), prevout.n).asBytes()));
+        addressRet = PKHash(uint160(EquityPayState::createEquityPayAddress(uintToh256(prevout.hash), prevout.n).asBytes()));
         return true;
     }
     return false;

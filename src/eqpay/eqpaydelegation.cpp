@@ -22,10 +22,10 @@ bool AbiOutEvent(FunctionABI* func, const std::vector<std::string>& topics, cons
     return func->abiOut(topics, data, values, errors);
 }
 
-class EqPayDelegationPriv
+class EquityPayDelegationPriv
 {
 public:
-    EqPayDelegationPriv():
+    EquityPayDelegationPriv():
         m_pfDelegations(0),
         m_pfAddDelegationEvent(0),
         m_pfRemoveDelegationEvent(0)
@@ -55,7 +55,7 @@ public:
         assert(m_pfRemoveDelegationEvent);
     }
 
-    virtual ~EqPayDelegationPriv()
+    virtual ~EquityPayDelegationPriv()
     {
         if(m_pfDelegations)
             delete m_pfDelegations;
@@ -154,20 +154,20 @@ public:
     dev::Address delegationsAddress;
 };
 
-EqPayDelegation::EqPayDelegation():
+EquityPayDelegation::EquityPayDelegation():
     priv(0)
 {
-    priv = new EqPayDelegationPriv();
+    priv = new EquityPayDelegationPriv();
 }
 
-EqPayDelegation::~EqPayDelegation()
+EquityPayDelegation::~EquityPayDelegation()
 {
     if(priv)
         delete priv;
     priv = 0;
 }
 
-bool EqPayDelegation::GetDelegation(const uint160 &address, Delegation &delegation) const
+bool EquityPayDelegation::GetDelegation(const uint160 &address, Delegation &delegation) const
 {
     // Contract exist check
     if(!ExistDelegationContract())
@@ -243,7 +243,7 @@ bool EqPayDelegation::GetDelegation(const uint160 &address, Delegation &delegati
     return true;
 }
 
-bool EqPayDelegation::VerifyDelegation(const uint160 &address, const Delegation &delegation)
+bool EquityPayDelegation::VerifyDelegation(const uint160 &address, const Delegation &delegation)
 {
     if(address == uint160() || delegation.IsNull() || delegation.fee > 100)
         return false;
@@ -251,7 +251,7 @@ bool EqPayDelegation::VerifyDelegation(const uint160 &address, const Delegation 
     return SignStr::VerifyMessage(CKeyID(address), delegation.staker.GetReverseHex(), delegation.PoD);
 }
 
-bool EqPayDelegation::FilterDelegationEvents(std::vector<DelegationEvent> &events, const IDelegationFilter &filter, int fromBlock, int toBlock, int minconf) const
+bool EquityPayDelegation::FilterDelegationEvents(std::vector<DelegationEvent> &events, const IDelegationFilter &filter, int fromBlock, int toBlock, int minconf) const
 {
     // Check if log events are enabled
     if(!fLogEvents)
@@ -312,14 +312,14 @@ bool EqPayDelegation::FilterDelegationEvents(std::vector<DelegationEvent> &event
     return true;
 }
 
-std::map<uint160, Delegation> EqPayDelegation::DelegationsFromEvents(const std::vector<DelegationEvent> &events)
+std::map<uint160, Delegation> EquityPayDelegation::DelegationsFromEvents(const std::vector<DelegationEvent> &events)
 {
     std::map<uint160, Delegation> delegations;
     UpdateDelegationsFromEvents(events, delegations);
     return delegations;
 }
 
-void EqPayDelegation::UpdateDelegationsFromEvents(const std::vector<DelegationEvent> &events, std::map<uint160, Delegation> &delegations)
+void EquityPayDelegation::UpdateDelegationsFromEvents(const std::vector<DelegationEvent> &events, std::map<uint160, Delegation> &delegations)
 {
     for(const DelegationEvent& event : events)
     {
@@ -342,18 +342,18 @@ void EqPayDelegation::UpdateDelegationsFromEvents(const std::vector<DelegationEv
     }
 }
 
-bool EqPayDelegation::ExistDelegationContract() const
+bool EquityPayDelegation::ExistDelegationContract() const
 {
     // Delegation contract exist check
     return globalState && globalState->addressInUse(priv->delegationsAddress);
 }
 
-std::string EqPayDelegation::BytecodeRemove()
+std::string EquityPayDelegation::BytecodeRemove()
 {
     return DelegationABI()["removeDelegation"].selector();
 }
 
-bool EqPayDelegation::BytecodeAdd(const std::string &hexStaker, const int &fee, const std::vector<unsigned char> &PoD, std::string &datahex, std::string &errorMessage)
+bool EquityPayDelegation::BytecodeAdd(const std::string &hexStaker, const int &fee, const std::vector<unsigned char> &PoD, std::string &datahex, std::string &errorMessage)
 {
     FunctionABI func = DelegationABI()["addDelegation"];
     std::vector<std::vector<std::string>> values;

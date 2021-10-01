@@ -9,7 +9,7 @@
 struct TokenData;
 class WalletModel;
 
-class Token : public EqPayTokenExec, public EqPayToken
+class Token : public EquityPayTokenExec, public EquityPayToken
 {
 public:
     Token();

@@ -57,7 +57,7 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
     QHBoxLayout *hbox_buttons = new QHBoxLayout();
     transactionView = new TransactionView(platformStyle, this);
     vbox->addWidget(transactionView);
-    QPushButton *exportButton = new EqPayPushButton(tr("&Export"), this);
+    QPushButton *exportButton = new EquityPayPushButton(tr("&Export"), this);
     exportButton->setToolTip(tr("Export the data in the current tab to a file"));
     if (platformStyle->getImagesOnButtons()) {
         exportButton->setIcon(platformStyle->MultiStatesIcon(":/icons/export", PlatformStyle::PushButton));

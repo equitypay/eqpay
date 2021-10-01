@@ -66,12 +66,12 @@
         <translation>Alamat-alamat penerima</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Berikut ialah alamat-alamat EqPay Anda yang digunakan untuk mengirimkan pembayaran. Selalu periksa jumlah dan alamat penerima sebelum mengirimkan koin.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Berikut ialah alamat-alamat EquityPay Anda yang digunakan untuk mengirimkan pembayaran. Selalu periksa jumlah dan alamat penerima sebelum mengirimkan koin.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Ini adalah alamat EqPay untuk menerima pembayaran. Gunakan tombol 'Buat alamat penerima baru' di tab terima untuk membuat alamat baru.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Ini adalah alamat EquityPay untuk menerima pembayaran. Gunakan tombol 'Buat alamat penerima baru' di tab terima untuk membuat alamat baru.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Pesan &amp;penanda...</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy di &lt;b&gt;aktifkan&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Kirim koin ke alamat EqPay</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Kirim koin ke alamat EquityPay</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Enkripsi private key yang dimiliki dompet Anda</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Tanda tangani sebuah pesan menggunakan alamat EqPay Anda untuk membuktikan bahwa Anda adalah pemilik alamat tersebut</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Tanda tangani sebuah pesan menggunakan alamat EquityPay Anda untuk membuktikan bahwa Anda adalah pemilik alamat tersebut</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verifikasi pesan untuk memastikan bahwa pesan tersebut ditanda tangani oleh suatu alamat EqPay tertentu</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verifikasi pesan untuk memastikan bahwa pesan tersebut ditanda tangani oleh suatu alamat EquityPay tertentu</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>&amp;pilihan Command-line</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n koneksi aktif ke jaringan EqPay</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n koneksi aktif ke jaringan EquityPay</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,8 +518,8 @@
         <translation>Tutup wallet</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Tampilkan %1 pesan bantuan untuk mendapatkan daftar opsi baris perintah EqPay yang memungkinkan</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Tampilkan %1 pesan bantuan untuk mendapatkan daftar opsi baris perintah EquityPay yang memungkinkan</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -630,8 +630,8 @@
         <translation>Dompet saat ini &lt;b&gt;terenkripsi&lt;/b&gt; dan &lt;b&gt;terkunci&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Terjadi Kesalahan Fatal. EqPay Tidak Dapat Melanjutkan Dengan Aman Dan Akan Keluar</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Terjadi Kesalahan Fatal. EquityPay Tidak Dapat Melanjutkan Dengan Aman Dan Akan Keluar</translation>
     </message>
 </context>
 <context>
@@ -874,8 +874,8 @@
         <translation>Ubah alamat pengirim</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Alamat yang dimasukkan "%1" bukanlah alamat EqPay yang valid.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Alamat yang dimasukkan "%1" bukanlah alamat EquityPay yang valid.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -971,8 +971,8 @@
         <translation>Gunakan direktori pilihan Anda:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,8 +987,8 @@
         <translation>%1 GB data akan disimpan di direktori ini.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 akan mengunduh dan menyimpan salinan EqPay block chain.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 akan mengunduh dan menyimpan salinan EquityPay block chain.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1023,7 +1023,7 @@
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the eqpay network, as detailed below.</source>
-        <translation>Transaksi-transaksi terkini mungkin belum terlihat dan oleh karenanya, saldo dompet Anda mungkin tidak tepat. Informasi ini akan akurat ketika dompet Anda tersinkronisasi dengan jaringan EqPay, seperti rincian berikut.</translation>
+        <translation>Transaksi-transaksi terkini mungkin belum terlihat dan oleh karenanya, saldo dompet Anda mungkin tidak tepat. Informasi ini akan akurat ketika dompet Anda tersinkronisasi dengan jaringan EquityPay, seperti rincian berikut.</translation>
     </message>
     <message>
         <source>Attempting to spend eqpays that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1223,8 +1223,8 @@
         <translation>&amp;Perubahan saldo untuk transaksi yang belum dikonfirmasi</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Otomatis membuka port client EqPay di router. Hanya berjalan apabila router anda mendukung UPnP dan di-enable.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Otomatis membuka port client EquityPay di router. Hanya berjalan apabila router anda mendukung UPnP dan di-enable.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1239,8 +1239,8 @@
         <translation>Terima koneksi-koneksi masuk</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Hubungkan ke jaringan EqPay melalui SOCKS5 proxy.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Hubungkan ke jaringan EquityPay melalui SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1275,7 +1275,7 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Koneksi ke jaringan eqpay melalui proxy SOCKS5 yang berbeda untuk layanan Tor tersembunyi.</translation>
     </message>
     <message>
@@ -1386,8 +1386,8 @@
         <translation>Formulir</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informasi terlampir mungkin sudah kedaluwarsa. Dompet Anda secara otomatis mensinkronisasi dengan jaringan EqPay ketika sebuah hubungan terbentuk, namun proses ini belum selesai.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informasi terlampir mungkin sudah kedaluwarsa. Dompet Anda secara otomatis mensinkronisasi dengan jaringan EquityPay ketika sebuah hubungan terbentuk, namun proses ini belum selesai.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1489,8 +1489,8 @@
         <translation>Alamat pembayaran tidak valid %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>URI tidak bisa dimengerti! Hal ini bisa disebabkan karena alamat EqPay yang tidak sah atau parameter URI yang tidak tepat.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>URI tidak bisa dimengerti! Hal ini bisa disebabkan karena alamat EquityPay yang tidak sah atau parameter URI yang tidak tepat.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1531,8 +1531,8 @@
         <translation>Nilai</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Masukkan alamat EqPay (contoh %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Masukkan alamat EquityPay (contoh %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1990,8 +1990,8 @@
         <translation>&amp;Pesan:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Pesan opsional untuk dilampirkan ke permintaan pembayaran, yang akan ditampilkan ketika permintaan dibuka. Catatan: Pesan tidak akan dikirim dengan pembayaran melalui jaringan EqPay.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Pesan opsional untuk dilampirkan ke permintaan pembayaran, yang akan ditampilkan ketika permintaan dibuka. Catatan: Pesan tidak akan dikirim dengan pembayaran melalui jaringan EquityPay.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2435,8 +2435,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" 
         <translation><numerusform>Diperkirakan akan memulai konfirmasi dalam %n blok.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Peringatan: Alamat EqPay tidak valid</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Peringatan: Alamat EquityPay tidak valid</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2474,8 +2474,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" 
         <translation>Pilih alamat yang telah digunakan sebelumnya</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>Alamat EqPay untuk mengirim pembayaran</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>Alamat EquityPay untuk mengirim pembayaran</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2526,8 +2526,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" 
         <translation>Masukkan label untuk alamat ini untuk dimasukan dalam daftar alamat yang pernah digunakan</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Pesan yang dilampirkan ke eqpay: URI yang akan disimpan dengan transaksi untuk referensi Anda. Catatan: Pesan ini tidak akan dikirim melalui jaringan EqPay.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Pesan yang dilampirkan ke eqpay: URI yang akan disimpan dengan transaksi untuk referensi Anda. Catatan: Pesan ini tidak akan dikirim melalui jaringan EquityPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2560,8 +2560,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" 
         <translation>Anda dapat menandatangani pesan / perjanjian dengan alamat Anda untuk membuktikan bahwa Anda dapat menerima eqpay yang dikirimkan kepada mereka. Berhati-hatilah untuk tidak menandatangani apa pun yang samar-samar atau acak, karena serangan phishing mungkin mencoba menipu Anda untuk menandatangani identitas Anda kepada mereka. Hanya tandatangani pernyataan terperinci yang Anda setujui.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>Alamat EqPay untuk menandatangani pesan</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>Alamat EquityPay untuk menandatangani pesan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2592,8 +2592,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" 
         <translation>Salin tanda tangan terpilih ke sistem klipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Tandai pesan untuk menyetujui kamu pemiliki alamat EqPay ini</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Tandai pesan untuk menyetujui kamu pemiliki alamat EquityPay ini</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2616,16 +2616,16 @@ Catatan: Karena biaya dihitung berdasarkan per byte, biaya "100 satoshi per kB" 
         <translation>Masukkan alamat penerima, pesan (pastikan Anda menyalin persis jeda baris, spasi, tab, dll) dan tanda tangan di bawah untuk memverifikasi pesan. Berhati-hatilah untuk tidak memberi informasi lebih ke tanda tangan daripada apa yang ada dalam pesan yang ditandatangani itu sendiri, untuk menghindari dikelabui oleh serangan man-in-the-middle. Perhatikan bahwa ini hanya membuktikan pihak penandatangan menerima dengan alamat, tapi tidak dapat membuktikan pengiriman dari transaksi apa pun!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>Alamat EqPay yang menandatangani pesan</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>Alamat EquityPay yang menandatangani pesan</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
         <translation>Pesan yang ditandatangani untuk diverifikasi</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Verifikasi pesan untuk memastikannya ditandatangani dengan alamat EqPay tersebut</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Verifikasi pesan untuk memastikannya ditandatangani dengan alamat EquityPay tersebut</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

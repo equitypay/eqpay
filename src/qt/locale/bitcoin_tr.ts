@@ -66,12 +66,12 @@
         <translation>Alınan Adresler</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Bunlar ödeme göndermek için gereken EqPay adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Bunlar ödeme göndermek için gereken EquityPay adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>İmza &amp;mesaj</translation>
@@ -362,8 +362,8 @@
         <translation>Tünelleme &lt;b&gt;etkin&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>EqPay adresine madeni para gönderin</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>EquityPay adresine madeni para gönderin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Cüzdanınıza ait özel anahtarları şifreleyin</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>İletileri adreslerin size ait olduğunu ispatlamak için EqPay adresleri ile imzala</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>İletileri adreslerin size ait olduğunu ispatlamak için EquityPay adresleri ile imzala</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Belirtilen EqPay adresleri ile imzalandıklarından emin olmak için iletileri kontrol et</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Belirtilen EquityPay adresleri ile imzalandıklarından emin olmak için iletileri kontrol et</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>Komut satırı ayarları</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>EqPay şebekesine %n faal bağlantı</numerusform><numerusform>EqPay ağına %n etkin bağlantı var</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>EquityPay şebekesine %n faal bağlantı</numerusform><numerusform>EquityPay ağına %n etkin bağlantı var</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,8 +518,8 @@
         <translation>Cüzdanı Kapat</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Olası EqPay komut satırı seçeneklerinin listesini görmek için %1 yardım mesajını göster</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Olası EquityPay komut satırı seçeneklerinin listesini görmek için %1 yardım mesajını göster</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -629,15 +629,15 @@
         <translation>Cüzdan &lt;b&gt;şifrelenmiştir&lt;/b&gt; ve şu anda &lt;b&gt;kilitlidir&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Ölümcül bir hata oluştu. EqPay yazılımı artık güvenli bir şekilde çalışmaya devam edemediği için kapatılacaktır.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Ölümcül bir hata oluştu. EquityPay yazılımı artık güvenli bir şekilde çalışmaya devam edemediği için kapatılacaktır.</translation>
     </message>
 </context>
 <context>
     <name>CoinControlDialog</name>
     <message>
         <source>Coin Selection</source>
-        <translation>EqPay Seçimi</translation>
+        <translation>EquityPay Seçimi</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -873,8 +873,8 @@
         <translation>Gönderim adresini düzenleyin</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Girilen adres "%1" EqPay adresiyle eşleşmiyor.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Girilen adres "%1" EquityPay adresiyle eşleşmiyor.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -966,8 +966,8 @@
         <translation>Özel bir veri klasörü kullan:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay
+        <source>EquityPay</source>
+        <translation>EquityPay
 </translation>
     </message>
     <message>
@@ -983,8 +983,8 @@
         <translation>Yaklaşık %1 GB veri bu dizinde depolanacak.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 lik EqPay blok zinciri nin bir kopyasını indirecek ve depolayacak.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 lik EquityPay blok zinciri nin bir kopyasını indirecek ve depolayacak.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1219,8 +1219,8 @@
         <translation>Doğrulanmamış para üstünü &amp;harca</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Yönlendiricide EqPay istemci portlarını otomatik olarak açar. Bu, sadece yönlendiricinizin UPnP desteği bulunuyorsa ve etkinse çalışabilir.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Yönlendiricide EquityPay istemci portlarını otomatik olarak açar. Bu, sadece yönlendiricinizin UPnP desteği bulunuyorsa ve etkinse çalışabilir.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1235,8 +1235,8 @@
         <translation>Gelen bağlantılara izin ver</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>EqPay ağına bir SOCKS5 vekil sunucusu aracılığıyla bağlan.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>EquityPay ağına bir SOCKS5 vekil sunucusu aracılığıyla bağlan.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1271,8 +1271,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>EqPay ağına gizli Tor servisleri için ayrı bir SOCKS5 vekil sunucusu aracılığıyla bağlan.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>EquityPay ağına gizli Tor servisleri için ayrı bir SOCKS5 vekil sunucusu aracılığıyla bağlan.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1308,7 +1308,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>EqPay gönderildiğinde arayüzde gösterilecek varsayılan alt birimi seçiniz.</translation>
+        <translation>EquityPay gönderildiğinde arayüzde gösterilecek varsayılan alt birimi seçiniz.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1382,7 +1382,7 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
         <translation>Gösterilen bilgi geçerli olmayabilir. Bağlantı tekrar sağlandıktan sonra cüzdanınız otomatik olarak senkronize olacaktır. Henüz senkronize olma işlemi tamamlanmadı.</translation>
     </message>
     <message>
@@ -1458,7 +1458,7 @@
     </message>
     <message>
         <source>Cannot start eqpay: click-to-pay handler</source>
-        <translation>EqPay başlatılamadı: tıkla-ve-öde yöneticisi</translation>
+        <translation>EquityPay başlatılamadı: tıkla-ve-öde yöneticisi</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1485,8 +1485,8 @@
         <translation>Hatalı ödeme adresi %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>URI ayrıştırılamıyor! Bunun nedeni geçersiz bir EqPay adresi veya hatalı biçimlendirilmiş URI değişkenleri olabilir.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>URI ayrıştırılamıyor! Bunun nedeni geçersiz bir EquityPay adresi veya hatalı biçimlendirilmiş URI değişkenleri olabilir.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1527,8 +1527,8 @@
         <translation>Tutar</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>EqPay adresinizi girin (örneğin %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>EquityPay adresinizi girin (örneğin %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1934,7 +1934,7 @@
     </message>
     <message>
         <source>WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.</source>
-        <translation>UYARI: EqPay dolandırıcılarının çok fazla etkin olduğu zamanlarda, dolandırıcılar bazı kullanıcılara buraya komutlar yazmalarını söylerek onların cüzdanlarındaki eqpayleri çalmışlardır. Bir komutun sonuçlarını tam olarak anlamadan bu konsolu kullanmayın.</translation>
+        <translation>UYARI: EquityPay dolandırıcılarının çok fazla etkin olduğu zamanlarda, dolandırıcılar bazı kullanıcılara buraya komutlar yazmalarını söylerek onların cüzdanlarındaki eqpayleri çalmışlardır. Bir komutun sonuçlarını tam olarak anlamadan bu konsolu kullanmayın.</translation>
     </message>
     <message>
         <source>Network activity disabled</source>
@@ -1996,8 +1996,8 @@
         <translation>&amp;Mesaj</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Talep açıldığında gösterilecek, isteğinize dayalı, ödeme talebi ile ilişkilendirilecek bir ileti. Not: Bu ileti ödeme ile birlikte EqPay ağı üzerinden gönderilmeyecektir.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Talep açıldığında gösterilecek, isteğinize dayalı, ödeme talebi ile ilişkilendirilecek bir ileti. Not: Bu ileti ödeme ile birlikte EquityPay ağı üzerinden gönderilmeyecektir.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2349,8 +2349,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Cr&amp;eate Unsigned</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2373,8 +2373,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Göndermek istediğinize emin misiniz?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EquityPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Please, review your transaction proposal. This will produce a Partially Signed EquityPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</translation>
     </message>
     <message>
         <source>or</source>
@@ -2465,8 +2465,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation><numerusform>Tahmini %n blok içinde doğrulamaya başlanacaktır.</numerusform><numerusform>Tahmini %n blok içinde doğrulamaya başlanacaktır.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Uyarı: Hatalı EqPay adresi</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Uyarı: Hatalı EquityPay adresi</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2504,8 +2504,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Önceden kullanılmış adres seç</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>Ödemenin yollanacağı EqPay adresi</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>Ödemenin yollanacağı EquityPay adresi</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2556,8 +2556,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Kullanılmış adres listesine eklemek için bu adrese bir etiket girin</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Referans için eqpay: URI'siyle iliştirilmiş işlemle birlikte depolanacak bir ileti. Not: Bu mesaj EqPay ağı üzerinden gönderilmeyecektir.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Referans için eqpay: URI'siyle iliştirilmiş işlemle birlikte depolanacak bir ileti. Not: Bu mesaj EquityPay ağı üzerinden gönderilmeyecektir.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2594,8 +2594,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Adreslerinize yollanan eqpayleri alabileceğiniz ispatlamak için adreslerinizle iletiler/anlaşmalar imzalayabilirsiniz. Oltalama saldırılarının kimliğinizi imzanızla elde etmeyi deneyebilecekleri için belirsiz ya da rastgele hiçbir şey imzalamamaya dikkat ediniz. Sadece ayrıntılı açıklaması olan ve tümüne katıldığınız ifadeleri imzalayınız.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>İletinin imzalanmasında kullanılacak EqPay adresi</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>İletinin imzalanmasında kullanılacak EquityPay adresi</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2626,8 +2626,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Güncel imzayı sistem panosuna kopyala</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Bu EqPay adresinin sizin olduğunu ispatlamak için iletiyi imzalayın</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Bu EquityPay adresinin sizin olduğunu ispatlamak için iletiyi imzalayın</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2650,8 +2650,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Alıcının adresini, iletiyi (satır sonları, boşluklar, sekmeler vs. karakterleri tam olarak kopyaladığınızdan emin olunuz) ve imzayı aşağıya giriniz. Bir ortadaki adam saldırısı tarafından kandırılmaya engel olmak için imzadan, imzalı iletinin içeriğini aşan bir anlam çıkarmamaya dikkat ediniz. Bunun sadece imzalayan tarafın adres ile alım yapabildiğini ispatladığını ve herhangi bir işlemin gönderi tarafını kanıtlayamayacağını unutmayınız!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>İletinin imzalanmasında kullanılan EqPay adresi</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>İletinin imzalanmasında kullanılan EquityPay adresi</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2662,8 +2662,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>The signature given when the message was signed</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Belirtilen EqPay adresi ile imzalandığını doğrulamak için iletiyi kontrol et</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Belirtilen EquityPay adresi ile imzalandığını doğrulamak için iletiyi kontrol et</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

@@ -30,7 +30,7 @@
         <translation>&amp;Dele</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Hae sunt inscriptiones mittendi pensitationes.  Semper inspice quantitatem et inscriptionem accipiendi antequam nummos mittis.</translation>
     </message>
     <message>
@@ -164,7 +164,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signa &amp;nuntium...</translation>
@@ -226,8 +226,8 @@
         <translation>Recreans indicem frustorum in disco...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Mitte nummos ad inscriptionem EqPay</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Mitte nummos ad inscriptionem EquityPay</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -262,12 +262,12 @@
         <translation>Cifra claves privatas quae cassidili tui sunt</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Signa nuntios cum tuis inscriptionibus EqPay ut demonstres te eas possidere</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Signa nuntios cum tuis inscriptionibus EquityPay ut demonstres te eas possidere</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus EqPay</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus EquityPay</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -342,8 +342,8 @@
         <translation>Cassidile &lt;b&gt;cifratum&lt;/b&gt; est et iam nunc &lt;b&gt;seratum&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Error fatalis accidit.  EqPay nondum pergere tute potest, et exibit.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Error fatalis accidit.  EquityPay nondum pergere tute potest, et exibit.</translation>
     </message>
 </context>
 <context>
@@ -418,8 +418,8 @@
         <translation>Muta inscriptionem mittendi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Inscriptio inserta "%1" non valida inscriptio EqPay est.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Inscriptio inserta "%1" non valida inscriptio EquityPay est.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -447,8 +447,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -499,8 +499,8 @@
         <translation>Cassidile</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aperi per se portam clientis EqPay in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aperi per se portam clientis EquityPay in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -582,8 +582,8 @@
         <translation>Schema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete EqPay postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete EquityPay postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -598,7 +598,7 @@
     <name>PaymentServer</name>
     <message>
         <source>Cannot start eqpay: click-to-pay handler</source>
-        <translation>EqPay incipere non potest: cliccare-ad-pensandum handler</translation>
+        <translation>EquityPay incipere non potest: cliccare-ad-pensandum handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -906,8 +906,8 @@
         <translation>Copia signationem in latibulum systematis</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Signa nuntium ut demonstres hanc inscriptionem EqPay a te possessa esse</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Signa nuntium ut demonstres hanc inscriptionem EquityPay a te possessa esse</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -926,8 +926,8 @@
         <translation>&amp;Verifica Nuntium</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione EqPay</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione EquityPay</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

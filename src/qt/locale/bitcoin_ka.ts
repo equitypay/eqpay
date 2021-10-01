@@ -66,7 +66,7 @@
         <translation>მიმღები მისამართი</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>ეს არის თქვენი ბიტკოინ-მისამართები, რომელთაგანაც შეგიძლიათ გადახდა. აუცილებლად შეამოწმეთ თანხა და მიმღები მისამართი გაგზავნამდე.</translation>
     </message>
     <message>
@@ -216,7 +216,7 @@
     </message>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>ხელ&amp;მოწერა</translation>
@@ -306,8 +306,8 @@
         <translation>დისკზე ბლოკების რეინდექსაცია...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>მონეტების გაგზავნა EqPay-მისამართზე</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>მონეტების გაგზავნა EquityPay-მისამართზე</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -342,12 +342,12 @@
         <translation>თქვენი საფულის პირადი გასაღებების დაშიფრვა</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>მესიჯებზე ხელმოწერა თქვენი EqPay-მისამართებით იმის დასტურად, რომ ის თქვენია</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>მესიჯებზე ხელმოწერა თქვენი EquityPay-მისამართებით იმის დასტურად, რომ ის თქვენია</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>შეამოწმეთ, რომ მესიჯები ხელმოწერილია მითითებული EqPay-მისამართით</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>შეამოწმეთ, რომ მესიჯები ხელმოწერილია მითითებული EquityPay-მისამართით</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -482,8 +482,8 @@
         <translation>საფულე &lt;b&gt;დაშიფრულია&lt;/b&gt; და ამჟამად &lt;b&gt;დაბლოკილია&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>ფატალური შეცდომა. EqPay ვერ უზრუნველყოფს უსაფრთხო გაგრძელებას, ამიტომ იხურება.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>ფატალური შეცდომა. EquityPay ვერ უზრუნველყოფს უსაფრთხო გაგრძელებას, ამიტომ იხურება.</translation>
     </message>
 </context>
 <context>
@@ -654,8 +654,8 @@
         <translation>გაგზავნის მისამართის შეცვლა</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>შეყვანილი მისამართი "%1" არ არის ვალიდური EqPay-მისამართი.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>შეყვანილი მისამართი "%1" არ არის ვალიდური EquityPay-მისამართი.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -723,8 +723,8 @@
         <translation>მითითებული კატალოგის გამოყენება:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -819,8 +819,8 @@
         <translation>დაუდასტურებელი ხურდის გამოყენების აკრძალვის შემდეგ მათი გამოყენება შეუძლებელი იქნება, სანამ ტრანსაქციას არ ექნება ერთი დასტური მაინც. ეს აისახება თქვენი ნაშთის დათვლაზეც.</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>როუტერში EqPay-კლიენტის პორტის ავტომატური გახსნა. მუშაობს, თუ თქვენს როუტერს ჩართული აქვს UPnP.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>როუტერში EquityPay-კლიენტის პორტის ავტომატური გახსნა. მუშაობს, თუ თქვენს როუტერს ჩართული აქვს UPnP.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -930,8 +930,8 @@
         <translation>ფორმა</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>ნაჩვენები ინფორმაცია შეიძლება მოძველებული იყოს. თქვენი საფულე ავტომატურად სინქრონიზდება EqPay-ის ქსელთან კავშირის დამყარების შემდეგ, ეს პროცესი ჯერ არ არის დასრულებული.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>ნაჩვენები ინფორმაცია შეიძლება მოძველებული იყოს. თქვენი საფულე ავტომატურად სინქრონიზდება EquityPay-ის ქსელთან კავშირის დამყარების შემდეგ, ეს პროცესი ჯერ არ არის დასრულებული.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1160,7 +1160,7 @@
         <translation>&amp;მესიჯი:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
         <translation>არააუცილებელი მესიჯი, რომელიც ერთვის გადახდის მოთხოვნას და ნაჩვენები იქნება მოთხოვნის გახსნისას. შენიშვნა: მესიჯი არ გაყვება გადახდას ბითქოინის ქსელში.</translation>
     </message>
     <message>
@@ -1445,8 +1445,8 @@
         <translation>შეცდომა ტრანსაქციის შექმნისას!</translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>ყურადღება: არასწორია EqPay-მისამართი</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>ყურადღება: არასწორია EquityPay-მისამართი</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -1500,7 +1500,7 @@
         <translation>შეიყვანეთ ამ მისამართის ნიშნული გამოყენებული მისამართების სიაში დასამატებლად</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
         <translation>მესიჯი, რომელიც თან ერთვის მონეტებს:  URI, რომელიც შეინახება ტრანსაქციასთან ერთად თქვენთვის. შენიშვნა: მესიჯი არ გაყვება გადახდას ბითქოინის ქსელში.</translation>
     </message>
     <message>
@@ -1558,7 +1558,7 @@
         <translation>მიმდინარე ხელმოწერის კოპირება კლიპბორდში</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
+        <source>Sign the message to prove you own this EquityPay address</source>
         <translation>მოაწერეთ ხელი იმის დასადასტურებლად, რომ ეს მისამართი თქვენია</translation>
     </message>
     <message>
@@ -1578,8 +1578,8 @@
         <translation>მესიჯის &amp;ვერიფიკაცია</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>შეამოწმეთ, რომ მესიჯი ხელმოწერილია მითითებული EqPay-მისამართით</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>შეამოწმეთ, რომ მესიჯი ხელმოწერილია მითითებული EquityPay-მისამართით</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

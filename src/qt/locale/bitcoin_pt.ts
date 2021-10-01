@@ -66,12 +66,12 @@
         <translation>Endereços de receção</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estes são os seus endereços EqPay para enviar pagamentos. Verifique sempre o valor e o endereço de receção antes de enviar moedas.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estes são os seus endereços EquityPay para enviar pagamentos. Verifique sempre o valor e o endereço de receção antes de enviar moedas.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Estes são os endereços EqPay para receiver pagamentos. Use o botão "Criar novo endereço para receiver" para crier novo endereço.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Estes são os endereços EquityPay para receiver pagamentos. Use o botão "Criar novo endereço para receiver" para crier novo endereço.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Assinar &amp;mensagem...</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy está &lt;b&gt;ativado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Enviar moedas para um endereço EqPay</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Enviar moedas para um endereço EquityPay</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Encriptar as chaves privadas que pertencem à sua carteira</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Assine as mensagens com os seus endereços EqPay para provar que é o proprietário dos mesmos</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Assine as mensagens com os seus endereços EquityPay para provar que é o proprietário dos mesmos</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço EqPay especificado</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verifique mensagens para assegurar que foram assinadas com o endereço EquityPay especificado</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>&amp;Opções da linha de &amp;comando</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n ligação ativa à rede EqPay</numerusform><numerusform>%n ligações ativas à rede EqPay</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n ligação ativa à rede EquityPay</numerusform><numerusform>%n ligações ativas à rede EquityPay</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,7 +518,7 @@
         <translation>Fechar a carteira</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
         <translation>Mostrar a mensagem de ajuda %1 para obter uma lista com possíveis opções a usar na linha de comandos.</translation>
     </message>
     <message>
@@ -630,8 +630,8 @@
         <translation>A carteira está &lt;b&gt;encriptada&lt;/b&gt; e atualmente &lt;b&gt;bloqueada&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Ocorreu um erro fatal. O EqPay não pode continuar com segurança e irá fechar.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Ocorreu um erro fatal. O EquityPay não pode continuar com segurança e irá fechar.</translation>
     </message>
 </context>
 <context>
@@ -874,7 +874,7 @@
         <translation>Editar o endereço de envio</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
         <translation>O endereço introduzido "%1" não é um endereço eqpay válido.</translation>
     </message>
     <message>
@@ -971,8 +971,8 @@
         <translation>Utilizar uma pasta de dados personalizada:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,8 +987,8 @@
         <translation>Aproximadamente %1 GB de dados irão ser guardados nesta pasta.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 irá descarregar e armazenar uma cópia da cadeia de blocos da EqPay.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 irá descarregar e armazenar uma cópia da cadeia de blocos da EquityPay.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1224,7 +1224,7 @@
         <translation>&amp;Gastar troco não confirmado</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Abrir a porta do cliente eqpay automaticamente no seu router. Isto apenas funciona se o seu router suportar UPnP e este se encontrar ligado.</translation>
     </message>
     <message>
@@ -1240,8 +1240,8 @@
         <translation>Permitir ligações de "a receber"</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Conectar à rede da EqPay através dum proxy SOCLS5.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Conectar à rede da EquityPay através dum proxy SOCLS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1276,8 +1276,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Ligar à rede EqPay através de um proxy SOCKS5 separado para utilizar os serviços ocultos do Tor.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Ligar à rede EquityPay através de um proxy SOCKS5 separado para utilizar os serviços ocultos do Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1387,8 +1387,8 @@
         <translation>Formulário</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede EqPay depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>A informação mostrada poderá estar desatualizada. A sua carteira sincroniza automaticamente com a rede EquityPay depois de estabelecer ligação, mas este processo ainda não está completo.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1490,8 +1490,8 @@
         <translation>Endereço de pagamento inválido %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>URI não foi lido corretamente! Isto pode ser causado por um endereço EqPay inválido ou por parâmetros URI malformados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>URI não foi lido corretamente! Isto pode ser causado por um endereço EquityPay inválido ou por parâmetros URI malformados.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1532,8 +1532,8 @@
         <translation>Quantia</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Introduza um endereço EqPay (ex. %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Introduza um endereço EquityPay (ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2001,8 +2001,8 @@
         <translation>&amp;Mensagem:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede EqPay.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Uma mensagem opcional para anexar ao pedido de pagamento, que será exibida quando o pedido for aberto. Nota: A mensagem não será enviada com o pagamento através da rede EquityPay.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2354,8 +2354,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Criar não assinado</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Cria uma transação de EqPay parcialmente assinada (PSBT)(sigla em inglês) para ser usada por exemplo com uma carteira %1 offline ou uma carteira de hardware compatível com PSBT.</translation>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Cria uma transação de EquityPay parcialmente assinada (PSBT)(sigla em inglês) para ser usada por exemplo com uma carteira %1 offline ou uma carteira de hardware compatível com PSBT.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2378,8 +2378,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Tem a certeza que deseja enviar?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Por favor, reveja sua proposta de transação. Isto irá produzir uma transação de EqPay parcialmente assinada (PSBT)(sigla em inglês) a qual você pode copiar e então assinar com por exemplo uma carteira %1 offiline ou uma carteira de hardware compatível com PSBT</translation>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EquityPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Por favor, reveja sua proposta de transação. Isto irá produzir uma transação de EquityPay parcialmente assinada (PSBT)(sigla em inglês) a qual você pode copiar e então assinar com por exemplo uma carteira %1 offiline ou uma carteira de hardware compatível com PSBT</translation>
     </message>
     <message>
         <source>or</source>
@@ -2470,8 +2470,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation><numerusform>Estimado para iniciar a confirmação dentro de %n bloco.</numerusform><numerusform>Estimado para iniciar a confirmação dentro de %n blocos.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Aviso: endereço EqPay inválido</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Aviso: endereço EquityPay inválido</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2509,8 +2509,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Escolha o endereço utilizado anteriormente</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>O endereço EqPay para enviar o pagamento</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>O endereço EquityPay para enviar o pagamento</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2561,8 +2561,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Introduza uma etiqueta para este endereço para o adicionar à sua lista de endereços usados</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Uma mensagem que estava anexada ao URI eqpay: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede EqPay.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Uma mensagem que estava anexada ao URI eqpay: que será armazenada com a transação para sua referência. Nota: Esta mensagem não será enviada através da rede EquityPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2599,8 +2599,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Pode assinar mensagens com os seus endereços para provar que são seus. Tenha atenção ao assinar mensagens ambíguas, pois ataques de phishing podem tentar enganá-lo de modo a assinar a sua identidade para os atacantes. Apenas assine declarações detalhadas com as quais concorde.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>O endereço EqPay para designar a mensagem</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>O endereço EquityPay para designar a mensagem</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2631,8 +2631,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Copiar a assinatura atual para a área de transferência</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Assine uma mensagem para provar que é dono deste endereço EqPay</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Assine uma mensagem para provar que é dono deste endereço EquityPay</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2655,8 +2655,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>Introduza o endereço de assinatura, mensagem (assegure-se que copia quebras de linha, espaços, tabulações, etc. exatamente) e assinatura abaixo para verificar a mensagem. Tenha atenção para não ler mais na assinatura do que o que estiver na mensagem assinada, para evitar ser enganado por um atacante que se encontre entre si e quem assinou a mensagem.</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>O endereço EqPay com que a mensagem foi designada</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>O endereço EquityPay com que a mensagem foi designada</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2667,8 +2667,8 @@ Nota: como a taxa é calculada por byte, uma taxa de "100 satoshis por kB" por u
         <translation>A assinatura dada quando a mensagem foi assinada</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço EqPay especificado</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Verifique a mensagem para assegurar que foi assinada com o endereço EquityPay especificado</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

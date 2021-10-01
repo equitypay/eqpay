@@ -418,7 +418,7 @@
           </widget>
          </item>
          <item>
-          <widget class="EqPayPushButton" name="openDebugLogfileButton">
+          <widget class="EquityPayPushButton" name="openDebugLogfileButton">
            <property name="toolTip">
             <string>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</string>
            </property>
@@ -496,7 +496,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="EqPayPushButton" name="fontSmallerButton">
+          <widget class="EquityPayPushButton" name="fontSmallerButton">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -528,7 +528,7 @@
           </widget>
          </item>
          <item>
-          <widget class="EqPayPushButton" name="fontBiggerButton">
+          <widget class="EquityPayPushButton" name="fontBiggerButton">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -560,7 +560,7 @@
           </widget>
          </item>
          <item>
-          <widget class="EqPayPushButton" name="clearButton">
+          <widget class="EquityPayPushButton" name="clearButton">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -618,7 +618,7 @@
           <number>3</number>
          </property>
          <item>
-          <widget class="EqPayPushButton" name="promptIcon">
+          <widget class="EquityPayPushButton" name="promptIcon">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -1569,7 +1569,7 @@
    </slots>
   </customwidget>
   <customwidget>
-   <class>EqPayPushButton</class>
+   <class>EquityPayPushButton</class>
    <extends>QPushButton</extends>
    <header>qt/eqpaypushbutton.h</header>
   </customwidget>

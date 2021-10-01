@@ -557,13 +557,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\EqPay
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\EqPay
-    // Mac: ~/Library/Application Support/EqPay
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\EquityPay
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\EquityPay
+    // Mac: ~/Library/Application Support/EquityPay
     // Unix: ~/.eqpay
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "EqPay";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "EquityPay";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -573,7 +573,7 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/EqPay";
+    return pathRet / "Library/Application Support/EquityPay";
 #else
     // Unix
     return pathRet / ".eqpay";
@@ -1166,8 +1166,8 @@ std::string CopyrightHolders(const std::string& strPrefix)
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
     // Make sure Bitcoin Core copyright is not removed by accident
-    if (copyright_devs.find("EqPay Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The EqPay Core Developers";
+    if (copyright_devs.find("EquityPay Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The EquityPay Core Developers";
     }
     return strCopyrightHolders;
 }

@@ -16,8 +16,8 @@
 */
 #include "../../GenesisInfo.h"
 
-static dev::h256 const c_genesisStateRootEqPayTestNetwork("2ebd2f054ed409f4bc77921ce642517eb574470c01772dc26658d016a4ccc825");
-static std::string const c_genesisInfoEqPayTestNetwork = std::string() +
+static dev::h256 const c_genesisStateRootEquityPayTestNetwork("2ebd2f054ed409f4bc77921ce642517eb574470c01772dc26658d016a4ccc825");
+static std::string const c_genesisInfoEquityPayTestNetwork = std::string() +
 R"E(
 {
 	"sealEngine": "NoProof",

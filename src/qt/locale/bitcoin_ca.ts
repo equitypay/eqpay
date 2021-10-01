@@ -66,12 +66,12 @@
         <translation>Adreces de recepció</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Aquestes són les vostres adreces de EqPay per enviar els pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Aquestes són les vostres adreces de EquityPay per enviar els pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Aquestes són les teves adreces EqPay per rebre pagaments. Utilitza el botó "Crear nova adreça de recepció" de la pestanya de recepció per crear noves adreces.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Aquestes són les teves adreces EquityPay per rebre pagaments. Utilitza el botó "Crear nova adreça de recepció" de la pestanya de recepció per crear noves adreces.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signa el &amp;missatge...</translation>
@@ -362,8 +362,8 @@
         <translation>El servidor proxy està &lt;b&gt;activat&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Envia monedes a una adreça EqPay</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Envia monedes a una adreça EquityPay</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Encripta les claus privades pertanyents de la cartera</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Signa el missatges amb la seva adreça de EqPay per provar que les poseeixes</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Signa el missatges amb la seva adreça de EquityPay per provar que les poseeixes</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verifiqueu els missatges per assegurar-vos que han estat signats amb una adreça EqPay específica.</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verifiqueu els missatges per assegurar-vos que han estat signats amb una adreça EquityPay específica.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>Opcions de la &amp;línia d'ordres</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>Una connexió activa a la xarxa de EqPay</numerusform><numerusform>%n connexions actives a la xarxa de EqPay</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>Una connexió activa a la xarxa de EquityPay</numerusform><numerusform>%n connexions actives a la xarxa de EquityPay</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,8 +518,8 @@
         <translation>Tanca la cartera</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Mostra el missatge d'ajuda del %1 per obtenir una llista amb les possibles opcions de línia d'ordres de EqPay</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Mostra el missatge d'ajuda del %1 per obtenir una llista amb les possibles opcions de línia d'ordres de EquityPay</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -630,8 +630,8 @@
         <translation>La cartera està &lt;b&gt;encriptada&lt;/b&gt; i actualment &lt;b&gt;blocada&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>S'ha produït un error fatal. EqPay no pot continuar amb seguretat i finalitzarà.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>S'ha produït un error fatal. EquityPay no pot continuar amb seguretat i finalitzarà.</translation>
     </message>
 </context>
 <context>
@@ -875,8 +875,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Edita l'adreça d'enviament</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>L'adreça introduïda «%1» no és una adreça de EqPay vàlida.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>L'adreça introduïda «%1» no és una adreça de EquityPay vàlida.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -972,8 +972,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Utilitza un directori de dades personalitzat:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -988,8 +988,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Aproximadament %1GB de dades seran emmagetzamades en aquest directori.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 descarregarà i emmagatzemarà una còpia de la cadena de blocs EqPay.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 descarregarà i emmagatzemarà una còpia de la cadena de blocs EquityPay.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1079,7 +1079,7 @@ Això és ideal per a carteres de mode només lectura.</translation>
     <name>OpenURIDialog</name>
     <message>
         <source>Open eqpay URI</source>
-        <translation>Obre EqPay URI</translation>
+        <translation>Obre EquityPay URI</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1224,8 +1224,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>&amp;Gasta el canvi sense confirmar</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Obre el port del client de EqPay al router de forma automàtica. Això només funciona quan el router implementa UPnP i l'opció està activada.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Obre el port del client de EquityPay al router de forma automàtica. Això només funciona quan el router implementa UPnP i l'opció està activada.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1240,8 +1240,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Permet connexions entrants</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Connecta a la xarxa EqPay a través d'un proxy SOCKS5.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Connecta a la xarxa EquityPay a través d'un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1276,8 +1276,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectar a la red de EqPay a través de un proxy SOCKS5 per als serveis ocults de Tor</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectar a la red de EquityPay a través de un proxy SOCKS5 per als serveis ocults de Tor</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1387,8 +1387,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Formulari</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>La informació mostrada pot no estar al dia. El vostra cartera se sincronitza automàticament amb la xarxa EqPay un cop s'ha establert connexió, però aquest proces encara no ha finalitzat.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>La informació mostrada pot no estar al dia. El vostra cartera se sincronitza automàticament amb la xarxa EquityPay un cop s'ha establert connexió, però aquest proces encara no ha finalitzat.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1490,8 +1490,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Adreça de pagament no vàlida %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>L'URI no pot ser analitzat! Això pot ser a causa d'una adreça de EqPay no vàlida o per paràmetres URI amb mal format.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>L'URI no pot ser analitzat! Això pot ser a causa d'una adreça de EquityPay no vàlida o per paràmetres URI amb mal format.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1532,8 +1532,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>Import</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Introduïu una adreça de EqPay (p. ex. %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Introduïu una adreça de EquityPay (p. ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2001,8 +2001,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation>&amp;Missatge:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Un missatge opcional que s'adjuntarà a la sol·licitud de pagament, que es mostrarà quan s'obri la sol·licitud. Nota: El missatge no s'enviarà amb el pagament per la xarxa EqPay.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Un missatge opcional que s'adjuntarà a la sol·licitud de pagament, que es mostrarà quan s'obri la sol·licitud. Nota: El missatge no s'enviarà amb el pagament per la xarxa EquityPay.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2354,7 +2354,7 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>Creació sense firmar</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation>Crea una transacció eqpay parcialment signada (PSBT) per a utilitzar, per exemple,  amb una cartera %1 fora de línia o amb una cartera compatible amb PSBT.</translation>
     </message>
     <message>
@@ -2470,8 +2470,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation><numerusform>S’estima que comenci la confirmació dintre d'un bloc.</numerusform><numerusform>S’estima que comenci la confirmació dintre de %n blocs.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Avís: adreça EqPay no vàlida</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Avís: adreça EquityPay no vàlida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2509,8 +2509,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>Escull una adreça feta servir anteriorment</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>L'adreça EqPay on enviar el pagament</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>L'adreça EquityPay on enviar el pagament</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2561,8 +2561,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>Introduïu una etiqueta per a aquesta adreça per afegir-la a la llista d'adreces utilitzades</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Un missatge que s'ha adjuntat al eqpay: URI que s'emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s'enviarà a través de la xarxa EqPay.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Un missatge que s'ha adjuntat al eqpay: URI que s'emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s'enviarà a través de la xarxa EquityPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2599,8 +2599,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>Podeu signar missatges/acords amb les vostres adreces per provar que rebeu les eqpays que s'hi envien. Aneu amb compte no signar res que sigui vague o aleatori, perquè en alguns atacs de suplantació es pot provar que hi signeu la vostra identitat. Només signeu aquelles declaracions completament detallades en què hi esteu d'acord. </translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>L'adreça EqPay amb què signar el missatge</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>L'adreça EquityPay amb què signar el missatge</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2631,8 +2631,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>Copia la signatura actual al porta-retalls del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Signa el missatge per provar que ets propietari d'aquesta adreça EqPay</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Signa el missatge per provar que ets propietari d'aquesta adreça EquityPay</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2655,8 +2655,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>Introduïu l'adreça del receptor, el missatge (assegureu-vos de copiar els salts de línia, espais, tabuladors, etc. exactament) i signatura de sota per verificar el missatge. Tingueu cura de no llegir més en la signatura del que està al missatge signat, per evitar ser enganyat per un atac d'home-en-el-mig. Tingueu en compte que això només demostra que la part que signa rep amb l'adreça, i no es pot provar l'enviament de qualsevol transacció!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>L'adreça EqPay amb què va ser signat el missatge</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>L'adreça EquityPay amb què va ser signat el missatge</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2667,8 +2667,8 @@ Nota: Com que la comissió es calcula en funció dels bytes, una comissió de "1
         <translation>La signatura donada quan es va signar el missatge</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça EqPay específica</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça EquityPay específica</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

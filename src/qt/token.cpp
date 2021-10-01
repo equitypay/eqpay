@@ -38,29 +38,29 @@ Token::Token()
 
     // Create new call command line interface
     QStringList lstMandatory;
-    lstMandatory.append(EqPayToken::paramAddress());
-    lstMandatory.append(EqPayToken::paramDatahex());
+    lstMandatory.append(EquityPayToken::paramAddress());
+    lstMandatory.append(EquityPayToken::paramDatahex());
     QStringList lstOptional;
-    lstOptional.append(EqPayToken::paramSender());
+    lstOptional.append(EquityPayToken::paramSender());
     d->call = new ExecRPCCommand(Token_NS::PRC_CALL, lstMandatory, lstOptional, QMap<QString, QString>());
 
     // Create new send command line interface
     lstMandatory.clear();
-    lstMandatory.append(EqPayToken::paramAddress());
-    lstMandatory.append(EqPayToken::paramDatahex());
+    lstMandatory.append(EquityPayToken::paramAddress());
+    lstMandatory.append(EquityPayToken::paramDatahex());
     lstOptional.clear();
-    lstOptional.append(EqPayToken::paramAmount());
-    lstOptional.append(EqPayToken::paramGasLimit());
-    lstOptional.append(EqPayToken::paramGasPrice());
-    lstOptional.append(EqPayToken::paramSender());
-    lstOptional.append(EqPayToken::paramBroadcast());
-    lstOptional.append(EqPayToken::paramChangeToSender());
+    lstOptional.append(EquityPayToken::paramAmount());
+    lstOptional.append(EquityPayToken::paramGasLimit());
+    lstOptional.append(EquityPayToken::paramGasPrice());
+    lstOptional.append(EquityPayToken::paramSender());
+    lstOptional.append(EquityPayToken::paramBroadcast());
+    lstOptional.append(EquityPayToken::paramChangeToSender());
     d->send = new ExecRPCCommand(Token_NS::PRC_SENDTO, lstMandatory, lstOptional, QMap<QString, QString>());
 
     // Create new event log interface
     d->eventLog = new EventLog();
 
-    setEqPayTokenExec(this);
+    setEquityPayTokenExec(this);
 }
 
 Token::~Token()
@@ -155,12 +155,12 @@ bool Token::execEvents(const int64_t &fromBlock, const int64_t &toBlock, const i
             if(numTopics > 1)
             {
                 tokenEvent.sender = topicsList[1].toString().toStdString().substr(24);
-                Token::ToEqPayAddress(tokenEvent.sender, tokenEvent.sender);
+                Token::ToEquityPayAddress(tokenEvent.sender, tokenEvent.sender);
             }
             if(numTopics > 2)
             {
                 tokenEvent.receiver = topicsList[2].toString().toStdString().substr(24);
-                Token::ToEqPayAddress(tokenEvent.receiver, tokenEvent.receiver);
+                Token::ToEquityPayAddress(tokenEvent.receiver, tokenEvent.receiver);
             }
             tokenEvent.blockHash = uint256S(variantMap.value("blockHash").toString().toStdString());
             tokenEvent.blockNumber = variantMap.value("blockNumber").toLongLong();

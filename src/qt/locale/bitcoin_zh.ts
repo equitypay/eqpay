@@ -66,7 +66,7 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这些是你的比特币支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>签名 &amp;消息...</translation>
@@ -358,7 +358,7 @@
         <translation>启用代理:%1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
+        <source>Send coins to a EquityPay address</source>
         <translation>发送比特币到一个比特币地址</translation>
     </message>
     <message>
@@ -394,11 +394,11 @@
         <translation>加密您的钱包私钥</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
         <translation>用您的比特币地址签名信息，以证明拥有它们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
         <translation>验证消息，确保它们是用指定的比特币地址签名的</translation>
     </message>
     <message>
@@ -514,8 +514,8 @@
         <translation>关闭钱包</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>显示%1帮助消息以获得可能包含EqPay命令行选项的列表</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>显示%1帮助消息以获得可能包含EquityPay命令行选项的列表</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -618,7 +618,7 @@
         <translation>钱包是&lt;b&gt;加密的&lt;/b&gt;，目前&lt;b&gt;已锁定&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
         <translation>发生了致命错误。比特币无法继续安全运行，将退出。</translation>
     </message>
 </context>
@@ -834,7 +834,7 @@
         <translation>编辑发送地址</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
         <translation>输入的地址"%1"不是有效的比特币地址。</translation>
     </message>
     <message>
@@ -911,7 +911,7 @@
         <translation>使用自定数据目录</translation>
     </message>
     <message>
-        <source>EqPay</source>
+        <source>EquityPay</source>
         <translation>比特币</translation>
     </message>
     <message>
@@ -1292,7 +1292,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>支付请求已过期。</translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
+        <source>Warning: Invalid EquityPay address</source>
         <translation>警告：比特币地址无效</translation>
     </message>
     <message>
@@ -1315,7 +1315,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>选择以前使用的地址</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
+        <source>The EquityPay address to send the payment to</source>
         <translation>支付到的比特币地址</translation>
     </message>
     <message>
@@ -1331,7 +1331,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>输入此地址的标签，将其添加到使用的地址列表中</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
         <translation>附在比特币上的消息:URI将与交易一起存储，供参考。注意：此信息不会通过比特币网络发送。</translation>
     </message>
     </context>

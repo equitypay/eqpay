@@ -5,7 +5,7 @@
 #include <map>
 #include <uint256.h>
 
-struct EqPayTokenData;
+struct EquityPayTokenData;
 
 struct TokenEvent{
     std::string address;
@@ -30,23 +30,23 @@ struct TokenEvent{
     }
 };
 
-class EqPayTokenExec
+class EquityPayTokenExec
 {
 public:
     virtual bool execValid(const int& func, const bool& sendTo);
     virtual bool execEventsValid(const int& func, const int64_t& fromBlock);
     virtual bool exec(const bool& sendTo, const std::map<std::string, std::string>& lstParams, std::string& result, std::string& message);
     virtual bool execEvents(const int64_t& fromBlock, const int64_t& toBlock, const int64_t& minconf, const std::string& eventName, const std::string& contractAddress, const std::string& senderAddress, const int& numTopics, std::vector<TokenEvent>& result);
-    virtual ~EqPayTokenExec();
+    virtual ~EquityPayTokenExec();
 };
 
-class EqPayToken
+class EquityPayToken
 {
 public:
-    EqPayToken();
-    virtual ~EqPayToken();
+    EquityPayToken();
+    virtual ~EquityPayToken();
 
-    void setEqPayTokenExec(EqPayTokenExec* tokenExec);
+    void setEquityPayTokenExec(EquityPayTokenExec* tokenExec);
 
     // Set command data
     void setAddress(const std::string &address);
@@ -82,8 +82,8 @@ public:
     bool burnEvents(std::vector<TokenEvent>& tokenEvents, int64_t fromBlock = 0, int64_t toBlock = -1, int64_t minconf = 0);
 
     // Static functions
-    static bool ToHash160(const std::string& strEqPayAddress, std::string& strHash160);
-    static bool ToEqPayAddress(const std::string& strHash160, std::string& strEqPayAddress);
+    static bool ToHash160(const std::string& strEquityPayAddress, std::string& strHash160);
+    static bool ToEquityPayAddress(const std::string& strHash160, std::string& strEquityPayAddress);
     static uint256 ToUint256(const std::string& data);
     static void addTokenEvent(std::vector<TokenEvent> &tokenEvents, TokenEvent tokenEvent);
 
@@ -101,11 +101,11 @@ private:
     bool exec(const std::vector<std::string>& input, int func, std::vector<std::string>& output, bool sendTo);
     bool execEvents(int64_t fromBlock, int64_t toBlock, int64_t minconf, int func, std::vector<TokenEvent> &tokenEvents);
 
-    EqPayToken(EqPayToken const&);
-    EqPayToken& operator=(EqPayToken const&);
+    EquityPayToken(EquityPayToken const&);
+    EquityPayToken& operator=(EquityPayToken const&);
 
 private:
-    EqPayTokenData* d;
+    EquityPayTokenData* d;
 };
 
 #endif // EQPAYTOKEN_H

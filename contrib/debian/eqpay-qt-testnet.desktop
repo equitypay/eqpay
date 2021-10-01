@@ -1,12 +1,12 @@
 [Desktop Entry]
 Version=0.17.6
-Name=EqPay Core Testnet
-Comment=Connect to the EqPay P2P Network Testnet
+Name=EquityPay Core Testnet
+Comment=Connect to the EquityPay P2P Network Testnet
 Exec=eqpay-qt -testnet %u
 Terminal=false
 Type=Application
 Icon=eqpaytestnet128
 MimeType=x-scheme-handler/eqpay;
 Categories=Network;
-StartupWMClass=EqPay-qt-testnet
+StartupWMClass=EquityPay-qt-testnet
 Name[en_US]=eqpay-qt-testnet

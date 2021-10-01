@@ -66,7 +66,7 @@
         <translation>адрасы Прымання</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Тут знаходзяцца Біткойн-адрасы для высылання плацяжоў. Заўсёды спраўджвайце колькасць і адрас прызначэння перад здзяйсненнем транзакцыі.</translation>
     </message>
     <message>
@@ -212,7 +212,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Падпісаць паведамленне...</translation>
@@ -278,7 +278,7 @@
         <translation>Пераіндэксацыя блокаў на дыску...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
+        <source>Send coins to a EquityPay address</source>
         <translation>Даслаць манеты на Біткойн-адрас</translation>
     </message>
     <message>
@@ -314,11 +314,11 @@
         <translation>Зашыфраваць прыватныя ключы, якия належаць вашаму гаманцу</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
         <translation>Падпісаць паведамленне з дапамогай Біткойн-адраса каб даказаць, што яно належыць вам</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
         <translation>Спраўдзіць паведамленне з дапамогай Біткойн-адраса каб даказаць, што яно належыць вам</translation>
     </message>
     <message>
@@ -617,7 +617,7 @@
         <translation>Вітаем</translation>
     </message>
     <message>
-        <source>EqPay</source>
+        <source>EquityPay</source>
         <translation>Біткойн</translation>
     </message>
     <message>

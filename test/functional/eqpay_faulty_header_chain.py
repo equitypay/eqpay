@@ -13,7 +13,7 @@ import time
 import io
 
 
-class EqPayHeaderSpamTest(BitcoinTestFramework):
+class EquityPayHeaderSpamTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -133,4 +133,4 @@ class EqPayHeaderSpamTest(BitcoinTestFramework):
         
 
 if __name__ == '__main__':
-    EqPayHeaderSpamTest().main()
+    EquityPayHeaderSpamTest().main()

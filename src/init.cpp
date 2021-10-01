@@ -740,7 +740,7 @@ void DeleteBlockChainData()
     // Delete block chain data paths
     fs::remove_all(GetDataDir() / "chainstate");
     fs::remove_all(GetBlocksDir());
-    fs::remove_all(GetDataDir() / "stateEqPay");
+    fs::remove_all(GetDataDir() / "stateEquityPay");
     fs::remove(GetDataDir() / "banlist.dat");
     fs::remove(GetDataDir() / FEE_ESTIMATES_FILENAME);
     fs::remove(GetDataDir() / "mempool.dat");
@@ -1888,12 +1888,12 @@ bool AppInitMain(NodeContext& node)
                 }
 
                 dev::eth::NoProof::init();
-                fs::path eqpayStateDir = GetDataDir() / "stateEqPay";
+                fs::path eqpayStateDir = GetDataDir() / "stateEquityPay";
                 bool fStatus = fs::exists(eqpayStateDir);
-                const std::string dirEqPay(eqpayStateDir.string());
+                const std::string dirEquityPay(eqpayStateDir.string());
                 const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-                dev::eth::BaseState existsEqPaystate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
-                globalState = std::unique_ptr<EqPayState>(new EqPayState(dev::u256(0), EqPayState::openDB(dirEqPay, hashDB, dev::WithExisting::Trust), dirEqPay, existsEqPaystate));
+                dev::eth::BaseState existsEquityPaystate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
+                globalState = std::unique_ptr<EquityPayState>(new EquityPayState(dev::u256(0), EquityPayState::openDB(dirEquityPay, hashDB, dev::WithExisting::Trust), dirEquityPay, existsEquityPaystate));
                 dev::eth::ChainParams cp(chainparams.EVMGenesisInfo());
                 globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
@@ -1951,8 +1951,8 @@ bool AppInitMain(NodeContext& node)
             try {
                 LOCK(cs_main);
 
-                EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
-                globalSealEngine->setEqPaySchedule(eqpayDGP.getGasSchedule(::ChainActive().Height() + (::ChainActive().Height()+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
+                EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+                globalSealEngine->setEquityPaySchedule(eqpayDGP.getGasSchedule(::ChainActive().Height() + (::ChainActive().Height()+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
 
                 if (!is_coinsview_empty) {
                     uiInterface.InitMessage(_("Verifying blocks...").translated);

@@ -22,7 +22,7 @@ def find_unspent(node, amount):
             return CTxIn(COutPoint(int(unspent['txid'], 16), unspent['vout']), nSequence=0)
     assert(False)
 
-class EqPayBlockHeaderTest(BitcoinTestFramework):
+class EquityPayBlockHeaderTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
@@ -175,4 +175,4 @@ class EqPayBlockHeaderTest(BitcoinTestFramework):
             self.reconnect_p2p()
 
 if __name__ == '__main__':
-    EqPayBlockHeaderTest().main()
+    EquityPayBlockHeaderTest().main()

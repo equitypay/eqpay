@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.eqpay.EqPay-Qt";
+        return @"org.eqpay.EquityPay-Qt";
     } else {
         return [self __bundleIdentifier];
     }

@@ -66,12 +66,12 @@
         <translation>Prijímajúce adresy</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Toto sú Vaše EqPay adresy pre posielanie platieb. Vždy skontrolujte sumu a prijímaciu adresu pred poslaním mincí.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Toto sú Vaše EquityPay adresy pre posielanie platieb. Vždy skontrolujte sumu a prijímaciu adresu pred poslaním mincí.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Toto sú vaše EqPay adresy pre prijímanie platieb. Pre vytvorenie nových adries použite tlačidlo 'Vytvoriť novú prijímajúcu adresu' na karte Prijať.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Toto sú vaše EquityPay adresy pre prijímanie platieb. Pre vytvorenie nových adries použite tlačidlo 'Vytvoriť novú prijímajúcu adresu' na karte Prijať.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Podpísať &amp;správu...</translation>
@@ -362,7 +362,7 @@
         <translation>Proxy je &lt;b&gt;zapnuté&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
+        <source>Send coins to a EquityPay address</source>
         <translation>Poslať eqpays na adresu</translation>
     </message>
     <message>
@@ -398,12 +398,12 @@
         <translation>Zašifruj súkromné kľúče ktoré patria do vašej peňaženky</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Podpísať správu s vašou adresou EqPay aby ste preukázali že ju vlastníte</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Podpísať správu s vašou adresou EquityPay aby ste preukázali že ju vlastníte</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Overiť či správa bola podpísaná uvedenou EqPay adresou</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Overiť či správa bola podpísaná uvedenou EquityPay adresou</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>&amp;Možnosti príkazového riadku</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n aktívne pripojenie do siete EqPay</numerusform><numerusform>%n aktívne pripojenia do siete EqPay</numerusform><numerusform>%n aktívnych pripojení do siete EqPay</numerusform><numerusform>%n aktívnych pripojení do siete EqPay</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n aktívne pripojenie do siete EquityPay</numerusform><numerusform>%n aktívne pripojenia do siete EquityPay</numerusform><numerusform>%n aktívnych pripojení do siete EquityPay</numerusform><numerusform>%n aktívnych pripojení do siete EquityPay</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,8 +518,8 @@
         <translation>Zatvoriť peňaženku</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Ukáž %1 zoznam možných nastavení EqPayu pomocou príkazového riadku</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Ukáž %1 zoznam možných nastavení EquityPayu pomocou príkazového riadku</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -630,8 +630,8 @@
         <translation>Peňaženka je &lt;b&gt;zašifrovaná&lt;/b&gt; a momentálne &lt;b&gt;zamknutá&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Vyskytla sa kritická chyba. EqPay nemôže ďalej bezpečne pokračovať a ukončí sa.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Vyskytla sa kritická chyba. EquityPay nemôže ďalej bezpečne pokračovať a ukončí sa.</translation>
     </message>
 </context>
 <context>
@@ -874,8 +874,8 @@
         <translation>Upraviť odosielaciu adresu</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Vložená adresa "%1" nieje platnou adresou EqPay.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Vložená adresa "%1" nieje platnou adresou EquityPay.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -971,8 +971,8 @@
         <translation>Použiť vlastný dátový adresár:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,7 +987,7 @@
         <translation>Približne %1 GB dát bude uložených v tejto zložke.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
         <translation>%1 bude sťahovať kopiu reťazca blokov.</translation>
     </message>
     <message>
@@ -1223,8 +1223,8 @@
         <translation>&amp;Minúť nepotvrdený výdavok</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automaticky otvorit port pre EqPay na routeri. Toto funguje len ak router podporuje UPnP a je táto podpora aktivovaná.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automaticky otvorit port pre EquityPay na routeri. Toto funguje len ak router podporuje UPnP a je táto podpora aktivovaná.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1239,8 +1239,8 @@
         <translation>Povoliť prichá&amp;dzajúce spojenia</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Pripojiť do siete EqPay cez proxy server SOCKS5.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Pripojiť do siete EquityPay cez proxy server SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1275,8 +1275,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Pripojiť k EqPayovej sieti cez separované SOCKS5 proxy pre skrytú službu Tor.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Pripojiť k EquityPayovej sieti cez separované SOCKS5 proxy pre skrytú službu Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1386,8 +1386,8 @@
         <translation>Formulár</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informácie môžu byť neaktuálne. Vaša peňaženka sa automaticky synchronizuje so sieťou EqPay po nadviazaní spojenia, ale tento proces ešte nie je ukončený.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informácie môžu byť neaktuálne. Vaša peňaženka sa automaticky synchronizuje so sieťou EquityPay po nadviazaní spojenia, ale tento proces ešte nie je ukončený.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1462,7 +1462,7 @@
     </message>
     <message>
         <source>Cannot start eqpay: click-to-pay handler</source>
-        <translation>Nemôžeme spustiť EqPay: obsluha click-to-pay</translation>
+        <translation>Nemôžeme spustiť EquityPay: obsluha click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1489,8 +1489,8 @@
         <translation>Neplatná adresa platby %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>URI sa nedá analyzovať! To môže byť spôsobené neplatnou EqPay adresou alebo zle nastavenými vlastnosťami URI.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>URI sa nedá analyzovať! To môže byť spôsobené neplatnou EquityPay adresou alebo zle nastavenými vlastnosťami URI.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1531,7 +1531,7 @@
         <translation>Suma</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
+        <source>Enter a EquityPay address (e.g. %1)</source>
         <translation>Zadajte eqpay adresu (napr. %1)</translation>
     </message>
     <message>
@@ -2001,8 +2001,8 @@
         <translation>&amp;Správa:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Pridať voliteľnú správu k výzve na zaplatenie, ktorá sa zobrazí keď bude výzva otvorená. Poznámka: Správa nebude poslaná s platbou cez sieť EqPay.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Pridať voliteľnú správu k výzve na zaplatenie, ktorá sa zobrazí keď bude výzva otvorená. Poznámka: Správa nebude poslaná s platbou cez sieť EquityPay.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2167,7 +2167,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Poslať EqPays</translation>
+        <translation>Poslať EquityPays</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2354,8 +2354,8 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Vytvoriť bez podpisu</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation>Vytvorí čiastočne podpísanú EqPay transakciu (Partially Signed EqPay Transaction - PSBT) na použitie napríklad s offline %1 peňaženkou alebo v hardvérovej peňaženke kompatibilnej s PSBT.</translation>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation>Vytvorí čiastočne podpísanú EquityPay transakciu (Partially Signed EquityPay Transaction - PSBT) na použitie napríklad s offline %1 peňaženkou alebo v hardvérovej peňaženke kompatibilnej s PSBT.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2466,8 +2466,8 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation><numerusform>Odhadovaný začiatok potvrdzovania po %n bloku.</numerusform><numerusform>Odhadovaný začiatok potvrdzovania po %n blokoch.</numerusform><numerusform>Odhadovaný začiatok potvrdzovania po %n blokoch.</numerusform><numerusform>Odhadovaný začiatok potvrdzovania po %n blokoch.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Varovanie: Neplatná EqPay adresa</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Varovanie: Neplatná EquityPay adresa</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2505,7 +2505,7 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Vybrať predtým použitú adresu</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
+        <source>The EquityPay address to send the payment to</source>
         <translation>Zvoľte adresu kam poslať platbu</translation>
     </message>
     <message>
@@ -2557,8 +2557,8 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Vložte popis pre túto adresu aby sa uložila do zoznamu použitých adries</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Správa ktorá bola pripojená k eqpay: URI a ktorá bude uložená s transakcou pre Vaše potreby. Poznámka: Táto správa nebude poslaná cez sieť EqPay.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Správa ktorá bola pripojená k eqpay: URI a ktorá bude uložená s transakcou pre Vaše potreby. Poznámka: Táto správa nebude poslaná cez sieť EquityPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2595,8 +2595,8 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Môžete podpísať správy svojou adresou a dokázať, že viete prijímať mince zaslané na túto adresu. Buďte však opatrní a podpíšte len podrobné prehlásenia, s ktorými plne súhlasíte, nakoľko útoky typu "phishing" Vás môžu lákať k podpísaniu nejasných alebo príliš všeobecných tvrdení čím prevezmú vašu identitu.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>EqPay adresa pre podpísanie správy s</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>EquityPay adresa pre podpísanie správy s</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2627,7 +2627,7 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Kopírovať tento podpis do systémovej schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
+        <source>Sign the message to prove you own this EquityPay address</source>
         <translation>Podpíšte správu aby ste dokázali že vlastníte túto adresu</translation>
     </message>
     <message>
@@ -2651,8 +2651,8 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Vložte adresu príjemcu, správu (uistite sa, že presne kopírujete ukončenia riadkov, medzery, odrážky, atď.) a podpis pre potvrdenie správy. Buďte opatrní a nedomýšľajte si viac než je uvedené v samotnej podpísanej správe a môžete sa tak vyhnúť podvodu MITM útokom. Toto len potvrdzuje, že podpisujúca strana môže prijímať na tejto adrese, nepotvrdzuje to vlastníctvo žiadnej transakcie!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>Adresa EqPay, ktorou bola podpísaná správa</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>Adresa EquityPay, ktorou bola podpísaná správa</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2663,8 +2663,8 @@ Poznámka: Keďže poplatok je počítaný za bajt, poplatok o hodnote "100 sato
         <translation>Poskytnutý podpis pri podpísaní správy</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Overím správy sa uistiť že bola podpísaná označenou EqPay adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Overím správy sa uistiť že bola podpísaná označenou EquityPay adresou</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

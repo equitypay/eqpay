@@ -66,11 +66,11 @@
         <translation>एड्रेस प्राप्त किए जा रहें हैं</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>भुगतान करने के लिए ये आपके बिटकॉइन एड्रेस हैं। कॉइन भेजने से पहले राशि और गंतव्य एड्रेस की हमेशा जाँच करें </translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
         <translation>भुगतान प्राप्त करने के लिए ये आपके बिटकॉइन एड्रेस हैं। नया एड्रेस बनाने के लिए रिसीव टैब में 'नया एड्रेस बनाएं' बटन का प्रयोग करें</translation>
     </message>
     <message>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>हस्ताक्षर और संदेश ...</translation>
@@ -436,7 +436,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>EqPay</source>
+        <source>EquityPay</source>
         <translation>बीटकोइन</translation>
     </message>
     <message>

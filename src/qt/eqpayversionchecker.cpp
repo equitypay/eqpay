@@ -10,23 +10,23 @@
 
 #define paternVersion "eqpay-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
 
-EqPayVersionChecker::EqPayVersionChecker(QObject *parent) : QObject(parent)
+EquityPayVersionChecker::EquityPayVersionChecker(QObject *parent) : QObject(parent)
 {
     currentVersion = Version(CLIENT_VERSION_MAJOR, CLIENT_VERSION_MINOR, CLIENT_VERSION_REVISION);
 }
 
-EqPayVersionChecker::~EqPayVersionChecker()
+EquityPayVersionChecker::~EquityPayVersionChecker()
 {
 
 }
 
-bool EqPayVersionChecker::newVersionAvailable()
+bool EquityPayVersionChecker::newVersionAvailable()
 {
     Version maxReleaseVersion = getMaxReleaseVersion();
     return maxReleaseVersion > currentVersion;
 }
 
-QList<Version> EqPayVersionChecker::getVersions()
+QList<Version> EquityPayVersionChecker::getVersions()
 {
     QNetworkAccessManager manager;
     QNetworkReply *response = manager.get(QNetworkRequest(QUrl(EQPAY_RELEASES)));
@@ -52,7 +52,7 @@ QList<Version> EqPayVersionChecker::getVersions()
     return versions;
 }
 
-Version EqPayVersionChecker::getMaxReleaseVersion()
+Version EquityPayVersionChecker::getMaxReleaseVersion()
 {
     QList<Version> versions = getVersions();
     Version maxVersion;

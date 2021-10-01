@@ -92,7 +92,7 @@
            <item row="5" column="0">
             <widget class="QLabel" name="label_3">
              <property name="toolTip">
-              <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</string>
+              <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</string>
              </property>
              <property name="text">
               <string>&amp;Message:</string>
@@ -256,7 +256,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="EqPayPushButton" name="showRequestButton">
+         <widget class="EquityPayPushButton" name="showRequestButton">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -298,7 +298,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="EqPayPushButton" name="removeRequestButton">
+         <widget class="EquityPayPushButton" name="removeRequestButton">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -433,7 +433,7 @@
    <class>QRImageWidget</class>
    <extends>QLabel</extends>
    <header>qt/qrimagewidget.h</header>
-   <class>EqPayPushButton</class>
+   <class>EquityPayPushButton</class>
    <extends>QPushButton</extends>
    <header>qt/eqpaypushbutton.h</header>
   </customwidget>

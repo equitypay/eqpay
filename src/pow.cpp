@@ -7,10 +7,9 @@
 
 #include <arith_uint256.h>
 #include <chain.h>
+#include <chainparams.h>
 #include <primitives/block.h>
 #include <uint256.h>
-#include <timedata.h>
-#include <validation.h>
 
 namespace {
     // returns a * exp(p/q) where |p/q| is small
@@ -42,7 +41,7 @@ const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfSta
     return pindex;
 }
 
-inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool fProofOfStake)
+inline arith_uint256 GetLimit(const Consensus::Params& params, bool fProofOfStake)
 {
     if(fProofOfStake) {
         return UintToArith256(params.posLimit);
@@ -51,58 +50,63 @@ inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool
     }
 }
 
-unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake)
-{
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake) {
+    /* current difficulty formula, veil - DarkGravity v3, written by Evan Duffield - evan@dash.org */
+    const arith_uint256 bnPowLimit = GetLimit(params, fProofOfStake);
 
-    unsigned int  nTargetLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake).GetCompact();
+    const CBlockIndex *pindex = pindexLast;
+    const CBlockIndex* pindexLastMatchingProof = nullptr;
+    arith_uint256 bnPastTargetAvg = 0;
+    int nDgwPastBlocks = 30;
 
-    // genesis block
-    if (pindexLast == NULL)
-        return nTargetLimit;
-
-    // first block
-    const CBlockIndex* pindexPrev = GetLastBlockIndex(pindexLast, fProofOfStake);
-    if (pindexPrev->pprev == NULL)
-        return nTargetLimit;
-
-    // second block
-    const CBlockIndex* pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
-    if (pindexPrevPrev->pprev == NULL)
-        return nTargetLimit;
-
-    return CalculateNextWorkRequired(pindexPrev, pindexPrevPrev->GetBlockTime(), params, fProofOfStake);
-}
-
-unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params, bool fProofOfStake)
-{
-    if(fProofOfStake){
-        if (params.fPoSNoRetargeting)
-            return pindexLast->nBits;
-    }else{
-        if (params.fPowNoRetargeting)
-            return pindexLast->nBits;
+    // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
+    if (!pindexLast || pindexLast->nHeight < nDgwPastBlocks) {
+        return bnPowLimit.GetCompact();
     }
-    // Limit adjustment step
-    int nHeight = pindexLast->nHeight + 1;
-    int64_t nTargetSpacing = params.TargetSpacing(nHeight);
-    int64_t nActualSpacing = pindexLast->GetBlockTime() - nFirstBlockTime;
+
+    unsigned int nCountBlocks = 0;
+    while (nCountBlocks < nDgwPastBlocks) {
+        // Ran out of blocks, return pow limit
+        if (!pindex)
+            return bnPowLimit.GetCompact();
+
+        // Only consider PoW or PoS blocks but not both
+        if (pindex->IsProofOfStake() != fProofOfStake) {
+            pindex = pindex->pprev;
+            continue;
+        } else if (!pindexLastMatchingProof) {
+            pindexLastMatchingProof = pindex;
+        }
+
+        arith_uint256 bnTarget = arith_uint256().SetCompact(pindex->nBits);
+        bnPastTargetAvg = (bnPastTargetAvg * nCountBlocks + bnTarget) / (nCountBlocks + 1);
+
+        if (++nCountBlocks != nDgwPastBlocks)
+            pindex = pindex->pprev;
+    }
+
+    arith_uint256 bnNew(bnPastTargetAvg);
+
+    //Should only happen on the first PoS block
+    if (pindexLastMatchingProof)
+        pindexLastMatchingProof = pindexLast;
+
+    int64_t nActualTimespan = pindexLastMatchingProof->GetBlockTime() - pindex->GetBlockTime();
+    int64_t nTargetTimespan = nDgwPastBlocks * params.nTargetSpacing;
+
+    if (nActualTimespan < nTargetTimespan/3)
+        nActualTimespan = nTargetTimespan/3;
+    if (nActualTimespan > nTargetTimespan*3)
+        nActualTimespan = nTargetTimespan*3;
+
     // Retarget
-    const arith_uint256 bnTargetLimit = GetLimit(nHeight, params, fProofOfStake);
-    // ppcoin: target change every block
-    // ppcoin: retarget with exponential moving toward target spacing
-    arith_uint256 bnNew;
-    bnNew.SetCompact(pindexLast->nBits);
-    int64_t nInterval = params.DifficultyAdjustmentInterval(nHeight); 
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
 
-    if (nActualSpacing < 0)
-        nActualSpacing = nTargetSpacing;
-    if (nActualSpacing > nTargetSpacing * 20)
-        nActualSpacing = nTargetSpacing * 20;
-    uint32_t stakeTimestampMask=params.StakeTimestampMask(nHeight);
-    bnNew = mul_exp(bnNew, 2 * (nActualSpacing - nTargetSpacing) / (stakeTimestampMask + 1), (nInterval + 1) * nTargetSpacing / (stakeTimestampMask + 1));
+    if (bnNew > bnPowLimit) {
+        bnNew = bnPowLimit;
+    }
 
-    if (bnNew <= 0 || bnNew > bnTargetLimit)
-        bnNew = bnTargetLimit;
     return bnNew.GetCompact();
 }
 

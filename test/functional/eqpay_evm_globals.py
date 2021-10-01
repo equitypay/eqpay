@@ -14,7 +14,7 @@ import sys
 import random
 import time
 
-class EqPayEVMGlobalsTest(BitcoinTestFramework):
+class EquityPayEVMGlobalsTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -234,4 +234,4 @@ class EqPayEVMGlobalsTest(BitcoinTestFramework):
         self.sync_all()
 
 if __name__ == '__main__':
-    EqPayEVMGlobalsTest().main()
+    EquityPayEVMGlobalsTest().main()

@@ -1423,7 +1423,7 @@ public:
 
 
     std::shared_ptr<CWallet> m_wallet;
-    EqPayDelegation m_eqpayDelegation;
+    EquityPayDelegation m_eqpayDelegation;
 };
 
 class WalletClientImpl : public ChainClient

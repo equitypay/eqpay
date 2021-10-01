@@ -42,12 +42,12 @@
         <translation>Ukuthola amakheli</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Lawa amakheli akho e-EqPay okuthumela izinkokhelo. Njalo hlola inani nekheli elitholwayo ngaphambi kokuthumela izinhlamvu zemali.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Lawa amakheli akho e-EquityPay okuthumela izinkokhelo. Njalo hlola inani nekheli elitholwayo ngaphambi kokuthumela izinhlamvu zemali.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Lawa amakheli akho e-EqPay athola izinkokhelo. Sebenzisa inkinobho ethi 'Dala ikheli elisha lokuthola' kuthebhu yokwamukela ukudala amakheli amasha.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Lawa amakheli akho e-EquityPay athola izinkokhelo. Sebenzisa inkinobho ethi 'Dala ikheli elisha lokuthola' kuthebhu yokwamukela ukudala amakheli amasha.</translation>
     </message>
     <message>
         <source>Export Address List</source>
@@ -145,7 +145,7 @@ Lahla YONKE IEQPAY YAKHO!</translation>
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     </context>
 <context>
     <name>CoinControlDialog</name>

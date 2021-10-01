@@ -66,8 +66,8 @@
         <translation>Vastuvõtvad aadressid</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Need on sinu EqPay aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Need on sinu EquityPay aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -248,7 +248,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signeeri &amp;sõnum</translation>
@@ -338,8 +338,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Saada münte EqPayi aadressile</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Saada münte EquityPayi aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -374,12 +374,12 @@
         <translation>Krüpteeri oma rahakoti privaatvõtmed</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Omandi tõestamiseks allkirjasta sõnumid oma EqPayi aadressiga</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Omandi tõestamiseks allkirjasta sõnumid oma EquityPayi aadressiga</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud EqPayi aadressiga</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud EquityPayi aadressiga</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -406,8 +406,8 @@
         <translation>&amp;Käsurea valikud</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n aktiivne ühendus EqPayi võrku</numerusform><numerusform>%n aktiivset ühendust EqPayi võrku</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n aktiivne ühendus EquityPayi võrku</numerusform><numerusform>%n aktiivset ühendust EquityPayi võrku</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -508,8 +508,8 @@
         <translation>Rahakott on &lt;b&gt;krüpteeritud&lt;/b&gt; ning hetkel &lt;b&gt;suletud&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Ilmnes kriitiline tõrge. EqPay suletakse turvakaalutluste tõttu.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Ilmnes kriitiline tõrge. EquityPay suletakse turvakaalutluste tõttu.</translation>
     </message>
 </context>
 <context>
@@ -664,8 +664,8 @@
         <translation>Muuda saatvat aadressi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Sisestatud aadress "%1" ei ole korrektne EqPay aadress.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Sisestatud aadress "%1" ei ole korrektne EquityPay aadress.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -701,8 +701,8 @@
         <translation>Tere tulemast</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -765,8 +765,8 @@
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>EqPayi kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>EquityPayi kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -864,7 +864,7 @@
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
         <translation>Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Bitconi võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
     </message>
     <message>
@@ -896,7 +896,7 @@
     </message>
     <message>
         <source>Cannot start eqpay: click-to-pay handler</source>
-        <translation>EqPay ei käivitu: vajuta-maksa toiming</translation>
+        <translation>EquityPay ei käivitu: vajuta-maksa toiming</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1383,8 +1383,8 @@
         <translation>Maksepäring aegunud.</translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Hoiatus: Ebakorrektne EqPay aadress</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Hoiatus: Ebakorrektne EquityPay aadress</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1456,8 +1456,8 @@
         <translation>&amp;Allkirjastamise teade</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>EqPay aadress millega sõnum allkirjastada</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>EquityPay aadress millega sõnum allkirjastada</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1488,8 +1488,8 @@
         <translation>Kopeeri praegune signatuur vahemällu</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Allkirjasta sõnum EqPayi aadressi sulle kuulumise tõestamiseks</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Allkirjasta sõnum EquityPayi aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1508,12 +1508,12 @@
         <translation>&amp;Kinnita Sõnum</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>EqPay aadress millega sõnum on allkirjastatud</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>EquityPay aadress millega sõnum on allkirjastatud</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud EqPayi aadressiga.</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud EquityPayi aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

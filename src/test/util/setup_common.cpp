@@ -118,7 +118,7 @@ TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(cha
     boost::filesystem::path pathTemp = fs::temp_directory_path() / strprintf("test_eqpay_%lu_%i", (unsigned long)GetTime(), (int)(GetRand(100000)));
     boost::filesystem::create_directories(pathTemp);
     const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-    globalState = std::unique_ptr<EqPayState>(new EqPayState(dev::u256(0), EqPayState::openDB(pathTemp.string(), hashDB, dev::WithExisting::Trust), pathTemp.string(), dev::eth::BaseState::Empty));
+    globalState = std::unique_ptr<EquityPayState>(new EquityPayState(dev::u256(0), EquityPayState::openDB(pathTemp.string(), hashDB, dev::WithExisting::Trust), pathTemp.string(), dev::eth::BaseState::Empty));
     dev::eth::ChainParams cp(chainparams.EVMGenesisInfo());
     cp.EIP150ForkBlock = 0xffffffffffffffff;
     cp.EIP158ForkBlock = 0xffffffffffffffff;

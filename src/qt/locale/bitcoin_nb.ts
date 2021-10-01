@@ -66,8 +66,8 @@
         <translation>Mottager adresser</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dette er dine EqPay adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dette er dine EquityPay adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Signer &amp;melding</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy er &lt;b&gt;slått på&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Send mynter til en EqPay adresse</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Send mynter til en EquityPay adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Krypter de private nøklene som tilhører lommeboken din</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Signer meldingene med EqPay adresse for å bevise at diu eier dem</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Signer meldingene med EquityPay adresse for å bevise at diu eier dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt EqPay adresse</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt EquityPay adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>&amp;Kommandolinjealternativer</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n aktiv tilkobling til EqPay nettverket</numerusform><numerusform>%n aktive tilkoblinger til EqPay nettverket</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n aktiv tilkobling til EquityPay nettverket</numerusform><numerusform>%n aktive tilkoblinger til EquityPay nettverket</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,8 +518,8 @@
         <translation>Lukk lommebok</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige EqPay-kommandolinjealternativer</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige EquityPay-kommandolinjealternativer</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -630,8 +630,8 @@
         <translation>Lommeboken er &lt;b&gt;kryptert&lt;/b&gt; og for tiden &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>En fatal feil har inntruffet. EqPay kan ikke lenger trygt fortsette, og må derfor avslutte.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>En fatal feil har inntruffet. EquityPay kan ikke lenger trygt fortsette, og må derfor avslutte.</translation>
     </message>
 </context>
 <context>
@@ -874,8 +874,8 @@
         <translation>Rediger utsendingsadresse</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Den angitte adressen "%1" er ikke en gyldig EqPay-adresse.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Den angitte adressen "%1" er ikke en gyldig EquityPay-adresse.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -971,8 +971,8 @@
         <translation>Bruk en egendefinert datamappe:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,8 +987,8 @@
         <translation>Omtrent %1GB data vil bli lagret i denne mappen.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 vil laste ned og lagre en kopi av EqPay blokkjeden.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 vil laste ned og lagre en kopi av EquityPay blokkjeden.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1219,8 +1219,8 @@
         <translation>&amp;Bruk ubekreftet veksel</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åpne automatisk EqPay klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åpne automatisk EquityPay klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1235,8 +1235,8 @@
         <translation>Tillatt innkommend&amp;e tilkoblinger</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Koble til EqPay-nettverket gjennom en SOCKS5 proxy.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Koble til EquityPay-nettverket gjennom en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1271,8 +1271,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Koble til EqPay-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Koble til EquityPay-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1382,8 +1382,8 @@
         <translation>Skjema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med EqPay-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med EquityPay-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1485,7 +1485,7 @@
         <translation>Ugyldig betalingsadresse %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
         <translation>URI kan ikke fortolkes! Dette kan være forårsaket av en ugyldig eqpay-adresse eller feilformede URI-parametre.</translation>
     </message>
     <message>
@@ -1527,8 +1527,8 @@
         <translation>Beløp</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Oppgi en EqPay-adresse (f.eks. %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Oppgi en EquityPay-adresse (f.eks. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1984,8 +1984,8 @@
         <translation>&amp;Melding:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over EqPay-nettverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over EquityPay-nettverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2150,7 +2150,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send EqPays</translation>
+        <translation>Send EquityPays</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2437,7 +2437,7 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation><numerusform>Antatt bekreftelsesbegynnelse innen %n blokk.</numerusform><numerusform>Antatt bekreftelsesbegynnelse innen %n blokker.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
+        <source>Warning: Invalid EquityPay address</source>
         <translation>Advarsel Ugyldig eqpay-adresse</translation>
     </message>
     <message>
@@ -2476,8 +2476,8 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation>Velg tidligere brukt adresse</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>EqPay-adressen betalingen skal sendes til</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>EquityPay-adressen betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2528,8 +2528,8 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation>Skriv inn en merkelapp for denne adressen for å legge den til listen av brukte adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>En melding som var tilknyttet eqpayen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over EqPay-nettverket.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>En melding som var tilknyttet eqpayen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over EquityPay-nettverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2566,8 +2566,8 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation>Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta eqpays sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>EqPay-adressen meldingen skal signeres med</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>EquityPay-adressen meldingen skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2598,8 +2598,8 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation>Kopier valgt signatur til utklippstavle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Signer meldingen for å bevise at du eier denne EqPay-adressen</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Signer meldingen for å bevise at du eier denne EquityPay-adressen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2622,8 +2622,8 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation>Skriv inn mottakerens adresse, melding (forsikre deg om at du kopier linjeskift, mellomrom, faner osv. nøyaktig) og underskrift nedenfor for å bekrefte meldingen. Vær forsiktig så du ikke leser mer ut av signaturen enn hva som er i den signerte meldingen i seg selv, for å unngå å bli lurt av et man-in-the-middle-angrep. Merk at dette bare beviser at den som signerer kan motta med adressen, dette beviser ikke hvem som har sendt transaksjoner!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>EqPay-adressen meldingen ble signert med</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>EquityPay-adressen meldingen ble signert med</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2634,8 +2634,8 @@ Merk: Siden avgiften er beregnet per byte-basis, vil et gebyr på "100 satoshis 
         <translation>signaturen som ble gitt da meldingen ble signert</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte EqPay-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte EquityPay-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

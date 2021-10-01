@@ -66,11 +66,11 @@
         <translation>Адресе за примање</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Ово су твоје Биткоин адресе за слање уплата. Увек добро провери износ и адресу на коју шаљеш пре него што пошаљеш уплату.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
         <translation>Ово су твоје Биткоин адресе за примање уплата. Користи дугме „Направи нову адресу за примање” у картици за примање за креирање нових адреса.</translation>
     </message>
     <message>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Потпиши &amp;поруку...</translation>
@@ -362,7 +362,7 @@
         <translation>Прокси је &lt;b&gt;омогућен&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
+        <source>Send coins to a EquityPay address</source>
         <translation>Пошаљи новац на Биткоин адресу</translation>
     </message>
     <message>
@@ -398,11 +398,11 @@
         <translation>Шифрирај приватни клуљ који припада новчанику.</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
         <translation>Потписуј поруку са своје Биткоин адресе као доказ да си њихов власник</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
         <translation>Верификуј поруке и утврди да ли су потписане од стране спецификованих Биткоин адреса</translation>
     </message>
     <message>
@@ -438,7 +438,7 @@
         <translation>&amp;Опције командне линије</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
+        <source>%n active connection(s) to EquityPay network</source>
         <translation><numerusform>%n aктивна веза са Биткоин мрежом</numerusform><numerusform>%n aктивних веза са Биткоин мрежом</numerusform><numerusform>%n aктивних веза са Биткоин мрежом</numerusform></translation>
     </message>
     <message>
@@ -518,7 +518,7 @@
         <translation>Затвори новчаник</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
         <translation>Прикажи  поруку помоћи %1 за листу са могућим опцијама Биткоин командне линије</translation>
     </message>
     <message>
@@ -626,7 +626,7 @@
         <translation>Новчаник јс &lt;b&gt;шифрован&lt;/b&gt; и тренутно &lt;b&gt;закључан&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
         <translation>Дошло је до критичне грешке. Биткоин не може безбедно да настави са радом и искључиће се.</translation>
     </message>
 </context>
@@ -870,7 +870,7 @@
         <translation>Измени адресу за слање</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
         <translation>Унета адреса "%1" није важећа Биткоин адреса.</translation>
     </message>
     <message>
@@ -967,7 +967,7 @@
         <translation>Користите прилагођени директоријум података:</translation>
     </message>
     <message>
-        <source>EqPay</source>
+        <source>EquityPay</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -983,7 +983,7 @@
         <translation>Најмање %1 GB подататака биће складиштен у овај директорјиум.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
         <translation>%1 биће преузеће и складиштити копију Биткоин ланца блокова.</translation>
     </message>
     <message>
@@ -1219,7 +1219,7 @@
         <translation>&amp;Троши непотврђени кусур</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Аутоматски отвори Биткоин клијент порт на рутеру. Ова опција ради само уколико твој рутер подржава и има омогућен UPnP.</translation>
     </message>
     <message>
@@ -1235,7 +1235,7 @@
         <translation>Дозволи долазеће конекције.</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
         <translation>Конектуј се на Биткоин мрежу кроз SOCKS5 проксијем.</translation>
     </message>
     <message>
@@ -1271,7 +1271,7 @@
         <translation>Тор</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Конектуј се на Биткоин мрежу кроз SOCK5 прокси за Тор скривене сервисе.</translation>
     </message>
     <message>
@@ -1378,7 +1378,7 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
         <translation>Приказана информација може бити застарела. Ваш новчаник се аутоматски синхронизује са Биткоин мрежом након успостављања конекције, али овај процес је још увек у току.</translation>
     </message>
     <message>
@@ -1481,7 +1481,7 @@
         <translation>Неважећа адреса за плаћање %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
         <translation>URI се не може рашчланити! Ово може бити проузроковано неважећом Биткоин адресом или погрешно форматираним URI параметрима.</translation>
     </message>
     <message>
@@ -1523,7 +1523,7 @@
         <translation>Износ</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
+        <source>Enter a EquityPay address (e.g. %1)</source>
         <translation>Унеси Биткоин адресу, (нпр %1)</translation>
     </message>
     <message>
@@ -1988,7 +1988,7 @@
         <translation>Poruka:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
         <translation>Опциона порука коју можеш прикачити уз захтев за плаћање, која ће бити приказана када захтев буде отворен. Напомена: Порука неће бити послата са уплатом на Биткоин мрежи.</translation>
     </message>
     <message>
@@ -2341,7 +2341,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Креирај непотписано</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed EqPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Creates a Partially Signed EquityPay Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation>Креира делимично потписану Биткоин трансакцију (PSBT) за коришћење са нпр. офлајн %1 новчаником, или PSBT компатибилним хардверским новчаником. </translation>
     </message>
     <message>
@@ -2365,7 +2365,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Да ли сте сигурни да желите да пошаљете?</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed EqPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed EquityPay Transaction (PSBT) which you can copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation>Молим, проверите ваш предлог трансакције. Ово ће произвести делимично потписану Биткоин трансакцију (PSBT) коју можете копирати и онда потписати са нпр. офлајн %1 новчаником, или PSBT компатибилним хардверским новчаником.</translation>
     </message>
     <message>
@@ -2457,7 +2457,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation><numerusform>Процењује се да ће започети потврду унутар %n блока.</numerusform><numerusform>Процењује се да ће започети потврду унутар %n блока.</numerusform><numerusform>Процењује се да ће започети потврду унутар %n блокова.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
+        <source>Warning: Invalid EquityPay address</source>
         <translation>Упозорење: Неважећа Биткоин адреса</translation>
     </message>
     <message>
@@ -2496,7 +2496,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Одабери претходно коришћену адресу</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
+        <source>The EquityPay address to send the payment to</source>
         <translation>Биткоин адреса на коју се шаље уплата</translation>
     </message>
     <message>
@@ -2548,7 +2548,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Унесите ознаку за ову адресу да бисте је додали на листу коришћених адреса</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
         <translation>Порука која је приложена биткоину: URI која ће бити сачувана уз трансакцију ради референце. Напомена: Ова порука се шаље преко Биткоин мреже.</translation>
     </message>
     <message>
@@ -2582,7 +2582,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Можете потписати поруку/споразум са вашом адресом да би сте доказали да можете примити биткоин послат ка њима. Будите опрезни да не потписујете ништа нејасно или случајно, јер се може десити напад крађе идентитета, да потпишете ваш идентитет нападачу. Потпишите само потпуно детаљне изјаве са којима се слажете.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
+        <source>The EquityPay address to sign the message with</source>
         <translation>Биткоин адреса са којом ћете потписати поруку</translation>
     </message>
     <message>
@@ -2614,7 +2614,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Копирајте тренутни потпис у системску базу за копирање</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
+        <source>Sign the message to prove you own this EquityPay address</source>
         <translation>Потпишите поруку да докажете да сте власник ове Биткоин адресе</translation>
     </message>
     <message>
@@ -2638,7 +2638,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Унесите адресу примаоца, поруку (осигурајте да тачно копирате прекиде линија, размаке, картице итд) и потпишите испод да потврдите поруку. Будите опрезни да не убаците више у потпис од онога што је у потписаној поруци, да би сте избегли напад посредника. Имајте на уму да потпис само доказује да потписник прима са потписаном адресом, а не може да докаже слање било које трансакције!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
+        <source>The EquityPay address the message was signed with</source>
         <translation>Биткоин адреса са којом је потписана порука</translation>
     </message>
     <message>
@@ -2650,7 +2650,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Потпис који је дат приликом потписивања поруке</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
         <translation>Потврдите поруку да осигурате да је потписана са одговарајућом Биткоин адресом</translation>
     </message>
     <message>

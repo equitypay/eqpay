@@ -13,7 +13,7 @@ import sys
 import time
 
 
-class EqPayDGPTest(BitcoinTestFramework):
+class EquityPayDGPTest(BitcoinTestFramework):
     def set_test_params(self, split=False):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -1138,4 +1138,4 @@ class EqPayDGPTest(BitcoinTestFramework):
         state.assert_state()
 
 if __name__ == '__main__':
-    EqPayDGPTest().main()
+    EquityPayDGPTest().main()

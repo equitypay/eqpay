@@ -8,7 +8,7 @@ from test_framework.eqpay import *
 from test_framework.eqpayconfig import *
 from test_framework.util import *
 
-class EqPaySimpleDelegationContractTest(BitcoinTestFramework):
+class EquityPaySimpleDelegationContractTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -57,4 +57,4 @@ class EqPaySimpleDelegationContractTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPaySimpleDelegationContractTest().main()
+    EquityPaySimpleDelegationContractTest().main()

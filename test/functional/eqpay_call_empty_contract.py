@@ -11,7 +11,7 @@ from test_framework.mininode import *
 from test_framework.eqpay import generatesynchronized
 import sys
 
-class EqPayCallContractStateNotRevertedTest(BitcoinTestFramework):
+class EquityPayCallContractStateNotRevertedTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -37,4 +37,4 @@ class EqPayCallContractStateNotRevertedTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayCallContractStateNotRevertedTest().main()
+    EquityPayCallContractStateNotRevertedTest().main()

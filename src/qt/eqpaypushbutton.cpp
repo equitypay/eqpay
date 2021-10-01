@@ -1,17 +1,17 @@
 #include "eqpaypushbutton.h"
 #include <QStylePainter>
 
-EqPayPushButton::EqPayPushButton(QWidget *parent):
+EquityPayPushButton::EquityPayPushButton(QWidget *parent):
     QPushButton(parent),
     m_iconCached(false)
 {}
 
-EqPayPushButton::EqPayPushButton(const QString &text, QWidget *parent):
+EquityPayPushButton::EquityPayPushButton(const QString &text, QWidget *parent):
     QPushButton(text, parent),
     m_iconCached(false)
 {}
 
-void EqPayPushButton::paintEvent(QPaintEvent *)
+void EquityPayPushButton::paintEvent(QPaintEvent *)
 {
     QStylePainter p(this);
     QStyleOptionButton option;
@@ -20,7 +20,7 @@ void EqPayPushButton::paintEvent(QPaintEvent *)
     p.drawControl(QStyle::CE_PushButton, option);
 }
 
-void EqPayPushButton::updateIcon(QStyleOptionButton &pushbutton)
+void EquityPayPushButton::updateIcon(QStyleOptionButton &pushbutton)
 {
     // Update sunken icon
     if((pushbutton.state & QStyle::State_Enabled) &&

@@ -8,7 +8,7 @@ from test_framework.messages import hash256
 import time
 import struct
 
-class EqPayCallContractTimestampTest(BitcoinTestFramework):
+class EquityPayCallContractTimestampTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
@@ -47,4 +47,4 @@ class EqPayCallContractTimestampTest(BitcoinTestFramework):
         assert(expected_now == now or expected_now == now+1)
 
 if __name__ == '__main__':
-    EqPayCallContractTimestampTest().main()
+    EquityPayCallContractTimestampTest().main()

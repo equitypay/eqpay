@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2019 The EqPay Core developers
+# Copyright (c) 2016-2019 The EquityPay Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@ import io
 import pprint
 
 
-class EqPayEVMStaticCallTest(BitcoinTestFramework):
+class EquityPayEVMStaticCallTest(BitcoinTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True
@@ -380,4 +380,4 @@ class EqPayEVMStaticCallTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayEVMStaticCallTest().main()
+    EquityPayEVMStaticCallTest().main()

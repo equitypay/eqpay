@@ -1,20 +1,20 @@
-# EqPay Sparknet Usage and Information
+# EquityPay Sparknet Usage and Information
 
-EqPay is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about EqPay as well as links to join our community, go to https://equitypay.org
+EquityPay is a decentralized blockchain project built on Bitcoin's UTXO model, but with support for Ethereum Virtual Machine based smart contracts. It achieves this through the revolutionary Account Abstraction Layer. For more general information about EquityPay as well as links to join our community, go to https://equitypay.org
 
-Welcome to EqPay Sparknet, the first public testnet for the EqPay blockchain. Sparknet is designed primarily for developers, and as such documentation at this point will be technical and suited more for developers. The mainnet is expected to be released in September and will be suited for the general public. Testnet tokens do not hold any value and should not be traded for any monetary instruments. The testnet can be reset or forked at anytime as deemed necessary for development. Sparknet does not include support for Mutualized Proof Of Stake, or for the Decentralized Governance Protocol. Both of these features are implemented, and their code is available on alternative branches (check the pull requests), but have not been tested and proven stable enough to include in this testnet. They will be implemented in the 2nd public testnet for EqPay. 
+Welcome to EquityPay Sparknet, the first public testnet for the EquityPay blockchain. Sparknet is designed primarily for developers, and as such documentation at this point will be technical and suited more for developers. The mainnet is expected to be released in September and will be suited for the general public. Testnet tokens do not hold any value and should not be traded for any monetary instruments. The testnet can be reset or forked at anytime as deemed necessary for development. Sparknet does not include support for Mutualized Proof Of Stake, or for the Decentralized Governance Protocol. Both of these features are implemented, and their code is available on alternative branches (check the pull requests), but have not been tested and proven stable enough to include in this testnet. They will be implemented in the 2nd public testnet for EquityPay. 
 
-# Using Smart Contracts with EqPay
+# Using Smart Contracts with EquityPay
 
-The smart contract interface in EqPay still requires some technical knowledge. The GUI is not completed yet, so all smart contract interation must happen either using `eqpay-cli` at the command line, or in the debug window of `eqpay-qt`. 
+The smart contract interface in EquityPay still requires some technical knowledge. The GUI is not completed yet, so all smart contract interation must happen either using `eqpay-cli` at the command line, or in the debug window of `eqpay-qt`. 
 
 To demonstrate how to deploy and interact with a simple we will use this contract:
 
     pragma solidity ^0.4.0;
 
-    contract EqPayTest {
+    contract EquityPayTest {
        uint storedNumber;
-       function EqPayTest() {
+       function EquityPayTest() {
            storedNumber=1;
        }
        function setNumber(uint number) public{
@@ -59,7 +59,7 @@ And finally, has the following JSON interface file:
 
 This info can easily be retrieved for any contract by using [Browser Solidity](https://ethereum.github.io/browser-solidity/), inputing your contract's source code, and then on the right hand side clicking "contract details" 
 
-(note, if using the debug window in the EqPay Qt application, don't include `./eqpay-cli` in the commands)
+(note, if using the debug window in the EquityPay Qt application, don't include `./eqpay-cli` in the commands)
 
 First, we need to deploy the contract:
 
@@ -153,7 +153,7 @@ Afterwards, we can call `returnNumber()` again and check the `output` field:
 
 This is 123456 encoded as hex. 
 
-You can also use the `logNumber()` function in order to generate logs. If your node was started with `-record-log-opcodes`, then the file `vmExecLogs.json` will contain any log operations that occur on the blockchain. This is what is used for events on the Ethereum blockchain, and eventually it is our intention to bring similar functionality to EqPay.
+You can also use the `logNumber()` function in order to generate logs. If your node was started with `-record-log-opcodes`, then the file `vmExecLogs.json` will contain any log operations that occur on the blockchain. This is what is used for events on the Ethereum blockchain, and eventually it is our intention to bring similar functionality to EquityPay.
 
 You can also deposit and withdraw coins from this test contract using the `deposit()` and `withdraw()` functions.
 
@@ -186,17 +186,17 @@ When creating this contract transaction, nothing will immediately happen, when t
 * Q: "I used `createcontract`, but can't call my contract and it's not in listcontract" A: You probably did not provide enough gas for the contract's constructor to be executed and it's code persisted in the blockchain. The vm.log file should confirm this by saying how much gas was needed
 * Q: "I sent a large amount of gas but I never got a refund" A: Refunds are generated from the coinstake transaction, so you must wait 500 blocks for the gas refund to mature before it can be spent again
 * Q: "I used -reindex and now my node is taking forever to resync" A: Currently when doing a reindex, all contracts are reprocessed, so in a chain with many contract executions this can add up to a significant amount of time. This will be made faster in the future, as well as the initial syncing speed of nodes
-* Q: "I think I found a bug in EqPay" A: Please report any bugs at https://github.com/equitypay/eqpay/issues
+* Q: "I think I found a bug in EquityPay" A: Please report any bugs at https://github.com/equitypay/eqpay/issues
 
 
 
-# New EqPay RPC Commands
+# New EquityPay RPC Commands
 
-EqPay supports all of the RPC commands supported by Bitcoin Core, but also includes the following commands unique to EqPay:
+EquityPay supports all of the RPC commands supported by Bitcoin Core, but also includes the following commands unique to EquityPay:
 
-* `createcontract` - This will create and deploy a new smart contract to the EqPay blockchain. This requires gas.
-* `callcontract` - This will interact with an already deployed smart contract on the EqPay blockchain, with all computation taking place off-chain and no persistence to the blockchain. This does not require gas
-* `sendtocontract` - This will interact with an already deployed smart contract on the EqPay blockchain. All computation takes place on-chain and any state changes will be persisted to the blockchain. This allows tokens to be sent to a smart contract. This requires gas.
+* `createcontract` - This will create and deploy a new smart contract to the EquityPay blockchain. This requires gas.
+* `callcontract` - This will interact with an already deployed smart contract on the EquityPay blockchain, with all computation taking place off-chain and no persistence to the blockchain. This does not require gas
+* `sendtocontract` - This will interact with an already deployed smart contract on the EquityPay blockchain. All computation takes place on-chain and any state changes will be persisted to the blockchain. This allows tokens to be sent to a smart contract. This requires gas.
 * `getaccountinfo` - This will show some low level information about a contract, including the contract's bytecode, stored data, and balance on the blockchain.
 * `listcontracts` - This will output a list of currently deployed contract addresses with their respective balance. This RPC call may change or be removed in the future.
 * `reservebalance` - This will reserve a set amount of coins so that they do not participate in staking. If you reserve as many or more coins than are in your wallet, then you will not participate at all in staking and block creation for the network.
@@ -205,25 +205,25 @@ EqPay supports all of the RPC commands supported by Bitcoin Core, but also inclu
 * `fromhexaddress` - this will convert a hex address used in smart contracts to a standard Base58 pubkeyhash address
 
 
-# New EqPay Command Line Arguments
+# New EquityPay Command Line Arguments
 
-EqPay supports all of the usual command line arguments that Bitcoin Core supports. In addition it adds the following new command line arguments:
+EquityPay supports all of the usual command line arguments that Bitcoin Core supports. In addition it adds the following new command line arguments:
 
-* `-record-log-opcodes` - This will create a new log file in the EqPay data directory (usually ~/.eqpay) named vmExecLogs.json, where any EVM LOG opcode is logged along with topics and data that the contract requested be logged. 
+* `-record-log-opcodes` - This will create a new log file in the EquityPay data directory (usually ~/.eqpay) named vmExecLogs.json, where any EVM LOG opcode is logged along with topics and data that the contract requested be logged. 
 
 # Untested features
 
-Some features included in Bitcoin Core have not been tested in it's porting to EqPay. This includes:
+Some features included in Bitcoin Core have not been tested in it's porting to EquityPay. This includes:
 
 * Pruning
 
 # EVM Smart Contract Changes and Limitations
 
-Because of EqPay's underlying technical differences, there are a few operations that can have different results or limitations when executed in EqPay than when compared to Ethereum. 
+Because of EquityPay's underlying technical differences, there are a few operations that can have different results or limitations when executed in EquityPay than when compared to Ethereum. 
 
 These include the following, though there may be others introduced in the future:  
 
-* The gas schedule for EqPay is different from Ethereum. Certain operations are more or less expensive. As such, gas cost estimators designed for Ethereum will not give accurate results for EqPay. We will develop our own gas estimating tools as well as fully documenting these differences at a later date. 
+* The gas schedule for EquityPay is different from Ethereum. Certain operations are more or less expensive. As such, gas cost estimators designed for Ethereum will not give accurate results for EquityPay. We will develop our own gas estimating tools as well as fully documenting these differences at a later date. 
 * `block.coinbase` or the `COINBASE` opcode currently is not supported and will only return 0. When MPoS is released in the 2nd testnet this should be functioning as expected
 * `block.number` will return the previous block height before this block containing the contract's execution
 * `block.difficulty` will return the previous block's difficulty
