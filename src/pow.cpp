@@ -41,7 +41,7 @@ const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfSta
     return pindex;
 }
 
-inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool fProofOfStake)
+inline arith_uint256 GetLimit(const Consensus::Params& params, bool fProofOfStake)
 {
     if(fProofOfStake) {
         return UintToArith256(params.posLimit);
@@ -50,214 +50,49 @@ inline arith_uint256 GetLimit(int nHeight, const Consensus::Params& params, bool
     }
 }
 
-unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake)
-{
-    const unsigned int nHeight = pindexLast ? pindexLast->nHeight + 1 : 0;  
-    unsigned int  nTargetLimit = GetLimit(nHeight, params, fProofOfStake).GetCompact();
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake) {
+    /* current difficulty formula, veil - DarkGravity v3, written by Evan Duffield - evan@dash.org */
+    const arith_uint256 bnPowLimit = GetLimit(params, fProofOfStake);
 
-    // genesis block
-    if (pindexLast == nullptr)
-        return nTargetLimit;
-
-    // first block
-    const CBlockIndex* pindexPrev = GetLastBlockIndex(pindexLast, fProofOfStake);
-    if (pindexPrev->pprev == nullptr)
-        return nTargetLimit;
-
-    // second block
-    const CBlockIndex* pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
-    if (pindexPrevPrev->pprev == nullptr)
-        return nTargetLimit;
-    
-    // Return the min difficulty on regtest
-    if (params.fPowAllowMinDifficultyBlocks) {
-        return nTargetLimit;
-    }
-
-    if (fProofOfStake) {
-        return CalculateNextWorkRequiredPoS(pindexPrev, pindexPrevPrev->GetBlockTime(), params);
-    } else {
-        return CalculateNextWorkRequiredPoW(pindexLast, params);
-    }
-
-    return CalculateNextWorkRequired(pindexPrev, params, fProofOfStake);
-
-}
-
-/**
- * eHRC (enhanced Hash Rate Compensation)
- * Short, medium and long samples averaged together and compared against the target time span.
- * Adjust every block but limted to 9% change maximum.
- * Difficulty is calculated separately for PoW and PoS blocks in that PoW skips PoS blocks and vice versa.
- */
-unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake)
-{
-    if(fProofOfStake){
-        if (params.fPoSNoRetargeting)
-            return pindexLast->nBits;
-    }else{
-        if (params.fPowNoRetargeting)
-            return pindexLast->nBits;
-    }
-    
-    int nHeight = pindexLast->nHeight + 1;
-    const arith_uint256 nTargetLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, fProofOfStake);
-    int nTargetTimespan = params.nTargetTimespan;
-
-    int pindexFirstShortTime = 0, pindexFirstMediumTime = 0, pindexFirstLongTime = 0;
-    int shortSample = 15, mediumSample = 200, longSample = 1000;
-    int nActualTimespan = 0, nActualTimespanShort = 0, nActualTimespanMedium = 0, nActualTimespanLong = 0;
-
-    const CBlockIndex* pindexFirstLong = pindexLast;
-
-    // i tracks sample height, j counts number of blocks of required type
-    for (int i = 0, j = 0; j <= longSample + 1;) {
-        bool skip = false;
-
-        // Hit the start of the chain before finding enough blocks
-        if (pindexFirstLong->pprev == nullptr)
-            return nTargetLimit.GetCompact();
-
-        // Only increment j if we have a block of the current type
-        if (fProofOfStake) {
-            if (pindexFirstLong->IsProofOfStake())
-                j++;
-            if (pindexFirstLong->pprev->IsProofOfWork())
-                skip = true;
-        } else {
-            if (pindexFirstLong->IsProofOfWork())
-                j++;
-            if (pindexFirstLong->pprev->IsProofOfStake())
-                skip = true;
-        }
-
-        pindexFirstLong = pindexFirstLong->pprev;
-
-        // Do not sample on longSample - 1 due to nDiffAdjustChange bug
-        if (i < longSample)
-            pindexFirstLongTime = pindexFirstLong->GetBlockTime();
-
-        if (skip) {
-            // Incorrectly increment i before nDiffAdjustChange
-            if (nHeight <= params.nDiffAdjustChange)
-                i++;
-            continue;
-        }
-
-        if (i == shortSample - 1)
-            pindexFirstShortTime = pindexFirstLong->GetBlockTime();
-
-        if (i == mediumSample - 1)
-            pindexFirstMediumTime = pindexFirstLong->GetBlockTime();
-
-        i++;
-    }
-
-    if (pindexLast->GetBlockTime() - pindexFirstShortTime != 0)
-        nActualTimespanShort = (pindexLast->GetBlockTime() - pindexFirstShortTime) / shortSample;
-
-    if (pindexLast->GetBlockTime() - pindexFirstMediumTime != 0)
-        nActualTimespanMedium = (pindexLast->GetBlockTime() - pindexFirstMediumTime) / mediumSample;
-
-    if (pindexLast->GetBlockTime() - pindexFirstLongTime != 0)
-        nActualTimespanLong = (pindexLast->GetBlockTime() - pindexFirstLongTime) / longSample;
-
-    int nActualTimespanSum = nActualTimespanShort + nActualTimespanMedium + nActualTimespanLong;
-
-    if (nActualTimespanSum != 0)
-        nActualTimespan = nActualTimespanSum / 3;
-
-    if (pindexLast->nHeight >= params.nDiffDamping) {
-        // Apply .25 damping
-        nActualTimespan = nActualTimespan + (3 * nTargetTimespan);
-        nActualTimespan /= 4;
-    }
-
-    // 9% difficulty limiter
-    int nActualTimespanMax = nTargetTimespan * 494 / 453;
-    int nActualTimespanMin = nTargetTimespan * 453 / 494;
-
-    if(nActualTimespan < nActualTimespanMin)
-        nActualTimespan = nActualTimespanMin;
-
-    if(nActualTimespan > nActualTimespanMax)
-        nActualTimespan = nActualTimespanMax;
-
-    arith_uint256 bnNew;
-    bnNew.SetCompact(pindexLast->nBits);
-    bnNew *= nActualTimespan;
-    bnNew /= nTargetTimespan;
-
-    if (bnNew <= 0 || bnNew > nTargetLimit)
-        bnNew = nTargetLimit;
-
-    return bnNew.GetCompact();
-}
-
-// Use QTUM's difficulty adjust for PoS blocks only
-unsigned int CalculateNextWorkRequiredPoS(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
-{
-    if (params.fPoSNoRetargeting) {
-        return pindexLast->nBits;
-    }
-    // Limit adjustment step
-    int64_t nTargetSpacing = params.nTargetSpacing;
-    int64_t nActualSpacing = pindexLast->GetBlockTime() - nFirstBlockTime;
-    // Retarget
-    const arith_uint256 bnTargetLimit = GetLimit(pindexLast ? pindexLast->nHeight+1 : 0, params, true);
-    // ppcoin: target change every block
-    // ppcoin: retarget with exponential moving toward target spacing
-    arith_uint256 bnNew;
-    bnNew.SetCompact(pindexLast->nBits);
-    int64_t nInterval = params.DifficultyAdjustmentInterval(pindexLast->nHeight + 1);
-
-    if (nActualSpacing < 0) {
-        nActualSpacing = nTargetSpacing;
-
-        if (nActualSpacing > nTargetSpacing) {
-            nActualSpacing = nTargetSpacing * 20;
-        }
-        bnNew = mul_exp(bnNew, 2 * (nActualSpacing - nTargetSpacing) / 16, (nInterval + 1) * nTargetSpacing / 16);
-    }
-
-    if (bnNew <= 0 || bnNew > bnTargetLimit)
-    bnNew = bnTargetLimit;
-
-    return bnNew.GetCompact();
-}
-
-// Use Dash's difficulty adjust for PoW blocks only
-unsigned int CalculateNextWorkRequiredPoW(const CBlockIndex* pindexLast, const Consensus::Params& params)
-{
-    /* current difficulty formula, dash - DarkGravity v3, written by Evan Duffield - evan@dash.org */
-
-    const arith_uint256 nTargetLimit = GetLimit(0, params, false);
-    int64_t nPastBlocks = 30;
     const CBlockIndex *pindex = pindexLast;
-    arith_uint256 bnPastTargetAvg;
+    const CBlockIndex* pindexLastMatchingProof = nullptr;
+    arith_uint256 bnPastTargetAvg = 0;
+    int nDgwPastBlocks = 30;
 
-    for (unsigned int nCountBlocks = 1; nCountBlocks <= nPastBlocks; nCountBlocks++) {
+    // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
+    if (!pindexLast || pindexLast->nHeight < nDgwPastBlocks) {
+        return bnPowLimit.GetCompact();
+    }
+
+    unsigned int nCountBlocks = 0;
+    while (nCountBlocks < nDgwPastBlocks) {
+        // Ran out of blocks, return pow limit
+        if (!pindex)
+            return bnPowLimit.GetCompact();
+
+        // Only consider PoW or PoS blocks but not both
+        if (pindex->IsProofOfStake() != fProofOfStake) {
+            pindex = pindex->pprev;
+            continue;
+        } else if (!pindexLastMatchingProof) {
+            pindexLastMatchingProof = pindex;
+        }
+
         arith_uint256 bnTarget = arith_uint256().SetCompact(pindex->nBits);
-        if (nCountBlocks == 1) {
-            bnPastTargetAvg = bnTarget;
-        } else {
-            // NOTE: that's not an average really...
-            bnPastTargetAvg = (bnPastTargetAvg * nCountBlocks + bnTarget) / (nCountBlocks + 1);
-        }
+        bnPastTargetAvg = (bnPastTargetAvg * nCountBlocks + bnTarget) / (nCountBlocks + 1);
 
-        if(nCountBlocks != nPastBlocks) {
-            // If we hit start of chain return min diff
-            if (pindex->pprev == nullptr)
-                return nTargetLimit.GetCompact();
-
-            pindex = GetLastBlockIndex(pindex->pprev, false);
-        }
+        if (++nCountBlocks != nDgwPastBlocks)
+            pindex = pindex->pprev;
     }
 
     arith_uint256 bnNew(bnPastTargetAvg);
 
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - pindex->GetBlockTime();
-    int64_t nTargetTimespan = nPastBlocks * params.nTargetSpacing;
+    //Should only happen on the first PoS block
+    if (pindexLastMatchingProof)
+        pindexLastMatchingProof = pindexLast;
+
+    int64_t nActualTimespan = pindexLastMatchingProof->GetBlockTime() - pindex->GetBlockTime();
+    int64_t nTargetTimespan = nDgwPastBlocks * params.nTargetSpacing;
 
     if (nActualTimespan < nTargetTimespan/3)
         nActualTimespan = nTargetTimespan/3;
@@ -268,8 +103,8 @@ unsigned int CalculateNextWorkRequiredPoW(const CBlockIndex* pindexLast, const C
     bnNew *= nActualTimespan;
     bnNew /= nTargetTimespan;
 
-    if (bnNew > nTargetLimit) {
-        bnNew = nTargetLimit;
+    if (bnNew > bnPowLimit) {
+        bnNew = bnPowLimit;
     }
 
     return bnNew.GetCompact();
