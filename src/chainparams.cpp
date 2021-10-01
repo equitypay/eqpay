@@ -131,7 +131,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xcbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb"); // 888000
+        consensus.defaultAssumeValid = uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"); // 888000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -141,17 +141,17 @@ public:
         pchMessageStart[0] = 0x80;
         pchMessageStart[1] = 0x65;
         pchMessageStart[2] = 0x89;
-        pchMessageStart[3] = 0x86;
+        pchMessageStart[3] = 0x76;
         nDefaultPort = 9998;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 8;
         m_assumed_chain_state_size = 1;
 
-        const char* pszTimestamp = "Hubble Observes Enigmatic Herbig-Haro Object | Aug 30, 2021 Sci News";
+        const char* pszTimestamp = "Tunguska-Sized Impact Destroyed Jordan Valley City 3,670 Years Ago | Sep 29, 2021 Sci News";
         genesis = CreateGenesisBlock(1630380996, 1591, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xcbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb"));
-        assert(genesis.hashMerkleRoot == uint256S("0x6f2751b1be09f5669b1b1296d417f2767c3df31d44b333e0f93c56a2b98df0db"));
+        assert(consensus.hashGenesisBlock == uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"));
+        assert(genesis.hashMerkleRoot == uint256S("0xaaed7f5c3953f815aca5127be6578651f9ca09e069696fa192e6f5990fffa7e1"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,70);
@@ -170,7 +170,7 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("cbf489924826891601bbac5b4b3edf120d95074c00d92919c00addf349ffbfeb")},
+                { 0, uint256S("4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83")},
             }
         };
 
@@ -180,7 +180,7 @@ public:
             0
         };
 
-        consensus.nCoinbaseMaturity = 300;
+        consensus.nCoinbaseMaturity = 150;
 
         consensus.nCheckpointSpan = consensus.nCoinbaseMaturity;
         consensus.delegationsAddress = uint160(ParseHex("0000000000000000000000000000000000000086")); // Delegations contract for offline staking
