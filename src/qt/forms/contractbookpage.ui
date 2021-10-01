@@ -96,7 +96,7 @@
        <number>15</number>
       </property>
       <item>
-       <widget class="EqPayPushButton" name="newContractInfo">
+       <widget class="EquityPayPushButton" name="newContractInfo">
         <property name="toolTip">
          <string>Create a new contract info</string>
         </property>
@@ -106,7 +106,7 @@
        </widget>
       </item>
       <item>
-       <widget class="EqPayPushButton" name="copyAddress">
+       <widget class="EquityPayPushButton" name="copyAddress">
         <property name="toolTip">
          <string>Copy the currently selected contract address to the system clipboard</string>
         </property>
@@ -116,7 +116,7 @@
        </widget>
       </item>
       <item>
-       <widget class="EqPayPushButton" name="deleteContractInfo">
+       <widget class="EquityPayPushButton" name="deleteContractInfo">
         <property name="toolTip">
          <string>Delete the currently selected contract info from the list</string>
         </property>
@@ -139,7 +139,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="EqPayPushButton" name="exportButton">
+       <widget class="EquityPayPushButton" name="exportButton">
         <property name="toolTip">
          <string>Export the data to a file</string>
         </property>
@@ -162,7 +162,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>EqPayPushButton</class>
+   <class>EquityPayPushButton</class>
    <extends>QPushButton</extends>
    <header>qt/eqpaypushbutton.h</header>
   </customwidget>

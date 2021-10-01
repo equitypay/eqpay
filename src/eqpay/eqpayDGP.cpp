@@ -25,11 +25,11 @@ std::vector<uint32_t> scheduleDataForBlockNumber(unsigned int blockHeight)
     return createDataSchedule(schedule);
 }
 
-void EqPayDGP::initDataSchedule(){
+void EquityPayDGP::initDataSchedule(){
     dataSchedule = scheduleDataForBlockNumber(0);
 }
 
-bool EqPayDGP::checkLimitSchedule(const std::vector<uint32_t>& defaultData, const std::vector<uint32_t>& checkData, int blockHeight){
+bool EquityPayDGP::checkLimitSchedule(const std::vector<uint32_t>& defaultData, const std::vector<uint32_t>& checkData, int blockHeight){
     const Consensus::Params& consensusParams = Params().GetConsensus();
 
     if(defaultData.size() == 39 && (checkData.size() == 39 || (checkData.size() == 40 && blockHeight >= consensusParams.QIP7Height))) {
@@ -45,28 +45,28 @@ bool EqPayDGP::checkLimitSchedule(const std::vector<uint32_t>& defaultData, cons
     return false;
 }
 
-dev::eth::EVMSchedule EqPayDGP::getGasSchedule(int blockHeight){
+dev::eth::EVMSchedule EquityPayDGP::getGasSchedule(int blockHeight){
     clear();
     dataSchedule = scheduleDataForBlockNumber(blockHeight);
     return globalSealEngine->chainParams().scheduleForBlockNumber(blockHeight);
 }
 
-uint32_t EqPayDGP::getBlockSize(unsigned int blockHeight){
+uint32_t EquityPayDGP::getBlockSize(unsigned int blockHeight){
     clear();
     return DEFAULT_BLOCK_SIZE_DGP;
 }
 
-uint64_t EqPayDGP::getMinGasPrice(unsigned int blockHeight){
+uint64_t EquityPayDGP::getMinGasPrice(unsigned int blockHeight){
     clear();
     return DEFAULT_MIN_GAS_PRICE_DGP;
 }
 
-uint64_t EqPayDGP::getBlockGasLimit(unsigned int blockHeight){
+uint64_t EquityPayDGP::getBlockGasLimit(unsigned int blockHeight){
     clear();
     return DEFAULT_BLOCK_GAS_LIMIT_DGP;
 }
 
-void EqPayDGP::createParamsInstance(){
+void EquityPayDGP::createParamsInstance(){
     dev::h256 paramsInstanceHash = sha3(dev::h256("0000000000000000000000000000000000000000000000000000000000000000"));
     if(storageDGP.count(paramsInstanceHash)){
         dev::u256 paramsInstanceSize = storageDGP.find(paramsInstanceHash)->second.second;
@@ -81,7 +81,7 @@ void EqPayDGP::createParamsInstance(){
     }
 }
 
-dev::Address EqPayDGP::getAddressForBlock(unsigned int blockHeight){
+dev::Address EquityPayDGP::getAddressForBlock(unsigned int blockHeight){
     for(auto i = paramsInstance.rbegin(); i != paramsInstance.rend(); i++){
         if(i->first <= blockHeight)
             return i->second;
@@ -93,7 +93,7 @@ static inline bool sortPairs(const std::pair<dev::u256, dev::u256>& a, const std
     return a.first < b.first;
 }
 
-void EqPayDGP::parseStorageScheduleContract(std::vector<uint32_t>& uint32Values){
+void EquityPayDGP::parseStorageScheduleContract(std::vector<uint32_t>& uint32Values){
     std::vector<std::pair<dev::u256, dev::u256>> data;
     for(size_t i = 0; i < 5; i++){
         dev::h256 gasScheduleHash = sha3(dev::h256(dev::u256(i)));
@@ -119,7 +119,7 @@ void EqPayDGP::parseStorageScheduleContract(std::vector<uint32_t>& uint32Values)
     }
 }
 
-void EqPayDGP::parseDataScheduleContract(std::vector<uint32_t>& uint32Values){
+void EquityPayDGP::parseDataScheduleContract(std::vector<uint32_t>& uint32Values){
     size_t size = dataTemplate.size() / 32;
     for(size_t i = 0; i < size; i++){
         std::vector<unsigned char> value = std::vector<unsigned char>(dataTemplate.begin() + (i * 32), dataTemplate.begin() + ((i+1) * 32));
@@ -128,7 +128,7 @@ void EqPayDGP::parseDataScheduleContract(std::vector<uint32_t>& uint32Values){
     }
 }
 
-dev::eth::EVMSchedule EqPayDGP::createEVMSchedule(const dev::eth::EVMSchedule &_schedule, int blockHeight){
+dev::eth::EVMSchedule EquityPayDGP::createEVMSchedule(const dev::eth::EVMSchedule &_schedule, int blockHeight){
     dev::eth::EVMSchedule schedule = _schedule;
     std::vector<uint32_t> uint32Values;
 
@@ -179,7 +179,7 @@ dev::eth::EVMSchedule EqPayDGP::createEVMSchedule(const dev::eth::EVMSchedule &_
     return schedule;
 }
 
-void EqPayDGP::clear(){
+void EquityPayDGP::clear(){
     templateContract = dev::Address();
     storageDGP.clear();
     storageTemplate.clear();

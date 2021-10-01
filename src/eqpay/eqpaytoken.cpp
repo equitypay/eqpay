@@ -7,7 +7,7 @@
 #include <util/convert.h>
 #include <libethcore/ABI.h>
 
-namespace EqPayToken_NS
+namespace EquityPayToken_NS
 {
 const char *TOKEN_ABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"},{\"name\":\"_extraData\",\"type\":\"bytes\"}],\"name\":\"approveAndCall\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"initialSupply\",\"type\":\"uint256\"},{\"name\":\"tokenName\",\"type\":\"string\"},{\"name\":\"decimalUnits\",\"type\":\"uint8\"},{\"name\":\"tokenSymbol\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Burn\",\"type\":\"event\"}]";
 const char *PARAM_ADDRESS = "address";
@@ -20,34 +20,34 @@ const char *PARAM_BROADCAST = "broadcast";
 const char *PARAM_CHANGE_TO_SENDER = "changeToSender";
 }
 
-bool EqPayTokenExec::execValid(const int &, const bool &)
+bool EquityPayTokenExec::execValid(const int &, const bool &)
 {
     return false;
 }
 
-bool EqPayTokenExec::execEventsValid(const int &, const int64_t &)
+bool EquityPayTokenExec::execEventsValid(const int &, const int64_t &)
 {
     return false;
 }
 
-bool EqPayTokenExec::exec(const bool &, const std::map<std::string, std::string> &, std::string &, std::string &)
+bool EquityPayTokenExec::exec(const bool &, const std::map<std::string, std::string> &, std::string &, std::string &)
 {
     return false;
 }
 
-bool EqPayTokenExec::execEvents(const int64_t &, const int64_t &, const int64_t&, const std::string &, const std::string &, const std::string &, const int &, std::vector<TokenEvent> &)
+bool EquityPayTokenExec::execEvents(const int64_t &, const int64_t &, const int64_t&, const std::string &, const std::string &, const std::string &, const int &, std::vector<TokenEvent> &)
 {
     return false;
 }
 
-EqPayTokenExec::~EqPayTokenExec()
+EquityPayTokenExec::~EquityPayTokenExec()
 {}
 
-struct EqPayTokenData
+struct EquityPayTokenData
 {
     std::map<std::string, std::string> lstParams;
     std::string address;
-    EqPayTokenExec* tokenExec;
+    EquityPayTokenExec* tokenExec;
     ContractABI* ABI;
     int funcName;
     int funcApprove;
@@ -67,7 +67,7 @@ struct EqPayTokenData
     std::string txid;
     std::string errorMessage;
 
-    EqPayTokenData():
+    EquityPayTokenData():
         tokenExec(0),
         ABI(0),
         funcName(-1),
@@ -87,9 +87,9 @@ struct EqPayTokenData
     {}
 };
 
-bool EqPayToken::ToHash160(const std::string& strEqPayAddress, std::string& strHash160)
+bool EquityPayToken::ToHash160(const std::string& strEquityPayAddress, std::string& strHash160)
 {
-    CTxDestination eqpayAddress = DecodeDestination(strEqPayAddress);
+    CTxDestination eqpayAddress = DecodeDestination(strEquityPayAddress);
     if(!IsValidDestination(eqpayAddress))
         return false;
     const PKHash * keyid = boost::get<PKHash>(&eqpayAddress);
@@ -101,19 +101,19 @@ bool EqPayToken::ToHash160(const std::string& strEqPayAddress, std::string& strH
     return true;
 }
 
-bool EqPayToken::ToEqPayAddress(const std::string& strHash160, std::string& strEqPayAddress)
+bool EquityPayToken::ToEquityPayAddress(const std::string& strHash160, std::string& strEquityPayAddress)
 {
     uint160 key(ParseHex(strHash160.c_str()));
     PKHash keyid(key);
     CTxDestination eqpayAddress = keyid;
     if(IsValidDestination(eqpayAddress)){
-        strEqPayAddress = EncodeDestination(eqpayAddress);
+        strEquityPayAddress = EncodeDestination(eqpayAddress);
         return true;
     }
     return false;
 }
 
-uint256 EqPayToken::ToUint256(const std::string &data)
+uint256 EquityPayToken::ToUint256(const std::string &data)
 {
     dev::bytes rawData = dev::fromHex(data);
     dev::bytesConstRef o(&rawData);
@@ -121,15 +121,15 @@ uint256 EqPayToken::ToUint256(const std::string &data)
     return u256Touint(outData);
 }
 
-EqPayToken::EqPayToken():
+EquityPayToken::EquityPayToken():
     d(0)
 {
-    d = new EqPayTokenData();
+    d = new EquityPayTokenData();
     clear();
 
     // Compute functions indexes
     d->ABI = new ContractABI();
-    if(d->ABI->loads(EqPayToken_NS::TOKEN_ABI))
+    if(d->ABI->loads(EquityPayToken_NS::TOKEN_ABI))
     {
         for(size_t i = 0; i < d->ABI->functions.size(); i++)
         {
@@ -194,7 +194,7 @@ EqPayToken::EqPayToken():
     }
 }
 
-EqPayToken::~EqPayToken()
+EquityPayToken::~EquityPayToken()
 {
     d->tokenExec = 0;
 
@@ -203,37 +203,37 @@ EqPayToken::~EqPayToken()
     d = 0;
 }
 
-void EqPayToken::setAddress(const std::string &address)
+void EquityPayToken::setAddress(const std::string &address)
 {
-    d->lstParams[EqPayToken_NS::PARAM_ADDRESS] = address;
+    d->lstParams[EquityPayToken_NS::PARAM_ADDRESS] = address;
 }
 
-void EqPayToken::setDataHex(const std::string &datahex)
+void EquityPayToken::setDataHex(const std::string &datahex)
 {
-    d->lstParams[EqPayToken_NS::PARAM_DATAHEX] = datahex;
+    d->lstParams[EquityPayToken_NS::PARAM_DATAHEX] = datahex;
 }
 
-void EqPayToken::setAmount(const std::string &amount)
+void EquityPayToken::setAmount(const std::string &amount)
 {
-    d->lstParams[EqPayToken_NS::PARAM_AMOUNT] = amount;
+    d->lstParams[EquityPayToken_NS::PARAM_AMOUNT] = amount;
 }
 
-void EqPayToken::setGasLimit(const std::string &gaslimit)
+void EquityPayToken::setGasLimit(const std::string &gaslimit)
 {
-    d->lstParams[EqPayToken_NS::PARAM_GASLIMIT] = gaslimit;
+    d->lstParams[EquityPayToken_NS::PARAM_GASLIMIT] = gaslimit;
 }
 
-void EqPayToken::setGasPrice(const std::string &gasPrice)
+void EquityPayToken::setGasPrice(const std::string &gasPrice)
 {
-    d->lstParams[EqPayToken_NS::PARAM_GASPRICE] = gasPrice;
+    d->lstParams[EquityPayToken_NS::PARAM_GASPRICE] = gasPrice;
 }
 
-void EqPayToken::setSender(const std::string &sender)
+void EquityPayToken::setSender(const std::string &sender)
 {
-    d->lstParams[EqPayToken_NS::PARAM_SENDER] = sender;
+    d->lstParams[EquityPayToken_NS::PARAM_SENDER] = sender;
 }
 
-void EqPayToken::clear()
+void EquityPayToken::clear()
 {
     d->lstParams.clear();
 
@@ -241,16 +241,16 @@ void EqPayToken::clear()
     setGasPrice(FormatMoney(DEFAULT_GAS_PRICE));
     setGasLimit(std::to_string(DEFAULT_GAS_LIMIT_OP_SEND));
 
-    d->lstParams[EqPayToken_NS::PARAM_BROADCAST] = "true";
-    d->lstParams[EqPayToken_NS::PARAM_CHANGE_TO_SENDER] = "true";
+    d->lstParams[EquityPayToken_NS::PARAM_BROADCAST] = "true";
+    d->lstParams[EquityPayToken_NS::PARAM_CHANGE_TO_SENDER] = "true";
 }
 
-std::string EqPayToken::getTxId()
+std::string EquityPayToken::getTxId()
 {
     return d->txid;
 }
 
-bool EqPayToken::name(std::string &result, bool sendTo)
+bool EquityPayToken::name(std::string &result, bool sendTo)
 {
     std::vector<std::string> input;
     std::vector<std::string> output;
@@ -268,7 +268,7 @@ bool EqPayToken::name(std::string &result, bool sendTo)
     return true;
 }
 
-bool EqPayToken::approve(const std::string &_spender, const std::string &_value, bool &success, bool sendTo)
+bool EquityPayToken::approve(const std::string &_spender, const std::string &_value, bool &success, bool sendTo)
 {
     std::string spender = _spender;
     if(!ToHash160(spender, spender))
@@ -295,7 +295,7 @@ bool EqPayToken::approve(const std::string &_spender, const std::string &_value,
     return true;
 }
 
-bool EqPayToken::totalSupply(std::string &result, bool sendTo)
+bool EquityPayToken::totalSupply(std::string &result, bool sendTo)
 {
     std::vector<std::string> input;
     std::vector<std::string> output;
@@ -313,7 +313,7 @@ bool EqPayToken::totalSupply(std::string &result, bool sendTo)
     return true;
 }
 
-bool EqPayToken::transferFrom(const std::string &_from, const std::string &_to, const std::string &_value, bool &success, bool sendTo)
+bool EquityPayToken::transferFrom(const std::string &_from, const std::string &_to, const std::string &_value, bool &success, bool sendTo)
 {
     std::string from = _from;
     if(!ToHash160(from, from))
@@ -346,7 +346,7 @@ bool EqPayToken::transferFrom(const std::string &_from, const std::string &_to, 
     return true;
 }
 
-bool EqPayToken::decimals(std::string &result, bool sendTo)
+bool EquityPayToken::decimals(std::string &result, bool sendTo)
 {
     std::vector<std::string> input;
     std::vector<std::string> output;
@@ -364,7 +364,7 @@ bool EqPayToken::decimals(std::string &result, bool sendTo)
     return true;
 }
 
-bool EqPayToken::decimals(uint32_t &result)
+bool EquityPayToken::decimals(uint32_t &result)
 {
     std::string str;
     bool ret = decimals(str);
@@ -373,7 +373,7 @@ bool EqPayToken::decimals(uint32_t &result)
     return ret;
 }
 
-bool EqPayToken::burn(const std::string &_value, bool &success, bool sendTo)
+bool EquityPayToken::burn(const std::string &_value, bool &success, bool sendTo)
 {
     std::vector<std::string> input;
     input.push_back(_value);
@@ -393,13 +393,13 @@ bool EqPayToken::burn(const std::string &_value, bool &success, bool sendTo)
     return true;
 }
 
-bool EqPayToken::balanceOf(std::string &result, bool sendTo)
+bool EquityPayToken::balanceOf(std::string &result, bool sendTo)
 {
-    std::string spender = d->lstParams[EqPayToken_NS::PARAM_SENDER];
+    std::string spender = d->lstParams[EquityPayToken_NS::PARAM_SENDER];
     return balanceOf(spender, result, sendTo);
 }
 
-bool EqPayToken::balanceOf(const std::string &_spender, std::string &result, bool sendTo)
+bool EquityPayToken::balanceOf(const std::string &_spender, std::string &result, bool sendTo)
 {
     std::string spender = _spender;
     if(!ToHash160(spender, spender))
@@ -425,7 +425,7 @@ bool EqPayToken::balanceOf(const std::string &_spender, std::string &result, boo
     return true;
 }
 
-bool EqPayToken::burnFrom(const std::string &_from, const std::string &_value, bool &success, bool sendTo)
+bool EquityPayToken::burnFrom(const std::string &_from, const std::string &_value, bool &success, bool sendTo)
 {
     std::string from = _from;
     if(!ToHash160(from, from))
@@ -452,7 +452,7 @@ bool EqPayToken::burnFrom(const std::string &_from, const std::string &_value, b
     return true;
 }
 
-bool EqPayToken::symbol(std::string &result, bool sendTo)
+bool EquityPayToken::symbol(std::string &result, bool sendTo)
 {
     std::vector<std::string> input;
     std::vector<std::string> output;
@@ -470,7 +470,7 @@ bool EqPayToken::symbol(std::string &result, bool sendTo)
     return true;
 }
 
-bool EqPayToken::transfer(const std::string &_to, const std::string &_value, bool& success, bool sendTo)
+bool EquityPayToken::transfer(const std::string &_to, const std::string &_value, bool& success, bool sendTo)
 {
     std::string to = _to;
     if(!ToHash160(to, to))
@@ -497,7 +497,7 @@ bool EqPayToken::transfer(const std::string &_to, const std::string &_value, boo
     return true;
 }
 
-bool EqPayToken::approveAndCall(const std::string &_spender, const std::string &_value, const std::string &_extraData, bool &success, bool sendTo)
+bool EquityPayToken::approveAndCall(const std::string &_spender, const std::string &_value, const std::string &_extraData, bool &success, bool sendTo)
 {
     std::string spender = _spender;
     if(!ToHash160(spender, spender))
@@ -525,7 +525,7 @@ bool EqPayToken::approveAndCall(const std::string &_spender, const std::string &
     return true;
 }
 
-bool EqPayToken::allowance(const std::string &_from, const std::string &_to, std::string &result, bool sendTo)
+bool EquityPayToken::allowance(const std::string &_from, const std::string &_to, std::string &result, bool sendTo)
 {
     std::string from = _from;
     if(!ToHash160(from, from))
@@ -557,17 +557,17 @@ bool EqPayToken::allowance(const std::string &_from, const std::string &_to, std
     return true;
 }
 
-bool EqPayToken::transferEvents(std::vector<TokenEvent> &tokenEvents, int64_t fromBlock, int64_t toBlock, int64_t minconf)
+bool EquityPayToken::transferEvents(std::vector<TokenEvent> &tokenEvents, int64_t fromBlock, int64_t toBlock, int64_t minconf)
 {
     return execEvents(fromBlock, toBlock, minconf, d->evtTransfer, tokenEvents);
 }
 
-bool EqPayToken::burnEvents(std::vector<TokenEvent> &tokenEvents, int64_t fromBlock, int64_t toBlock, int64_t minconf)
+bool EquityPayToken::burnEvents(std::vector<TokenEvent> &tokenEvents, int64_t fromBlock, int64_t toBlock, int64_t minconf)
 {
     return execEvents(fromBlock, toBlock, minconf, d->evtBurn, tokenEvents);
 }
 
-bool EqPayToken::exec(const std::vector<std::string> &input, int func, std::vector<std::string> &output, bool sendTo)
+bool EquityPayToken::exec(const std::vector<std::string> &input, int func, std::vector<std::string> &output, bool sendTo)
 {
     // Convert the input data into hex encoded binary data
     d->txid = "";
@@ -615,7 +615,7 @@ bool EqPayToken::exec(const std::vector<std::string> &input, int func, std::vect
     return true;
 }
 
-void EqPayToken::addTokenEvent(std::vector<TokenEvent> &tokenEvents, TokenEvent tokenEvent)
+void EquityPayToken::addTokenEvent(std::vector<TokenEvent> &tokenEvents, TokenEvent tokenEvent)
 {
     // Check if the event is from an existing token transaction and update the value
     bool found = false;
@@ -643,7 +643,7 @@ void EqPayToken::addTokenEvent(std::vector<TokenEvent> &tokenEvents, TokenEvent 
         tokenEvents.push_back(tokenEvent);
 }
 
-bool EqPayToken::execEvents(int64_t fromBlock, int64_t toBlock, int64_t minconf, int func, std::vector<TokenEvent> &tokenEvents)
+bool EquityPayToken::execEvents(int64_t fromBlock, int64_t toBlock, int64_t minconf, int func, std::vector<TokenEvent> &tokenEvents)
 {
     // Check parameters
     if(d->tokenExec == 0 || !(d->tokenExec->execEventsValid(func, fromBlock)))
@@ -655,8 +655,8 @@ bool EqPayToken::execEvents(int64_t fromBlock, int64_t toBlock, int64_t minconf,
     // Search for events
     std::vector<TokenEvent> result;
     std::string eventName = function.selector();
-    std::string contractAddress = d->lstParams[EqPayToken_NS::PARAM_ADDRESS];
-    std::string senderAddress = d->lstParams[EqPayToken_NS::PARAM_SENDER];
+    std::string contractAddress = d->lstParams[EquityPayToken_NS::PARAM_ADDRESS];
+    std::string senderAddress = d->lstParams[EquityPayToken_NS::PARAM_SENDER];
     ToHash160(senderAddress, senderAddress);
     senderAddress  = "000000000000000000000000" + senderAddress;
     int numTopics = function.numIndexed() + 1;
@@ -672,52 +672,52 @@ bool EqPayToken::execEvents(int64_t fromBlock, int64_t toBlock, int64_t minconf,
     return true;
 }
 
-std::string EqPayToken::getErrorMessage()
+std::string EquityPayToken::getErrorMessage()
 {
     return d->errorMessage;
 }
 
-void EqPayToken::setEqPayTokenExec(EqPayTokenExec *tokenExec)
+void EquityPayToken::setEquityPayTokenExec(EquityPayTokenExec *tokenExec)
 {
     d->tokenExec = tokenExec;
 }
 
-const char* EqPayToken::paramAddress()
+const char* EquityPayToken::paramAddress()
 {
-    return EqPayToken_NS::PARAM_ADDRESS;
+    return EquityPayToken_NS::PARAM_ADDRESS;
 }
 
-const char* EqPayToken::paramDatahex()
+const char* EquityPayToken::paramDatahex()
 {
-    return EqPayToken_NS::PARAM_DATAHEX;
+    return EquityPayToken_NS::PARAM_DATAHEX;
 }
 
-const char* EqPayToken::paramAmount()
+const char* EquityPayToken::paramAmount()
 {
-    return EqPayToken_NS::PARAM_AMOUNT;
+    return EquityPayToken_NS::PARAM_AMOUNT;
 }
 
-const char* EqPayToken::paramGasLimit()
+const char* EquityPayToken::paramGasLimit()
 {
-    return EqPayToken_NS::PARAM_GASLIMIT;
+    return EquityPayToken_NS::PARAM_GASLIMIT;
 }
 
-const char* EqPayToken::paramGasPrice()
+const char* EquityPayToken::paramGasPrice()
 {
-    return EqPayToken_NS::PARAM_GASPRICE;
+    return EquityPayToken_NS::PARAM_GASPRICE;
 }
 
-const char* EqPayToken::paramSender()
+const char* EquityPayToken::paramSender()
 {
-    return EqPayToken_NS::PARAM_SENDER;
+    return EquityPayToken_NS::PARAM_SENDER;
 }
 
-const char* EqPayToken::paramBroadcast()
+const char* EquityPayToken::paramBroadcast()
 {
-    return EqPayToken_NS::PARAM_BROADCAST;
+    return EquityPayToken_NS::PARAM_BROADCAST;
 }
 
-const char* EqPayToken::paramChangeToSender()
+const char* EquityPayToken::paramChangeToSender()
 {
-    return EqPayToken_NS::PARAM_CHANGE_TO_SENDER;
+    return EquityPayToken_NS::PARAM_CHANGE_TO_SENDER;
 }

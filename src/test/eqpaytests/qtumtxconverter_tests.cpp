@@ -24,7 +24,7 @@ CMutableTransaction createTX(std::vector<CTxOut> vout, uint256 hashprev = uint25
     return tx;
 }
 
-void checkResult(bool isCreation, std::vector<EqPayTransaction> results, uint256 hash){
+void checkResult(bool isCreation, std::vector<EquityPayTransaction> results, uint256 hash){
     for(size_t i = 0; i < results.size(); i++){
         if(isCreation){
             BOOST_CHECK(results[i].isCreation());
@@ -65,10 +65,10 @@ void runTest(bool isCreation, size_t n, CScript& script1, CScript script2 = CScr
     }    
     tx2 = createTX(outs2, hashParentTx);
     CTransaction transaction(tx2);
-    EqPayTxConverter converter(transaction, NULL);
-    ExtractEqPayTX eqpayTx;
-    BOOST_CHECK(converter.extractionEqPayTransactions(eqpayTx));
-    std::vector<EqPayTransaction> result = eqpayTx.first;
+    EquityPayTxConverter converter(transaction, NULL);
+    ExtractEquityPayTX eqpayTx;
+    BOOST_CHECK(converter.extractionEquityPayTransactions(eqpayTx));
+    std::vector<EquityPayTransaction> result = eqpayTx.first;
     if(script2 == CScript()){
         BOOST_CHECK(result.size() == n);
     } else {
@@ -99,9 +99,9 @@ void runFailingTest(bool isCreation, size_t n, CScript& script1, CScript script2
     }
     tx2 = createTX(outs2, hashParentTx);
     CTransaction transaction(tx2);
-    EqPayTxConverter converter(transaction, NULL);
-    ExtractEqPayTX eqpayTx;
-    BOOST_CHECK(!converter.extractionEqPayTransactions(eqpayTx));
+    EquityPayTxConverter converter(transaction, NULL);
+    ExtractEquityPayTX eqpayTx;
+    BOOST_CHECK(!converter.extractionEquityPayTransactions(eqpayTx));
 }
 
 BOOST_FIXTURE_TEST_SUITE(eqpaytxconverter_tests, TestingSetup)

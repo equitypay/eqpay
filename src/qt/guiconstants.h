@@ -43,11 +43,11 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "EqPay"
+#define QAPP_ORG_NAME "EquityPay"
 #define QAPP_ORG_DOMAIN "equitypay.org"
-#define QAPP_APP_NAME_DEFAULT "EqPay-Qt"
-#define QAPP_APP_NAME_TESTNET "EqPay-Qt-testnet"
-#define QAPP_APP_NAME_REGTEST "EqPay-Qt-regtest"
+#define QAPP_APP_NAME_DEFAULT "EquityPay-Qt"
+#define QAPP_APP_NAME_TESTNET "EquityPay-Qt-testnet"
+#define QAPP_APP_NAME_REGTEST "EquityPay-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

@@ -35,7 +35,7 @@
 #include <typeinfo>
 
 #if defined(NDEBUG)
-# error "EqPay cannot be compiled without assertions."
+# error "EquityPay cannot be compiled without assertions."
 #endif
 
 /** Expiration time for orphan transactions in seconds */

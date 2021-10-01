@@ -21,7 +21,7 @@ def get_dir_size(path):
     return size
 
 
-class EqPayHeaderSpamTest(BitcoinTestFramework):
+class EquityPayHeaderSpamTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -325,4 +325,4 @@ class EqPayHeaderSpamTest(BitcoinTestFramework):
         assert_equal(self.nodes[1].getchaintips()[0]['hash'], self.node.getbestblockhash())
 
 if __name__ == '__main__':
-    EqPayHeaderSpamTest().main()
+    EquityPayHeaderSpamTest().main()

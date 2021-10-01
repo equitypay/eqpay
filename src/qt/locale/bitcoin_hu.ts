@@ -66,12 +66,12 @@
         <translation>Fogadási cím</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ezek a EqPay címeid kifizetések küldéséhez. Mindíg ellenőrizd az összeget és a fogadó címet mielőtt coinokat küldenél.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ezek a EquityPay címeid kifizetések küldéséhez. Mindíg ellenőrizd az összeget és a fogadó címet mielőtt coinokat küldenél.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Ezek a fizetések fogadására szolgáló EqPay-címeid. Használd az "Új fogadócím létrehozása" gombot a fogadás fülön új cím létrehozásához.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Ezek a fizetések fogadására szolgáló EquityPay-címeid. Használd az "Új fogadócím létrehozása" gombot a fogadás fülön új cím létrehozásához.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Üzenet aláírása...</translation>
@@ -362,8 +362,8 @@
         <translation>Proxy  &lt;b&gt;aktív&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>EqPay küldése megadott címre</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>EquityPay küldése megadott címre</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>A tárcádhoz tartozó privát kulcsok titkosítása</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Üzenetek aláírása a EqPay-címmeiddel, amivel bizonyítod, hogy a cím a sajátod</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Üzenetek aláírása a EquityPay-címmeiddel, amivel bizonyítod, hogy a cím a sajátod</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Üzenetek ellenőrzése, hogy valóban a megjelölt EqPay-címekkel vannak-e aláírva</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Üzenetek ellenőrzése, hogy valóban a megjelölt EquityPay-címekkel vannak-e aláírva</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>Paran&amp;cssor kapcsolók</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n aktív kapcsolat a EqPay hálózathoz</numerusform><numerusform>%n aktív kapcsolat a EqPay hálózathoz</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n aktív kapcsolat a EquityPay hálózathoz</numerusform><numerusform>%n aktív kapcsolat a EquityPay hálózathoz</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -506,8 +506,8 @@
         <translation>Tárca bezárása</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>A %1 súgó megjelenítése a EqPay lehetséges parancssori kapcsolóinak listájával</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>A %1 súgó megjelenítése a EquityPay lehetséges parancssori kapcsolóinak listájával</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -617,8 +617,8 @@
         <translation>A tárca &lt;b&gt;titkosítva&lt;/b&gt; és jelenleg &lt;b&gt;bezárva&lt;/b&gt;.</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Végzetes hiba történt. A EqPay működése nem biztonságos és hamarosan leáll.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Végzetes hiba történt. A EquityPay működése nem biztonságos és hamarosan leáll.</translation>
     </message>
 </context>
 <context>
@@ -861,8 +861,8 @@
         <translation>Küldő cím szerkesztése</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>A megadott "%1" cím nem egy érvényes EqPay-cím.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>A megadott "%1" cím nem egy érvényes EquityPay-cím.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -950,8 +950,8 @@
         <translation>Saját adatkönyvtár használata:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -966,8 +966,8 @@
         <translation>Hozzávetőlegesen %1 GB adatot fogunk ebben a könyvtárban tárolni.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
-        <translation>%1 le fog töltődni és a EqPay blokk lánc egy másolatát fogja tárolni.</translation>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
+        <translation>%1 le fog töltődni és a EquityPay blokk lánc egy másolatát fogja tárolni.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1178,8 +1178,8 @@
         <translation>&amp;Költése a a jóváhagyatlan visszajárónak</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>A EqPay-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a routered támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>A EquityPay-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a routered támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1194,8 +1194,8 @@
         <translation>Bejövő kapcsolatok engedélyezése.</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Csatlakozás a EqPay hálózatához SOCKS5 proxyn keresztül</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Csatlakozás a EquityPay hálózatához SOCKS5 proxyn keresztül</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1230,8 +1230,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Csatlakozás a EqPay hálózathoz külön SOCKS5 proxy használatával a Tor rejtett szolgáltatásainak eléréséhez.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Csatlakozás a EquityPay hálózathoz külön SOCKS5 proxy használatával a Tor rejtett szolgáltatásainak eléréséhez.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1337,8 +1337,8 @@
         <translation>Űrlap</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>A kijelzett információ lehet, hogy elavult. A kapcsolat létrehozatalát követően tárcája automatikusan szinkronba kerül a EqPay hálózattal, de ez a folyamat még nem fejeződött be.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>A kijelzett információ lehet, hogy elavult. A kapcsolat létrehozatalát követően tárcája automatikusan szinkronba kerül a EquityPay hálózattal, de ez a folyamat még nem fejeződött be.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1428,8 +1428,8 @@
         <translation>Érvénytelen fizetési cím %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>Nem sikerült az URI elemzése! Ezt okozhatja érvénytelen EqPay cím, vagy rossz URI paraméterezés.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>Nem sikerült az URI elemzése! Ezt okozhatja érvénytelen EquityPay cím, vagy rossz URI paraméterezés.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1470,8 +1470,8 @@
         <translation>Összeg</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Ad meg egy EqPay címet (pl: %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Ad meg egy EquityPay címet (pl: %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1907,8 +1907,8 @@
         <translation>&amp;Üzenet:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Egy opcionális üzenet csatolása a fizetési kérelemhez, amely megjelenik a kérelem megnyitásakor. Megjegyzés: Az üzenet nem lesz elküldve a fizetséggel a EqPay hálózaton keresztül.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Egy opcionális üzenet csatolása a fizetési kérelemhez, amely megjelenik a kérelem megnyitásakor. Megjegyzés: Az üzenet nem lesz elküldve a fizetséggel a EquityPay hálózaton keresztül.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2300,8 +2300,8 @@
         <translation>A fizetési kérelem lejárt.</translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Figyelmeztetés: Érvénytelen EqPay cím</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Figyelmeztetés: Érvénytelen EquityPay cím</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2339,8 +2339,8 @@
         <translation>Válassz egy korábban már használt címet</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>Erre a EqPay címre küldje az összeget</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>Erre a EquityPay címre küldje az összeget</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2387,8 +2387,8 @@
         <translation>Adjon egy címkét ehhez a címhez, hogy bekerüljön a használt címek közé</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Sporočilo, ki ste ga pripeli na URI tipa eqpay:. Shranjeno bo skupaj s podatki o transakciji. Opomba: Sporočilo ne bo poslano preko omrežja EqPay.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Sporočilo, ki ste ga pripeli na URI tipa eqpay:. Shranjeno bo skupaj s podatki o transakciji. Opomba: Sporočilo ne bo poslano preko omrežja EquityPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2425,8 +2425,8 @@
         <translation>S svojimi naslovi lahko podpisujete sporočila ali pogodbe in s tem dokazujete, da na teh naslovih lahko prejemate kovance. Bodite previdni in ne podpisujte ničesar nejasnega ali naključnega, ker vas zlikovci preko ribarjenja (phishing) lahko prelisičijo, da na njih prepišete svojo identiteto. Podpisujte samo podrobno opisane izjave, s katerimi se strinjate.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>EqPay cím, amivel alá kívánja írni az üzenetet</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>EquityPay cím, amivel alá kívánja írni az üzenetet</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2457,7 +2457,7 @@
         <translation>A jelenleg kiválasztott aláírás másolása a rendszer-vágólapra</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
+        <source>Sign the message to prove you own this EquityPay address</source>
         <translation>Üzenet</translation>
     </message>
     <message>
@@ -2481,12 +2481,12 @@
         <translation>Da preverite verodostojnost sporočila, spodaj vnesite: prejemnikov naslov, prejeto sporočilo (pazljivo skopirajte vse prelome vrstic, presledke, tabulatorje ipd.,) in prejeti podpis. Da se izognete napadom tipa man-in-the-middle, vedite, da iz veljavnega podpisa ne sledi nič drugega, kot tisto, kar je navedeno v sporočilu. Podpis samo potrjuje dejstvo, da ima podpisnik v lasti prejemni naslov, ne more pa dokazati vira nobene transakcije!</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>EqPay cím, amivel aláírta az üzenetet</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>EquityPay cím, amivel aláírta az üzenetet</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Ellenőrizze az üzenetet, hogy valóban a megjelölt EqPay címmel van-e aláírva</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Ellenőrizze az üzenetet, hogy valóban a megjelölt EquityPay címmel van-e aláírva</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

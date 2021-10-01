@@ -19,7 +19,7 @@ def rpc_sign_transaction(node, tx):
     tx_signed.deserialize(f)
     return tx_signed
 
-class EqPayNoExecCallDisabledTest(BitcoinTestFramework):
+class EquityPayNoExecCallDisabledTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -72,4 +72,4 @@ class EqPayNoExecCallDisabledTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayNoExecCallDisabledTest().main()
+    EquityPayNoExecCallDisabledTest().main()

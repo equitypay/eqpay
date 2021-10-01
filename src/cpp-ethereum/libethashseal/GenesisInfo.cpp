@@ -46,12 +46,12 @@ std::string const& dev::eth::genesisInfo(Network _n)
     switch (_n)
     {
     //Client genesis
-    case Network::eqpayMainNetwork: return c_genesisInfoEqPayMainNetwork;
+    case Network::eqpayMainNetwork: return c_genesisInfoEquityPayMainNetwork;
     case Network::MainNetwork: return c_genesisInfoMainNetwork;
     case Network::Ropsten: return c_genesisInfoRopsten;
 
     //Test genesis
-    case Network::eqpayTestNetwork: return c_genesisInfoEqPayTestNetwork;
+    case Network::eqpayTestNetwork: return c_genesisInfoEquityPayTestNetwork;
     case Network::MainNetworkTest: return c_genesisInfoMainNetworkTest;
     case Network::MainNetworkNoProofTest: return c_genesisInfoMainNetworkNoProofTest;
     case Network::FrontierNoProofTest: return c_genesisInfoFrontierNoProofTest;
@@ -99,8 +99,8 @@ h256 const& dev::eth::genesisStateRoot(Network _n)
 {
     switch (_n)
     {
-    case Network::eqpayMainNetwork: return c_genesisStateRootEqPayMainNetwork;
-    case Network::eqpayTestNetwork: return c_genesisStateRootEqPayTestNetwork;
+    case Network::eqpayMainNetwork: return c_genesisStateRootEquityPayMainNetwork;
+    case Network::eqpayTestNetwork: return c_genesisStateRootEquityPayTestNetwork;
     case Network::MainNetwork: return c_genesisStateRootMainNetwork;
     case Network::Ropsten:
     case Network::MainNetworkTest:

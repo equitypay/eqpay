@@ -31,9 +31,9 @@ struct Vin{
     uint8_t alive;
 };
 
-class EqPayTransactionReceipt: public dev::eth::TransactionReceipt {
+class EquityPayTransactionReceipt: public dev::eth::TransactionReceipt {
 public:
-    EqPayTransactionReceipt(
+    EquityPayTransactionReceipt(
         dev::h256 const& state_root, dev::h256 const& utxo_root,
         dev::u256 const& gas_used, dev::eth::LogEntries const& log,
         std::vector<std::pair<dev::Address, dev::bytes>>&& createdContracts,
@@ -61,7 +61,7 @@ private:
 
 struct ResultExecute{
     dev::eth::ExecutionResult execRes;
-    EqPayTransactionReceipt txRec;
+    EquityPayTransactionReceipt txRec;
     CTransaction tx;
 };
 
@@ -86,15 +86,15 @@ namespace eqpay{
 
 class CondensingTX;
 
-class EqPayState : public dev::eth::State {
+class EquityPayState : public dev::eth::State {
     
 public:
 
-    EqPayState();
+    EquityPayState();
 
-    EqPayState(dev::u256 const& _accountStartNonce, dev::OverlayDB const& _db, const std::string& _path, dev::eth::BaseState _bs = dev::eth::BaseState::PreExisting);
+    EquityPayState(dev::u256 const& _accountStartNonce, dev::OverlayDB const& _db, const std::string& _path, dev::eth::BaseState _bs = dev::eth::BaseState::PreExisting);
 
-    ResultExecute execute(dev::eth::EnvInfo const& _envInfo, dev::eth::SealEngineFace const& _sealEngine, EqPayTransaction const& _t, dev::eth::Permanence _p = dev::eth::Permanence::Committed, dev::eth::OnOpFunc const& _onOp = OnOpFunc());
+    ResultExecute execute(dev::eth::EnvInfo const& _envInfo, dev::eth::SealEngineFace const& _sealEngine, EquityPayTransaction const& _t, dev::eth::Permanence _p = dev::eth::Permanence::Committed, dev::eth::OnOpFunc const& _onOp = OnOpFunc());
 
     void setRootUTXO(dev::h256 const& _r) { cacheUTXO.clear(); stateUTXO.setRoot(_r); }
 
@@ -108,7 +108,7 @@ public:
 
     dev::OverlayDB& dbUtxo() { return dbUTXO; }
 
-    static const dev::Address createEqPayAddress(dev::h256 hashTx, uint32_t voutNumber){
+    static const dev::Address createEquityPayAddress(dev::h256 hashTx, uint32_t voutNumber){
         uint256 hashTXid(h256Touint(hashTx));
         std::vector<unsigned char> txIdAndVout(hashTXid.begin(), hashTXid.end());
         std::vector<unsigned char> voutNumberChrs;
@@ -127,7 +127,7 @@ public:
 
     void deployDelegationsContract();
 
-    virtual ~EqPayState(){}
+    virtual ~EquityPayState(){}
 
     friend CondensingTX;
 
@@ -166,11 +166,11 @@ private:
 
 
 struct TemporaryState{
-    std::unique_ptr<EqPayState>& globalStateRef;
+    std::unique_ptr<EquityPayState>& globalStateRef;
     dev::h256 oldHashStateRoot;
     dev::h256 oldHashUTXORoot;
 
-    TemporaryState(std::unique_ptr<EqPayState>& _globalStateRef) : 
+    TemporaryState(std::unique_ptr<EquityPayState>& _globalStateRef) : 
         globalStateRef(_globalStateRef),
         oldHashStateRoot(globalStateRef->rootHash()), 
         oldHashUTXORoot(globalStateRef->rootHashUTXO()) {}
@@ -198,7 +198,7 @@ class CondensingTX{
 
 public:
 
-    CondensingTX(EqPayState* _state, const std::vector<TransferInfo>& _transfers, const EqPayTransaction& _transaction, std::set<dev::Address> _deleteAddresses = std::set<dev::Address>()) : transfers(_transfers), deleteAddresses(_deleteAddresses), transaction(_transaction), state(_state){}
+    CondensingTX(EquityPayState* _state, const std::vector<TransferInfo>& _transfers, const EquityPayTransaction& _transaction, std::set<dev::Address> _deleteAddresses = std::set<dev::Address>()) : transfers(_transfers), deleteAddresses(_deleteAddresses), transaction(_transaction), state(_state){}
 
     CTransaction createCondensingTX();
 
@@ -234,9 +234,9 @@ private:
     //So, making this unordered_set could be an attack vector
     const std::set<dev::Address> deleteAddresses;
 
-    const EqPayTransaction& transaction;
+    const EquityPayTransaction& transaction;
 
-    EqPayState* state;
+    EquityPayState* state;
 
     bool voutOverflow = false;
 

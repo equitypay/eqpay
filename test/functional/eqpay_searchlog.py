@@ -9,7 +9,7 @@ from test_framework.script import *
 from test_framework.mininode import *
 import sys
 
-class EqPayRPCSearchlogsTest(BitcoinTestFramework):
+class EquityPayRPCSearchlogsTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -84,4 +84,4 @@ class EqPayRPCSearchlogsTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayRPCSearchlogsTest().main()
+    EquityPayRPCSearchlogsTest().main()

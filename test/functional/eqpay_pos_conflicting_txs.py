@@ -10,7 +10,7 @@ from test_framework.eqpay import *
 """
  This test specifically tests that inputs to transactions in the mempool are not used in staking.
 """
-class EqPayPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
+class EquityPayPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True
@@ -97,4 +97,4 @@ class EqPayPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
         assert_equal(int(self.nodes[0].getbalance()*COIN), int((19*(INITIAL_BLOCK_REWARD-0.01)+INITIAL_BLOCK_REWARD)*COIN))
         assert_equal(self.nodes[0].getbestblockhash(), self.nodes[1].getbestblockhash())
 if __name__ == '__main__':
-    EqPayPOSConflictingStakingMempoolTxTest().main()
+    EquityPayPOSConflictingStakingMempoolTxTest().main()

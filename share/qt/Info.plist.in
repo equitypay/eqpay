@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>EqPay-Qt</string>
+  <string>EquityPay-Qt</string>
 
   <key>CFBundleName</key>
-  <string>EqPay-Qt</string>
+  <string>EquityPay-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.eqpayproject.EqPay-Qt</string>
+  <string>org.eqpayproject.EquityPay-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.eqpay.EqPayPayment</string>
+      <string>org.eqpay.EquityPayPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>eqpay</string>

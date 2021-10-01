@@ -100,7 +100,7 @@ UniValue getdgpinfo(const JSONRPCRequest& request)
 
     LOCK(cs_main);
 
-    EqPayDGP eqpayDGP(globalState.get());
+    EquityPayDGP eqpayDGP(globalState.get());
 
     UniValue obj(UniValue::VOBJ);
     obj.pushKV("maxblocksize", (uint64_t)eqpayDGP.getBlockSize(::ChainActive().Height()));

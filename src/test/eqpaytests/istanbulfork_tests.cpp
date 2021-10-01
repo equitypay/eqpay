@@ -57,14 +57,14 @@ BOOST_AUTO_TEST_CASE(checking_istanbul_after_fork){
     dev::h256 hashTx(HASHTX);
 
     // Create contract
-    std::vector<EqPayTransaction> txs;
-    txs.push_back(createEqPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
+    std::vector<EquityPayTransaction> txs;
+    txs.push_back(createEquityPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
     executeBC(txs);
 
     // Call is it istanbul
-    dev::Address proxy = createEqPayAddress(txs[0].getHashWith(), txs[0].getNVout());
-    std::vector<EqPayTransaction> txIsItIstanbul;
-    txIsItIstanbul.push_back(createEqPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    dev::Address proxy = createEquityPayAddress(txs[0].getHashWith(), txs[0].getNVout());
+    std::vector<EquityPayTransaction> txIsItIstanbul;
+    txIsItIstanbul.push_back(createEquityPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
     auto result = executeBC(txIsItIstanbul);
     BOOST_CHECK(dev::h256(result.first[0].execRes.output) == dev::h256(globalSealEngine->chainParams().chainID));
 }
@@ -75,14 +75,14 @@ BOOST_AUTO_TEST_CASE(checking_istanbul_before_fork){
     dev::h256 hashTx(HASHTX);
 
     // Create contract
-    std::vector<EqPayTransaction> txs;
-    txs.push_back(createEqPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
+    std::vector<EquityPayTransaction> txs;
+    txs.push_back(createEquityPayTransaction(CODE[0], 0, GASLIMIT, dev::u256(1), hashTx, dev::Address()));
     executeBC(txs);
 
     // Call is it istanbul
-    dev::Address proxy = createEqPayAddress(txs[0].getHashWith(), txs[0].getNVout());
-    std::vector<EqPayTransaction> txIsItIstanbul;
-    txIsItIstanbul.push_back(createEqPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
+    dev::Address proxy = createEquityPayAddress(txs[0].getHashWith(), txs[0].getNVout());
+    std::vector<EquityPayTransaction> txIsItIstanbul;
+    txIsItIstanbul.push_back(createEquityPayTransaction(CODE[1], 0, GASLIMIT, dev::u256(1), ++hashTx, proxy));
     auto result = executeBC(txIsItIstanbul);
     BOOST_CHECK(dev::h256(result.first[0].execRes.output) != dev::h256(globalSealEngine->chainParams().chainID));
 }

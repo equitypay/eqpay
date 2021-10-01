@@ -79,12 +79,12 @@ private:
     }
 };
 
-class EqPayVersionChecker : public QObject
+class EquityPayVersionChecker : public QObject
 {
     Q_OBJECT
 public:
-    explicit EqPayVersionChecker(QObject *parent = 0);
-    ~EqPayVersionChecker();
+    explicit EquityPayVersionChecker(QObject *parent = 0);
+    ~EquityPayVersionChecker();
 
     bool newVersionAvailable();
 

@@ -7,7 +7,7 @@ from test_framework.mininode import *
 from test_framework.address import *
 from test_framework.eqpay import *
 
-class EqPayBlockNumberCorruptionTest(BitcoinTestFramework):
+class EquityPayBlockNumberCorruptionTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -38,4 +38,4 @@ class EqPayBlockNumberCorruptionTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayBlockNumberCorruptionTest().main()
+    EquityPayBlockNumberCorruptionTest().main()

@@ -43,17 +43,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-osx.md#disable-wallet-mode)).
 
-## Build EqPay Core
+## Build EquityPay Core
 
-1. Clone the EqPay Core source code:
+1. Clone the EquityPay Core source code:
     ```shell
     git clone --recursive https://github.com/equitypay/eqpay.git
     cd eqpay
     ```
 
-2.  Build EqPay Core:
+2.  Build EquityPay Core:
 
-    Configure and build the headless EqPay Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless EquityPay Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
     ```shell
@@ -84,15 +84,15 @@ In this case there is no dependency on Berkeley DB 4.8.
 Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC call.
 
 ## Running
-EqPay Core is now available at `./src/eqpayd`
+EquityPay Core is now available at `./src/eqpayd`
 
 Before running, you may create an empty configuration file:
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/EqPay"
+mkdir -p "/Users/${USER}/Library/Application Support/EquityPay"
 
-touch "/Users/${USER}/Library/Application Support/EqPay/eqpay.conf"
+touch "/Users/${USER}/Library/Application Support/EquityPay/eqpay.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/EqPay/eqpay.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/EquityPay/eqpay.conf"
 ```
 
 The first time you run eqpayd, it will start downloading the blockchain. This process could
@@ -100,7 +100,7 @@ take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 ```shell
-tail -f $HOME/Library/Application\ Support/EqPay/debug.log
+tail -f $HOME/Library/Application\ Support/EquityPay/debug.log
 ```
 
 ## Other commands:

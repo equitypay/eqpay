@@ -7,7 +7,7 @@ from test_framework.mininode import *
 from test_framework.eqpay import *
 from test_framework.eqpayconfig import *
 
-class EqPayNullSenderTest(BitcoinTestFramework):
+class EquityPayNullSenderTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -36,4 +36,4 @@ class EqPayNullSenderTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), block_count+1)
 
 if __name__ == '__main__':
-    EqPayNullSenderTest().main()
+    EquityPayNullSenderTest().main()

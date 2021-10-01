@@ -12,7 +12,7 @@ import io
 """
 Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see eqpay-dgp.py
 """
-class EqPayDGPGasSchedule(BitcoinTestFramework):
+class EquityPayDGPGasSchedule(BitcoinTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True
@@ -118,4 +118,4 @@ class EqPayDGPGasSchedule(BitcoinTestFramework):
             self.sync_all()
 
 if __name__ == '__main__':
-    EqPayDGPGasSchedule().main()
+    EquityPayDGPGasSchedule().main()

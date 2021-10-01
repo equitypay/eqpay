@@ -65,7 +65,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "EqPay cannot be compiled without assertions."
+# error "EquityPay cannot be compiled without assertions."
 #endif
 
 #define MICRO 0.000001
@@ -77,7 +77,7 @@
 #include "pubkey.h"
 #include <univalue.h>
 
-std::unique_ptr<EqPayState> globalState;
+std::unique_ptr<EquityPayState> globalState;
 std::shared_ptr<dev::eth::SealEngineFace> globalSealEngine;
 bool fRecordLogOpcodes = false;
 bool fIsVMlogFile = false;
@@ -741,24 +741,24 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
             return state.Invalid(TxValidationResult::TX_INVALID_SENDER_SCRIPT, "bad-txns-invalid-sender-script");
         }
 
-        EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+        EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
         uint64_t minGasPrice = eqpayDGP.getMinGasPrice(::ChainActive().Tip()->nHeight + 1);
         uint64_t blockGasLimit = eqpayDGP.getBlockGasLimit(::ChainActive().Tip()->nHeight + 1);
         size_t count = 0;
         for(const CTxOut& o : tx.vout)
             count += o.scriptPubKey.HasOpCreate() || o.scriptPubKey.HasOpCall() ? 1 : 0;
         unsigned int contractflags = GetContractScriptFlags(GetSpendHeight(m_view), chainparams.GetConsensus());
-        EqPayTxConverter converter(tx, NULL, NULL, contractflags);
-        ExtractEqPayTX resultConverter;
-        if(!converter.extractionEqPayTransactions(resultConverter)){
+        EquityPayTxConverter converter(tx, NULL, NULL, contractflags);
+        ExtractEquityPayTX resultConverter;
+        if(!converter.extractionEquityPayTransactions(resultConverter)){
             return state.Invalid(TxValidationResult::TX_CONSENSUS, "bad-tx-bad-contract-format", "AcceptToMempool(): Contract transaction of the wrong format");
         }
-        std::vector<EqPayTransaction> eqpayTransactions = resultConverter.first;
+        std::vector<EquityPayTransaction> eqpayTransactions = resultConverter.first;
         std::vector<EthTransactionParams> eqpayETP = resultConverter.second;
 
         dev::u256 sumGas = dev::u256(0);
         dev::u256 gasAllTxs = dev::u256(0);
-        for(const EqPayTransaction& eqpayTransaction : eqpayTransactions){
+        for(const EquityPayTransaction& eqpayTransaction : eqpayTransactions){
             sumGas += eqpayTransaction.gas() * eqpayTransaction.gasPrice();
 
             if(sumGas > dev::u256(INT64_MAX)) {
@@ -2379,7 +2379,7 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     else
     	block.vtx.erase(block.vtx.begin()+1,block.vtx.end());
 
-    EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+    EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
     uint64_t blockGasLimit = eqpayDGP.getBlockGasLimit(pblockindex->nHeight + 1);
 
     if(gasLimit == 0){
@@ -2389,20 +2389,20 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     tx.vout.push_back(CTxOut(nAmount, CScript() << OP_DUP << OP_HASH160 << senderAddress.asBytes() << OP_EQUALVERIFY << OP_CHECKSIG));
     block.vtx.push_back(MakeTransactionRef(CTransaction(tx)));
  
-    EqPayTransaction callTransaction;
+    EquityPayTransaction callTransaction;
     if(addrContract == dev::Address())
     {
-        callTransaction = EqPayTransaction(nAmount, 1, dev::u256(gasLimit), opcode, dev::u256(0));
+        callTransaction = EquityPayTransaction(nAmount, 1, dev::u256(gasLimit), opcode, dev::u256(0));
     }
     else
     {
-        callTransaction = EqPayTransaction(nAmount, 1, dev::u256(gasLimit), addrContract, opcode, dev::u256(0));
+        callTransaction = EquityPayTransaction(nAmount, 1, dev::u256(gasLimit), addrContract, opcode, dev::u256(0));
     }
     callTransaction.forceSender(senderAddress);
     callTransaction.setVersion(VersionVM::GetEVMDefault());
 
     
-    ByteCodeExec exec(block, std::vector<EqPayTransaction>(1, callTransaction), blockGasLimit, pblockindex);
+    ByteCodeExec exec(block, std::vector<EquityPayTransaction>(1, callTransaction), blockGasLimit, pblockindex);
     exec.performByteCode(dev::eth::Permanence::Reverted);
     return exec.getResult();
 }
@@ -2604,7 +2604,7 @@ void LastHashes::clear()
 }
 
 bool ByteCodeExec::performByteCode(dev::eth::Permanence type){
-    for(EqPayTransaction& tx : txs){
+    for(EquityPayTransaction& tx : txs){
         //validate VM version
         if(tx.getVersion().toRaw() != VersionVM::GetEVMDefault().toRaw()){
             return false;
@@ -2615,7 +2615,7 @@ bool ByteCodeExec::performByteCode(dev::eth::Permanence type){
             execRes.excepted = dev::eth::TransactionException::Unknown;
             result.push_back(ResultExecute{
                 execRes, 
-                EqPayTransactionReceipt(dev::h256(), dev::h256(), dev::u256(), dev::eth::LogEntries(), {}, {}), 
+                EquityPayTransactionReceipt(dev::h256(), dev::h256(), dev::u256(), dev::eth::LogEntries(), {}, {}), 
                 CTransaction()
             });
             continue;
@@ -2711,12 +2711,12 @@ dev::Address ByteCodeExec::EthAddrFromScript(const CScript& script){
     return dev::Address();
 }
 
-bool EqPayTxConverter::extractionEqPayTransactions(ExtractEqPayTX& eqpaytx){
+bool EquityPayTxConverter::extractionEquityPayTransactions(ExtractEquityPayTX& eqpaytx){
     // Get the address of the sender that pay the coins for the contract transactions
     refundSender = dev::Address(GetSenderAddress(txBit, view, blockTransactions));
 
     // Extract contract transactions
-    std::vector<EqPayTransaction> resultTX;
+    std::vector<EquityPayTransaction> resultTX;
     std::vector<EthTransactionParams> resultETP;
     for(size_t i = 0; i < txBit.vout.size(); i++){
         if(txBit.vout[i].scriptPubKey.HasOpCreate() || txBit.vout[i].scriptPubKey.HasOpCall()){
@@ -2737,7 +2737,7 @@ bool EqPayTxConverter::extractionEqPayTransactions(ExtractEqPayTX& eqpaytx){
     return true;
 }
 
-bool EqPayTxConverter::receiveStack(const CScript& scriptPubKey){
+bool EquityPayTxConverter::receiveStack(const CScript& scriptPubKey){
     sender = false;
     EvalScript(stack, scriptPubKey, nFlags, BaseSignatureChecker(), SigVersion::BASE, nullptr);
     if (stack.empty())
@@ -2757,7 +2757,7 @@ bool EqPayTxConverter::receiveStack(const CScript& scriptPubKey){
     return true;
 }
 
-bool EqPayTxConverter::parseEthTXParams(EthTransactionParams& params){
+bool EquityPayTxConverter::parseEthTXParams(EthTransactionParams& params){
     try{
         dev::Address receiveAddress;
         valtype vecAddr;
@@ -2805,13 +2805,13 @@ bool EqPayTxConverter::parseEthTXParams(EthTransactionParams& params){
     }
 }
 
-EqPayTransaction EqPayTxConverter::createEthTX(const EthTransactionParams& etp, uint32_t nOut){
-    EqPayTransaction txEth;
+EquityPayTransaction EquityPayTxConverter::createEthTX(const EthTransactionParams& etp, uint32_t nOut){
+    EquityPayTransaction txEth;
     if (etp.receiveAddress == dev::Address() && opcode != OP_CALL){
-        txEth = EqPayTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.code, dev::u256(0));
+        txEth = EquityPayTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.code, dev::u256(0));
     }
     else{
-        txEth = EqPayTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.receiveAddress, etp.code, dev::u256(0));
+        txEth = EquityPayTransaction(txBit.vout[nOut].nValue, etp.gasPrice, etp.gasLimit, etp.receiveAddress, etp.code, dev::u256(0));
     }
     dev::Address sender(GetSenderAddress(txBit, view, blockTransactions, (int)nOut));
     txEth.forceSender(sender);
@@ -2823,7 +2823,7 @@ EqPayTransaction EqPayTxConverter::createEthTX(const EthTransactionParams& etp, 
     return txEth;
 }
 
-size_t EqPayTxConverter::correctedStackSize(size_t size){
+size_t EquityPayTxConverter::correctedStackSize(size_t size){
     // OP_SENDER add 3 more parameters in stack besides those for OP_CREATE or OP_CALL
     return sender ? size + 3 : size;
 }
@@ -2871,8 +2871,8 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     int64_t nTimeStart = GetTimeMicros();
 
     ///////////////////////////////////////////////// // eqpay
-    EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
-    globalSealEngine->setEqPaySchedule(eqpayDGP.getGasSchedule(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
+    EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+    globalSealEngine->setEquityPaySchedule(eqpayDGP.getGasSchedule(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
     uint32_t sizeBlockDGP = eqpayDGP.getBlockSize(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1));
     uint64_t minGasPrice = eqpayDGP.getMinGasPrice(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1));
     uint64_t blockGasLimit = eqpayDGP.getBlockGasLimit(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1));
@@ -3151,25 +3151,25 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-txns-invalid-sender-script");
             }
 
-            EqPayTxConverter convert(tx, &view, &block.vtx, contractflags);
+            EquityPayTxConverter convert(tx, &view, &block.vtx, contractflags);
 
-            ExtractEqPayTX resultConvertEqPayTX;
-            if(!convert.extractionEqPayTransactions(resultConvertEqPayTX)){
+            ExtractEquityPayTX resultConvertEquityPayTX;
+            if(!convert.extractionEquityPayTransactions(resultConvertEquityPayTX)){
                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-tx-bad-contract-format", "ConnectBlock(): Contract transaction of the wrong format");
             }
-            if(!CheckMinGasPrice(resultConvertEqPayTX.second, minGasPrice))
+            if(!CheckMinGasPrice(resultConvertEquityPayTX.second, minGasPrice))
                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-tx-low-gas-price", "ConnectBlock(): Contract execution has lower gas price than allowed");
 
 
             dev::u256 gasAllTxs = dev::u256(0);
-            ByteCodeExec exec(block, resultConvertEqPayTX.first, blockGasLimit, pindex->pprev);
+            ByteCodeExec exec(block, resultConvertEquityPayTX.first, blockGasLimit, pindex->pprev);
             //validate VM version and other ETH params before execution
             //Reject anything unknown (could be changed later by DGP)
             //TODO evaluate if this should be relaxed for soft-fork purposes
             bool nonZeroVersion=false;
             dev::u256 sumGas = dev::u256(0);
             CAmount nTxFee = view.GetValueIn(tx)-tx.GetValueOut();
-            for(EqPayTransaction& qtx : resultConvertEqPayTX.first){
+            for(EquityPayTransaction& qtx : resultConvertEquityPayTX.first){
                 sumGas += qtx.gas() * qtx.gasPrice();
 
                 if(sumGas > dev::u256(INT64_MAX)) {
@@ -3235,7 +3235,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             if (fLogEvents && !fJustCheck)
             {
                 uint64_t countCumulativeGasUsed = blockGasUsed;
-                for(size_t k = 0; k < resultConvertEqPayTX.first.size(); k ++){
+                for(size_t k = 0; k < resultConvertEquityPayTX.first.size(); k ++){
                     for(auto& log : resultExec[k].txRec.log()) {
                         if(!heightIndexes.count(log.address)){
                             heightIndexes[log.address].first = CHeightTxIndexKey(pindex->nHeight, log.address);
@@ -3249,15 +3249,15 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                         uint32_t(pindex->nHeight),
                         tx.GetHash(),
                         uint32_t(i),
-                        resultConvertEqPayTX.first[k].from(),
-                        resultConvertEqPayTX.first[k].to(),
+                        resultConvertEquityPayTX.first[k].from(),
+                        resultConvertEquityPayTX.first[k].to(),
                         countCumulativeGasUsed,
                         gasUsed,
                         resultExec[k].execRes.newAddress,
                         resultExec[k].txRec.log(),
                         resultExec[k].execRes.excepted,
                         exceptedMessage(resultExec[k].execRes.excepted, resultExec[k].execRes.output),
-                        resultConvertEqPayTX.first[k].getNVout(),
+                        resultConvertEquityPayTX.first[k].getNVout(),
                         resultExec[k].txRec.bloom(),
                         resultExec[k].txRec.stateRoot(),
                         resultExec[k].txRec.utxoRoot(),
@@ -6003,7 +6003,7 @@ bool CVerifyDB::VerifyDB(const CChainParams& chainparams, CCoinsView *coinsview,
 ////////////////////////////////////////////////////////////////////////// // eqpay
     dev::h256 oldHashStateRoot(globalState->rootHash());
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
-    EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+    EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
 //////////////////////////////////////////////////////////////////////////
 
     LogPrintf("[0%%]..."); /* Continued */
@@ -6504,7 +6504,7 @@ bool LoadExternalBlockFile(const CChainParams& chainparams, FILE* fileIn, FlatFi
                 }
 
                 // In Bitcoin this only needed to be done for genesis and at the end of block indexing
-                // But for EqPay PoS we need to sync this after every block to ensure txdb is populated for
+                // But for EquityPay PoS we need to sync this after every block to ensure txdb is populated for
                 // validating PoS proofs
                 {
                     BlockValidationState state;
@@ -7063,15 +7063,15 @@ CAmount GetTxGasFee(const CMutableTransaction& _tx)
         CCoinsViewCache& view = ::ChainstateActive().CoinsTip();
         const CChainParams& chainparams = Params();
         unsigned int contractflags = GetContractScriptFlags(GetSpendHeight(view), chainparams.GetConsensus());
-        EqPayTxConverter convert(tx, NULL, NULL, contractflags);
+        EquityPayTxConverter convert(tx, NULL, NULL, contractflags);
 
-        ExtractEqPayTX resultConvertEqPayTX;
-        if(!convert.extractionEqPayTransactions(resultConvertEqPayTX)){
+        ExtractEquityPayTX resultConvertEquityPayTX;
+        if(!convert.extractionEquityPayTransactions(resultConvertEquityPayTX)){
             return nGasFee;
         }
 
         dev::u256 sumGas = dev::u256(0);
-        for(EqPayTransaction& qtx : resultConvertEqPayTX.first){
+        for(EquityPayTransaction& qtx : resultConvertEquityPayTX.first){
             sumGas += qtx.gas() * qtx.gasPrice();
         }
 

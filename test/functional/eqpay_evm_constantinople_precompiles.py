@@ -11,7 +11,7 @@ import subprocess
 
 pp = pprint.PrettyPrinter()
 
-class EqPayEVMConstantinoplePrecompiledContractsTest(BitcoinTestFramework):
+class EquityPayEVMConstantinoplePrecompiledContractsTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -662,4 +662,4 @@ class EqPayEVMConstantinoplePrecompiledContractsTest(BitcoinTestFramework):
         self.bn256pairing_test(should_fail=False)
 
 if __name__ == '__main__':
-    EqPayEVMConstantinoplePrecompiledContractsTest().main()
+    EquityPayEVMConstantinoplePrecompiledContractsTest().main()

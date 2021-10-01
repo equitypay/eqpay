@@ -27,7 +27,7 @@ void parseParam(const UniValue& val, std::vector<boost::optional<dev::h256>> &h2
 /**
  * @brief The CallToken class Read available token data
  */
-class CallToken : public EqPayTokenExec, public EqPayToken
+class CallToken : public EquityPayTokenExec, public EquityPayToken
 {
 public:
     CallToken();

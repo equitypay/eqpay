@@ -31,7 +31,7 @@ qrc20listtransactions
 """
 
 
-class EqPayQRC20Test(BitcoinTestFramework):
+class EquityPayQRC20Test(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True
@@ -329,4 +329,4 @@ class EqPayQRC20Test(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayQRC20Test().main()
+    EquityPayQRC20Test().main()

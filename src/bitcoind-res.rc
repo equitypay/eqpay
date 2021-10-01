@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "EqPay"
-            VALUE "FileDescription",    "eqpayd (EqPay node with a JSON-RPC server)"
+            VALUE "CompanyName",        "EquityPay"
+            VALUE "FileDescription",    "eqpayd (EquityPay node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "eqpayd"
             VALUE "LegalCopyright",     COPYRIGHT_STR

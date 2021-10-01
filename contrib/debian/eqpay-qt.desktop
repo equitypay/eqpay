@@ -1,12 +1,12 @@
 [Desktop Entry]
 Version=0.17.6
-Name=EqPay Core
-Comment=Connect to the EqPay P2P Network
+Name=EquityPay Core
+Comment=Connect to the EquityPay P2P Network
 Exec=eqpay-qt %u
 Terminal=false
 Type=Application
 Icon=eqpay128
 MimeType=x-scheme-handler/eqpay;
 Categories=Network;
-StartupWMClass=EqPay-qt
+StartupWMClass=EquityPay-qt
 Name[en_US]=eqpay-qt

@@ -58,8 +58,8 @@
         <translation>Address king pamag-Tanggap</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Reni reng kekang EqPay address king pamagpadalang kabayaran. Lawan mulang masalese reng alaga ampo ing address na ning tumanggap bayu ka magpadalang barya.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Reni reng kekang EquityPay address king pamagpadalang kabayaran. Lawan mulang masalese reng alaga ampo ing address na ning tumanggap bayu ka magpadalang barya.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -192,7 +192,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>I-sign ing &amp;mensayi</translation>
@@ -250,8 +250,8 @@
         <translation>&amp;Alilan ing Passphrase...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Magpadalang barya king EqPay address</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Magpadalang barya king EquityPay address</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -342,8 +342,8 @@
         <translation>Maka-&lt;b&gt;encrypt&lt;/b&gt; ya ing wallet at kasalukuyan yang maka-&lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Atin kamalian a milyari. Ali ne magsilbing sumulung pa ing EqPay at kailangan na ng tuknang.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Atin kamalian a milyari. Ali ne magsilbing sumulung pa ing EquityPay at kailangan na ng tuknang.</translation>
     </message>
 </context>
 <context>
@@ -414,8 +414,8 @@
         <translation>Alilan ya ing address king pamagpadala</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Ing pepalub yung address "%1" ali ya katanggap-tanggap a EqPay address.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Ing pepalub yung address "%1" ali ya katanggap-tanggap a EquityPay address.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -447,8 +447,8 @@
         <translation>Malaus ka</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Error</source>
@@ -487,8 +487,8 @@
         <translation>&amp;Network</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ibuklat yang antimanu ing EqPay client port king router. Gagana yamu ini istung ing router mu susuporta yang UPnP at magsilbi ya.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ibuklat yang antimanu ing EquityPay client port king router. Gagana yamu ini istung ing router mu susuporta yang UPnP at magsilbi ya.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -566,8 +566,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>Ing makaltong impormasion mapalyaring luma ne. Ing kekang wallet otomatiku yang mag-synchronize keng EqPay network istung mekakonekta ne king network, oneng ing prosesung ini ali ya pa kumpletu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>Ing makaltong impormasion mapalyaring luma ne. Ing kekang wallet otomatiku yang mag-synchronize keng EquityPay network istung mekakonekta ne king network, oneng ing prosesung ini ali ya pa kumpletu.</translation>
     </message>
     <message>
         <source>Your current spendable balance</source>
@@ -882,8 +882,8 @@
         <translation>Kopyan ing kasalungsungan pirma king system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Pirman ing mensayi ban patune na keka ya ining EqPay address</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Pirman ing mensayi ban patune na keka ya ining EquityPay address</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -902,8 +902,8 @@
         <translation>&amp;Beripikan ing Mensayi</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Beripikan ing mensayi ban asiguradu a me pirma ya ini gamit ing mepiling EqPay address</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Beripikan ing mensayi ban asiguradu a me pirma ya ini gamit ing mepiling EquityPay address</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

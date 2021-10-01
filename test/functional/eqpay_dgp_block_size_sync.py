@@ -12,7 +12,7 @@ import io
 """
 Note, these tests do not test the functionality of the DGP template contract itself, for tests for the DGP template, see eqpay-dgp.py
 """
-class EqPayDGPBlockSizeSyncTest(BitcoinTestFramework):
+class EquityPayDGPBlockSizeSyncTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 8
@@ -142,4 +142,4 @@ class EqPayDGPBlockSizeSyncTest(BitcoinTestFramework):
         self.sync_all()
 
 if __name__ == '__main__':
-    EqPayDGPBlockSizeSyncTest().main()
+    EquityPayDGPBlockSizeSyncTest().main()

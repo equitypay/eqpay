@@ -66,12 +66,12 @@
         <translation>Helbideak jasotzen</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hauek dira zuk dirua jaso dezaketen EqPay helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hauek dira zuk dirua jaso dezaketen EquityPay helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Hauek dira ordainketak jasotzeko zure EqPay helbideak. Jaso taulako 'Jasotzeko helbide berri bat sortu' botoia erabili helbide berri bat sortzeko.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Hauek dira ordainketak jasotzeko zure EquityPay helbideak. Jaso taulako 'Jasotzeko helbide berri bat sortu' botoia erabili helbide berri bat sortzeko.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>&amp;Mezua zinatu</translation>
@@ -358,8 +358,8 @@
         <translation>Blokeak diskoan berriro zerrendatzen...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Bidali txanponak EqPay helbide batera</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Bidali txanponak EquityPay helbide batera</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -386,8 +386,8 @@
         <translation>Lehio nagusia erakutsi edo izkutatu</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Egiaztatu mesua EqPay helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Egiaztatu mesua EquityPay helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -681,8 +681,8 @@
         <translation>Ongietorri %1-ra</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>Error</source>

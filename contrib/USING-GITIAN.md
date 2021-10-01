@@ -28,7 +28,7 @@ Ensure that the ./gitian-builder directory is up to date.
     git pull
     popd
 
-### Build and sign EqPay for Linux, Windows, and OS X:
+### Build and sign EquityPay for Linux, Windows, and OS X:
 
   ```eqpay/contrib/gitian-build.sh --build --signer signer version``` or 
   ```eqpay/contrib/gitian-build.sh --build --kvm --signer signer version```

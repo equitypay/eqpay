@@ -41,7 +41,7 @@ class HelpMessageDialog;
 class ModalOverlay;
 class TitleBar;
 class NavigationBar;
-class EqPayVersionChecker;
+class EquityPayVersionChecker;
 
 namespace interfaces {
 class Handler;
@@ -193,7 +193,7 @@ private:
     HelpMessageDialog* helpMessageDialog = nullptr;
     ModalOverlay* modalOverlay = nullptr;
     ModalOverlay *modalBackupOverlay = nullptr;
-    EqPayVersionChecker *eqpayVersionChecker = nullptr;
+    EquityPayVersionChecker *eqpayVersionChecker = nullptr;
 
 #ifdef Q_OS_MAC
     CAppNapInhibitor* m_app_nap_inhibitor = nullptr;

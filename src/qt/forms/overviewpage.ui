@@ -103,7 +103,7 @@
             <bool>true</bool>
            </property>
            <property name="toolTip">
-            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</string>
+            <string>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</string>
            </property>
            <property name="text">
             <string/>
@@ -873,14 +873,14 @@
           </spacer>
          </item>
          <item>
-          <widget class="EqPayPushButton" name="buttonSend">
+          <widget class="EquityPayPushButton" name="buttonSend">
            <property name="text">
             <string>Send</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="EqPayPushButton" name="buttonReceive">
+          <widget class="EquityPayPushButton" name="buttonReceive">
            <property name="text">
             <string>Receive</string>
            </property>
@@ -974,7 +974,7 @@
            <bool>true</bool>
           </property>
           <property name="toolTip">
-           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</string>
+           <string>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</string>
           </property>
           <property name="text">
            <string/>
@@ -1152,7 +1152,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>EqPayPushButton</class>
+   <class>EquityPayPushButton</class>
    <extends>QPushButton</extends>
    <header>qt/eqpaypushbutton.h</header>
   </customwidget>

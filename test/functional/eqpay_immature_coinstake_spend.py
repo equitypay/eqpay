@@ -10,7 +10,7 @@ import sys
 import random
 import time
 
-class EqPayPrematureCoinstakeSpendTest(BitcoinTestFramework):
+class EquityPayPrematureCoinstakeSpendTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -80,4 +80,4 @@ class EqPayPrematureCoinstakeSpendTest(BitcoinTestFramework):
         self.assert_spend_of_coinstake_at_height(height=5002-COINBASE_MATURITY, should_accept=False)
 
 if __name__ == '__main__':
-    EqPayPrematureCoinstakeSpendTest().main()
+    EquityPayPrematureCoinstakeSpendTest().main()

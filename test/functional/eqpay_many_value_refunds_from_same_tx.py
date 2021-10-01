@@ -8,7 +8,7 @@ from test_framework.eqpay import *
 from test_framework.address import *
 import time
 
-class EqPayManyValueRefundsFromSameTxTest(BitcoinTestFramework):
+class EquityPayManyValueRefundsFromSameTxTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -42,4 +42,4 @@ class EqPayManyValueRefundsFromSameTxTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), block_count+1)
 
 if __name__ == '__main__':
-    EqPayManyValueRefundsFromSameTxTest().main()
+    EquityPayManyValueRefundsFromSameTxTest().main()

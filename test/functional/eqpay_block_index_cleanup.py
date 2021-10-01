@@ -11,7 +11,7 @@ from test_framework.eqpay import *
 from test_framework.eqpayconfig import *
 import sys
 
-class EqPayBlockIndexCleanupTest(BitcoinTestFramework):
+class EquityPayBlockIndexCleanupTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -132,4 +132,4 @@ class EqPayBlockIndexCleanupTest(BitcoinTestFramework):
             assert_equal(self.node.getchaintips(), n.getchaintips())
 
 if __name__ == '__main__':
-    EqPayBlockIndexCleanupTest().main()
+    EquityPayBlockIndexCleanupTest().main()

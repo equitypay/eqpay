@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "EqPay"
-            VALUE "FileDescription",    "eqpay-tx (CLI EqPay transaction editor utility)"
+            VALUE "CompanyName",        "EquityPay"
+            VALUE "FileDescription",    "eqpay-tx (CLI EquityPay transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "eqpay-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

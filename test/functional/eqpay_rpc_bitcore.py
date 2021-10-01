@@ -15,7 +15,7 @@ from test_framework.eqpay import *
 
 
 
-class EqPayBitcoreTest(BitcoinTestFramework):
+class EquityPayBitcoreTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.extra_args = [['-addrindex=1'], ['-addrindex=0']]
@@ -103,4 +103,4 @@ class EqPayBitcoreTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayBitcoreTest().main()
+    EquityPayBitcoreTest().main()

@@ -251,8 +251,8 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     }
 
     //////////////////////////////////////////////////////// eqpay
-    EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
-    globalSealEngine->setEqPaySchedule(eqpayDGP.getGasSchedule(nHeight));
+    EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+    globalSealEngine->setEquityPaySchedule(eqpayDGP.getGasSchedule(nHeight));
     uint32_t blockSizeDGP = eqpayDGP.getBlockSize(nHeight);
     minGasPrice = eqpayDGP.getMinGasPrice(nHeight);
     if(gArgs.IsArgSet("-staker-min-tx-gas-price")) {
@@ -487,18 +487,18 @@ bool BlockAssembler::AttemptToAddContractToBlock(CTxMemPool::txiter iter, uint64
     uint64_t nBlockSigOpsCost = this->nBlockSigOpsCost;
 
     unsigned int contractflags = GetContractScriptFlags(nHeight, chainparams.GetConsensus());
-    EqPayTxConverter convert(iter->GetTx(), NULL, &pblock->vtx, contractflags);
+    EquityPayTxConverter convert(iter->GetTx(), NULL, &pblock->vtx, contractflags);
 
-    ExtractEqPayTX resultConverter;
-    if(!convert.extractionEqPayTransactions(resultConverter)){
+    ExtractEquityPayTX resultConverter;
+    if(!convert.extractionEquityPayTransactions(resultConverter)){
         //this check already happens when accepting txs into mempool
         //therefore, this can only be triggered by using raw transactions on the staker itself
         LogPrintf("AttemptToAddContractToBlock(): Fail to extract contacts from tx %s\n", iter->GetTx().GetHash().ToString());
         return false;
     }
-    std::vector<EqPayTransaction> eqpayTransactions = resultConverter.first;
+    std::vector<EquityPayTransaction> eqpayTransactions = resultConverter.first;
     dev::u256 txGas = 0;
-    for(EqPayTransaction eqpayTransaction : eqpayTransactions){
+    for(EquityPayTransaction eqpayTransaction : eqpayTransactions){
         txGas += eqpayTransaction.gas();
         if(txGas > txGasLimit) {
             // Limit the tx gas limit by the soft limit if such a limit has been specified.
@@ -1041,7 +1041,7 @@ public:
 
 private:
     CWallet *pwallet;
-    EqPayDelegation eqpayDelegations;
+    EquityPayDelegation eqpayDelegations;
     int32_t cacheHeight;
     std::map<uint160, Delegation> cacheDelegationsStaker;
     std::vector<uint160> allowList;
@@ -1130,7 +1130,7 @@ public:
                 {
                     Delegation delegation;
                     uint160 address = item.first;
-                    if(eqpayDelegations.GetDelegation(address, delegation) && EqPayDelegation::VerifyDelegation(address, delegation))
+                    if(eqpayDelegations.GetDelegation(address, delegation) && EquityPayDelegation::VerifyDelegation(address, delegation))
                     {
                         cacheMyDelegations[address] = delegation;
                     }
@@ -1162,7 +1162,7 @@ public:
 private:
 
     CWallet *pwallet;
-    EqPayDelegation eqpayDelegations;
+    EquityPayDelegation eqpayDelegations;
     int32_t cacheHeight;
     int32_t cacheAddressHeight;
     std::map<uint160, Delegation> cacheMyDelegations;

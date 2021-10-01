@@ -285,7 +285,7 @@ public:
     {
         LOCK(::cs_main);
 
-        EqPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
+        EquityPayDGP eqpayDGP(globalState.get(), fGettingValuesDGP);
         blockGasLimit = eqpayDGP.getBlockGasLimit(::ChainActive().Height());
         minGasPrice = CAmount(eqpayDGP.getMinGasPrice(::ChainActive().Height()));
         nGasPrice = (minGasPrice>DEFAULT_GAS_PRICE)?minGasPrice:DEFAULT_GAS_PRICE;

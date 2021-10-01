@@ -10,7 +10,7 @@ from test_framework.mininode import *
 from test_framework.address import *
 from test_framework.eqpay import *
 
-class EqPaySignRawSenderTest(BitcoinTestFramework):
+class EquityPaySignRawSenderTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.setup_clean_chain = True
@@ -116,4 +116,4 @@ class EqPaySignRawSenderTest(BitcoinTestFramework):
         assert_equal(self.nodes[0].listcontracts()[payable_contract_address], 1)
 
 if __name__ == '__main__':
-    EqPaySignRawSenderTest().main()
+    EquityPaySignRawSenderTest().main()

@@ -62,8 +62,8 @@
         <translation>Ontvang adresse</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit is jou EqPay-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit is jou EquityPay-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -216,7 +216,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Teken &amp;Boodskap</translation>
@@ -310,8 +310,8 @@
         <translation>Herindekseer blokke op skyf...</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Stuur muntstukke na 'n EqPay adres</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Stuur muntstukke na 'n EquityPay adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -346,12 +346,12 @@
         <translation>Versleutel die private sleutels wat aan u beursie behoort</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Teken boodskappe met u EqPay adresse om te bewys dat u hul besit</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Teken boodskappe met u EquityPay adresse om te bewys dat u hul besit</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde EqPay adresse</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde EquityPay adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -422,8 +422,8 @@
         <translation>Op datum</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
-        <translation>Wys die %1 hulpboodskap om 'n lys met moontlike EqPay bevel-lyn opsies te verkry</translation>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
+        <translation>Wys die %1 hulpboodskap om 'n lys met moontlike EquityPay bevel-lyn opsies te verkry</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -500,8 +500,8 @@
         <translation>Beursie is &lt;b&gt;versleutel&lt;/b&gt; en is tans &lt;b&gt;gesluit&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>'n Noodlottige fout het voorgekom. EqPay kan nie langer voortgaan nie en sal afsluit.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>'n Noodlottige fout het voorgekom. EquityPay kan nie langer voortgaan nie en sal afsluit.</translation>
     </message>
 </context>
 <context>
@@ -696,8 +696,8 @@
         <translation>Wysig stuurende adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Die ingeskrewe adres "%1" is nie 'n geldige EqPay adres nie.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Die ingeskrewe adres "%1" is nie 'n geldige EquityPay adres nie.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -765,8 +765,8 @@
         <translation>Gebruik 'n persoonlike data gids:</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1069,8 +1069,8 @@
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
-        <translation>Voer in 'n EqPay adres (bv. %1)</translation>
+        <source>Enter a EquityPay address (e.g. %1)</source>
+        <translation>Voer in 'n EquityPay adres (bv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1635,8 +1635,8 @@ transaksievertragingsrisiko.</translation>
         <translation>Betalings versoek verstryk.</translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Waarskuwing: Ongeldige EqPayadres</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Waarskuwing: Ongeldige EquityPayadres</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1668,8 +1668,8 @@ Is u seker?</translation>
         <translation>Kies voorheen gebruikte adres</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>Die EqPayadres waarheen die betaling gestuur word</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>Die EquityPayadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
         <source>Alt+A</source>

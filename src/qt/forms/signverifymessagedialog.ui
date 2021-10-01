@@ -75,12 +75,12 @@
              <item>
               <widget class="QValidatedLineEdit" name="addressIn_SM">
                <property name="toolTip">
-                <string>The EqPay address to sign the message with</string>
+                <string>The EquityPay address to sign the message with</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="EqPayPushButton" name="addressBookButton_SM">
+              <widget class="EquityPayPushButton" name="addressBookButton_SM">
                <property name="toolTip">
                 <string>Choose previously used address</string>
                </property>
@@ -113,7 +113,7 @@
               </widget>
              </item>
              <item>
-              <widget class="EqPayPushButton" name="pasteButton_SM">
+              <widget class="EquityPayPushButton" name="pasteButton_SM">
                <property name="toolTip">
                 <string>Paste address from clipboard</string>
                </property>
@@ -165,7 +165,7 @@
               </widget>
              </item>
              <item>
-              <widget class="EqPayPushButton" name="copySignatureButton_SM">
+              <widget class="EquityPayPushButton" name="copySignatureButton_SM">
                <property name="toolTip">
                 <string>Copy the current signature to the system clipboard</string>
                </property>
@@ -265,7 +265,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="EqPayPushButton" name="clearButton_SM">
+           <widget class="EquityPayPushButton" name="clearButton_SM">
             <property name="toolTip">
              <string>Reset all sign message fields</string>
             </property>
@@ -282,9 +282,9 @@
            </widget>
           </item>
           <item>
-           <widget class="EqPayPushButton" name="signMessageButton_SM">
+           <widget class="EquityPayPushButton" name="signMessageButton_SM">
             <property name="toolTip">
-             <string>Sign the message to prove you own this EqPay address</string>
+             <string>Sign the message to prove you own this EquityPay address</string>
             </property>
             <property name="text">
              <string>Sign &amp;Message</string>
@@ -358,12 +358,12 @@
            <item>
             <widget class="QValidatedLineEdit" name="addressIn_VM">
              <property name="toolTip">
-              <string>The EqPay address the message was signed with</string>
+              <string>The EquityPay address the message was signed with</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="EqPayPushButton" name="addressBookButton_VM">
+            <widget class="EquityPayPushButton" name="addressBookButton_VM">
              <property name="toolTip">
               <string>Choose previously used address</string>
              </property>
@@ -461,7 +461,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="EqPayPushButton" name="clearButton_VM">
+           <widget class="EquityPayPushButton" name="clearButton_VM">
             <property name="toolTip">
              <string>Reset all verify message fields</string>
             </property>
@@ -478,9 +478,9 @@
            </widget>
           </item>
           <item>
-           <widget class="EqPayPushButton" name="verifyMessageButton_VM">
+           <widget class="EquityPayPushButton" name="verifyMessageButton_VM">
             <property name="toolTip">
-             <string>Verify the message to ensure it was signed with the specified EqPay address</string>
+             <string>Verify the message to ensure it was signed with the specified EquityPay address</string>
             </property>
             <property name="text">
              <string>Verify &amp;Message</string>
@@ -510,7 +510,7 @@
    <header>qt/qvalidatedlineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>EqPayPushButton</class>
+   <class>EquityPayPushButton</class>
    <extends>QPushButton</extends>
    <header>qt/eqpaypushbutton.h</header>
   </customwidget>

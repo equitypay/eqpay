@@ -18,10 +18,10 @@ static const QString STYLE_FORMAT = ":/styles/%1/%2";
 static const QString STYLE_CONFIG_FORMAT = ":/styles/%1/config";
 static const QColor LINK_COLOR = "#2d9ad0";
 
-class EqPayStyle : public QProxyStyle
+class EquityPayStyle : public QProxyStyle
 {
 public:
-    EqPayStyle()
+    EquityPayStyle()
     {
         message_info_path = GetStringStyleValue("appstyle/message-info-icon", ":/styles/theme1/app-icons/message_info");
         message_warning_path = GetStringStyleValue("appstyle/message-warning-icon", ":/styles/theme1/app-icons/message_warning");
@@ -126,7 +126,7 @@ void StyleSheet::setStyleSheet(QWidget *widget, const QString &style_name)
 void StyleSheet::setStyleSheet(QApplication *app, const QString& style_name)
 {
     QStyle* mainStyle = QStyleFactory::create("fusion");
-    EqPayStyle* eqpayStyle = new EqPayStyle;
+    EquityPayStyle* eqpayStyle = new EquityPayStyle;
     eqpayStyle->setBaseStyle(mainStyle);
     app->setStyle(eqpayStyle);
 

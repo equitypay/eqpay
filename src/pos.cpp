@@ -20,9 +20,9 @@
 using namespace std;
 
 // Delegation contract function
-EqPayDelegation& GetEqPayDelegation()
+EquityPayDelegation& GetEquityPayDelegation()
 {
-    static EqPayDelegation eqpayDelegation;
+    static EquityPayDelegation eqpayDelegation;
     return eqpayDelegation;
 }
 
@@ -202,7 +202,7 @@ bool CheckProofOfStake(CBlockIndex* pindexPrev, BlockValidationState& state, con
         /////////////////////////////////////////////////
 
         // Check if the delegation contract exist
-        EqPayDelegation& eqpayDelegation = GetEqPayDelegation();
+        EquityPayDelegation& eqpayDelegation = GetEquityPayDelegation();
         if(!eqpayDelegation.ExistDelegationContract())
             return state.Invalid(BlockValidationResult::BLOCK_HEADER_REJECT, "stake-delegation-contract-not-exist", strprintf("CheckProofOfStake() : The delegation contract doesn't exist, block height %i", nOfflineStakeHeight)); // Internal error, delegation contract not exist
 
@@ -542,7 +542,7 @@ int GetDelegationFeeTx(const CTransaction& tx, const Coin& coin, bool delegateOu
 bool GetDelegationFeeFromContract(const uint160& address, uint8_t& fee)
 {
     Delegation delegation;
-    EqPayDelegation& eqpayDelegation = GetEqPayDelegation();
+    EquityPayDelegation& eqpayDelegation = GetEquityPayDelegation();
     bool ret = eqpayDelegation.GetDelegation(address, delegation);
     if(ret) ret &= eqpayDelegation.VerifyDelegation(address, delegation);
     if(ret)

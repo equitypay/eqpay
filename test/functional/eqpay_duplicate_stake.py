@@ -9,7 +9,7 @@ from test_framework.eqpay import *
 import time
 
 
-class EqPayDuplicateStakeTest(BitcoinTestFramework):
+class EquityPayDuplicateStakeTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
@@ -179,4 +179,4 @@ class EqPayDuplicateStakeTest(BitcoinTestFramework):
 
 
 if __name__ == '__main__':
-    EqPayDuplicateStakeTest().main()
+    EquityPayDuplicateStakeTest().main()

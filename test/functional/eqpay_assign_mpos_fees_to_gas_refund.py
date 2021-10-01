@@ -11,7 +11,7 @@ import random
 import time
 import io
 
-class EqPayAssignMPoSFeesToGasRefundTest(BitcoinTestFramework):
+class EquityPayAssignMPoSFeesToGasRefundTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -74,4 +74,4 @@ class EqPayAssignMPoSFeesToGasRefundTest(BitcoinTestFramework):
         assert_equal(self.node.getblockcount(), blockcount)
 
 if __name__ == '__main__':
-    EqPayAssignMPoSFeesToGasRefundTest().main()
+    EquityPayAssignMPoSFeesToGasRefundTest().main()

@@ -66,12 +66,12 @@
         <translation>Адреса получения</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Это ваши EqPay-адреса для отправки платежей. Всегда проверяйте количество и адрес получателя перед отправкой перевода.</translation>
+        <source>These are your EquityPay addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Это ваши EquityPay-адреса для отправки платежей. Всегда проверяйте количество и адрес получателя перед отправкой перевода.</translation>
     </message>
     <message>
-        <source>These are your EqPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Это ваши EqPay-адреса для приёма платежей. Используйте кнопку «Создать новый адрес для получения» на вкладке Получить, чтобы создать новые адреса.</translation>
+        <source>These are your EquityPay addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Это ваши EquityPay-адреса для приёма платежей. Используйте кнопку «Создать новый адрес для получения» на вкладке Получить, чтобы создать новые адреса.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -252,7 +252,7 @@
     </message>
 </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Подписать &amp;сообщение...</translation>
@@ -362,8 +362,8 @@
         <translation>Прокси &lt;b&gt;включен&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a EqPay address</source>
-        <translation>Послать средства на EqPay-адрес</translation>
+        <source>Send coins to a EquityPay address</source>
+        <translation>Послать средства на EquityPay-адрес</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -398,12 +398,12 @@
         <translation>Зашифровать приватные ключи, принадлежащие вашему кошельку</translation>
     </message>
     <message>
-        <source>Sign messages with your EqPay addresses to prove you own them</source>
-        <translation>Подписывайте сообщения EqPay-адресами чтобы подтвердить что это написали именно Вы</translation>
+        <source>Sign messages with your EquityPay addresses to prove you own them</source>
+        <translation>Подписывайте сообщения EquityPay-адресами чтобы подтвердить что это написали именно Вы</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified EqPay addresses</source>
-        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными EqPay-адресами</translation>
+        <source>Verify messages to ensure they were signed with specified EquityPay addresses</source>
+        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными EquityPay-адресами</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -438,8 +438,8 @@
         <translation>Опции командной строки</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to EqPay network</source>
-        <translation><numerusform>%n активное подключение к сети EqPay</numerusform><numerusform>%n активных подключения к сети EqPay</numerusform><numerusform>%n активных подключений к сети EqPay</numerusform><numerusform>%n активных подключений к сети EqPay</numerusform></translation>
+        <source>%n active connection(s) to EquityPay network</source>
+        <translation><numerusform>%n активное подключение к сети EquityPay</numerusform><numerusform>%n активных подключения к сети EquityPay</numerusform><numerusform>%n активных подключений к сети EquityPay</numerusform><numerusform>%n активных подключений к сети EquityPay</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -518,7 +518,7 @@
         <translation>Закрыть кошелёк</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible EqPay command-line options</source>
+        <source>Show the %1 help message to get a list with possible EquityPay command-line options</source>
         <translation>Показать помощь по %1, чтобы получить список доступных параметров командной строки</translation>
     </message>
     <message>
@@ -630,8 +630,8 @@
         <translation>Кошелёк &lt;b&gt;зашифрован&lt;/b&gt; и сейчас &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. EqPay can no longer continue safely and will quit.</source>
-        <translation>Произошла критическая ошибка. EqPay больше не может продолжать безопасную работу и будет закрыт.</translation>
+        <source>A fatal error occurred. EquityPay can no longer continue safely and will quit.</source>
+        <translation>Произошла критическая ошибка. EquityPay больше не может продолжать безопасную работу и будет закрыт.</translation>
     </message>
 </context>
 <context>
@@ -874,8 +874,8 @@
         <translation>Изменить адрес отправки</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid EqPay address.</source>
-        <translation>Введенный адрес "%1" не является действительным EqPay-адресом.</translation>
+        <source>The entered address "%1" is not a valid EquityPay address.</source>
+        <translation>Введенный адрес "%1" не является действительным EquityPay-адресом.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -971,8 +971,8 @@
         <translation>Использовать пользовательскую директорию данных</translation>
     </message>
     <message>
-        <source>EqPay</source>
-        <translation>EqPay Core</translation>
+        <source>EquityPay</source>
+        <translation>EquityPay Core</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -987,7 +987,7 @@
         <translation>Приблизительно %1 ГБ данных будет сохранено в эту директорию.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the EqPay block chain.</source>
+        <source>%1 will download and store a copy of the EquityPay block chain.</source>
         <translation>%1 скачает и сохранит копию цепи блоков.</translation>
     </message>
     <message>
@@ -1223,8 +1223,8 @@
         <translation>&amp;Тратить неподтвержденную сдачу</translation>
     </message>
     <message>
-        <source>Automatically open the EqPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт для EqPay-клиента на маршрутизаторе. Работает только если Ваш маршрутизатор поддерживает UPnP, и данная функция включена.</translation>
+        <source>Automatically open the EquityPay client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматически открыть порт для EquityPay-клиента на маршрутизаторе. Работает только если Ваш маршрутизатор поддерживает UPnP, и данная функция включена.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1239,8 +1239,8 @@
         <translation>Разрешить входящие подключения</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a SOCKS5 proxy.</source>
-        <translation>Подключится к сети EqPay через прокси SOCKS5.</translation>
+        <source>Connect to the EquityPay network through a SOCKS5 proxy.</source>
+        <translation>Подключится к сети EquityPay через прокси SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1275,8 +1275,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the EqPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Подключатся к EqPay-сети через отдельный прокси SOCKS5 для скрытых сервисов Tor.</translation>
+        <source>Connect to the EquityPay network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Подключатся к EquityPay-сети через отдельный прокси SOCKS5 для скрытых сервисов Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1386,8 +1386,8 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EqPay network after a connection is established, but this process has not completed yet.</source>
-        <translation>Отображаемая информация может быть устаревшей. Ваш кошелёк автоматически синхронизируется с сетью EqPay после подключения, но этот процесс пока не завершён.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the EquityPay network after a connection is established, but this process has not completed yet.</source>
+        <translation>Отображаемая информация может быть устаревшей. Ваш кошелёк автоматически синхронизируется с сетью EquityPay после подключения, но этот процесс пока не завершён.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1489,8 +1489,8 @@
         <translation>Неверный адрес %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid EqPay address or malformed URI parameters.</source>
-        <translation>Не удалось обработать идентификатор! Это может быть связано с неверным EqPay-адресом или неправильными параметрами идентификатора.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid EquityPay address or malformed URI parameters.</source>
+        <translation>Не удалось обработать идентификатор! Это может быть связано с неверным EquityPay-адресом или неправильными параметрами идентификатора.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1531,7 +1531,7 @@
         <translation>Количество</translation>
     </message>
     <message>
-        <source>Enter a EqPay address (e.g. %1)</source>
+        <source>Enter a EquityPay address (e.g. %1)</source>
         <translation>Введите eqpay-адрес (напр. %1)</translation>
     </message>
     <message>
@@ -2000,8 +2000,8 @@
         <translation>&amp;Сообщение:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EqPay network.</source>
-        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть EqPay.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the EquityPay network.</source>
+        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть EquityPay.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2469,8 +2469,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation><numerusform>Предполагаемое подтверждение в течение %n блока.</numerusform><numerusform>Предполагаемое подтверждение в течение %n блоков.</numerusform><numerusform>Предполагаемое подтверждение в течение %n блоков.</numerusform><numerusform>Предполагаемое подтверждение в течение %n блоков.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid EqPay address</source>
-        <translation>Предупреждение: Неверный EqPay-адрес</translation>
+        <source>Warning: Invalid EquityPay address</source>
+        <translation>Предупреждение: Неверный EquityPay-адрес</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2508,8 +2508,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Выбрать предыдущий использованный адрес</translation>
     </message>
     <message>
-        <source>The EqPay address to send the payment to</source>
-        <translation>EqPay-адрес, на который отправить платёж</translation>
+        <source>The EquityPay address to send the payment to</source>
+        <translation>EquityPay-адрес, на который отправить платёж</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2560,8 +2560,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Введите метку для этого адреса, чтобы добавить его в список используемых адресов</translation>
     </message>
     <message>
-        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EqPay network.</source>
-        <translation>Сообщение прикрепленное к eqpay идентификатору будет сохранено вместе с транзакцией для вашего сведения. Заметьте: Сообщение не будет отправлено через сеть EqPay.</translation>
+        <source>A message that was attached to the eqpay: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the EquityPay network.</source>
+        <translation>Сообщение прикрепленное к eqpay идентификатору будет сохранено вместе с транзакцией для вашего сведения. Заметьте: Сообщение не будет отправлено через сеть EquityPay.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2598,8 +2598,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Вы можете подписывать сообщения/соглашения своими адресами, чтобы доказать свою возможность получать eqpays на них. Будьте осторожны, не подписывайте что-то неопределённое или случайное, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
     </message>
     <message>
-        <source>The EqPay address to sign the message with</source>
-        <translation>EqPay-адрес, которым подписать сообщение</translation>
+        <source>The EquityPay address to sign the message with</source>
+        <translation>EquityPay-адрес, которым подписать сообщение</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2630,8 +2630,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Скопировать текущую подпись в буфер обмена системы</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this EqPay address</source>
-        <translation>Подписать сообщение, чтобы доказать владение EqPay-адресом</translation>
+        <source>Sign the message to prove you own this EquityPay address</source>
+        <translation>Подписать сообщение, чтобы доказать владение EquityPay-адресом</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2654,8 +2654,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Введите ниже адрес получателя, сообщение (убедитесь, что переводы строк, пробелы, табы и т.п. в точности скопированы) и подпись, чтобы проверить сообщение. Убедитесь, что не скопировали лишнего в подпись, по сравнению с самим подписываемым сообщением, чтобы не стать жертвой атаки "man-in-the-middle". Заметьте, что эта операция удостоверяет лишь авторство подписавшего, но не может удостоверить отправителя транзакции.</translation>
     </message>
     <message>
-        <source>The EqPay address the message was signed with</source>
-        <translation>EqPay-адрес, которым было подписано сообщение</translation>
+        <source>The EquityPay address the message was signed with</source>
+        <translation>EquityPay-адрес, которым было подписано сообщение</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2666,8 +2666,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>The signature given when the message was signed</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified EqPay address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным EqPay-адресом</translation>
+        <source>Verify the message to ensure it was signed with the specified EquityPay address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным EquityPay-адресом</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

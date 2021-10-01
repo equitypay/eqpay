@@ -16,7 +16,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>EqPayGUI</name>
+    <name>EquityPayGUI</name>
     <message>
         <source>Open Wallet</source>
         <translation>sii apamowo</translation>
