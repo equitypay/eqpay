@@ -148,7 +148,7 @@ public:
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "Tunguska-Sized Impact Destroyed Jordan Valley City 3,670 Years Ago | Sep 29, 2021 Sci News";
-        genesis = CreateGenesisBlock(1630380996, 1591, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1633011237, 339, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"));
         assert(genesis.hashMerkleRoot == uint256S("0xaaed7f5c3953f815aca5127be6578651f9ca09e069696fa192e6f5990fffa7e1"));
