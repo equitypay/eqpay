@@ -75,7 +75,26 @@
             </property>
            </widget>
           </item>
+          <item>
+           <widget class="QCheckBox" name="checkEnableAdvanced">
+            <property name="text">
+             <string>Advanced</string>
+            </property>
+           </widget>
+          </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="advancedWarning">
+          <property name="font">
+           <font>
+            <italic>true</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>Warning: usage of all available threads may cause wallet to freeze.</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="Line" name="hLine">

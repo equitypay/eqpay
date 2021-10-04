@@ -50,6 +50,7 @@ private:
     TransactionView* transactionView;
 
 private Q_SLOTS:
+    void on_checkEnableAdvanced_clicked(bool checked);
     void on_miningButton_clicked();
 };
 

@@ -86,6 +86,8 @@ MiningPage::MiningPage(const PlatformStyle *_platformStyle, QWidget *parent) :
     ui->threadLabel->setText(QString::number(1));
     ui->networkLabel->setText(FormatHashrate(GetNetworkHashPM()));
 
+    ui->advancedWarning->hide();
+
     updateMiningStatsTimer = new QTimer(this);
     updateNethashTimer = new QTimer(this);
 
@@ -99,6 +101,19 @@ MiningPage::MiningPage(const PlatformStyle *_platformStyle, QWidget *parent) :
 MiningPage::~MiningPage()
 {
     delete ui;
+}
+
+void MiningPage::on_checkEnableAdvanced_clicked(bool checked)
+{
+    int threads = std::thread::hardware_concurrency();
+
+    if (!checked) {
+        ui->threadSlider->setMaximum(threads / 2);
+        ui->advancedWarning->hide();
+    } else {
+        ui->threadSlider->setMaximum(threads);
+        ui->advancedWarning->show();
+    }
 }
 
 void MiningPage::setClientModel(ClientModel *model)
