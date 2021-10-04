@@ -246,20 +246,20 @@ public:
     CBlockHeader GetBlockHeader() const
     {
         CBlockHeader block;
-        block.nVersion       = nVersion;
+        block.nVersion          = nVersion;
         if (pprev)
             block.hashPrevBlock = pprev->GetBlockHash();
-        block.hashMerkleRoot = hashMerkleRoot;
-        block.nTime          = nTime;
-        block.nBits          = nBits;
-        block.nNonce         = nNonce;
-        block.hashStateRoot  = hashStateRoot; // eqpay
-        block.hashUTXORoot   = hashUTXORoot; // eqpay
-        block.vchBlockSigDlgt    = vchBlockSigDlgt;
-        block.prevoutStake   = prevoutStake;
-        block.cacheInit      = cacheInit;
-        block.cacheIndexHash = cacheIndexHash;
-        block.cacheWorkHash  = cacheWorkHash;
+        block.hashMerkleRoot    = hashMerkleRoot;
+        block.nTime             = nTime;
+        block.nBits             = nBits;
+        block.nNonce            = nNonce;
+        block.hashStateRoot     = hashStateRoot; // eqpay
+        block.hashUTXORoot      = hashUTXORoot; // eqpay
+        block.vchBlockSigDlgt   = vchBlockSigDlgt;
+        block.prevoutStake      = prevoutStake;
+        block.cacheInit         = cacheInit;
+        block.cacheIndexHash    = cacheIndexHash;
+        block.cacheWorkHash     = cacheWorkHash;
         return block;
     }
 
@@ -423,7 +423,7 @@ public:
         block.nNonce          = nNonce;
         block.hashStateRoot   = hashStateRoot; // eqpay
         block.hashUTXORoot    = hashUTXORoot; // eqpay
-        block.vchBlockSigDlgt     = vchBlockSigDlgt;
+        block.vchBlockSigDlgt = vchBlockSigDlgt;
         block.prevoutStake    = prevoutStake;
         return block.GetHash();
     }

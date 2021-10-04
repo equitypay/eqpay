@@ -679,28 +679,28 @@ bool CBlockTreeDB::LoadBlockIndexGuts(const Consensus::Params& consensusParams, 
             CDiskBlockIndex diskindex;
             if (pcursor->GetValue(diskindex)) {
                 // Construct block index object
-                CBlockIndex* pindexNew = insertBlockIndex(diskindex.GetBlockHash());
-                pindexNew->pprev          = insertBlockIndex(diskindex.hashPrev);
-                pindexNew->nHeight        = diskindex.nHeight;
-                pindexNew->nFile          = diskindex.nFile;
-                pindexNew->nDataPos       = diskindex.nDataPos;
-                pindexNew->nUndoPos       = diskindex.nUndoPos;
-                pindexNew->nVersion       = diskindex.nVersion;
-                pindexNew->hashMerkleRoot = diskindex.hashMerkleRoot;
-                pindexNew->nTime          = diskindex.nTime;
-                pindexNew->nBits          = diskindex.nBits;
-                pindexNew->nNonce         = diskindex.nNonce;
-                pindexNew->nMoneySupply   = diskindex.nMoneySupply;
-                pindexNew->nStatus        = diskindex.nStatus;
-                pindexNew->nTx            = diskindex.nTx;
-                pindexNew->hashStateRoot  = diskindex.hashStateRoot; // eqpay
-                pindexNew->hashUTXORoot   = diskindex.hashUTXORoot; // eqpay
-                pindexNew->nStakeModifier = diskindex.nStakeModifier;
-                pindexNew->prevoutStake   = diskindex.prevoutStake;
+                CBlockIndex* pindexNew        = insertBlockIndex(diskindex.GetBlockHash());
+                pindexNew->pprev              = insertBlockIndex(diskindex.hashPrev);
+                pindexNew->nHeight            = diskindex.nHeight;
+                pindexNew->nFile              = diskindex.nFile;
+                pindexNew->nDataPos           = diskindex.nDataPos;
+                pindexNew->nUndoPos           = diskindex.nUndoPos;
+                pindexNew->nVersion           = diskindex.nVersion;
+                pindexNew->hashMerkleRoot     = diskindex.hashMerkleRoot;
+                pindexNew->nTime              = diskindex.nTime;
+                pindexNew->nBits              = diskindex.nBits;
+                pindexNew->nNonce             = diskindex.nNonce;
+                pindexNew->nMoneySupply       = diskindex.nMoneySupply;
+                pindexNew->nStatus            = diskindex.nStatus;
+                pindexNew->nTx                = diskindex.nTx;
+                pindexNew->hashStateRoot      = diskindex.hashStateRoot; // eqpay
+                pindexNew->hashUTXORoot       = diskindex.hashUTXORoot; // eqpay
+                pindexNew->nStakeModifier     = diskindex.nStakeModifier;
+                pindexNew->prevoutStake       = diskindex.prevoutStake;
                 pindexNew->vchBlockSigDlgt    = diskindex.vchBlockSigDlgt; // eqpay
 
-                if (!CheckIndexProof(*pindexNew, Params().GetConsensus()))
-                    return error("%s: CheckIndexProof failed: %s", __func__, pindexNew->ToString());
+                // if (!CheckIndexProof(*pindexNew, Params().GetConsensus()))
+                //     return error("%s: CheckIndexProof failed: %s", __func__, pindexNew->ToString());
 
                 // NovaCoin: build setStakeSeen
                 if (pindexNew->IsProofOfStake())
