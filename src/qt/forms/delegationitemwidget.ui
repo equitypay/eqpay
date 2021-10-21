@@ -260,7 +260,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>Stake:</string>
+                    <string>Pending stake:</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
