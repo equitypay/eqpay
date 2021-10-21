@@ -454,7 +454,7 @@
               <item>
                <widget class="QLabel" name="labelStakeText">
                 <property name="text">
-                 <string>Stake:</string>
+                 <string>Pending stake:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -809,7 +809,7 @@
               <item>
                <widget class="QLabel" name="labelWatchStakeText">
                 <property name="text">
-                 <string>Stake:</string>
+                 <string>Pending stake:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

@@ -2103,7 +2103,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>관찰 전용 주소 중 금액 총액</translation>
     </message>
     <message>
-        <source>Stake:</source>
+        <source>Pending stake:</source>
         <translation type="unfinished">스테이킹</translation>
     </message>
     <message>
@@ -4219,7 +4219,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">스테이킹 자산</translation>
     </message>
     <message>
-        <source>Stake:</source>
+        <source>Pending stake:</source>
         <translation type="unfinished">스테이킹</translation>
     </message>
     <message>

@@ -56,7 +56,7 @@ static constexpr uint64_t GB_BYTES{1000000000};
 static constexpr int DEFAULT_PRUNE_TARGET_GB{2};
 
 /* Mainnet eqpay explorer uri */
-#define EQPAY_INFO_MAINNET "<a href='https://eqpay.info/%1/%2'>%2</a>"
+#define EQPAY_INFO_MAINNET "<a href='https://equitypay.online/%1/%2'>%2</a>"
 
 /* Testnet eqpay explorer uri */
 #define EQPAY_INFO_TESTNET "<a href='https://testnet.eqpay.info/%1/%2'>%2</a>"

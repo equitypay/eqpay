@@ -2088,7 +2088,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>观察地址(watch-only address)中的当前总余额</translation>
     </message>
     <message>
-        <source>Stake:</source>
+        <source>Pending stake:</source>
         <translation type="unfinished">Stake</translation>
     </message>
     <message>
@@ -4216,7 +4216,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">Staking财产</translation>
     </message>
     <message>
-        <source>Stake:</source>
+        <source>Pending stake:</source>
         <translation type="unfinished">Stake</translation>
     </message>
     <message>

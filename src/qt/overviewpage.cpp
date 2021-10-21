@@ -28,7 +28,7 @@
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 
-#define NUM_ITEMS 5
+#define NUM_ITEMS 10
 #define TOKEN_SIZE 40
 #define MARGIN 5
 #define SYMBOL_WIDTH 80
@@ -222,7 +222,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);
     ui->listTransactions->setIconSize(QSize(DECORATION_SIZE, DECORATION_SIZE));
-    ui->listTransactions->setMinimumHeight(NUM_ITEMS * (TX_SIZE + 2));
+    ui->listTransactions->setMinimumHeight((NUM_ITEMS / 2) * (TX_SIZE + 2));
     ui->listTransactions->setMinimumWidth(590);
     ui->listTransactions->setAttribute(Qt::WA_MacShowFocusRect, false);
     ui->listTransactions->setSelectionBehavior(QAbstractItemView::SelectRows);
