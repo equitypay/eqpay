@@ -274,7 +274,7 @@
               <item>
                <widget class="QLabel" name="labelBalanceText">
                 <property name="text">
-                 <string>Available:</string>
+                 <string>Available balance:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
