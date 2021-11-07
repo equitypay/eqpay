@@ -454,6 +454,7 @@ bool RPCHelpMan::IsValidNumArgs(size_t num_args) const
             break;
         }
     }
+
     return num_required_args <= num_args && num_args <= m_args.size();
 }
 std::string RPCHelpMan::ToString() const

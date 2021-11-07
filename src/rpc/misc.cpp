@@ -373,9 +373,9 @@ UniValue getaddressutxos(const JSONRPCRequest& request)
                                     {"address", RPCArg::Type::STR, RPCArg::Optional::OMITTED, "The eqpay address"},
                                 }
                             },
-                            {"chainInfo", RPCArg::Type::BOOL, RPCArg::Optional::OMITTED_NAMED_ARG, "Include chain info with results"},
                         }
-                    }
+                    },
+                    {"amount", RPCArg::Type::AMOUNT, RPCArg::Optional::OMITTED_NAMED_ARG, "Total amount of UTXO's needed (0 will return all)"}
                 },
                 RPCResult{
                     RPCResult::Type::OBJ, "", "",
@@ -391,17 +391,15 @@ UniValue getaddressutxos(const JSONRPCRequest& request)
                 RPCExamples{
                     HelpExampleCli("getaddressutxos", "'{\"addresses\": [\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\"]}'")
             + HelpExampleRpc("getaddressutxos", "{\"addresses\": [\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\"]}") +
-                    HelpExampleCli("getaddressutxos", "'{\"addresses\": [\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\"], \"chainInfo\": true}'")
-            + HelpExampleRpc("getaddressutxos", "{\"addresses\": [\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\"], \"chainInfo\": true}")
+                    HelpExampleCli("getaddressutxos", "'{\"addresses\": [\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\"], \"amount\": 0}'")
+            + HelpExampleRpc("getaddressutxos", "{\"addresses\": [\"QD1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX\"], \"amount\": 0}")
                 },
             }.Check(request);
 
-    bool includeChainInfo = false;
-    if (request.params[0].isObject()) {
-        UniValue chainInfo = find_value(request.params[0].get_obj(), "chainInfo");
-        if (chainInfo.isBool()) {
-            includeChainInfo = chainInfo.get_bool();
-        }
+
+    CAmount requiredAmount = 0;
+    if (!request.params[1].isNull()) {
+        requiredAmount = AmountFromValue(request.params[1]);
     }
 
     std::vector<std::pair<uint256, int> > addresses;
@@ -421,8 +419,13 @@ UniValue getaddressutxos(const JSONRPCRequest& request)
     std::sort(unspentOutputs.begin(), unspentOutputs.end(), heightSort);
 
     UniValue utxos(UniValue::VARR);
+    CAmount total = 0;
 
     for (std::vector<std::pair<CAddressUnspentKey, CAddressUnspentValue> >::const_iterator it=unspentOutputs.begin(); it!=unspentOutputs.end(); it++) {
+        if (requiredAmount > 0 && total >= requiredAmount) {
+            break;
+        }
+
         UniValue output(UniValue::VOBJ);
         std::string address;
         if (!getAddressFromIndex(it->first.type, it->first.hashBytes, address)) {
@@ -437,19 +440,11 @@ UniValue getaddressutxos(const JSONRPCRequest& request)
         output.pushKV("height", it->second.blockHeight);
         output.pushKV("isStake", it->second.coinStake);
         utxos.push_back(output);
+
+        total += it->second.satoshis;
     }
 
-    if (includeChainInfo) {
-        UniValue result(UniValue::VOBJ);
-        result.pushKV("utxos", utxos);
-
-        LOCK(cs_main);
-        result.pushKV("hash", ::ChainActive().Tip()->GetBlockHash().GetHex());
-        result.pushKV("height", (int)::ChainActive().Height());
-        return result;
-    } else {
-        return utxos;
-    }
+    return utxos;
 }
 
 UniValue getaddressmempool(const JSONRPCRequest& request)
@@ -1364,7 +1359,7 @@ static const CRPCCommand commands[] =
     { "util",               "getaddresstxids",        &getaddresstxids,        {"addresses"} },
     { "util",               "getaddressdeltas",       &getaddressdeltas,       {"addresses"} },
     { "util",               "getaddressbalance",      &getaddressbalance,      {"addresses"} },
-    { "util",               "getaddressutxos",        &getaddressutxos,        {"addresses"} },
+    { "util",               "getaddressutxos",        &getaddressutxos,        {"addresses", "amount"} },
     { "util",               "getaddressmempool",      &getaddressmempool,      {"addresses"} },
     { "util",               "getblockhashes",         &getblockhashes,         {"high","low","options"} },
     { "util",               "getspentinfo",           &getspentinfo,           {"argument"} },
