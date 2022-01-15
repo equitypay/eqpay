@@ -28,6 +28,19 @@ UniValue transactionReceiptToJSON(const EqPayTransactionReceipt& txRec)
     result.pushKV("utxoRoot", txRec.utxoRoot().hex());
     result.pushKV("gasUsed", CAmount(txRec.cumulativeGasUsed()));
     result.pushKV("bloom", txRec.bloom().hex());
+    UniValue createdContracts(UniValue::VARR);
+    for (const auto& item: txRec.createdContracts()) {
+        UniValue contractItem(UniValue::VOBJ);
+        contractItem.pushKV("address", item.first.hex());
+        contractItem.pushKV("code", HexStr(item.second));
+        createdContracts.push_back(contractItem);
+    }
+    result.pushKV("createdContracts", createdContracts);
+    UniValue destructedContracts(UniValue::VARR);
+    for (const dev::Address& contract: txRec.destructedContracts()) {
+        destructedContracts.push_back(contract.hex());
+    }
+    result.pushKV("destructedContracts", destructedContracts);
     UniValue logEntries(UniValue::VARR);
     dev::eth::LogEntries logs = txRec.log();
     for(dev::eth::LogEntry log : logs){
@@ -55,17 +68,6 @@ UniValue CallToContract(const UniValue& params)
     if(data.size() % 2 != 0 || !CheckHex(data))
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid data (data not hex)");
 
-    dev::Address addrAccount;
-    if(strAddr.size() > 0)
-    {
-        if(strAddr.size() != 40 || !CheckHex(strAddr))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Incorrect address");
-
-        addrAccount = dev::Address(strAddr);
-        if(!globalState->addressInUse(addrAccount))
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Address does not exist");
-    }
-
     dev::Address senderAddress;
     if(params.size() >= 3){
         CTxDestination eqpaySenderAddress = DecodeDestination(params[2].get_str());
@@ -89,8 +91,32 @@ UniValue CallToContract(const UniValue& params)
             throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount for send");
     }
 
+    TemporaryState ts(globalState);
+    int blockNum;
+    if (params.size() >= 6) {
+        if (params[5].isNum()) {
+            blockNum = params[5].get_int();
+            if (blockNum < 0 || blockNum > ::ChainActive().Height())
+                throw JSONRPCError(RPC_INVALID_PARAMS, "Incorrect block number");
+            ts.SetRoot(uintToh256(::ChainActive()[blockNum]->hashStateRoot), uintToh256(::ChainActive()[blockNum]->hashUTXORoot));
+        } else {
+            throw JSONRPCError(RPC_INVALID_PARAMS, "Incorrect block number");
+        }
+    } else {
+        blockNum = latestblock.height;
+    }
 
-    std::vector<ResultExecute> execResults = CallContract(addrAccount, ParseHex(data), senderAddress, gasLimit, nAmount);
+    dev::Address addrAccount;
+    if (strAddr.size() > 0) {
+        if (strAddr.size() != 40 || !CheckHex(strAddr))
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Incorrect address");
+
+        addrAccount = dev::Address(strAddr);
+        if (!globalState->addressInUse(addrAccount))
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Address does not exist");
+    }
+
+    std::vector<ResultExecute> execResults = CallContract(addrAccount, ParseHex(data), blockNum, senderAddress, gasLimit, nAmount);
 
     if(fRecordLogOpcodes){
         writeVMlog(execResults);
@@ -122,6 +148,19 @@ void assignJSON(UniValue& entry, const TransactionReceiptInfo& resExec) {
     entry.pushKV("bloom", resExec.bloom.hex());
     entry.pushKV("stateRoot", resExec.stateRoot.hex());
     entry.pushKV("utxoRoot", resExec.utxoRoot.hex());
+    UniValue createdContracts(UniValue::VARR);
+    for (const auto& item: resExec.createdContracts) {
+        UniValue contractItem(UniValue::VOBJ);
+        contractItem.pushKV("address", item.first.hex());
+        contractItem.pushKV("code", HexStr(item.second));
+        createdContracts.push_back(contractItem);
+    }
+    entry.pushKV("createdContracts", createdContracts);
+    UniValue destructedContracts(UniValue::VARR);
+    for (const dev::Address& contract : resExec.destructedContracts) {
+        destructedContracts.push_back(contract.hex());
+    }
+    entry.pushKV("destructedContracts", destructedContracts);
 }
 
 void assignJSON(UniValue& logEntry, const dev::eth::LogEntry& log,
