@@ -3313,6 +3313,53 @@ UniValue dumptxoutset(const JSONRPCRequest& request)
     return result;
 }
 
+static UniValue eqrc20info(const JSONRPCRequest& request)
+{
+    RPCHelpMan{"eqrc20info",
+        "\nReturns info about eqrc20 token\n",
+        {
+            {"contractaddress", RPCArg::Type::STR_HEX, RPCArg::Optional::NO, "The contract address"},
+        },
+        RPCResult{
+            RPCResult::Type::STR, "name", "The name of the token"},
+        RPCExamples{
+            HelpExampleCli("eqrc20name", "\"eb23c0b3e6042821da281a2e2364feb22dd543e3\"")
+    + HelpExampleRpc("eqrc20name", "\"eb23c0b3e6042821da281a2e2364feb22dd543e3\"")
+        },
+    }.Check(request);
+
+    // Set contract address
+    CallToken token;
+    token.setAddress(request.params[0].get_str());
+
+    std::string name;
+    if(!token.name(name))
+        throw JSONRPCError(RPC_MISC_ERROR, "Failed to get token name");
+
+    std::string symbol;
+    if(!token.symbol(symbol))
+        throw JSONRPCError(RPC_MISC_ERROR, "Failed to get symbol");
+
+    std::string supply;
+    if(!token.totalSupply(supply))
+        throw JSONRPCError(RPC_MISC_ERROR, "Failed to get total supply");
+
+    uint32_t decimals;
+    if(!token.decimals(decimals))
+        throw JSONRPCError(RPC_MISC_ERROR, "Failed to get decimals");
+
+    dev::s256 value(supply);
+    if(value < 0)
+        throw JSONRPCError(RPC_MISC_ERROR, "Invalid total supply, value must be positive");
+
+    UniValue result(UniValue::VOBJ);
+    result.pushKV("name", name);
+    result.pushKV("symbol", symbol);
+    result.pushKV("supply", FormatToken(decimals, value));
+    result.pushKV("decimals", (int)decimals);
+    return result;
+}
+
 static UniValue eqrc20name(const JSONRPCRequest& request)
 {
             RPCHelpMan{"eqrc20name",
@@ -3635,6 +3682,7 @@ static const CRPCCommand commands[] =
 
     { "blockchain",         "callcontract",           &callcontract,           {"address","data", "senderAddress", "gasLimit", "amount", "blockNum"} },
 
+    { "blockchain",         "eqrc20info",              &eqrc20info,              {"address"} },
     { "blockchain",         "eqrc20name",              &eqrc20name,              {"address"} },
     { "blockchain",         "eqrc20symbol",            &eqrc20symbol,            {"address"} },
     { "blockchain",         "eqrc20totalsupply",       &eqrc20totalsupply,       {"address"} },
