@@ -201,8 +201,8 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 64;
-        consensus.nTargetSpacing = 64;
+        consensus.nTargetTimespan = 64 * 2; // 1 minute fix
+        consensus.nTargetSpacing = 64 * 2; // 1 minute fix
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.fPoSNoRetargeting = false;
@@ -216,7 +216,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350");
+        consensus.defaultAssumeValid = uint256S("0x5705f451465f2f256a4baad4d259d4a5c11a0a22624091e560f9adfd8612272c");
 
         pchMessageStart[0] = 0x86;
         pchMessageStart[1] = 0x80;
@@ -228,9 +228,10 @@ public:
         m_assumed_chain_state_size = 1;
 
         const char* pszTimestamp = "U.S. Debt Ceiling Suspension Ends, Congress Unclear on Next Step | Aug 1, 2021 Bloomberg";
-        genesis = CreateGenesisBlock(1632732913, 631, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
+        genesis = CreateGenesisBlock(1643390148, 401, 0x1f3fffff, 1, 2 * COIN, pszTimestamp);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x5705f451465f2f256a4baad4d259d4a5c11a0a22624091e560f9adfd8612272c"));
         assert(genesis.hashMerkleRoot == uint256S("0x6b25cef5cf941fa342bc0a490d680a6f31e4fc32a3b8f5c09e82d818abf919ac"));
 
         vFixedSeeds.clear();
@@ -254,7 +255,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("317d96abfea58edcb5411291fe29d95a99ccbaa475870e7ab91d92e702a378350")},
+                {0, uint256S("5705f451465f2f256a4baad4d259d4a5c11a0a22624091e560f9adfd8612272c")},
             }
         };
 
