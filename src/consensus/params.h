@@ -50,6 +50,8 @@ struct Params {
     int QIP7Height;
     /** Block height at which Offline Staking becomes active */
     int nOfflineStakeHeight;
+    /** Block height at which new DAA becomes active */
+    int nAlgoSwitchHeight;
     /** Block height at which EVM Muir Glacier fork becomes active */
     int nMuirGlacierHeight;
     uint32_t nRuleChangeActivationThreshold;
