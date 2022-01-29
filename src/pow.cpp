@@ -56,7 +56,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus:
 
 unsigned int GetNextWorkRequiredNew(const CBlockIndex* pindexLast, const Consensus::Params& params, bool fProofOfStake)
 {
-    int64_t nTargetSpacing = params.nTargetSpacing;
+    int spacingModifier = fProofOfStake ? 1 : 2;
+    int64_t nTargetSpacing = params.nTargetSpacing * spacingModifier;
     int64_t nTargetTimespan = params.nTargetTimespan;
     const arith_uint256 bnLimit = GetLimit(params, fProofOfStake);
 
