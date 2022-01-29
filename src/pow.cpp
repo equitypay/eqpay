@@ -69,7 +69,7 @@ unsigned int GetNextWorkRequiredNew(const CBlockIndex* pindexLast, const Consens
 
     // ppcoin: target change every block
     // ppcoin: retarget with exponential moving toward target spacing
-    arith_uint256 bnNew(pindexPrev->nBits); // Replaced pindexLast to avoid bugs
+    arith_uint256 bnNew = arith_uint256().SetCompact(pindexPrev->nBits); // Replaced pindexLast to avoid bugs
 
     int64_t nInterval = nTargetTimespan / nTargetSpacing;
     bnNew *= ((nInterval - 1) * nTargetSpacing + nActualSpacing + nActualSpacing);

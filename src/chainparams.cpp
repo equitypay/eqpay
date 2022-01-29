@@ -113,7 +113,7 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 64;
+        consensus.nTargetTimespan = 10 * 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -203,7 +203,7 @@ public:
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nTargetTimespan = 64;
+        consensus.nTargetTimespan = 10 * 64;
         consensus.nTargetSpacing = 64;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
