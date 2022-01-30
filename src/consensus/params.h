@@ -65,6 +65,7 @@ struct Params {
     bool fPowAllowMinDifficultyBlocks;
     bool fPowNoRetargeting;
     bool fPoSNoRetargeting;
+    int64_t nTargetSpacingOld;
     int64_t nTargetSpacing;
     int64_t nTargetTimespan;
     uint256 nMinimumChainWork;
