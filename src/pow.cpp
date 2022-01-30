@@ -39,15 +39,15 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus:
     arith_uint256 bnPastTargetAvg = 0;
     int nDgwPastBlocks = 30;
 
-    int64_t nTargetSpacing = pindexLast->nHeight >= params.nAlgoSwitchHeight ?
+    int64_t nTargetSpacing = pindexLast->nHeight >= params.nSpacingFixHeight ?
         params.nTargetSpacing : params.nTargetSpacing;
 
     // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
     if (!pindexLast || pindexLast->nHeight < nDgwPastBlocks)
         return bnLimit.GetCompact();
 
-    if (pindexLast->nHeight >= params.nAlgoSwitchHeight
-        && pindexLast->nHeight < params.nAlgoSwitchHeight + nDgwPastBlocks)
+    if (pindexLast->nHeight >= params.nSpacingFixHeight
+        && pindexLast->nHeight < params.nSpacingFixHeight + nDgwPastBlocks)
         return bnLimit.GetCompact();
 
     unsigned int nCountBlocks = 0;

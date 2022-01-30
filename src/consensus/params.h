@@ -51,7 +51,7 @@ struct Params {
     /** Block height at which Offline Staking becomes active */
     int nOfflineStakeHeight;
     /** Block height at which new DAA becomes active */
-    int nAlgoSwitchHeight;
+    int nSpacingFixHeight;
     /** Block height at which EVM Muir Glacier fork becomes active */
     int nMuirGlacierHeight;
     uint32_t nRuleChangeActivationThreshold;

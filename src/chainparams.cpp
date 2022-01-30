@@ -109,7 +109,7 @@ public:
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
         consensus.nMuirGlacierHeight = 1;
-        consensus.nAlgoSwitchHeight = std::numeric_limits<int>::max();
+        consensus.nSpacingFixHeight = 335200;
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -200,7 +200,7 @@ public:
         consensus.QIP6Height = 1;
         consensus.QIP7Height = 1;
         consensus.nMuirGlacierHeight = 1;
-        consensus.nAlgoSwitchHeight = 1;
+        consensus.nSpacingFixHeight = 1;
         consensus.nOfflineStakeHeight = std::numeric_limits<int>::max();
         consensus.powLimit = uint256S("003fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.posLimit = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff");
