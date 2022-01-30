@@ -39,9 +39,6 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus:
     arith_uint256 bnPastTargetAvg = 0;
     int nDgwPastBlocks = 30;
 
-    int64_t nTargetSpacing = pindexLast->nHeight >= params.nSpacingFixHeight ?
-        params.nTargetSpacing : params.nTargetSpacing;
-
     // make sure we have at least (nPastBlocks + 1) blocks, otherwise just return powLimit
     if (!pindexLast || pindexLast->nHeight < nDgwPastBlocks)
         return bnLimit.GetCompact();
@@ -78,6 +75,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const Consensus:
         pindexLastMatchingProof = pindexLast;
 
     int64_t nActualTimespan = pindexLastMatchingProof->GetBlockTime() - pindex->GetBlockTime();
+    int64_t nTargetSpacing = pindexLast->nHeight >= params.nSpacingFixHeight ?
+        params.nTargetSpacing : params.nTargetSpacingOld;
+
     int64_t nTargetTimespan = nDgwPastBlocks * nTargetSpacing;
 
     if (nActualTimespan < nTargetTimespan / 3)
