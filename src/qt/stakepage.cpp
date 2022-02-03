@@ -96,10 +96,10 @@ void StakePage::on_checkStake_clicked(bool checked)
     if(!walletModel)
         return;
 
-    this->walletModel->wallet().setEnabledStaking(checked);
-
     if(checked && WalletModel::Locked == walletModel->getEncryptionStatus())
         Q_EMIT requireUnlock(true);
+
+    this->walletModel->wallet().setEnabledStaking(checked);
 }
 
 void StakePage::updateDisplayUnit()
