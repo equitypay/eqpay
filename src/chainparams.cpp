@@ -130,10 +130,10 @@ public:
         consensus.nDiffDamping = 1000;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // eqpay
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001145f7ca085c124cf42"); // eqpay
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"); // 888000
+        consensus.defaultAssumeValid = uint256S("0xe113de0c5d2aecf63c9405c88cf3579c0afef3aadb15514d22e1b204488440e5"); // 888000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -172,14 +172,27 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256S("4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83")},
+                { 0, uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83")},
+                { 10000, uint256S("0xe160b5bd3a8d654113925506e81d05d62921adda36704276dc7d60deb6a09d59")},
+                { 100000, uint256S("0xdbba31ed19d2787dc8791768448890b59e8335314b3aabdb75b98eeb2352371c")},
+                { 150000, uint256S("0x093239bc226479c069bee71734739f436139808fbe6541737359e1f7281885cf")},
+                { 200000, uint256S("0xa973563a090cf268c9672b92bdba7c0f191b0a227ec54ab6cacb9905f0530ca0")},
+                { 250000, uint256S("0x52a82d29363b8046fd4aa3656f89a7fccac5686b05839e707ea3422ec6d244d7")},
+                { 300000, uint256S("0x07952878da43a243830d3d121f20055f92c1c8510e73c4beb3d7d303b8bf55a8")},
+                { 350000, uint256S("0xc4af13e7ff27fa8a7dde0df4825e671847fef0df8245396965f1854d2c1f4ae9")},
+                { 400000, uint256S("0xa31b6abe3f76177b478b6af0a2da5ba20b28047436384d899724de81dfc140df")},
+                { 450000, uint256S("0xa2899dbd3d23f2a163cfe09f1f746f757ae27578d64c2f3adf33303c6f840e62")},
+                { 500000, uint256S("0x54329b07eac45bcbca838fff4755b91fe5316125ae0a1cf3ec5d1bfae2c939bc")},
+                { 550000, uint256S("0xab8bb3d3878fb4c5be71f421073e20ae05170102a18bc938e364222a249bdcb3")},
+                { 599000, uint256S("0xe113de0c5d2aecf63c9405c88cf3579c0afef3aadb15514d22e1b204488440e5")},
             }
         };
 
+        // getchaintxstats 4096 e113de0c5d2aecf63c9405c88cf3579c0afef3aadb15514d22e1b204488440e5
         chainTxData = ChainTxData{
-            0,
-            0,
-            0
+            1661503638,
+            896089,
+            0.02291165361721782
         };
 
         consensus.nCoinbaseMaturity = 150;
