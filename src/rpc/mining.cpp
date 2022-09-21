@@ -416,6 +416,92 @@ UniValue minerstop(const JSONRPCRequest& request)
     return obj;
 }
 
+
+
+
+
+UniValue stakerstart(const JSONRPCRequest& request)
+{
+    std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
+    CWallet* const pwallet = wallet.get();
+
+    if (!EnsureWalletIsAvailable(pwallet, request.fHelp)) {
+        return false;
+    }
+
+    RPCHelpMan{"stakerstart",
+        "\nStart staking.",
+        {
+
+        },
+        RPCResult{
+            RPCResult::Type::OBJ, "", "",
+            {
+                {RPCResult::Type::STR, "status", "Staking status (active/stopped)"},
+            }
+        },
+        RPCExamples{
+            HelpExampleCli("stakerstart", "")
+        },
+    }.Check(request);
+
+    LOCK(cs_main);
+
+    if (pwallet)
+    {
+        LOCK(pwallet->cs_wallet);
+        auto locked_chain = pwallet->chain().lock();
+        pwallet->StopStake();
+        pwallet->StartStake(true);
+    }
+
+    UniValue obj(UniValue::VOBJ);
+    obj.pushKV("status",   "active");
+
+    return obj;
+}
+
+UniValue stakerstop(const JSONRPCRequest& request)
+{
+    std::shared_ptr<CWallet> const wallet = GetWalletForJSONRPCRequest(request);
+    CWallet* const pwallet = wallet.get();
+
+    if (!EnsureWalletIsAvailable(pwallet, request.fHelp)) {
+        return false;
+    }
+
+    RPCHelpMan{"stakerstop",
+        "\nStop staking.",
+        {},
+        RPCResult{
+            RPCResult::Type::OBJ, "", "",
+            {
+                {RPCResult::Type::STR, "status", "Mining status (active/stopped)"},
+            }
+        },
+        RPCExamples{
+            HelpExampleCli("stakerstop", "")
+        },
+    }.Check(request);
+
+    LOCK(cs_main);
+
+    if (pwallet)
+    {
+        LOCK(pwallet->cs_wallet);
+        pwallet->StopStake();
+    }
+
+    UniValue obj(UniValue::VOBJ);
+    obj.pushKV("status",   "stopped");
+
+    return obj;
+}
+
+
+
+
+
 static UniValue getstakinginfo(const JSONRPCRequest& request)
 {
             RPCHelpMan{"getstakinginfo",
@@ -468,7 +554,7 @@ static UniValue getstakinginfo(const JSONRPCRequest& request)
 
     UniValue obj(UniValue::VOBJ);
 
-    obj.pushKV("enabled", gArgs.GetBoolArg("-staking", true));
+    obj.pushKV("enabled", pwallet->m_enabled_staking);
     obj.pushKV("staking", staking);
     obj.pushKV("errors", GetWarnings("statusbar"));
 
@@ -1244,6 +1330,8 @@ static const CRPCCommand commands[] =
 
     { "miner",              "minerstart",             &minerstart,             {"nthreads"} },
     { "miner",              "minerstop",              &minerstop,              {} },
+    { "miner",              "stakerstart",            &stakerstart,            {} },
+    { "miner",              "stakerstop",             &stakerstop,             {} },
 
     { "generating",         "generatetoaddress",      &generatetoaddress,      {"nblocks","address","maxtries"} },
     { "generating",         "generatetodescriptor",   &generatetodescriptor,   {"num_blocks","descriptor","maxtries"} },
