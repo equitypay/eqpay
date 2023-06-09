@@ -148,6 +148,7 @@ void ReceiveRequestDialog::update()
         QString _uri = GUIUtil::formatBitcoinURI(_info);
         ui->labelURI->setText(_uri);
         ui->labelURI->setToolTip(uri);
+        // ui->labelURI->setVisible(false);
     }
     else
     {

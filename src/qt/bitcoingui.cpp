@@ -351,7 +351,7 @@ void BitcoinGUI::createActions()
     EQRCTokenAction->setToolTip(EQRCTokenAction->statusTip());
     EQRCTokenAction->setCheckable(true);
     EQRCTokenAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
-    tabGroup->addAction(EQRCTokenAction);
+    // tabGroup->addAction(EQRCTokenAction);
 
 #ifdef ENABLE_WALLET
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
@@ -634,10 +634,10 @@ void BitcoinGUI::createToolBars()
         contractActions.append(createContractAction);
         contractActions.append(sendToContractAction);
         contractActions.append(callContractAction);
-        appNavigationBar->mapGroup(smartContractAction, contractActions);
+        // appNavigationBar->mapGroup(smartContractAction, contractActions);
         appNavigationBar->addAction(stakeAction);
         appNavigationBar->addAction(miningAction);
-        appNavigationBar->addAction(EQRCTokenAction);
+        // appNavigationBar->addAction(EQRCTokenAction);
         appNavigationBar->buildUi();
         overviewAction->setChecked(true);
     }
@@ -845,8 +845,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     receiveCoinsAction->setEnabled(enabled);
     receiveCoinsMenuAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
-    smartContractAction->setEnabled(enabled);
-    EQRCTokenAction->setEnabled(enabled);
+    // smartContractAction->setEnabled(enabled);
+    // EQRCTokenAction->setEnabled(enabled);
     encryptWalletAction->setEnabled(enabled);
     backupWalletAction->setEnabled(enabled);
     restoreWalletAction->setEnabled(enabled);

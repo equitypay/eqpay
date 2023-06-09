@@ -180,28 +180,29 @@ QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
     bool bech_32 = info.address.startsWith(QString::fromStdString(Params().Bech32HRP() + "1"));
 
-    QString ret = QString("eqpay:%1").arg(bech_32 ? info.address.toUpper() : info.address);
-    int paramCount = 0;
+    // QString ret = QString("eqpay:%1").arg(bech_32 ? info.address.toUpper() : info.address);
+    QString ret = QString("%1").arg(bech_32 ? info.address.toUpper() : info.address);
+    // int paramCount = 0;
 
-    if (info.amount)
-    {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BTC, info.amount, false, BitcoinUnits::separatorNever));
-        paramCount++;
-    }
+    // if (info.amount)
+    // {
+    //     ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BTC, info.amount, false, BitcoinUnits::separatorNever));
+    //     paramCount++;
+    // }
 
-    if (!info.label.isEmpty())
-    {
-        QString lbl(QUrl::toPercentEncoding(info.label));
-        ret += QString("%1label=%2").arg(paramCount == 0 ? "?" : "&").arg(lbl);
-        paramCount++;
-    }
+    // if (!info.label.isEmpty())
+    // {
+    //     QString lbl(QUrl::toPercentEncoding(info.label));
+    //     ret += QString("%1label=%2").arg(paramCount == 0 ? "?" : "&").arg(lbl);
+    //     paramCount++;
+    // }
 
-    if (!info.message.isEmpty())
-    {
-        QString msg(QUrl::toPercentEncoding(info.message));
-        ret += QString("%1message=%2").arg(paramCount == 0 ? "?" : "&").arg(msg);
-        paramCount++;
-    }
+    // if (!info.message.isEmpty())
+    // {
+    //     QString msg(QUrl::toPercentEncoding(info.message));
+    //     ret += QString("%1message=%2").arg(paramCount == 0 ? "?" : "&").arg(msg);
+    //     paramCount++;
+    // }
 
     return ret;
 }
