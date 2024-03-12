@@ -154,6 +154,9 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x4931bde43eaf3a907fe516d35a389df99b4dff6a9d3cdfd2a624950d7cb91d83"));
         assert(genesis.hashMerkleRoot == uint256S("0xaaed7f5c3953f815aca5127be6578651f9ca09e069696fa192e6f5990fffa7e1"));
+
+        vSeeds.emplace_back("seed.equitypay.online");
+
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,33);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,58);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,70);
